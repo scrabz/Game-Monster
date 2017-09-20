@@ -65,6 +65,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1489384050977172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4154918655774540}
+  - component: {fileID: 65416154361032124}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1918766829099418
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,15 +119,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130236720247120}
   m_LocalRotation: {x: -0, y: -0.258819, z: -0, w: 0.9659259}
-  m_LocalPosition: {x: 11.168461, y: 3.46, z: -17.642256}
+  m_LocalPosition: {x: 7.996267, y: 2.83, z: -22.977}
   m_LocalScale: {x: 60.646175, y: 40.055977, z: 80.11195}
   m_Children:
   - {fileID: 4308083827844568}
   - {fileID: 4548415618067912}
   - {fileID: 4055495690920164}
+  - {fileID: 4154918655774540}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -30.000002, z: 0}
+--- !u!4 &4154918655774540
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489384050977172}
+  m_LocalRotation: {x: -0, y: 0.31780538, z: -0, w: 0.948156}
+  m_LocalPosition: {x: -0.0133, y: 0.030707028, z: -0.0121}
+  m_LocalScale: {x: 0.014470729, y: 0.0667434, z: 0.04160076}
+  m_Children: []
+  m_Father: {fileID: 4114937788704992}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 37.06, z: 0}
 --- !u!4 &4308083827844568
 Transform:
   m_ObjectHideFlags: 1
@@ -294,6 +324,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130236720247120}
   m_Mesh: {fileID: 4300000, guid: 408fc8d699b7d7842b88f16871bd333d, type: 3}
+--- !u!65 &65416154361032124
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489384050977172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95144194175017384
 Animator:
   serializedVersion: 3
