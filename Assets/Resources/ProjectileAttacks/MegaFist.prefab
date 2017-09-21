@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114570741709411020}
   m_Layer: 8
   m_Name: MegaFist
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamNum: 0
   parentPoint: {fileID: 0}
+  creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 2
 --- !u!135 &135927524327983380

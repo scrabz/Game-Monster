@@ -14,17 +14,17 @@ public class MasterGameManager : MonoBehaviour {
 
 
 
-	public GameObject team1Ch1;
-	public GameObject team1Ch2;
-	public GameObject team1Ch3;
-	public GameObject team1Ch4;
-	public GameObject team1Ch5;
-
-	public GameObject team2Ch1;
-	public GameObject team2Ch2;
-	public GameObject team2Ch3;
-	public GameObject team2Ch4;
-	public GameObject team2Ch5;
+//	public GameObject team1Ch1;
+//	public GameObject team1Ch2;
+//	public GameObject team1Ch3;
+//	public GameObject team1Ch4;
+//	public GameObject team1Ch5;
+//
+//	public GameObject team2Ch1;
+//	public GameObject team2Ch2;
+//	public GameObject team2Ch3;
+//	public GameObject team2Ch4;
+//	public GameObject team2Ch5;
 
 
 	public List<GameObject> team1Characters;
@@ -49,6 +49,8 @@ public class MasterGameManager : MonoBehaviour {
 
 	public GameObject Brogre;
 	public GameObject Skelly;
+
+	public int teamSize;
 
 	//Awake is always called before any Start functions
 	void Awake()
@@ -120,11 +122,7 @@ public class MasterGameManager : MonoBehaviour {
 		musicSource.clip = musicTrack;
 		musicSource.Play ();
 	}
-
-	public void StopMusic(){
-		musicSource.Stop ();
-	}
-
+		
 	public void RedScreenShake(GameObject camObject){
 		currentCamera = camObject;
 		originalPos = currentCamera.transform.localPosition;

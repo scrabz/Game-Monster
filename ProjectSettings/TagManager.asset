@@ -14,14 +14,8 @@ TagManager:
   - Enemy
   - BossEnemy
   - TrapHitbox
-  - Wall
-  - Floor
-  - Player1Spawn
-  - Player2Spawn
-  - Player3Spawn
-  - player4Spawn
-  - ItemDrop
-  - Walls
+  - Projectile
+  - Hitbox
   layers:
   - Default
   - TransparentFX
@@ -32,7 +26,7 @@ TagManager:
   - 
   - 
   - Attacks
-  - 
+  - NoPlayerCol
   - 
   - 
   - 

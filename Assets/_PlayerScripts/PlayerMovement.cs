@@ -72,9 +72,15 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 
+		if (matchManager != null) {
+			if (matchManager.GetComponent<MatchManager> ().isCountingDown) {
+				canMove = false;
+			} else {
+				canMove = true;
+			}
+		}
 
-
-		if (currentJoystick != null) {
+		if (currentJoystick != null && canMove) {
 			hMovement = currentJoystick.LeftStickX.RawValue;
 			vMovement = currentJoystick.LeftStickY.RawValue;
 			rollButton = currentJoystick.Action1.WasPressed;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackAction : MonoBehaviour {
 	public int teamNum;
 	public Transform parentPoint;
+	public GameObject creator;
 	public bool foundCreator = false;
 	public float lifeTimer = 2.5f;
 	// Use this for initialization
@@ -28,6 +29,7 @@ public class AttackAction : MonoBehaviour {
 		}
 		lifeTimer -= Time.deltaTime;
 		if (lifeTimer <= 0) {
+			Destroy (this.gameObject);
 			this.transform.position = new Vector3 (0, -100f, 0);
 
 

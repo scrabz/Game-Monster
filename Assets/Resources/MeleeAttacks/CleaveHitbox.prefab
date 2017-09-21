@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 54069080373376124}
   - component: {fileID: 114105341502563148}
   - component: {fileID: 114391406226027464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CleaveHitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alreadyHit: {fileID: 0}
+  pushBackDir: {x: 0, y: 0, z: 0}
+  damage: 10
 --- !u!114 &114391406226027464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,5 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamNum: 0
   parentPoint: {fileID: 0}
+  creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.4
