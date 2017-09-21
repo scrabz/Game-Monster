@@ -31,7 +31,7 @@ GameObject:
   - component: {fileID: 114049151662589880}
   m_Layer: 0
   m_Name: ToeTip
-  m_TagString: Player1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   invincible: 0
   invincibleTimer: 2
   model: {fileID: 0}
+  playerNum: 0
 --- !u!114 &114147308264613024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,6 +626,7 @@ MonoBehaviour:
   characterPoint1: {fileID: 0}
   characterPoint2: {fileID: 0}
   spawnPoint: {fileID: 0}
+  storedProjectiles: []
   abilityActive: 0
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 114934505266910066}
   m_Layer: 0
   m_Name: Brogre
-  m_TagString: Player2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,6 +629,7 @@ MonoBehaviour:
   invincible: 0
   invincibleTimer: 2
   model: {fileID: 0}
+  playerNum: 0
 --- !u!143 &143609345960354806
 CharacterController:
   m_ObjectHideFlags: 1

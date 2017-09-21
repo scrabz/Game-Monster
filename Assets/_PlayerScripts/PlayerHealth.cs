@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour {
 	public float invincibleTimer = 2f;
 
 	public GameObject model;
+	public int playerNum;
+
 
 
 	void Start () {
@@ -34,12 +36,15 @@ public class PlayerHealth : MonoBehaviour {
 
 		//healthBar = gameObject.transform.FindChild("Canvas").transform.FindChild("HealthBar").gameObject.GetComponent<Image>();
 
+		matchManagerObject = GameObject.Find ("MatchManager");
 
 		if (this.gameObject.tag == "Player1") {
 			healthPanel = GameObject.Find ("P1Panel");
+			playerNum = 1;
 		}
 		if (this.gameObject.tag == "Player2") {
 			healthPanel = GameObject.Find ("P2Panel");
+			playerNum = 2;
 		}
 		if (this.gameObject.tag == "Player3") {
 			healthPanel = GameObject.Find ("P3Panel");
@@ -66,6 +71,10 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (this.transform.position.y < -50f) {
+			if (matchManagerObject != null) {
+				matchManagerObject.GetComponent<MatchManager> ().RoundOver (playerNum);
+			}
+
 			Destroy (this.gameObject);
 		}
 

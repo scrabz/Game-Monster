@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MiniFistAction : MonoBehaviour {
 	public Rigidbody thisRigid;
+	public Vector3 pushBackDir;
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
@@ -21,7 +22,10 @@ public class MiniFistAction : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
+				
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (3);
+				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
+				col.GetComponent<CharacterController> ().Move (pushBackDir);
 				Destroy (this.gameObject);
 			}
 		}
