@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MatchManager.cs">
+    <Files>
+      <File FileName="Assets\_PlayerScripts\PlayerMovement.cs" Line="33" Column="2" />
+      <File FileName="Assets\PlayerCursor.cs" Line="87" Column="71" />
+      <File FileName="Assets\CharacterSelectAction.cs" Line="201" Column="34" />
+      <File FileName="Assets\_ManagerScripts\ButtonManager.cs" Line="60" Column="28" />
+      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="91" Column="34" />
+      <File FileName="Assets\MatchManager.cs" Line="183" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
