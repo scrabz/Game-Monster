@@ -108,30 +108,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			comboJab.aName = "Fury Fists";
-			comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			//comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
 			comboJab.aCooldown = 0.2f;
 			comboJab.aPanel = ability1;
 
 			megaFist.aName = "Mega Fist";
-			megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			//megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
 			megaFist.aCooldown = 2f;
 			megaFist.aPanel = ability2;
 
 			collection.aName = "Collection / Rejection";
-			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			//collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
 			collection.aCooldown = 3f;
 			collection.aPanel = ability3;
 
 			stomp.aName = "Stomp";
-			stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			//stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
 			stomp.aCooldown = 0.4f;
 			stomp.aPanel = ability4;
 
 			//Change the icons to match the ability
-			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
-			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
-			ability3.GetComponent<Image> ().sprite = collection.aIcon;
-			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
+//			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
+//			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
+//			ability3.GetComponent<Image> ().sprite = collection.aIcon;
+//			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
 
 		}
 
@@ -150,30 +150,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			cleave.aName = "Cleave";
-			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
 			cleave.aCooldown = 1.2f;
 			cleave.aPanel = ability1;
 
 			shield.aName = "Shield";
-			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
 			shield.aCooldown = 2f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
-			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
 			shieldPush.aCooldown = 1.5f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
-			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			kegToss.aCooldown = 0.4f;
+			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			kegToss.aCooldown = 5f;
 			kegToss.aPanel = ability4;
 
 			//Change the icons to match the ability
-			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
-			ability2.GetComponent<Image> ().sprite = shield.aIcon;
-			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
-			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
+//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
+//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
+//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
 
 		}
 
@@ -238,6 +238,15 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine("ShieldPush");
 
 				}
+
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (kegToss.aCooldown);
+					StartCoroutine("KegToss");
+
+				}
+
+
 			}
 		}
 
@@ -317,6 +326,19 @@ public class PlayerAbilities : MonoBehaviour {
 		abilityActive = false;
 		yield return null;
 	}
+
+	public IEnumerator KegToss(){
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KegTossProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		//Do an animation here
+		abilityActive = false;
+		yield return null;
+
+	}
+
 
 
 }

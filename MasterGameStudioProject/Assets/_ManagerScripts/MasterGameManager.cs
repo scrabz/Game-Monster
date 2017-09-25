@@ -10,6 +10,8 @@ public class MasterGameManager : MonoBehaviour {
 	public AudioSource soundSource;
 	public AudioSource musicSource;
 	public GameObject matchManagerObject;
+
+	//0 = FFA, 1 = 2v2
 	public int currentMode = 0;
 
 

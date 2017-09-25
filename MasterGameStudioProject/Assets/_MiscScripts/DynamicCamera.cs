@@ -15,7 +15,7 @@ public class DynamicCamera : MonoBehaviour
 
 	public List<GameObject> allPlayers;// The position the camera is moving towards.
 	public GameObject thePlayer;
-
+	public float size = 0f;
 
 	public float requiredSize;
 
@@ -42,7 +42,7 @@ public class DynamicCamera : MonoBehaviour
 	private void Awake ()
 	{
 
-		m_Camera = GetComponentInChildren<Camera> ();
+		m_Camera = this.transform.Find("Main Camera").GetComponent<Camera>();
 	}
 
 	private void FixedUpdate ()
@@ -90,6 +90,7 @@ public class DynamicCamera : MonoBehaviour
 	{
 		// Find the required size based on the desired position and smoothly transition to that size.
 		requiredSize = FindRequiredSize();
+		//this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y + size, this.transform.position.z);
 		//m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
 		//m_Camera.transform.Translate(m_Camera.transform.forward + Mathf.SmoothDamp (m_Camera.transform.forward.z,m_Camera.transform.forward.z + requiredSize, ref m_ZoomSpeed, m_DampTime));
 		//m_Camera.transform.position = new Vector3(m_Camera.transform.localPosition.x, m_Camera.transform.localPosition.y + 20,Mathf.SmoothDamp ((m_Camera.transform.localPosition.z - 10), requiredSize, ref m_ZoomSpeed, m_DampTime));
@@ -100,7 +101,7 @@ public class DynamicCamera : MonoBehaviour
 		// Find the position the camera rig is moving towards in its local space.
 		Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
 		// Start the camera's size calculation at zero.
-		float size = 0f;
+		
 		// Go through all the targets...
 		for (int i = 0; i < m_Targets.Length; i++)
 		{

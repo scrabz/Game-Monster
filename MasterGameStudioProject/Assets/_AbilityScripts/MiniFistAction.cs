@@ -9,6 +9,7 @@ public class MiniFistAction : MonoBehaviour {
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
 		thisRigid.velocity = transform.forward * 20f;
+
 	}
 	
 	// Update is called once per frame
@@ -20,10 +21,14 @@ public class MiniFistAction : MonoBehaviour {
 		if (col.gameObject.tag == "Solid") {
 			Destroy (this.gameObject);
 		}
+
+
+
+
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
 				
-				col.gameObject.GetComponent<PlayerHealth> ().GetHit (3);
+				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
 				col.GetComponent<CharacterController> ().Move (pushBackDir);
 				Destroy (this.gameObject);

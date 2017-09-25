@@ -5,7 +5,6 @@ using UnityEngine;
 public class MeleeHitboxActions : MonoBehaviour {
 	public GameObject alreadyHit;
 	public Vector3 pushBackDir;
-	public int damage = 10;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,8 +19,8 @@ public class MeleeHitboxActions : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
-			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling && col.gameObject != alreadyHit) {
-				col.gameObject.GetComponent<PlayerHealth> ().GetHit (10);
+			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
+				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				alreadyHit = col.gameObject;
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward * 5f;

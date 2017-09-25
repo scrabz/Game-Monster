@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour {
 			
 		
 			//if (controller.isGrounded) {
-			if (rollButton && !isRolling && !isRollCooling) {
+			if (rollButton && !isRolling && !isRollCooling && !this.GetComponent<PlayerState>().isSlowed) {
 					isRolling = true;
 				rollDirection = this.transform.Find ("RotationPoint").forward;
 				}

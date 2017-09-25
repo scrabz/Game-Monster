@@ -8,6 +8,8 @@ public class AttackAction : MonoBehaviour {
 	public GameObject creator;
 	public bool foundCreator = false;
 	public float lifeTimer = 2.5f;
+
+	public float damage = 1;
 	// Use this for initialization
 	void Start () {
 		//spawnPoint = this.transform.position;
