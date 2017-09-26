@@ -69,23 +69,27 @@ public class PlayerCursor : MonoBehaviour {
 		if (aButton) {
 			if (Physics.Raycast(transform.position, transform.forward, out hit,500f)){
 				if (hit.collider.gameObject.name == "BrogreButton") {
-					Debug.Log ("BrogreSelected");
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Brogre");
 				}
 				if (hit.collider.gameObject.name == "SkeletonButton") {
-					Debug.Log ("SkeletonSelected");
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Skelly");
 				}
 				if (hit.collider.gameObject.name == "DecreaseTeam") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().ChangeTeamSize(-1);
 				}
 				if (hit.collider.gameObject.name == "IncreaseTeam") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().ChangeTeamSize(1);
 				}
 				if (hit.collider.gameObject.name == "BackButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					buttonManagerObject.GetComponent<ButtonManager> ().BackFromCharacterSelect();
 				}
 				if (hit.collider.gameObject.name == "LevelSelectButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizeTeams();
 
 				}

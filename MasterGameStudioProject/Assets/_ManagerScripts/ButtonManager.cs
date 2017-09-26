@@ -29,9 +29,6 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 
-	public void NewGame(){
-		StartCoroutine ("FadeOut","LevelSelect");
-	}
 	public void StartVersusMatch(){
 		cursorCanvas.SetActive (true);
 		mainMenuAnimator.SetBool ("upFromMid", true);
@@ -58,7 +55,7 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	public void LevelSelect(){
-		SceneManager.LoadScene ("testscene");
+		SceneManager.LoadScene ("Cave");
 
 	}
 

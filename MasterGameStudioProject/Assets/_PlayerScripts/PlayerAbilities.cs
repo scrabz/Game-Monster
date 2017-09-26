@@ -34,15 +34,19 @@ public class PlayerAbilities : MonoBehaviour {
 	CharacterAbility comboJab;
 	CharacterAbility megaFist;
 	CharacterAbility collection;
-
 	public List<GameObject> storedProjectiles;
-
 	CharacterAbility stomp;
+
 
 	CharacterAbility cleave;
 	CharacterAbility shield;
 	CharacterAbility shieldPush;
 	CharacterAbility kegToss;
+
+	CharacterAbility duelDaggers;
+	CharacterAbility knifeThrow;
+	CharacterAbility clawTrap;
+	CharacterAbility giantTiny;
 
 	public InputDevice currentJoystick;
 
@@ -59,6 +63,16 @@ public class PlayerAbilities : MonoBehaviour {
 	public bool isShieldPushing = false;
 	public bool isShielding = false;
 	public bool isKegTossing = false;
+
+	public bool isCollecting = false;
+	public bool isComboJabbing = false;
+	public bool isMegaPunching = false;
+	public bool isStomping = false;
+
+	public bool isDaggering = false;
+	public bool isKnifeThrowing = false;
+	public bool isClawTrapping = false;
+	public bool giant = false;
 
 
 	public GameObject matchManager;
@@ -191,6 +205,53 @@ public class PlayerAbilities : MonoBehaviour {
 //			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
 
 		}
+
+
+		if (this.gameObject.name == "Tiny(Clone)") {
+
+			duelDaggers = new CharacterAbility ();
+			knifeThrow = new CharacterAbility ();
+			clawTrap = new CharacterAbility ();
+			giantTiny = new CharacterAbility ();
+
+			//Find the Ability panels
+			ability1 = abilityPanel.transform.Find ("Ability1").gameObject;
+			ability2 = abilityPanel.transform.Find ("Ability2").gameObject;
+			ability3 = abilityPanel.transform.Find ("Ability3").gameObject;
+			ability4 = abilityPanel.transform.Find ("Ability4").gameObject;
+
+			//Set the properties of every ability
+			duelDaggers.aName = "Duel Daggers";
+			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			duelDaggers.aCooldown = 0.7f;
+			duelDaggers.aPanel = ability1;
+
+			shield.aName = "Knife Throw";
+			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			shield.aCooldown = 5f;
+			shield.aPanel = ability2;
+
+			clawTrap.aName = "Claw Trap";
+			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			clawTrap.aCooldown = 3f;
+			clawTrap.aPanel = ability3;
+
+			giantTiny.aName = "Keg Toss";
+			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			giantTiny.aCooldown = 15f;
+			giantTiny.aPanel = ability4;
+
+			//Change the icons to match the ability
+			//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
+			//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
+			//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
+			//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+
+		}
+
+
+
+
 
 
 			ability4.GetComponent<CooldownManager> ().StartCooldown (15f);
@@ -377,6 +438,26 @@ public class PlayerAbilities : MonoBehaviour {
 
 	}
 
+	//TINY ABILITIES
+	public IEnumerator DuelDaggers(){
+		isDaggering = true;
 
+
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds(0.2f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds(0.2f);
+		isDaggering = false;
+		abilityActive = false;
+		yield return null;
+	}
 
 }

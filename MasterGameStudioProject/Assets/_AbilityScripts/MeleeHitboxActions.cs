@@ -20,8 +20,12 @@ public class MeleeHitboxActions : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
-				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
-				alreadyHit = col.gameObject;
+				//Dont let Brogre get hurt by this if he's shielding
+				if (!col.gameObject.GetComponent<PlayerAbilities> ().isShielding && !col.gameObject.GetComponent<PlayerAbilities> ().isShieldPushing) {
+					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
+
+					alreadyHit = col.gameObject;
+				}
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward * 5f;
 					col.GetComponent<CharacterController> ().Move (pushBackDir);

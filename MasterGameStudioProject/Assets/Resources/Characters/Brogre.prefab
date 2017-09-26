@@ -3559,6 +3559,14 @@ MonoBehaviour:
   isShieldPushing: 0
   isShielding: 0
   isKegTossing: 0
+  isCollecting: 0
+  isComboJabbing: 0
+  isMegaPunching: 0
+  isStomping: 0
+  isDaggering: 0
+  isKnifeThrowing: 0
+  isClawTrapping: 0
+  giant: 0
   matchManager: {fileID: 0}
 --- !u!114 &114950464605838298
 MonoBehaviour:
