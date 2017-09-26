@@ -25,6 +25,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward * 5f;
 					col.GetComponent<CharacterController> ().Move (pushBackDir);
+					col.GetComponent<PlayerState> ().InflictStun (1f);
 				}
 			}
 		}

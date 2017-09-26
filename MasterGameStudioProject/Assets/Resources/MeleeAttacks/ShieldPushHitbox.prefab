@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720442083784928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alreadyHit: {fileID: 0}
   pushBackDir: {x: 0, y: 0, z: 0}
-  damage: 10
 --- !u!114 &114219112391223078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,3 +153,4 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.4
+  damage: 1

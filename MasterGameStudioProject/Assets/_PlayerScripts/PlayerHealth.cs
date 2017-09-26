@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -128,6 +129,9 @@ public class PlayerHealth : MonoBehaviour {
 
 		if (currentHealth <= 0f) {
 			Death ();
+			if (matchManagerObject == null) {
+				SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+			}
 
 		}
 

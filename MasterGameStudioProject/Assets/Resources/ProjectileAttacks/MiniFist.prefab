@@ -115,6 +115,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.2
+  damage: 2
 --- !u!114 &114675004147043408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisRigid: {fileID: 0}
+  pushBackDir: {x: 0, y: 0, z: 0}
 --- !u!135 &135190739789043286
 SphereCollider:
   m_ObjectHideFlags: 1

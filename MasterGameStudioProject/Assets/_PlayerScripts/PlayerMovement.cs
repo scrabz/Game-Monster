@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using InControl;
+using UnityEngine.UI;
+
 
 public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 6.0F;
-	public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
 
 	public bool isDying = false;
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isRollCooling = false;
 	public Vector3 rollDirection;
 
-	private Vector3 moveDirection = Vector3.zero;
+	public Vector3 moveDirection = Vector3.zero;
 	public CharacterController controller;
 
 	public GameObject matchManager;
@@ -39,6 +40,10 @@ public class PlayerMovement : MonoBehaviour {
 	public float stunTimer;
 
 	public InputDevice currentJoystick;
+
+	public Image staminaBack;
+	public Image staminaFront;
+	public float calcRecoverTime;
 
 	void Start() {
 		rollTimer = rollTimerDef;
@@ -67,7 +72,10 @@ public class PlayerMovement : MonoBehaviour {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
-
+		staminaFront = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").Find("StaminaFront").gameObject.GetComponent<Image>();
+		staminaBack = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").gameObject.GetComponent<Image>();
+		staminaBack.enabled = false;
+		staminaFront.enabled = false;
 	}
 
 	void Update() {
@@ -108,10 +116,16 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (isRollCooling) {
+			calcRecoverTime =  rollTimerCoolDef - (rollTimerCool / rollTimerCoolDef);
+			staminaBack.enabled = true;
+			staminaFront.enabled = true;
+			staminaFront.transform.localScale = new Vector3 (Mathf.Clamp (calcRecoverTime, 0f, 1f), staminaFront.transform.localScale.y, staminaFront.transform.localScale.z);
 			rollTimerCool -= Time.deltaTime;
 			if (rollTimerCool <= 0) {
 				isRollCooling = false;
 				rollTimerCool = rollTimerCoolDef;
+				staminaBack.enabled = false;
+				staminaFront.enabled = false;
 			}
 
 		}
@@ -137,8 +151,8 @@ public class PlayerMovement : MonoBehaviour {
 			
 		
 			//if (controller.isGrounded) {
-			if (rollButton && !isRolling && !isRollCooling && !this.GetComponent<PlayerState>().isSlowed) {
-					isRolling = true;
+			if (rollButton && !isRolling && !isRollCooling && !this.GetComponent<PlayerState>().isSlowed && !this.GetComponent<PlayerAbilities>().abilityActive) {
+				isRolling = true;
 				rollDirection = this.transform.Find ("RotationPoint").forward;
 				}
 				if (isRolling == false) {
@@ -146,7 +160,11 @@ public class PlayerMovement : MonoBehaviour {
 					moveDirection = transform.TransformDirection (moveDirection);
 					moveDirection *= speed;
 					moveDirection.y -= gravity * Time.deltaTime;
+				if (this.GetComponent<PlayerAbilities> ().abilityActive) {
+					controller.Move ((moveDirection / 1.5f) * Time.deltaTime);
+				} else {
 					controller.Move (moveDirection * Time.deltaTime);
+				}
 				}
 			//}
 
