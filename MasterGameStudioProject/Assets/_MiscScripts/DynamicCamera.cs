@@ -17,6 +17,8 @@ public class DynamicCamera : MonoBehaviour
 	public GameObject thePlayer;
 	public float size = 0f;
 
+	public float zoomFactor = 0f;
+
 	public float requiredSize;
 
 	void Start(){
@@ -60,7 +62,8 @@ public class DynamicCamera : MonoBehaviour
 		// Find the average position of the targets.
 		FindAveragePosition ();
 		// Smoothly transition to that position.
-		transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
+		//transform.position = Vector3.SmoothDamp(transform.position, new Vector3(m_DesiredPosition.x,m_DesiredPosition.y,m_DesiredPosition.z), ref m_MoveVelocity, m_DampTime);
+		transform.position = Vector3.SmoothDamp(transform.position, new Vector3(m_DesiredPosition.x,m_DesiredPosition.y,m_DesiredPosition.z), ref m_MoveVelocity, m_DampTime);
 	}
 	private void FindAveragePosition ()
 	{
@@ -80,16 +83,84 @@ public class DynamicCamera : MonoBehaviour
 		if (numTargets > 0)
 			averagePos /= numTargets;
 		// Keep the same y value.
-		averagePos.y = averagePos.y + 20;
+		averagePos.y = averagePos.y + (20 + (zoomFactor * 2));
 		//averagePos.y = transform.position.y;
-		averagePos.z = averagePos.z - 10;
+		averagePos.z = averagePos.z - (10 + (zoomFactor * 1));
 		// The desired position is the average position;
 		m_DesiredPosition = averagePos;
 	}
 	private void Zoom ()
 	{
+
+		float zoomInFactor = 1f;
+		float zoomOutFactor = 0f;
+
+		float outerBufferW = Screen.width * 0.1f;
+		float innerBufferW = Screen.width * 0.15f;
+		float outerBufferH = Screen.height * 0.1f;
+		float innerBufferH = Screen.height * 0.15f;
+
+
+		//Vector3 averagePos = new Vector3 ();
+		Vector3 temp;
+		//int numTargets = 0;
+		// Go through all the targets and add their positions together.
+		for (int i = 0; i < m_Targets.Length; i++)
+		{
+
+
+
+			// If the target isn't active, go on to the next one.
+			if (!m_Targets[i].gameObject.activeSelf)
+				continue;
+
+
+			temp = m_Camera.WorldToScreenPoint(m_Targets[i].position);
+			if (i == 0) {
+				print (temp);
+			}
+
+			if ((temp.x < outerBufferW) || (temp.y < outerBufferH) || (temp.x > (Screen.width - outerBufferW))|| (temp.y > (Screen.height - outerBufferH))) {
+				zoomOutFactor = -1f;
+				break;
+		
+			}
+			if (zoomInFactor != 0f) {
+				if ((temp.x < innerBufferW) || (temp.y < innerBufferH) || (temp.x > (Screen.width - innerBufferW)) || (temp.y > (Screen.height - innerBufferH))) {
+					zoomInFactor = 0f;
+
+
+				}
+			}
+			// Add to the average and increment the number of targets in the average.
+//			averagePos += m_Targets[i].position;
+//			numTargets++;
+		}
+		if (zoomOutFactor == 0f) {
+			if (zoomInFactor != 0) {
+				print ("zoomin in");
+				zoomFactor = Mathf.Max(0,zoomFactor - 0.05f);
+				//transform.position = new Vector3 (transform.position.x, transform.position.y - 0.2f, transform.position.z + 0.2f);
+			}
+		} else {
+			print ("zoomin out");
+			zoomFactor = Mathf.Min(1000f,zoomFactor + 0.05f);
+			//transform.position = new Vector3 (transform.position.x, transform.position.y + 0.2f, transform.position.z - 0.2f);
+		}
+		// If there are targets divide the sum of the positions by the number of them to find the average.
+//		if (numTargets > 0)
+//			averagePos /= numTargets;
+//		// Keep the same y value.
+//		averagePos.y = averagePos.y + 20;
+//		//averagePos.y = transform.position.y;
+//		averagePos.z = averagePos.z - 10;
+//		// The desired position is the average position;
+//		m_DesiredPosition = averagePos;
+
+
+
 		// Find the required size based on the desired position and smoothly transition to that size.
-		requiredSize = FindRequiredSize();
+		//requiredSize = FindRequiredSize();
 		//this.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y + size, this.transform.position.z);
 		//m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
 		//m_Camera.transform.Translate(m_Camera.transform.forward + Mathf.SmoothDamp (m_Camera.transform.forward.z,m_Camera.transform.forward.z + requiredSize, ref m_ZoomSpeed, m_DampTime));

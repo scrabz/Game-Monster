@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (isRollCooling) {
-			calcRecoverTime =  rollTimerCoolDef - (rollTimerCool / rollTimerCoolDef);
+			calcRecoverTime =  1f - (rollTimerCool / rollTimerCoolDef);
 			staminaBack.enabled = true;
 			staminaFront.enabled = true;
 			staminaFront.transform.localScale = new Vector3 (Mathf.Clamp (calcRecoverTime, 0f, 1f), staminaFront.transform.localScale.y, staminaFront.transform.localScale.z);

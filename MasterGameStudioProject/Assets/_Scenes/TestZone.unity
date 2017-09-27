@@ -748,6 +748,10 @@ Prefab:
       propertyPath: rollTimerCoolDef
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
   m_IsPrefabParent: 0
@@ -1127,6 +1131,7 @@ MonoBehaviour:
   allPlayers: []
   thePlayer: {fileID: 0}
   size: 0
+  zoomFactor: 0
   requiredSize: 0
 --- !u!1001 &486156782
 Prefab:
