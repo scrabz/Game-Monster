@@ -11,8 +11,6 @@ public class CharacterSelectAction : MonoBehaviour {
 	public Image team1Ch3;
 	public Image team1Ch4;
 
-
-
 	public Image team2Ch1;
 	public Image team2Ch2;
 	public Image team2Ch3;
@@ -37,6 +35,7 @@ public class CharacterSelectAction : MonoBehaviour {
 	public List<Sprite> team2Characters;
 
 	public GameObject buttonManagerObject;
+
 
 	// Use this for initialization
 	void Start () {
@@ -206,33 +205,46 @@ public class CharacterSelectAction : MonoBehaviour {
 			team1Ch2.enabled = true;
 			team1Ch3.enabled = true;
 			team1Ch4.enabled = false;
+			team1Ch4.sprite = blankPortrait;
+
 
 			team2Ch1.enabled = true;
 			team2Ch2.enabled = true;
 			team2Ch3.enabled = true;
 			team2Ch4.enabled = false;
+			team1Ch4.sprite = blankPortrait;
 		}
 		if (teamSize == 2) {
 			team1Ch1.enabled = true;
 			team1Ch2.enabled = true;
 			team1Ch3.enabled = false;
 			team1Ch4.enabled = false;
+			team1Ch3.sprite = blankPortrait;
+			team1Ch4.sprite = blankPortrait;
 
 			team2Ch1.enabled = true;
 			team2Ch2.enabled = true;
 			team2Ch3.enabled = false;
 			team2Ch4.enabled = false;
+			team2Ch3.sprite = blankPortrait;
+			team2Ch4.sprite = blankPortrait;
 		}
 		if (teamSize == 1) {
 			team1Ch1.enabled = true;
 			team1Ch2.enabled = false;
 			team1Ch3.enabled = false;
 			team1Ch4.enabled = false;
+			team1Ch2.sprite = blankPortrait;
+			team1Ch3.sprite = blankPortrait;
+			team1Ch4.sprite = blankPortrait;
 
 			team2Ch1.enabled = true;
 			team2Ch2.enabled = false;
 			team2Ch3.enabled = false;
 			team2Ch4.enabled = false;
+			team2Ch2.sprite = blankPortrait;
+			team2Ch3.sprite = blankPortrait;
+			team2Ch4.sprite = blankPortrait;
 		}
 		teamSizeDisplay.text = teamSize.ToString ();
 	}
@@ -252,20 +264,32 @@ public class CharacterSelectAction : MonoBehaviour {
 			team2Characters.Add (team2Ch4.sprite);
 
 			foreach (Sprite chr in team1Characters) {
+				print (chr.name);
 				if (chr.name == "BrogreP") {
 					MasterGameManager.instance.AddCharacter (1, "Brogre");
 				}
 				if (chr.name == "SkeletonP") {
 					MasterGameManager.instance.AddCharacter (1, "Skelly");
 				}
+				if (chr.name == "Blank") {
+					Debug.Log ("added null");
+					MasterGameManager.instance.AddCharacter (1, "Empty");
+				}
+
+
 			}
 
 			foreach (Sprite chr in team2Characters) {
+				print (chr.name);
 				if (chr.name == "BrogreP") {
 					MasterGameManager.instance.AddCharacter (2, "Brogre");
 				}
 				if (chr.name == "SkeletonP") {
 					MasterGameManager.instance.AddCharacter (2, "Skelly");
+				}
+				if (chr.name == "Blank") {
+					Debug.Log ("added null");
+					MasterGameManager.instance.AddCharacter (2, "Empty");
 				}
 			}
 			buttonManagerObject.GetComponent<ButtonManager> ().LevelSelect ();

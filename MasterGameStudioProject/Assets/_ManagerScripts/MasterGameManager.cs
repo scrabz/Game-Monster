@@ -49,6 +49,8 @@ public class MasterGameManager : MonoBehaviour {
 
 	public bool inDialogue = false;
 
+
+	public GameObject Empty;
 	public GameObject Brogre;
 	public GameObject Skelly;
 
@@ -78,6 +80,7 @@ public class MasterGameManager : MonoBehaviour {
 
 	}
 	void Start(){
+		Empty = Resources.Load("Characters/Empty") as GameObject;
 		Brogre = Resources.Load("Characters/Brogre") as GameObject;
 		Skelly = Resources.Load("Characters/ToeTip") as GameObject;
 
@@ -88,6 +91,9 @@ public class MasterGameManager : MonoBehaviour {
 
 	public void AddCharacter(int teamNumber, string name){
 		if (teamNumber == 1) {
+			if (name == "Empty"){
+				team1Characters.Add (Empty);
+			}
 			if (name == "Brogre"){
 				team1Characters.Add (Brogre);
 			}
@@ -97,6 +103,9 @@ public class MasterGameManager : MonoBehaviour {
 		}
 
 		if (teamNumber == 2) {
+			if (name == "Empty"){
+				team2Characters.Add (Empty);
+			}
 			if (name == "Brogre"){
 				team2Characters.Add (Brogre);
 			}

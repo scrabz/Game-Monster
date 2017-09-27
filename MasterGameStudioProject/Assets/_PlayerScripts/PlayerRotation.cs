@@ -10,6 +10,7 @@ public class PlayerRotation : MonoBehaviour {
 	public InputDevice currentJoystick;
 
 	public GameObject parentObject;
+	public bool canRotate = true;
 	// Use this for initialization
 	void Start () {
 		parentObject = transform.parent.gameObject;
@@ -40,25 +41,27 @@ public class PlayerRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentJoystick != null) {
-			hMovementR = currentJoystick.RightStickX;
-			vMovementR =  currentJoystick.RightStickY;
+		if (canRotate) {
+			if (currentJoystick != null) {
+				hMovementR = currentJoystick.RightStickX;
+				vMovementR = currentJoystick.RightStickY;
 
-		}
-			
-
-		if (parentObject.GetComponent<PlayerMovement> ().isDying == false && parentObject.GetComponent<PlayerMovement> ().isRolling == false) {
-			if (hMovementR != 0f || vMovementR != 0f) {
-				angle = Mathf.Atan2 (vMovementR, hMovementR) * Mathf.Rad2Deg;
-			} else {
-				if (Mathf.RoundToInt(parentObject.GetComponent<PlayerMovement> ().hMovement) != 0 || Mathf.RoundToInt(parentObject.GetComponent<PlayerMovement> ().vMovement) != 0) {
-					angle = Mathf.Atan2 (parentObject.GetComponent<PlayerMovement> ().vMovement, parentObject.GetComponent<PlayerMovement> ().hMovement) * Mathf.Rad2Deg;
-				}
 			}
 			
-			transform.rotation = Quaternion.Lerp(this.transform.rotation,Quaternion.AngleAxis (90f - angle, Vector3.up),20f* Time.deltaTime);
+
+			if (parentObject.GetComponent<PlayerMovement> ().isDying == false && parentObject.GetComponent<PlayerMovement> ().isRolling == false) {
+				if (hMovementR != 0f || vMovementR != 0f) {
+					angle = Mathf.Atan2 (vMovementR, hMovementR) * Mathf.Rad2Deg;
+				} else {
+					if (Mathf.RoundToInt (parentObject.GetComponent<PlayerMovement> ().hMovement) != 0 || Mathf.RoundToInt (parentObject.GetComponent<PlayerMovement> ().vMovement) != 0) {
+						angle = Mathf.Atan2 (parentObject.GetComponent<PlayerMovement> ().vMovement, parentObject.GetComponent<PlayerMovement> ().hMovement) * Mathf.Rad2Deg;
+					}
+				}
+			
+				transform.rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.AngleAxis (90f - angle, Vector3.up), 20f * Time.deltaTime);
 
 		
+			}
 		}
 	}
 

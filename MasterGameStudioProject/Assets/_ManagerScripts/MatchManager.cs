@@ -76,8 +76,8 @@ public class MatchManager : MonoBehaviour {
 	public Image p1ActiveProfile;
 	public Image p2ActiveProfile;
 
-	public int i = 0;
-	public int o = 0;
+	//public int i = 0;
+	//public int o = 0;
 
 	public int team1CharactersLeft;
 	public int team2CharactersLeft;
@@ -189,22 +189,22 @@ public class MatchManager : MonoBehaviour {
 			}
 				
 			if (p1ActiveCharacter == null) {
-				if (p1A) {
+				if (p1A && team1Ch1.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.team1Characters [0];
 					p1ActiveProfile = team1Ch1;
 					StartCoroutine ("VibrateController", p1Joystick);
 				}
-				if (p1B) {
+				if (p1B && team1Ch3.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.team1Characters [1];
 					p1ActiveProfile = team1Ch2;
 					StartCoroutine ("VibrateController", p1Joystick);
 				}
-				if (p1X) {
+				if (p1X && team1Ch3.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.team1Characters [2];
 					p1ActiveProfile = team1Ch3;
 					StartCoroutine ("VibrateController", p1Joystick);
 				}
-				if (p1Y) {
+				if (p1Y && team1Ch4.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.team1Characters [3];
 					p1ActiveProfile = team1Ch4;
 					StartCoroutine ("VibrateController", p1Joystick);
@@ -214,22 +214,22 @@ public class MatchManager : MonoBehaviour {
 
 			if (p2ActiveCharacter == null) {
 				
-				if (p2A) {
+				if (p2A && team2Ch1.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.team2Characters [0];
 					p2ActiveProfile = team2Ch1;
 					StartCoroutine ("VibrateController", p2Joystick);
 				}
-				if (p2B) {
+				if (p2B && team2Ch2.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.team2Characters [1];
 					p2ActiveProfile = team2Ch2;
 					StartCoroutine ("VibrateController", p2Joystick);
 				}
-				if (p2X) {
+				if (p2X && team2Ch3.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.team2Characters [2];
 					p2ActiveProfile = team2Ch3;
 					StartCoroutine ("VibrateController", p2Joystick);
 				}
-				if (p2Y) {
+				if (p2Y && team2Ch4.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.team2Characters [3];
 					p2ActiveProfile = team2Ch4;
 					StartCoroutine ("VibrateController", p2Joystick);
@@ -283,13 +283,64 @@ public class MatchManager : MonoBehaviour {
 
 
 
-		for (o = 0;o < MasterGameManager.instance.team2Characters.Count; o++) {
+
+		for (int i = 0; i < MasterGameManager.instance.team1Characters.Count; i++) {
+			//if (character != null) {
+			if (MasterGameManager.instance.team1Characters[i].name == "Brogre") {
+				p1Portraits.Add (brogrePortrait);
+			}
+			if (MasterGameManager.instance.team1Characters[i].name == "ToeTip") {
+				p1Portraits.Add (skeletonPortrait);
+			}
+			if (MasterGameManager.instance.team1Characters[i].name == "Empty") {
+				p1Portraits.Add (blankPortrait);
+			}
+			//}
+		}
+
+
+
+
+
+		team1Ch1.sprite = p1Portraits[0];
+		team1Ch2.sprite = p1Portraits [1];
+		team1Ch3.sprite = p1Portraits [2];
+		team1Ch4.sprite = p1Portraits [3];
+
+		team1Ch1Name.text = MasterGameManager.instance.team1Characters [0].name;
+		team1Ch2Name.text = MasterGameManager.instance.team1Characters [1].name;
+		team1Ch3Name.text = MasterGameManager.instance.team1Characters [2].name;
+		team1Ch4Name.text = MasterGameManager.instance.team1Characters [3].name;
+
+
+		if (team1Ch2.sprite == blankPortrait) {
+			team1Ch2.enabled = false;
+			team1Ch2Name.enabled = false;
+			team1Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
+		}
+		if (team1Ch3.sprite == blankPortrait) {
+			team1Ch3.enabled = false;
+			team1Ch3Name.enabled = false;
+			team1Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
+		}
+
+		if (team1Ch4.sprite == blankPortrait) {
+			team1Ch4.enabled = false;
+			team1Ch4Name.enabled = false;
+			team1Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
+		}
+
+
+		for (int o = 0;o < MasterGameManager.instance.team2Characters.Count; o++) {
 			//if (character2 != null) {
-			if (MasterGameManager.instance.team1Characters[o].name == "Brogre") {
+			if (MasterGameManager.instance.team2Characters[o].name == "Brogre") {
 				p2Portraits.Add (brogrePortrait);
 			}
-			if (MasterGameManager.instance.team1Characters[o].name == "Brogre") {
+			if (MasterGameManager.instance.team2Characters[o].name == "ToeTip") {
 				p2Portraits.Add (skeletonPortrait);
+			}
+			if (MasterGameManager.instance.team2Characters[o].name == "Empty") {
+				p2Portraits.Add (blankPortrait);
 			}
 			//}
 		}
@@ -307,26 +358,28 @@ public class MatchManager : MonoBehaviour {
 
 
 
-		for (i = 0; i < MasterGameManager.instance.team1Characters.Count; i++) {
-			//if (character != null) {
-			if (MasterGameManager.instance.team1Characters[i].name == "Brogre") {
-				p1Portraits.Add (brogrePortrait);
-			}
-			if (MasterGameManager.instance.team1Characters[i].name == "ToeTip") {
-				p1Portraits.Add (skeletonPortrait);
-			}
-			//}
+		if (team2Ch2.sprite == blankPortrait) {
+			team2Ch2.enabled = false;
+			team2Ch2Name.enabled = false;
+			team2Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
+		}
+		if (team2Ch3.sprite == blankPortrait) {
+			team2Ch3.enabled = false;
+			team2Ch3Name.enabled = false;
+			team2Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 
-		team1Ch1.sprite = p1Portraits[0];
-		team1Ch2.sprite = p1Portraits [1];
-		team1Ch3.sprite = p1Portraits [2];
-		team1Ch4.sprite = p1Portraits [3];
+		if (team2Ch4.sprite == blankPortrait) {
+			team2Ch4.enabled = false;
+			team2Ch4Name.enabled = false;
+			team2Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
+		}
 
-		team1Ch1Name.text = MasterGameManager.instance.team1Characters [0].name;
-		team1Ch2Name.text = MasterGameManager.instance.team1Characters [1].name;
-		team1Ch3Name.text = MasterGameManager.instance.team1Characters [2].name;
-		team1Ch4Name.text = MasterGameManager.instance.team1Characters [3].name;
+
+
+
+
+
 
 
 

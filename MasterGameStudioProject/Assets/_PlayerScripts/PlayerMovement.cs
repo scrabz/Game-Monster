@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Start() {
 		rollTimer = rollTimerDef;
 		controller = this.GetComponent<CharacterController> ();
-		//matchManager = GameObject.Find ("MatchManager(Clone)");
+		matchManager = GameObject.Find ("MatchManager");
 
 		downDir = new Vector3 (0, -1, 0);
 
@@ -89,9 +89,17 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (currentJoystick != null && canMove) {
-			hMovement = currentJoystick.LeftStickX.RawValue;
-			vMovement = currentJoystick.LeftStickY.RawValue;
-			rollButton = currentJoystick.Action1.WasPressed;
+			if (matchManager != null) {
+				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
+					hMovement = currentJoystick.LeftStickX.RawValue;
+					vMovement = currentJoystick.LeftStickY.RawValue;
+					rollButton = currentJoystick.Action1.WasPressed;
+				}
+			} else {
+				hMovement = currentJoystick.LeftStickX.RawValue;
+				vMovement = currentJoystick.LeftStickY.RawValue;
+				rollButton = currentJoystick.Action1.WasPressed;
+			}
 		}
 
 

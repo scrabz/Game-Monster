@@ -8,7 +8,7 @@ public class KnifeAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 25f;
+		thisRigid.velocity = transform.forward * 35f;
 
 	}
 	

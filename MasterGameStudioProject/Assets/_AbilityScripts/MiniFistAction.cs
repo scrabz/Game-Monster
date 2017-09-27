@@ -29,8 +29,8 @@ public class MiniFistAction : MonoBehaviour {
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
 				
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
-				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
-				col.GetComponent<CharacterController> ().Move (pushBackDir);
+				//pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
+				//col.GetComponent<CharacterController> ().Move (pushBackDir);
 				Destroy (this.gameObject);
 			}
 		}

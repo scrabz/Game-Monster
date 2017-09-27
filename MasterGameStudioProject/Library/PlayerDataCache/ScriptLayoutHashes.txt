@@ -14,7 +14,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-cbe52e5de4e7daa4c848c44bc0445f8b Assembly-CSharp.dll:.MasterGameManager
+66945a5f294e9463afea0551ac79056d Assembly-CSharp.dll:.MasterGameManager
 397e63175121be0e33bbf2aa3b5cd614 Assembly-CSharp.dll:.PlayerState
 e1e4626c59a880cc828abfd630febf6e Assembly-CSharp.dll:.FaceCamera
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:InControl.NativeInputDeviceProfileList
@@ -100,7 +100,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 5667fb372c2b292ccdec2a31aaac98fa UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-8aa543ad9f3b447178e8fe82d701d4ca Assembly-CSharp.dll:.DynamicCamera
+4fd5e77ece873a62b21b1db951fbabdc Assembly-CSharp.dll:.DynamicCamera
 e1ff970319fa33ba4daa3ef83c5282a8 Assembly-CSharp.dll:.PlayerAnimation
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -141,16 +141,9 @@ e70de861749a94a4bd0559e7a0ac678d Assembly-CSharp.dll:.PlayerRotation
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:KeyboardAndMouseExample.CubeController
 fce1cb0ecafea32d917d5ea3f7adba43 Assembly-CSharp.dll:.CooldownManager
 e03bb263218febaa70bbf8d97a5952f4 Assembly-CSharp.dll:.MiniFistAction
-d65f8e166eb4df1e46eb9eaa8ee261c1 ProBuilderCore-Unity4.dll:ProBuilder2.Common.pb_ColorPalette
-05524b8f659e7bfe5756d1335fec24ba ProBuilderCore-Unity4.dll:.pb_DummyScript
-7f029a2ada87142e4b8394abd12e4552 ProBuilderCore-Unity4.dll:ProBuilder2.Common.pb_ElementGraphics
-d05d1726290c11f0086c3ed9a61ae76d ProBuilderCore-Unity4.dll:.pb_Entity
-08d320ebcef1851d2d5edc2e728a92ee ProBuilderCore-Unity4.dll:ProBuilder2.Common.pb_LineRenderer
-e5ac1cfca5e014dec75b9bdc0e93f33f ProBuilderCore-Unity4.dll:ProBuilder2.Common.pb_MeshRenderer
-2bc8bffa442d471f63726d9d95ec3942 ProBuilderCore-Unity4.dll:.pb_Object
-b6994eef3ccb7ef36dbcb0ded4de4503 ProBuilderCore-Unity4.dll:ProBuilder2.Common.pb_Renderable
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:MultiplayerBasicExample.Player
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:BindingsExample.BindingsExample
+e03bb263218febaa70bbf8d97a5952f4 Assembly-CSharp.dll:.KnifeAction
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -172,7 +165,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 3fe1cd75a7f3590bd226da0b3f08776e Assembly-CSharp.dll:.CharacterSelectAction
 47d4dbb91b8073a64be47276b7d4f29a Assembly-CSharp.dll:MultiplayerWithBindingsExample.PlayerManager
-f1c383a0459936a09de41af5b56c0951 Assembly-CSharp.dll:.MatchManager
+edffa38f2030dbb9a63ed5fb7c388553 Assembly-CSharp.dll:.MatchManager
 82c6192ece8decc1abce9eae5bc44e95 Assembly-CSharp.dll:.HighlightNearestFace
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -181,6 +174,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 420d73cb5979b4d126f3c0d301bcca59 Assembly-CSharp.dll:ProBuilder2.Examples.CameraControls
 80c7b34069bfe5a4fc409d14139f7706 Assembly-CSharp.dll:.PlayerAbilities
+90f089b42f5ddef0fdc619f8ac562db1 Assembly-CSharp.dll:.ButtonClick
 47d4dbb91b8073a64be47276b7d4f29a Assembly-CSharp.dll:MultiplayerBasicExample.PlayerManager
 71a22087eb6a67fb4d8e01b447f220d6 Assembly-CSharp.dll:.CollectionAction
 a18e5efb0eef72ef9591e0d26419119c Assembly-CSharp.dll:.PlayerMovement
@@ -195,5 +189,3 @@ e3877417227d1ce1c4a9e7a8e8726f12 Assembly-CSharp.dll:.ButtonManager
 32dcc1dca94294515dfea07e896e1a84 Assembly-CSharp.dll:ProBuilder2.Examples.RuntimeEdit
 cbabb88dc4caa978ac32921ce89eb205 Assembly-CSharp.dll:InControl.TouchManager
 e77ee4fecaefed1fb1bc89e1d0e70589 Assembly-CSharp.dll:.GameManagerLoader
-90f089b42f5ddef0fdc619f8ac562db1 Assembly-CSharp.dll:.ButtonClick
-e03bb263218febaa70bbf8d97a5952f4 Assembly-CSharp.dll:.KnifeAction

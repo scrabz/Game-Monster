@@ -10,7 +10,7 @@ public class KegTossAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 5f;
+		thisRigid.velocity = transform.forward * 8f;
 		thisRigid.AddForce (transform.up * 800f);
 	}
 
@@ -20,10 +20,8 @@ public class KegTossAction : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag == "Solid") {
-			Destroy (this.gameObject);
-		}
-		if (col.gameObject.tag == "Ground") {
+
+		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid") {
 			createdThing = Instantiate (Resources.Load("ProjectileAttacks/KegSplat"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;

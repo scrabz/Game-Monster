@@ -46,7 +46,7 @@ public class PlayerAbilities : MonoBehaviour {
 	CharacterAbility duelDaggers;
 	CharacterAbility knifeThrow;
 	CharacterAbility clawTrap;
-	CharacterAbility giantTiny;
+	CharacterAbility knifeSpin;
 
 	public InputDevice currentJoystick;
 
@@ -72,7 +72,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public bool isDaggering = false;
 	public bool isKnifeThrowing = false;
 	public bool isClawTrapping = false;
-	public bool giant = false;
+	public bool isKnifeSpinning = false;
 
 
 	public GameObject matchManager;
@@ -212,7 +212,7 @@ public class PlayerAbilities : MonoBehaviour {
 			duelDaggers = new CharacterAbility ();
 			knifeThrow = new CharacterAbility ();
 			clawTrap = new CharacterAbility ();
-			giantTiny = new CharacterAbility ();
+			knifeSpin = new CharacterAbility ();
 
 			//Find the Ability panels
 			ability1 = abilityPanel.transform.Find ("Ability1").gameObject;
@@ -226,20 +226,20 @@ public class PlayerAbilities : MonoBehaviour {
 			duelDaggers.aCooldown = 0.7f;
 			duelDaggers.aPanel = ability1;
 
-			shield.aName = "Knife Throw";
+			knifeThrow.aName = "Knife Throw";
 			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			shield.aCooldown = 5f;
-			shield.aPanel = ability2;
+			knifeThrow.aCooldown = 2.5f;
+			knifeThrow.aPanel = ability2;
 
 			clawTrap.aName = "Claw Trap";
 			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
-			clawTrap.aCooldown = 3f;
+			clawTrap.aCooldown = 8f;
 			clawTrap.aPanel = ability3;
 
-			giantTiny.aName = "Keg Toss";
+			knifeSpin.aName = "Knife Spin";
 			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			giantTiny.aCooldown = 15f;
-			giantTiny.aPanel = ability4;
+			knifeSpin.aCooldown = 15f;
+			knifeSpin.aPanel = ability4;
 
 			//Change the icons to match the ability
 			//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
@@ -254,7 +254,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
-			ability4.GetComponent<CooldownManager> ().StartCooldown (15f);
+			ability4.GetComponent<CooldownManager> ().StartCooldown (4f);
 		
 
 	}
@@ -264,12 +264,20 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		//Set input based on player tag
-		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove) {
-
-			abilityButton1 = currentJoystick.RightTrigger.IsPressed;
-			abilityButton2 = currentJoystick.LeftTrigger.IsPressed;
-			abilityButton3 = currentJoystick.LeftBumper.IsPressed;
-			abilityButton4 = currentJoystick.RightBumper.IsPressed;
+		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove && !this.GetComponent<PlayerState>().isStunned) {
+			if (matchManager != null) {
+				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
+					abilityButton1 = currentJoystick.RightTrigger.IsPressed;
+					abilityButton2 = currentJoystick.LeftTrigger.IsPressed;
+					abilityButton3 = currentJoystick.LeftBumper.IsPressed;
+					abilityButton4 = currentJoystick.RightBumper.IsPressed;
+				}
+			} else {
+				abilityButton1 = currentJoystick.RightTrigger.IsPressed;
+				abilityButton2 = currentJoystick.LeftTrigger.IsPressed;
+				abilityButton3 = currentJoystick.LeftBumper.IsPressed;
+				abilityButton4 = currentJoystick.RightBumper.IsPressed;
+			}
 
 		}
 		//If player is pressing an attack and there's no problem with that, attack
@@ -291,6 +299,12 @@ public class PlayerAbilities : MonoBehaviour {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (collection.aCooldown);
 					StartCoroutine("Collection");
+
+				}
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (collection.aCooldown);
+					StartCoroutine("Stomp");
 
 				}
 			}
@@ -328,19 +342,60 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 
+		if (this.gameObject.name == "Tiny(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability1.GetComponent<CooldownManager> ().StartCooldown (duelDaggers.aCooldown);
+					StartCoroutine ("DuelDaggers");
+
+				}
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability2.GetComponent<CooldownManager> ().StartCooldown (knifeThrow.aCooldown);
+					StartCoroutine("KnifeThrow");
+
+				}
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability3.GetComponent<CooldownManager> ().StartCooldown (clawTrap.aCooldown);
+					StartCoroutine("TrapSet");
+
+				}
+
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (knifeSpin.aCooldown);
+					StartCoroutine("KnifeSpin");
+
+				}
+
+
+			}
+		}
+
+
 
 	}
 
 	public IEnumerator ComboJab(){
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
-
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -448,16 +503,86 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.12f);
 		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.12f);
 		isDaggering = false;
 		abilityActive = false;
 		yield return null;
 	}
+
+
+	public IEnumerator KnifeThrow(){
+		isKnifeThrowing = true;
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
+
+
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		//Do an animation here
+		isKnifeThrowing = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator TrapSet(){
+		isClawTrapping = true;
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClawTrap"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+
+		isClawTrapping = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator KnifeSpin(){
+		isKnifeSpinning = true;
+		rotationPoint.GetComponent<PlayerRotation> ().canRotate = false;
+		yield return new WaitForSeconds(0.1f);
+		for (int i = 0; i < 40; i++) {
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
+			yield return new WaitForSeconds (0.05f);
+		}
+
+
+		//Do an animation here
+		rotationPoint.GetComponent<PlayerRotation> ().canRotate = true;
+		isKnifeSpinning = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
 
 }

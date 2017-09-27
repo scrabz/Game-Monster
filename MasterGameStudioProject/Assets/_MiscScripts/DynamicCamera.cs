@@ -26,19 +26,34 @@ public class DynamicCamera : MonoBehaviour
 		allPlayers = new List<GameObject> ();
 
 		thePlayer = GameObject.FindGameObjectWithTag ("Player1");
-		allPlayers.Add (thePlayer);
+		if (thePlayer != null) {
+			allPlayers.Add (thePlayer);
+		}
 		thePlayer = GameObject.FindGameObjectWithTag ("Player2");
-		allPlayers.Add (thePlayer);
+		if (thePlayer != null) {
+			allPlayers.Add (thePlayer);
+		}
+		thePlayer = GameObject.FindGameObjectWithTag ("Player3");
+		if (thePlayer != null) {
+			allPlayers.Add (thePlayer);
+		}
+		thePlayer = GameObject.FindGameObjectWithTag ("Player4");
+		if (thePlayer != null) {
+			allPlayers.Add (thePlayer);
+		}
 
 	}
+
 
 
 	void Update () 
 	{
 
 		m_Targets = new Transform[allPlayers.Count];
-		for (int i = 0; i < allPlayers.Count; i++) {
-			m_Targets[i] = allPlayers[i].transform;
+		if (m_Targets.Length != 0) {
+			for (int i = 0; i < allPlayers.Count; i++) {
+				m_Targets [i] = allPlayers [i].transform;
+			}
 		}
 	}
 	private void Awake ()
@@ -49,11 +64,12 @@ public class DynamicCamera : MonoBehaviour
 
 	private void FixedUpdate ()
 	{
-		
-		// Move the camera towards a desired position.
-		Move ();
+		if (m_Targets.Length != 0) {
+			// Move the camera towards a desired position.
+			Move ();
 
-		Zoom ();
+			Zoom ();
+		}
 		// Change the size of the camera based.
 
 	}

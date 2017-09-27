@@ -54,6 +54,7 @@
      <Compile Include="Assets\_AbilityScripts\AttackAction.cs" />
      <Compile Include="Assets\_AbilityScripts\BigFistAction.cs" />
      <Compile Include="Assets\_AbilityScripts\CharacterAbility.cs" />
+     <Compile Include="Assets\_AbilityScripts\ClawTrapAction.cs" />
      <Compile Include="Assets\_AbilityScripts\CollectionAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KegSplatAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KegTossAction.cs" />
