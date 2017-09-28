@@ -84,21 +84,29 @@ public class MatchManager : MonoBehaviour {
 	public Image p1ActiveProfile;
 	public Image p2ActiveProfile;
 
+	public GameObject winnerPanel;
+	public Text winnerText;
+
 	//public int i = 0;
 	//public int o = 0;
 
 	public int team1CharactersLeft;
 	public int team2CharactersLeft;
 
+	void Awake(){
+		p1Portraits = new List<Sprite> ();
+		p2Portraits = new List<Sprite> ();
 
-	void Start () {
-		DontDestroyOnLoad (this.gameObject);
 		if (InputManager.Devices [0] != null) {
 			p1Joystick = InputManager.Devices [0];
 		}
 		if (InputManager.Devices [1] != null) {
 			p2Joystick = InputManager.Devices [1];
 		}
+
+
+		winnerPanel = GameObject.Find ("WinnerPanel");
+		winnerText = GameObject.Find ("WinnerText").GetComponent<Text> ();
 
 		brogrePortrait = Resources.Load<Sprite> ("CharacterPortraits/BrogreP");
 		tinyPortrait = Resources.Load<Sprite> ("CharacterPortraits/TinyP");
@@ -133,21 +141,26 @@ public class MatchManager : MonoBehaviour {
 		team2Ch2Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch2Img").Find("Ch2Name").gameObject.GetComponent<Text> ();
 		team2Ch3Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch3Img").Find("Ch3Name").gameObject.GetComponent<Text> ();
 		team2Ch4Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch4Img").Find("Ch4Name").gameObject.GetComponent<Text> ();
-	
+
 		p1Panel = GameObject.Find ("P1TeamPanel").GetComponent<Animator> ();
 		p2Panel = GameObject.Find ("P2TeamPanel").GetComponent<Animator> ();
 
-		p1Portraits = new List<Sprite> ();
-		p2Portraits = new List<Sprite> ();
+
 
 		team1CharactersLeft = MasterGameManager.instance.teamSize;
 		team2CharactersLeft = MasterGameManager.instance.teamSize;
 
 		spawn1 = GameObject.Find ("Spawn1").transform;
 		spawn2 = GameObject.Find ("Spawn2").transform;
+	}
+
+	void Start () {
+		DontDestroyOnLoad (this.gameObject);
+
+
 
 		LoadCharacters ();
-
+		winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", false);
 		OpenPanels ();
 		countdownText.enabled = false;
 
@@ -306,7 +319,7 @@ public class MatchManager : MonoBehaviour {
 			if (MasterGameManager.instance.team1Characters[i].name == "ToeTip") {
 				p1Portraits.Add (skeletonPortrait);
 			}
-			if (MasterGameManager.instance.team2Characters[i].name == "Tiny") {
+			if (MasterGameManager.instance.team1Characters[i].name == "Tiny") {
 				p1Portraits.Add (tinyPortrait);
 			}
 			if (MasterGameManager.instance.team1Characters[i].name == "Empty") {
@@ -318,7 +331,7 @@ public class MatchManager : MonoBehaviour {
 
 
 
-
+		Debug.Log (p1Portraits [3].name);
 		team1Ch1.sprite = p1Portraits[0];
 		team1Ch2.sprite = p1Portraits [1];
 		team1Ch3.sprite = p1Portraits [2];
@@ -446,26 +459,43 @@ public class MatchManager : MonoBehaviour {
 			p1ActiveProfile.color = Color.black;
 			team1CharactersLeft -= 1;
 			if (team1CharactersLeft <= 0) {
-				SceneManager.LoadScene ("CharacterAndLevelSelect");
+				winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", true);
 			}
 		}
 
 		if (loser == 2) {
 			p2ActiveProfile.color = Color.black;
 			team2CharactersLeft -= 1;
-			if (team2CharactersLeft <= 0) {
-				SceneManager.LoadScene ("CharacterAndLevelSelect");
-			}
+
 		}
 
+		if (team1CharactersLeft <= 0 || team2CharactersLeft <= 0) {
+			winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", true);
+			if (team1CharactersLeft <= 0) {
+				winnerText.text = "Player 2 Wins";
+			}
+			if (team2CharactersLeft <= 0) {
+				winnerText.text = "Player 1 Wins";
+			}
+
+			StartCoroutine ("MatchComplete");
+		} else {
+			isSelectingCharacter = true;
+			OpenPanels ();
+		}
 			
-		isSelectingCharacter = true;
-		OpenPanels ();
+	
 	}
 
 	IEnumerator VibrateController(InputDevice whichDevice){
 		whichDevice.Vibrate (0.3f);
 		yield return new WaitForSeconds(0.3f);
 		whichDevice.StopVibration ();
+	}
+
+
+	IEnumerator MatchComplete(){
+		yield return new WaitForSeconds(4f);
+		SceneManager.LoadScene ("Menu");
 	}
 }

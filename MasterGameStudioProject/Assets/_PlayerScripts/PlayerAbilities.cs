@@ -570,7 +570,7 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
-			yield return new WaitForSeconds (0.05f);
+			yield return new WaitForSeconds (0.02f);
 		}
 
 

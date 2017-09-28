@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_PlayerScripts\PlayerAbilities.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_PlayerScripts\PlayerHealth.cs">
     <Files>
-      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="115" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="87" Column="58" />
+      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="152" Column="3" />
+      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="127" Column="33" />
       <File FileName="Assets\_ManagerScripts\ButtonManager.cs" Line="1" Column="1" />
       <File FileName="Assets\_MiscScripts\ButtonClick.cs" Line="1" Column="1" />
       <File FileName="Assets\_AbilityScripts\KnifeAction.cs" Line="1" Column="1" />
@@ -16,8 +16,7 @@
       <File FileName="Assets\_AbilityScripts\ClawTrapAction.cs" Line="1" Column="1" />
       <File FileName="Assets\_PlayerScripts\PlayerRotation.cs" Line="1" Column="1" />
       <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="58" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="258" Column="3" />
+      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
