@@ -53,8 +53,9 @@ public class MasterGameManager : MonoBehaviour {
 	public GameObject Empty;
 	public GameObject Brogre;
 	public GameObject Skelly;
+	public GameObject Tiny;
 
-	public int teamSize;
+	public int teamSize = 4;
 
 	//Awake is always called before any Start functions
 	void Awake()
@@ -83,6 +84,7 @@ public class MasterGameManager : MonoBehaviour {
 		Empty = Resources.Load("Characters/Empty") as GameObject;
 		Brogre = Resources.Load("Characters/Brogre") as GameObject;
 		Skelly = Resources.Load("Characters/ToeTip") as GameObject;
+		Tiny = Resources.Load("Characters/Tiny") as GameObject;
 
 	}
 	void Update(){
@@ -100,6 +102,9 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Skelly") {
 				team1Characters.Add (Skelly);
 			}
+			if (name == "Tiny") {
+				team1Characters.Add (Tiny);
+			}
 		}
 
 		if (teamNumber == 2) {
@@ -111,6 +116,9 @@ public class MasterGameManager : MonoBehaviour {
 			}
 			if (name == "Skelly") {
 				team2Characters.Add (Skelly);
+			}
+			if (name == "Tiny") {
+				team2Characters.Add (Tiny);
 			}
 		}
 

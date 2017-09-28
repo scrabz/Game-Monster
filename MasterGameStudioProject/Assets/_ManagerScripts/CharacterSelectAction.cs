@@ -22,10 +22,16 @@ public class CharacterSelectAction : MonoBehaviour {
 	public int team1CurrentSelection = 1;
 	public int team2CurrentSelection = 1;
 
-	public int teamSize = 4;
+	public int teamSize = 3;
 
 	public Sprite brogrePortrait;
 	public Sprite skeletonPortrait;
+	public Sprite tinyPortrait;
+	public Sprite guyPortrait;
+	public Sprite drDecayPortrait;
+	public Sprite claymondPortrait;
+	public Sprite succPortrait;
+	public Sprite gorgonPortrait;
 
 
 	public Sprite portrait;
@@ -40,13 +46,20 @@ public class CharacterSelectAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		teamSize = MasterGameManager.instance.teamSize;
 
 		team1Characters = new List<Sprite>();
 		team2Characters = new List<Sprite>();
 
 		brogrePortrait = Resources.Load<Sprite> ("CharacterPortraits/BrogreP");
+		tinyPortrait = Resources.Load<Sprite> ("CharacterPortraits/TinyP");
 		skeletonPortrait = Resources.Load<Sprite> ("CharacterPortraits/SkeletonP");
+		claymondPortrait = Resources.Load<Sprite> ("CharacterPortraits/ClaymondP");
+		drDecayPortrait = Resources.Load<Sprite> ("CharacterPortraits/DrDecayP");
+		succPortrait = Resources.Load<Sprite> ("CharacterPortraits/SuccP");
+		guyPortrait = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
+		gorgonPortrait = Resources.Load<Sprite> ("CharacterPortraits/GorgonP");
+
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
 
 		teamSizeDisplay = GameObject.Find ("TeamSizeNum").GetComponent<Text> ();
@@ -62,6 +75,7 @@ public class CharacterSelectAction : MonoBehaviour {
 		team2Ch3 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
 		team2Ch4 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
 		buttonManagerObject = GameObject.Find ("ButtonManager");
+		ChangeTeamSize (0);
 	}
 	
 	// Update is called once per frame
@@ -77,6 +91,30 @@ public class CharacterSelectAction : MonoBehaviour {
 		}
 		if (whichCharacter == "Skelly") {
 			portrait = skeletonPortrait;
+
+		}
+		if (whichCharacter == "Tiny") {
+			portrait = tinyPortrait;
+
+		}
+		if (whichCharacter == "DrDecay") {
+			portrait = drDecayPortrait;
+
+		}
+		if (whichCharacter == "Gorgon") {
+			portrait = gorgonPortrait;
+
+		}
+		if (whichCharacter == "Claymond") {
+			portrait = claymondPortrait;
+
+		}
+		if (whichCharacter == "Guy") {
+			portrait = guyPortrait;
+
+		}
+		if (whichCharacter == "Succ") {
+			portrait = succPortrait;
 
 		}
 
@@ -181,7 +219,10 @@ public class CharacterSelectAction : MonoBehaviour {
 
 	}
 	public void ChangeTeamSize(int amount){
-			teamSize += amount;
+
+
+		teamSize += amount;
+		print (teamSize);
 		if (teamSize <= 0) {
 			teamSize = 1;
 		}
@@ -271,6 +312,25 @@ public class CharacterSelectAction : MonoBehaviour {
 				if (chr.name == "SkeletonP") {
 					MasterGameManager.instance.AddCharacter (1, "Skelly");
 				}
+				if (chr.name == "TinyP") {
+					MasterGameManager.instance.AddCharacter (1, "Tiny");
+				}
+				if (chr.name == "GorgonP") {
+					MasterGameManager.instance.AddCharacter (1, "Gorgon");
+				}
+				if (chr.name == "SuccP") {
+					MasterGameManager.instance.AddCharacter (1, "Succ");
+				}
+				if (chr.name == "ClaymondP") {
+					MasterGameManager.instance.AddCharacter (1, "Claymond");
+				}
+				if (chr.name == "GuyP") {
+					MasterGameManager.instance.AddCharacter (1, "Guy");
+				}
+				if (chr.name == "DrDecayP") {
+					MasterGameManager.instance.AddCharacter (1, "DrDecay");
+				}
+
 				if (chr.name == "Blank") {
 					Debug.Log ("added null");
 					MasterGameManager.instance.AddCharacter (1, "Empty");
@@ -286,6 +346,24 @@ public class CharacterSelectAction : MonoBehaviour {
 				}
 				if (chr.name == "SkeletonP") {
 					MasterGameManager.instance.AddCharacter (2, "Skelly");
+				}
+				if (chr.name == "TinyP") {
+					MasterGameManager.instance.AddCharacter (2, "Tiny");
+				}
+				if (chr.name == "GorgonP") {
+					MasterGameManager.instance.AddCharacter (2, "Gorgon");
+				}
+				if (chr.name == "SuccP") {
+					MasterGameManager.instance.AddCharacter (2, "Succ");
+				}
+				if (chr.name == "ClaymondP") {
+					MasterGameManager.instance.AddCharacter (2, "Claymond");
+				}
+				if (chr.name == "GuyP") {
+					MasterGameManager.instance.AddCharacter (2, "Guy");
+				}
+				if (chr.name == "DrDecayP") {
+					MasterGameManager.instance.AddCharacter (2, "DrDecay");
 				}
 				if (chr.name == "Blank") {
 					Debug.Log ("added null");

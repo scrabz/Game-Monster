@@ -254,7 +254,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
-			ability4.GetComponent<CooldownManager> ().StartCooldown (4f);
+			//ability4.GetComponent<CooldownManager> ().StartCooldown (4f);
 		
 
 	}

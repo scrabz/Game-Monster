@@ -55,14 +55,10 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	public void LevelSelect(){
-		SceneManager.LoadScene ("Cave");
+		SceneManager.LoadScene ("MatchTestZone");
 
 	}
-
-	public void CreateNewCharacter(){
-		StartCoroutine ("FadeOut","CharacterCreator");
-	}
-
+		
 
 
 

@@ -76,6 +76,39 @@ public class PlayerCursor : MonoBehaviour {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Skelly");
 				}
+
+				if (hit.collider.gameObject.name == "TinyButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Tiny");
+				}
+
+				if (hit.collider.gameObject.name == "SuccButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Succ");
+				}
+
+				if (hit.collider.gameObject.name == "GuyButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Guy");
+				}
+
+				if (hit.collider.gameObject.name == "ClaymondButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Claymond");
+				}
+
+				if (hit.collider.gameObject.name == "GorgonButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Gorgon");
+				}
+				if (hit.collider.gameObject.name == "DrDecayButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "DrDecay");
+				}
+
+
+
+
 				if (hit.collider.gameObject.name == "DecreaseTeam") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().ChangeTeamSize(-1);

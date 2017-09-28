@@ -60,12 +60,20 @@ public class MatchManager : MonoBehaviour {
 	public List<Sprite> p1Portraits;
 	public List<Sprite> p2Portraits;
 
-	public Sprite brogrePortrait;
-	public Sprite skeletonPortrait;
 
 
 	public Sprite portrait;
 	public Sprite blankPortrait;
+
+	public Sprite brogrePortrait;
+	public Sprite skeletonPortrait;
+	public Sprite tinyPortrait;
+	public Sprite guyPortrait;
+	public Sprite drDecayPortrait;
+	public Sprite claymondPortrait;
+	public Sprite succPortrait;
+	public Sprite gorgonPortrait;
+
 
 	public Transform spawn1;
 	public Transform spawn2;
@@ -91,9 +99,15 @@ public class MatchManager : MonoBehaviour {
 		if (InputManager.Devices [1] != null) {
 			p2Joystick = InputManager.Devices [1];
 		}
-	
+
 		brogrePortrait = Resources.Load<Sprite> ("CharacterPortraits/BrogreP");
+		tinyPortrait = Resources.Load<Sprite> ("CharacterPortraits/TinyP");
 		skeletonPortrait = Resources.Load<Sprite> ("CharacterPortraits/SkeletonP");
+		claymondPortrait = Resources.Load<Sprite> ("CharacterPortraits/ClaymondP");
+		drDecayPortrait = Resources.Load<Sprite> ("CharacterPortraits/DrDecayP");
+		succPortrait = Resources.Load<Sprite> ("CharacterPortraits/SuccP");
+		guyPortrait = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
+		gorgonPortrait = Resources.Load<Sprite> ("CharacterPortraits/GorgonP");
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
 
 		nextCharacterPanel = GameObject.Find ("NextCharacterPanel");
@@ -292,6 +306,9 @@ public class MatchManager : MonoBehaviour {
 			if (MasterGameManager.instance.team1Characters[i].name == "ToeTip") {
 				p1Portraits.Add (skeletonPortrait);
 			}
+			if (MasterGameManager.instance.team2Characters[i].name == "Tiny") {
+				p1Portraits.Add (tinyPortrait);
+			}
 			if (MasterGameManager.instance.team1Characters[i].name == "Empty") {
 				p1Portraits.Add (blankPortrait);
 			}
@@ -338,6 +355,9 @@ public class MatchManager : MonoBehaviour {
 			}
 			if (MasterGameManager.instance.team2Characters[o].name == "ToeTip") {
 				p2Portraits.Add (skeletonPortrait);
+			}
+			if (MasterGameManager.instance.team2Characters[o].name == "Tiny") {
+				p2Portraits.Add (tinyPortrait);
 			}
 			if (MasterGameManager.instance.team2Characters[o].name == "Empty") {
 				p2Portraits.Add (blankPortrait);

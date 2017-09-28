@@ -55,16 +55,8 @@ MonoBehaviour:
   musicSource: {fileID: 0}
   matchManagerObject: {fileID: 0}
   currentMode: 0
-  team1Ch1: {fileID: 0}
-  team1Ch2: {fileID: 0}
-  team1Ch3: {fileID: 0}
-  team1Ch4: {fileID: 0}
-  team1Ch5: {fileID: 0}
-  team2Ch1: {fileID: 0}
-  team2Ch2: {fileID: 0}
-  team2Ch3: {fileID: 0}
-  team2Ch4: {fileID: 0}
-  team2Ch5: {fileID: 0}
+  team1Characters: []
+  team2Characters: []
   musicVolume: 0.2
   screenShaking: 0
   screenShakeTimer: 0.2
@@ -74,3 +66,7 @@ MonoBehaviour:
   decreaseFactor: 1
   originalPos: {x: 0, y: 0, z: 0}
   inDialogue: 0
+  Empty: {fileID: 0}
+  Brogre: {fileID: 0}
+  Skelly: {fileID: 0}
+  teamSize: 4
