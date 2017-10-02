@@ -33,6 +33,8 @@ public class PlayerCursor : MonoBehaviour {
 			currentPlayer = 1;
 			if (InputManager.Devices [0] != null) {
 				currentJoystick = InputManager.Devices [0];
+			} else {
+				currentJoystick = null;
 			}
 		}
 		if (this.gameObject.tag == "Player2") {
@@ -63,6 +65,12 @@ public class PlayerCursor : MonoBehaviour {
 			aButton = currentJoystick.Action1.WasPressed;
 			bButton = currentJoystick.Action2.WasPressed;
 			startButton = currentJoystick.Command.WasPressed;
+		} else {
+			hMovement = Input.GetAxis("Horizontal");
+			vMovement = Input.GetAxis("Vertical");
+			aButton = Input.GetButtonDown ("Space");
+			bButton = Input.GetButtonDown ("Backspace");
+			startButton = Input.GetButtonDown ("Enter");
 		}
 
 		//Debug.DrawRay (this.transform.position, transform.forward);

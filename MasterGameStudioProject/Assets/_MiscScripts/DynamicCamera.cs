@@ -19,28 +19,38 @@ public class DynamicCamera : MonoBehaviour
 
 	public float zoomFactor = 0f;
 
+	public bool cameraEnabled = false;
 	public float requiredSize;
+	public void AddPlayerToView(GameObject importedChar){
+		allPlayers.Add (importedChar);
 
+
+	}
+	public void RemoveAllPlayersFromView(){
+		allPlayers.Clear ();
+
+
+	}
 	void Start(){
 		
-		allPlayers = new List<GameObject> ();
-
-		thePlayer = GameObject.FindGameObjectWithTag ("Player1");
-		if (thePlayer != null) {
-			allPlayers.Add (thePlayer);
-		}
-		thePlayer = GameObject.FindGameObjectWithTag ("Player2");
-		if (thePlayer != null) {
-			allPlayers.Add (thePlayer);
-		}
-		thePlayer = GameObject.FindGameObjectWithTag ("Player3");
-		if (thePlayer != null) {
-			allPlayers.Add (thePlayer);
-		}
-		thePlayer = GameObject.FindGameObjectWithTag ("Player4");
-		if (thePlayer != null) {
-			allPlayers.Add (thePlayer);
-		}
+//		allPlayers = new List<GameObject> ();
+//
+//		thePlayer = GameObject.FindGameObjectWithTag ("Player1");
+//		if (thePlayer != null) {
+//			allPlayers.Add (thePlayer);
+//		}
+//		thePlayer = GameObject.FindGameObjectWithTag ("Player2");
+//		if (thePlayer != null) {
+//			allPlayers.Add (thePlayer);
+//		}
+//		thePlayer = GameObject.FindGameObjectWithTag ("Player3");
+//		if (thePlayer != null) {
+//			allPlayers.Add (thePlayer);
+//		}
+//		thePlayer = GameObject.FindGameObjectWithTag ("Player4");
+//		if (thePlayer != null) {
+//			allPlayers.Add (thePlayer);
+//		}
 
 	}
 
@@ -133,7 +143,7 @@ public class DynamicCamera : MonoBehaviour
 
 			temp = m_Camera.WorldToScreenPoint(m_Targets[i].position);
 			if (i == 0) {
-				print (temp);
+				//print (temp);
 			}
 
 			if ((temp.x < outerBufferW) || (temp.y < outerBufferH) || (temp.x > (Screen.width - outerBufferW))|| (temp.y > (Screen.height - outerBufferH))) {
@@ -154,12 +164,12 @@ public class DynamicCamera : MonoBehaviour
 		}
 		if (zoomOutFactor == 0f) {
 			if (zoomInFactor != 0) {
-				print ("zoomin in");
+				//print ("zoomin in");
 				zoomFactor = Mathf.Max(0,zoomFactor - 0.05f);
 				//transform.position = new Vector3 (transform.position.x, transform.position.y - 0.2f, transform.position.z + 0.2f);
 			}
 		} else {
-			print ("zoomin out");
+			//print ("zoomin out");
 			zoomFactor = Mathf.Min(1000f,zoomFactor + 0.05f);
 			//transform.position = new Vector3 (transform.position.x, transform.position.y + 0.2f, transform.position.z - 0.2f);
 		}

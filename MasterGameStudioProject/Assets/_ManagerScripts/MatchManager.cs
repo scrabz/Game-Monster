@@ -92,6 +92,7 @@ public class MatchManager : MonoBehaviour {
 
 	public int team1CharactersLeft;
 	public int team2CharactersLeft;
+	public GameObject mainCam;
 
 	void Awake(){
 		p1Portraits = new List<Sprite> ();
@@ -152,6 +153,8 @@ public class MatchManager : MonoBehaviour {
 
 		spawn1 = GameObject.Find ("Spawn1").transform;
 		spawn2 = GameObject.Find ("Spawn2").transform;
+
+		mainCam = GameObject.Find ("CameraHolder");
 	}
 
 	void Start () {
@@ -426,12 +429,17 @@ public class MatchManager : MonoBehaviour {
 
 
 	public void SpawnCharacters(){
+		
 		characterSpawn = Instantiate (p1ActiveCharacter, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
 		characterSpawn.tag = "Player1";
+		//mainCam.GetComponent<DynamicCamera> ().allPlayers.Add (characterSpawn);
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 1;
+		mainCam.gameObject.GetComponent<DynamicCamera> ().AddPlayerToView (characterSpawn);
 		characterSpawn = Instantiate (p2ActiveCharacter, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
 		characterSpawn.tag = "Player2";
+		//mainCam.GetComponent<DynamicCamera> ().allPlayers.Add (characterSpawn);
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 2;
+		mainCam.gameObject.GetComponent<DynamicCamera> ().AddPlayerToView (characterSpawn);
 
 	}
 
@@ -445,11 +453,13 @@ public class MatchManager : MonoBehaviour {
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 		foreach (GameObject player in allPlayersLeft) {
+			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 			Destroy (player);
 		}
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
 
 		foreach (GameObject player in allPlayersLeft) {
+			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 			Destroy (player);
 		}
 
@@ -497,5 +507,7 @@ public class MatchManager : MonoBehaviour {
 	IEnumerator MatchComplete(){
 		yield return new WaitForSeconds(4f);
 		SceneManager.LoadScene ("Menu");
+		Destroy (MasterGameManager.instance);
+		Destroy (this.gameObject);
 	}
 }

@@ -18,7 +18,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 		if (col.gameObject.tag == "Solid") {
 			Destroy (this.gameObject);
 		}
-		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
+		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
 				//Dont let Brogre get hurt by this if he's shielding
 				if (!col.gameObject.GetComponent<PlayerAbilities> ().isShielding && !col.gameObject.GetComponent<PlayerAbilities> ().isShieldPushing) {
@@ -27,11 +27,16 @@ public class MeleeHitboxActions : MonoBehaviour {
 					alreadyHit = col.gameObject;
 				}
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
-					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward * 5f;
-					col.GetComponent<CharacterController> ().Move (pushBackDir);
+					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1f);
+					col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
+					Destroy (this.gameObject);
 				}
 			}
 		}
 	}
+
+
+
+
 }

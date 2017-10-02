@@ -107,6 +107,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 		rotationPoint = this.gameObject.transform.Find ("RotationPoint").gameObject;
 		characterPoint1 = this.gameObject.transform.Find ("RotationPoint").Find ("SpawningPoint1");
+		characterPoint2 = this.gameObject.transform.Find ("RotationPoint").Find ("SpawningPoint2");
 
 		if (this.gameObject.tag == "Player1") {
 			abilityPanel = GameObject.Find ("P1Panel");
@@ -153,7 +154,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			stomp.aName = "Stomp";
 			//stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			stomp.aCooldown = 0.4f;
+			stomp.aCooldown = 15f;
 			stomp.aPanel = ability4;
 
 			//Change the icons to match the ability
@@ -179,30 +180,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			cleave.aName = "Cleave";
-			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Cleave");
 			cleave.aCooldown = 0.7f;
 			cleave.aPanel = ability1;
 
 			shield.aName = "Shield";
-			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Shield");
 			shield.aCooldown = 5f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
-			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Charge");
 			shieldPush.aCooldown = 3f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
-			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Keg Toss");
 			kegToss.aCooldown = 15f;
 			kegToss.aPanel = ability4;
 
 			//Change the icons to match the ability
-//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
-//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
-//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
-//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
+			ability2.GetComponent<Image> ().sprite = shield.aIcon;
+			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
+			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
 
 		}
 
@@ -271,6 +272,11 @@ public class PlayerAbilities : MonoBehaviour {
 					abilityButton2 = currentJoystick.LeftTrigger.IsPressed;
 					abilityButton3 = currentJoystick.LeftBumper.IsPressed;
 					abilityButton4 = currentJoystick.RightBumper.IsPressed;
+//
+//					abilityButton1 = currentJoystick.Action1.IsPressed;
+//					abilityButton2 = currentJoystick.Action2.IsPressed;
+//					abilityButton3 = currentJoystick.Action3.IsPressed;
+//					abilityButton4 = currentJoystick.RightStickButton.IsPressed;
 				}
 			} else {
 				abilityButton1 = currentJoystick.RightTrigger.IsPressed;
@@ -303,7 +309,7 @@ public class PlayerAbilities : MonoBehaviour {
 				}
 				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
-					ability4.GetComponent<CooldownManager> ().StartCooldown (collection.aCooldown);
+					ability4.GetComponent<CooldownManager> ().StartCooldown (stomp.aCooldown);
 					StartCoroutine("Stomp");
 
 				}
@@ -430,6 +436,20 @@ public class PlayerAbilities : MonoBehaviour {
 		yield return null;
 	}
 
+	public IEnumerator Stomp(){
+
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GiantHand"), characterPoint2.transform.position + new Vector3(0,25f,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		//Do an animation here
+		abilityActive = false;
+		yield return null;
+
+	}
+
+
+
 	//BROGRE ABILITIES
 	public IEnumerator Cleave(){
 		isCleaving = true;
@@ -464,16 +484,23 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public IEnumerator ShieldPush(){
 		isShieldPushing = true;
-		this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 2.5f);
+		this.GetComponent<PlayerMovement> ().canMove = false;
 		createdThing = Instantiate (Resources.Load ("MeleeAttacks/ShieldPushHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		for (int i = 0; i < 16; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 20f * Time.deltaTime);
+			yield return new WaitForSeconds(0.01f);
+		}
+
+
 
 		yield return new WaitForSeconds(0.3f);
 		abilityActive = false;
 		isShieldPushing = false;
+		this.GetComponent<PlayerMovement> ().canMove = true;
 		yield return null;
 	}
 
@@ -570,7 +597,7 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
-			yield return new WaitForSeconds (0.02f);
+			yield return new WaitForSeconds (0.01f);
 		}
 
 

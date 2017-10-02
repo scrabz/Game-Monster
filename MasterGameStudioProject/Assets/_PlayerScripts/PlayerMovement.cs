@@ -45,11 +45,13 @@ public class PlayerMovement : MonoBehaviour {
 	public Image staminaFront;
 	public float calcRecoverTime;
 
+	public GameObject thisModel;
+
 	void Start() {
 		rollTimer = rollTimerDef;
 		controller = this.GetComponent<CharacterController> ();
 		matchManager = GameObject.Find ("MatchManager");
-
+		thisModel = this.transform.Find("RotationPoint").Find("Model").gameObject;
 		downDir = new Vector3 (0, -1, 0);
 
 		if (this.gameObject.tag == "Player1") {
@@ -113,12 +115,15 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (isRolling) {
 			//Temp Code
-			controller.Move (rollDirection * Time.deltaTime * (speed * 4f));
+			//thisModel.transform.Rotate(0,0,40f * Time.deltaTime);
+			//thisModel.transform.Rotate(Vector3.up * Time.deltaTime,Space.World);
+			controller.Move (rollDirection * Time.deltaTime * (speed * 6f));
 			rollTimer -= Time.deltaTime;
 			if (rollTimer <= 0) {
 				isRolling = false;
 				isRollCooling = true;
 				rollTimer = rollTimerDef;
+				//thisModel.transform.rotation = Quaternion.identity;
 			}
 
 		}
@@ -216,5 +221,11 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			Debug.Log ("MatchManager was null");
 		}
+	}
+
+	public IEnumerator Rumble(){
+		currentJoystick.Vibrate (0.3f);
+		yield return new WaitForSeconds(0.3f);
+		currentJoystick.StopVibration ();
 	}
 }

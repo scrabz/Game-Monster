@@ -475,6 +475,7 @@ MonoBehaviour:
   vMovementR: 0
   angle: 0
   parentObject: {fileID: 0}
+  canRotate: 1
 --- !u!114 &114146948171124382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -538,7 +539,7 @@ MonoBehaviour:
   isDaggering: 0
   isKnifeThrowing: 0
   isClawTrapping: 0
-  giant: 0
+  isKnifeSpinning: 0
   matchManager: {fileID: 0}
 --- !u!114 &114169269185305526
 MonoBehaviour:
@@ -588,10 +589,10 @@ MonoBehaviour:
   dist: 2
   downDir: {x: 0, y: 0, z: 0}
   oldPosition: {x: 0, y: 0, z: 0}
-  rollTimer: 0.3
-  rollTimerDef: 0.3
-  rollTimerCool: 1
-  rollTimerCoolDef: 1
+  rollTimer: 0.07
+  rollTimerDef: 0.07
+  rollTimerCool: 0.6
+  rollTimerCoolDef: 0.6
   isRolling: 0
   isRollCooling: 0
   rollDirection: {x: 0, y: 0, z: 0}
@@ -602,6 +603,7 @@ MonoBehaviour:
   staminaBack: {fileID: 0}
   staminaFront: {fileID: 0}
   calcRecoverTime: 0
+  thisModel: {fileID: 0}
 --- !u!114 &114210561690019144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,8 +647,11 @@ MonoBehaviour:
   isMoving: 0
   isStunned: 0
   isSlowed: 0
+  isBeingPushed: 0
+  pushDir: {x: 0, y: 0, z: 0}
   stunTimer: 2
   slowTimer: 2
+  pushTimer: 2
   origSpeed: 0
 --- !u!114 &114642940888473778
 MonoBehaviour:
