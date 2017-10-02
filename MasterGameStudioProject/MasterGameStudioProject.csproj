@@ -104,6 +104,7 @@
     <Compile Include="Assets\_AbilityScripts\MeleeHitboxActions.cs" />
     <Compile Include="Assets\_AbilityScripts\MiniFistAction.cs" />
     <Compile Include="Assets\_AbilityScripts\ShieldAction.cs" />
+    <Compile Include="Assets\_AbilityScripts\StompAction.cs" />
     <Compile Include="Assets\_ManagerScripts\ButtonManager.cs" />
     <Compile Include="Assets\_ManagerScripts\CharacterSelectAction.cs" />
     <Compile Include="Assets\_ManagerScripts\CooldownManager.cs" />
