@@ -8,10 +8,14 @@ public class PlayerState : MonoBehaviour {
 	public bool isMoving = false;
 	public bool isStunned = false;
 	public bool isSlowed = false;
+	public bool isBeingPushed = false;
+
+
+	public Vector3 pushDir;
 
 	public float stunTimer = 2f;
 	public float slowTimer = 2f;
-
+	public float pushTimer = 2f;
 	public float origSpeed;
 	// Use this for initialization
 	void Start () {
@@ -34,6 +38,17 @@ public class PlayerState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (isBeingPushed) {
+			pushTimer -= Time.deltaTime;
+			this.GetComponent<CharacterController>().Move(pushDir * 30f * Time.deltaTime);
+			if (pushTimer <= 0) {
+				isBeingPushed = false;
+				this.GetComponent<PlayerMovement> ().speed = origSpeed;
+			}
+
+		}
+
 
 		if (isSlowed) {
 			slowTimer -= Time.deltaTime;
@@ -67,6 +82,14 @@ public class PlayerState : MonoBehaviour {
 		isSlowed = true;
 		slowTimer = howLong;
 		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed / 2f;
+	}
+
+	public void Pushback(float howLong, Vector3 importedDir){
+		isBeingPushed = true;
+		pushTimer = howLong;
+		pushDir = importedDir;
+		this.GetComponent<PlayerMovement> ().speed = 0;
+
 	}
 
 }

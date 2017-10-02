@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public float calcHealth;
 	public GameObject healthPanel;
-	public bool healthBarActive;
+	public bool healthBarActive = true;
 	float healthBarTimer = 2.5f;
 	public GameObject matchManagerObject;
 
@@ -28,13 +28,15 @@ public class PlayerHealth : MonoBehaviour {
 	public GameObject model;
 	public int playerNum;
 
+	public GameObject mainCam;
+
 
 
 	void Start () {
 		//matchManagerObject = GameObject.Find ("MatchManager");
 		healthBarActive = true;
 		currentHealth = maxHealth;
-
+		mainCam = GameObject.Find ("CameraHolder");
 		//healthBar = gameObject.transform.FindChild("Canvas").transform.FindChild("HealthBar").gameObject.GetComponent<Image>();
 
 		matchManagerObject = GameObject.Find ("MatchManager");
@@ -66,7 +68,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (maxHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
 		model = this.gameObject.transform.Find ("RotationPoint").Find ("Model").gameObject;
 		maxHealthText.text = maxHealth.ToString ();
-		GetHit (0);
+		//GetHit (0);
 	}
 
 	// Update is called once per frame
@@ -75,7 +77,7 @@ public class PlayerHealth : MonoBehaviour {
 			if (matchManagerObject != null) {
 				matchManagerObject.GetComponent<MatchManager> ().RoundOver (playerNum);
 			}
-
+			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 			Destroy (this.gameObject);
 		}
 
@@ -117,6 +119,9 @@ public class PlayerHealth : MonoBehaviour {
 		//Subtract the Lost Health
 		currentHealth -= healthLost;
 
+		StartCoroutine ("FlashRed");
+
+		this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
 
 		calcHealth = currentHealth / maxHealth;
 		healthText.text = currentHealth.ToString();
@@ -138,6 +143,18 @@ public class PlayerHealth : MonoBehaviour {
 	}
 		
 
+	public IEnumerator FlashRed(){
+		foreach(Renderer variableName in GetComponentsInChildren<Renderer>()){
+			variableName.material.color = Color.red;
+		}
+		yield return new WaitForSeconds(0.2f);
+		foreach(Renderer variableName in GetComponentsInChildren<Renderer>()){
+			variableName.material.color = Color.white;
+		}
+		yield return null;
+
+
+	}
 
 	public void Death(){
 		
