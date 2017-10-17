@@ -1,0 +1,99 @@
+<html>
+<head>
+<style>
+code {
+	color: white;
+	background: black;
+}
+</style>
+</head>
+<body>
+<h3>Opening a repository on the command line:</h3>
+	<p>"Shift+Right Click" on the folder that contains the ".git" file and on the prompt that pops up click "Open command window here" or "Git Bash Here"</p>
+<hr>
+<h3>How to create a new repository:</h3>
+	<code>git init</code>
+<hr>
+<h3>How to add the remote repository to a new git:</h3>
+</p>
+	<code>git remote add {RN} {URL}</code>
+	<br><br>
+	<b>{RN}</b>: What you want to refer to the origin as.
+	Usually just call this origin unless origin already exists
+	<br>
+	<b>{URL}</b>: The url of the repository.
+	<br><br>
+	ex) <code>git remote add origin https://github.com/username/repo_name.git</code>
+</p>
+<hr>
+<h3>How to clone a repository:</h3>
+<p>
+	<code>git clone {URL} {DIRECTORY}</code>
+	<br><br>
+	<b>{URL}</b>: The url of the repository.
+	<br>
+	<b>{DIRECTORY}</b>: The name of the folder that the repo will be cloned to.
+	<br><br>
+	ex) <code>git clone https://github.com/username/repo_name.git repo_name</code>
+</p>
+<hr>
+<h3>How to stage files:</h3>
+<p>
+	<code>git add {FILES}</code>
+	<br><br>
+	<b>{FILES}</b>: The files you wish to stage. Replace with "*" without the quotes to stage all files
+	<br><br>
+	ex.1) <code>git add *</code><br>
+	ex.2) <code>git add file1.txt file2.bar "file three.foo"</code>
+</p>
+<hr>
+<h3>How to commit:</h3>
+<p>
+	<code>git commit -m "{COMMIT MESSAGE}"</code>
+	<br><br>
+	<b>{COMMIT MESSAGE}</b>: The commit message
+	<br><br>
+	ex) <code>git commit -m "Some files were changed"</code>
+	<br><br>
+	<b>note</b>: <i>If you forgot to add "-m" to this command, see the section at the bottom of this file called, "So you fucked up..."</i>
+</p>
+<hr>
+<h3>How to push:</h3>
+<p>
+	<code>git push</code><br>
+	or
+	<code>git push {RN} {BRANCH}</code>
+	<br><br>
+	<b>{RN}</b>: The name of the remote repository (Usually origin)
+	<br>
+	<b>{BRANCH}</b>: The name of the branch you want to push to the repository (Usually master)
+	<br><br>
+	ex) <code>git push origin master</code>
+</p>
+<hr>
+<h3>How to fetch:</h3>
+<p>
+	<code>git fetch</code>
+	<br><br>
+	Fetch before pulling
+</p>
+<hr>
+<h3>How to pull:</h3>
+<p>
+	<code>git pull</code>
+	<br><br>
+	Pull before pushing
+</p>
+<hr>
+<h2>So you fucked up...</h2>
+<p>
+If you forgot to add the "-m" you are now in a program called vim. I'll walk you through the next few steps.
+<ol>
+<li>Hit the "i" key.</li>
+<li>Type your commit message.</li>
+<li>Hit the "esc" key.</li>
+<li>Hit the ":" key, then hit the "x" key, then hit enter.</li>
+</ol>
+</p>
+</body>
+</html>
