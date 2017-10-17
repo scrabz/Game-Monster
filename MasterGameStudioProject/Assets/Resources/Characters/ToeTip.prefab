@@ -3434,6 +3434,8 @@ MonoBehaviour:
   characterPoint2: {fileID: 0}
   spawnPoint: {fileID: 0}
   storedProjectiles: []
+  rageEffectL: {fileID: 0}
+  rageEffectR: {fileID: 0}
   abilityActive: 0
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
@@ -3507,7 +3509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7.5
-  gravity: 20
+  gravity: 55
   isDying: 0
   canMove: 1
   canRotate: 1

@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 114953406950183750}
   m_Layer: 10
   m_Name: Tiny
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3052,6 +3052,8 @@ MonoBehaviour:
   characterPoint2: {fileID: 0}
   spawnPoint: {fileID: 0}
   storedProjectiles: []
+  rageEffectL: {fileID: 0}
+  rageEffectR: {fileID: 0}
   abilityActive: 0
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
@@ -3112,7 +3114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  gravity: 20
+  gravity: 55
   isDying: 0
   canMove: 1
   canRotate: 1
@@ -3319,9 +3321,9 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 90666275e1e087e41a9e7553157b0bb2, type: 2}
-  - {fileID: 2100000, guid: 90666275e1e087e41a9e7553157b0bb2, type: 2}
-  - {fileID: 2100000, guid: 90666275e1e087e41a9e7553157b0bb2, type: 2}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: a19607c7d4f349b4a8b0e738ae1fec9c, type: 2}
+  - {fileID: 2100000, guid: a19607c7d4f349b4a8b0e738ae1fec9c, type: 2}
   - {fileID: 2100000, guid: 08a88ed198dde684cb49f705fdc1e997, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

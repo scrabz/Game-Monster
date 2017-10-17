@@ -55,10 +55,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4313767505551154}
-  - component: {fileID: 65497724714419614}
   m_Layer: 0
   m_Name: island barrier
-  m_TagString: Solid
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,7 +210,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1dae79602f735f4599b8130a5ca1fa1, type: 2}
+  - {fileID: 2100000, guid: a11b291dd202ac64d97265a0d463fe27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,7 +242,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1dae79602f735f4599b8130a5ca1fa1, type: 2}
+  - {fileID: 2100000, guid: a11b291dd202ac64d97265a0d463fe27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,7 +274,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1dae79602f735f4599b8130a5ca1fa1, type: 2}
+  - {fileID: 2100000, guid: a11b291dd202ac64d97265a0d463fe27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -307,7 +306,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1dae79602f735f4599b8130a5ca1fa1, type: 2}
+  - {fileID: 2100000, guid: a11b291dd202ac64d97265a0d463fe27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -354,18 +353,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021817448487976}
   m_Mesh: {fileID: 4300000, guid: 408fc8d699b7d7842b88f16871bd333d, type: 3}
---- !u!65 &65497724714419614
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1665295695856154}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65785016763235744
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -373,7 +360,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983791224851464}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
