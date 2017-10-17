@@ -165,12 +165,12 @@ public class DynamicCamera : MonoBehaviour
 		if (zoomOutFactor == 0f) {
 			if (zoomInFactor != 0) {
 				//print ("zoomin in");
-				zoomFactor = Mathf.Max(0,zoomFactor - 0.05f);
+				zoomFactor = Mathf.Max(0,zoomFactor - 0.1f);
 				//transform.position = new Vector3 (transform.position.x, transform.position.y - 0.2f, transform.position.z + 0.2f);
 			}
 		} else {
 			//print ("zoomin out");
-			zoomFactor = Mathf.Min(1000f,zoomFactor + 0.05f);
+			zoomFactor = Mathf.Min(1000f,zoomFactor + 0.1f);
 			//transform.position = new Vector3 (transform.position.x, transform.position.y + 0.2f, transform.position.z - 0.2f);
 		}
 		// If there are targets divide the sum of the positions by the number of them to find the average.

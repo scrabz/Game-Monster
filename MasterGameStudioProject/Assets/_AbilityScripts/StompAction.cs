@@ -11,7 +11,7 @@ public class StompAction : MonoBehaviour {
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
 
-		thisRigid.AddForce (-transform.up * 1000f);
+		thisRigid.AddForce (-transform.up * 2700f);
 	}
 
 	// Update is called once per frame
@@ -23,7 +23,9 @@ public class StompAction : MonoBehaviour {
 
 		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid") {
 			//Create some particles
+			thisRigid.AddForce (Vector3.zero,ForceMode.VelocityChange);
 			Destroy (this.gameObject);
+
 		}
 
 
@@ -38,6 +40,10 @@ public class StompAction : MonoBehaviour {
 			}
 		}
 	}
-
+	public IEnumerator Die(){
+		yield return new WaitForSeconds (2f);
+		Destroy (this.gameObject);
+		yield return null;
+	}
 
 }

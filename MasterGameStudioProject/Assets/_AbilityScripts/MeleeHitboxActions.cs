@@ -23,13 +23,28 @@ public class MeleeHitboxActions : MonoBehaviour {
 				//Dont let Brogre get hurt by this if he's shielding
 				if (!col.gameObject.GetComponent<PlayerAbilities> ().isShielding && !col.gameObject.GetComponent<PlayerAbilities> ().isShieldPushing) {
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
-
+					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+					if (this.gameObject.name != "DashHitbox(Clone)" && this.gameObject.name != "PetrifyHitbox(Clone)") {
+						col.gameObject.GetComponent<PlayerState> ().Pushback (0.025f, pushBackDir);
+					}
 					alreadyHit = col.gameObject;
 				}
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1f);
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
+					Destroy (this.gameObject);
+				}
+
+				if (this.gameObject.name == "PetrifyHitbox(Clone)") {
+					//pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+					col.GetComponent<PlayerState> ().InflictStun (1.5f);
+					Destroy (this.gameObject);
+				}
+
+				if (this.gameObject.name == "PushPunchHitbox(Clone)") {
+					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+					col.gameObject.GetComponent<PlayerState> ().Pushback (0.05f,pushBackDir);
 					Destroy (this.gameObject);
 				}
 			}

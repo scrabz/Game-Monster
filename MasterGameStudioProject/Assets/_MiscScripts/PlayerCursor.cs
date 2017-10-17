@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InControl;
-
+using UnityEngine.SceneManagement;
 
 
 public class PlayerCursor : MonoBehaviour {
@@ -112,6 +112,11 @@ public class PlayerCursor : MonoBehaviour {
 				if (hit.collider.gameObject.name == "DrDecayButton") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "DrDecay");
+				}
+
+
+				if (hit.collider.gameObject.name == "VolcanoButton") {
+					SceneManager.LoadScene ("VolcanoLevel");
 				}
 
 

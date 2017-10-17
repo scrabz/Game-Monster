@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool isDying = false;
 	public bool canMove = true;
+	public bool canRotate = true;
 	float dyingTimer = 0.7f;
 
 	public float hMovement;
@@ -93,13 +94,13 @@ public class PlayerMovement : MonoBehaviour {
 		if (currentJoystick != null && canMove) {
 			if (matchManager != null) {
 				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
-					hMovement = currentJoystick.LeftStickX.RawValue;
-					vMovement = currentJoystick.LeftStickY.RawValue;
+					hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
+					vMovement = Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
 					rollButton = currentJoystick.Action1.WasPressed;
 				}
 			} else {
-				hMovement = currentJoystick.LeftStickX.RawValue;
-				vMovement = currentJoystick.LeftStickY.RawValue;
+				hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
+				vMovement =  Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
 				rollButton = currentJoystick.Action1.WasPressed;
 			}
 		}

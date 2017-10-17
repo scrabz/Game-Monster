@@ -5,10 +5,11 @@ using UnityEngine;
 public class MiniFistAction : MonoBehaviour {
 	public Rigidbody thisRigid;
 	public Vector3 pushBackDir;
+	public GameObject collisionObject;
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 20f;
+		thisRigid.velocity = transform.forward * 28f;
 
 	}
 	
@@ -25,13 +26,14 @@ public class MiniFistAction : MonoBehaviour {
 
 
 
-		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
+		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
-				
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
-				//pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
-				//col.GetComponent<CharacterController> ().Move (pushBackDir);
+				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+				collisionObject = col.gameObject;
+				col.gameObject.GetComponent<PlayerState> ().Pushback (0.01f,thisRigid.velocity.normalized);
 				Destroy (this.gameObject);
+
 			}
 		}
 	}

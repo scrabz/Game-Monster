@@ -6,6 +6,10 @@ public class ShieldAction : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject createdThing;
+	public Vector3 reverseDir;
+
+	public
+
 	void Start () {
 	}
 	
@@ -17,7 +21,10 @@ public class ShieldAction : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 
 		if (col.gameObject.tag == "Projectile") {
-			Destroy (col.gameObject);
+			if (col.gameObject.GetComponent<AttackAction> ().teamNum != this.GetComponent<AttackAction> ().teamNum) {
+				col.gameObject.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
+				col.GetComponent<Rigidbody> ().velocity = -col.GetComponent<Rigidbody> ().velocity;
+			}
 
 		}
 

@@ -263,6 +263,7 @@ public class CharacterSelectAction : MonoBehaviour {
 			team1Ch3.sprite = blankPortrait;
 			team1Ch4.sprite = blankPortrait;
 
+
 			team2Ch1.enabled = true;
 			team2Ch2.enabled = true;
 			team2Ch3.enabled = false;
@@ -291,7 +292,7 @@ public class CharacterSelectAction : MonoBehaviour {
 	}
 
 	public void FinalizeTeams(){
-		if (team1CurrentSelection - 1 == teamSize && team2CurrentSelection - 1 == teamSize) {
+		if (team1CurrentSelection - 1 >= teamSize && team2CurrentSelection - 1 >= teamSize) {
 
 			MasterGameManager.instance.teamSize = teamSize;
 			team1Characters.Add (team1Ch1.sprite);
@@ -316,7 +317,7 @@ public class CharacterSelectAction : MonoBehaviour {
 					MasterGameManager.instance.AddCharacter (1, "Tiny");
 				}
 				if (chr.name == "GorgonP") {
-					MasterGameManager.instance.AddCharacter (1, "Gorgon");
+					MasterGameManager.instance.AddCharacter (1, "Neredy");
 				}
 				if (chr.name == "SuccP") {
 					MasterGameManager.instance.AddCharacter (1, "Succ");
@@ -351,7 +352,7 @@ public class CharacterSelectAction : MonoBehaviour {
 					MasterGameManager.instance.AddCharacter (2, "Tiny");
 				}
 				if (chr.name == "GorgonP") {
-					MasterGameManager.instance.AddCharacter (2, "Gorgon");
+					MasterGameManager.instance.AddCharacter (2, "Neredy");
 				}
 				if (chr.name == "SuccP") {
 					MasterGameManager.instance.AddCharacter (2, "Succ");

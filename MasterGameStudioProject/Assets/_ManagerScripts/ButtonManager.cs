@@ -12,12 +12,14 @@ public class ButtonManager : MonoBehaviour {
 
 	public Animator mainMenuAnimator;
 	public Animator characterSelectAnimator;
+	public Animator levelSelectAnimator;
 
 	public GameObject cursorCanvas;
 	void Start () {
 		cursorCanvas = GameObject.Find ("CursorCanvas");
 		mainMenuAnimator = GameObject.Find ("MainMenuPanel").GetComponent<Animator> ();
 		characterSelectAnimator = GameObject.Find ("CharacterSelectPanel").GetComponent<Animator> ();
+		levelSelectAnimator = GameObject.Find ("LevelSelectPanel").GetComponent<Animator> ();
 		cursorCanvas.SetActive (false);
 		//blackoutPanel = GameObject.Find ("BlackoutPanel").GetComponent<Image> ();
 
@@ -55,7 +57,17 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	public void LevelSelect(){
-		SceneManager.LoadScene ("MatchTestZone");
+
+		characterSelectAnimator.SetBool ("upFromMid", true);
+		characterSelectAnimator.SetBool ("upFromBottom", false);
+		characterSelectAnimator.SetBool ("downFromTop", false);
+		characterSelectAnimator.SetBool ("downFromMid", false);
+
+		levelSelectAnimator.SetBool ("upFromBottom", true);
+		levelSelectAnimator.SetBool ("upFromMid", false);
+		levelSelectAnimator.SetBool ("downFromTop", false);
+		levelSelectAnimator.SetBool ("downFromMid", false);
+
 
 	}
 		

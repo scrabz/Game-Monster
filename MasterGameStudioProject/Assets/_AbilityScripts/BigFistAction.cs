@@ -9,12 +9,11 @@ public class BigFistAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 5f;
+		thisRigid.velocity = transform.forward * 18f;
 	}
 
 	// Update is called once per frame
 	void Update () {
-
 	}
 
 	void OnTriggerEnter(Collider col){
@@ -26,7 +25,7 @@ public class BigFistAction : MonoBehaviour {
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				collisionObject = col.gameObject;
-				col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
+				col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,thisRigid.velocity.normalized);
 				Destroy (this.gameObject);
 
 			}

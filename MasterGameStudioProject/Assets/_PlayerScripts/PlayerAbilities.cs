@@ -48,6 +48,17 @@ public class PlayerAbilities : MonoBehaviour {
 	CharacterAbility clawTrap;
 	CharacterAbility knifeSpin;
 
+	CharacterAbility pushPunch;
+	CharacterAbility clayShards;
+	CharacterAbility clayWall;
+	CharacterAbility shockwave;
+
+	CharacterAbility comboAttack;
+	CharacterAbility dashAttack;
+	CharacterAbility petrify;
+	CharacterAbility rage;
+
+
 	public InputDevice currentJoystick;
 
 	public bool abilityActive = false;
@@ -65,8 +76,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public bool isKegTossing = false;
 
 	public bool isCollecting = false;
-	public bool isComboJabbing = false;
-	public bool isMegaPunching = false;
+	public bool isShooting = false;
 	public bool isStomping = false;
 
 	public bool isDaggering = false;
@@ -74,8 +84,14 @@ public class PlayerAbilities : MonoBehaviour {
 	public bool isClawTrapping = false;
 	public bool isKnifeSpinning = false;
 
+	public bool isDashAttacking = false;
+	public bool isPetrifying = false;
+	public bool isBecomingEnraged = false;
+	public bool isRaging = false;
 
 	public GameObject matchManager;
+
+	public bool handicap = false;
 
 	void Start () {
 
@@ -139,7 +155,7 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			comboJab.aName = "Fury Fists";
 			//comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			comboJab.aCooldown = 1.5f;
+			comboJab.aCooldown = 0.8f;
 			comboJab.aPanel = ability1;
 
 			megaFist.aName = "Mega Fist";
@@ -186,7 +202,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			shield.aName = "Shield";
 			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Shield");
-			shield.aCooldown = 5f;
+			shield.aCooldown = 3f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
@@ -204,6 +220,49 @@ public class PlayerAbilities : MonoBehaviour {
 			ability2.GetComponent<Image> ().sprite = shield.aIcon;
 			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
 			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+
+		}
+
+
+		if (this.gameObject.name == "Neredy(Clone)") {
+
+			comboAttack = new CharacterAbility ();
+			dashAttack = new CharacterAbility ();
+			petrify = new CharacterAbility ();
+			rage = new CharacterAbility ();
+
+			//Find the Ability panels
+			ability1 = abilityPanel.transform.Find ("Ability1").gameObject;
+			ability2 = abilityPanel.transform.Find ("Ability2").gameObject;
+			ability3 = abilityPanel.transform.Find ("Ability3").gameObject;
+			ability4 = abilityPanel.transform.Find ("Ability4").gameObject;
+
+			//Set the properties of every ability
+			comboAttack.aName = "Combo Attack";
+			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			comboAttack.aCooldown = 1f;
+			comboAttack.aPanel = ability1;
+
+			dashAttack.aName = "Dash Attack";
+			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			dashAttack.aCooldown = 2.5f;
+			dashAttack.aPanel = ability2;
+
+			petrify.aName = "Petrify";
+			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			petrify.aCooldown = 8f;
+			petrify.aPanel = ability3;
+
+			rage.aName = "Rage";
+			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			rage.aCooldown = 15f;
+			rage.aPanel = ability4;
+
+			//Change the icons to match the ability
+			//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
+			//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
+			//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
+			//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
 
 		}
 
@@ -250,12 +309,55 @@ public class PlayerAbilities : MonoBehaviour {
 
 		}
 
+		if (this.gameObject.name == "Claymond(Clone)") {
+
+			pushPunch = new CharacterAbility ();
+			clayShards = new CharacterAbility ();
+			clayWall = new CharacterAbility ();
+			shockwave = new CharacterAbility ();
+
+			//Find the Ability panels
+			ability1 = abilityPanel.transform.Find ("Ability1").gameObject;
+			ability2 = abilityPanel.transform.Find ("Ability2").gameObject;
+			ability3 = abilityPanel.transform.Find ("Ability3").gameObject;
+			ability4 = abilityPanel.transform.Find ("Ability4").gameObject;
+
+			//Set the properties of every ability
+			pushPunch.aName = "Push Punch";
+			//pushPunch.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			pushPunch.aCooldown = 0.8f;
+			pushPunch.aPanel = ability1;
+
+			clayShards.aName = "Clay Shards";
+			//clayShards.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			clayShards.aCooldown = 2f;
+			clayShards.aPanel = ability2;
+
+			clayWall.aName = "Clay Wall";
+			//clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			clayWall.aCooldown = 3f;
+			clayWall.aPanel = ability3;
+
+			shockwave.aName = "Shockwave";
+			//shockwave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			shockwave.aCooldown = 15f;
+			shockwave.aPanel = ability4;
+
+			//Change the icons to match the ability
+			//			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
+			//			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
+			//			ability3.GetComponent<Image> ().sprite = collection.aIcon;
+			//			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
+
+		}
 
 
 
 
 
-			//ability4.GetComponent<CooldownManager> ().StartCooldown (4f);
+		if (!handicap && matchManager != null){
+			ability4.GetComponent<CooldownManager> ().StartCooldown (15f);
+		}
 		
 
 	}
@@ -265,7 +367,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		//Set input based on player tag
-		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove && !this.GetComponent<PlayerState>().isStunned) {
+		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove && !this.GetComponent<PlayerState>().isStunned && !this.GetComponent<PlayerState>().isBeingPushed) {
 			if (matchManager != null) {
 				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
 					abilityButton1 = currentJoystick.RightTrigger.IsPressed;
@@ -347,6 +449,64 @@ public class PlayerAbilities : MonoBehaviour {
 
 			}
 		}
+		if (this.gameObject.name == "Neredy(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+				if (isRaging == false) {
+					if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability1.GetComponent<CooldownManager> ().StartCooldown (comboAttack.aCooldown);
+						StartCoroutine ("ComboAttack");
+
+					}
+					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability2.GetComponent<CooldownManager> ().StartCooldown (dashAttack.aCooldown);
+						StartCoroutine ("DashAttack");
+
+					}
+					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability3.GetComponent<CooldownManager> ().StartCooldown (petrify.aCooldown);
+						StartCoroutine ("Petrify");
+
+					}
+
+					if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability4.GetComponent<CooldownManager> ().StartCooldown (rage.aCooldown);
+						StartCoroutine ("BecomeEnraged");
+
+					}
+				} else {
+					if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability1.GetComponent<CooldownManager> ().StartCooldown (0.8f);
+						StartCoroutine ("ComboAttack");
+
+					}
+					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability2.GetComponent<CooldownManager> ().StartCooldown (0.5f);
+						StartCoroutine ("DashAttack");
+
+					}
+					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+						abilityActive = true;
+						ability3.GetComponent<CooldownManager> ().StartCooldown (0.8f);
+						StartCoroutine ("Petrify");
+
+					}
+
+
+
+
+
+
+				}
+
+
+			}
+		}
 
 		if (this.gameObject.name == "Tiny(Clone)") {
 			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
@@ -380,12 +540,44 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 
+		if (this.gameObject.name == "Claymond(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability1.GetComponent<CooldownManager> ().StartCooldown (pushPunch.aCooldown);
+					StartCoroutine ("PushPunch");
+
+				}
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability2.GetComponent<CooldownManager> ().StartCooldown (clayShards.aCooldown);
+					StartCoroutine("ClayShards");
+
+				}
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability3.GetComponent<CooldownManager> ().StartCooldown (clayWall.aCooldown);
+					StartCoroutine("ClayWall");
+
+				}
+
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (shockwave.aCooldown);
+					StartCoroutine("Shockwave");
+
+				}
+
+
+			}
+		}
 
 
 	}
 
 	public IEnumerator ComboJab(){
-		yield return new WaitForSeconds(0.1f);
+		isShooting = true;
+		yield return new WaitForSeconds(0.2f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
@@ -406,6 +598,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		//Do an animation here
+		yield return new WaitForSeconds(0.1f);
+		isShooting = false;
 		abilityActive = false;
 		yield return null;
 
@@ -413,37 +607,46 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 	public IEnumerator MegaFist(){
-
+		isShooting = true;
+		yield return new WaitForSeconds(0.2f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MegaFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		//Do an animation here
+		yield return new WaitForSeconds(0.1f);
 		abilityActive = false;
+		isShooting = false;
+
 		yield return null;
 
 	}
 
 
 	public IEnumerator Collection(){
-
+		isShooting = true;
+		yield return new WaitForSeconds (0.2f);
 		createdThing = Instantiate (Resources.Load ("SpecialAttacks/CollectionHandHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds (2f);
+		isShooting = false;
 		abilityActive = false;
 		yield return null;
 	}
 
 	public IEnumerator Stomp(){
-
+		isStomping = true;
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GiantHand"), characterPoint2.transform.position + new Vector3(0,25f,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		//Do an animation here
+		yield return new WaitForSeconds(1f);
 		abilityActive = false;
+		isStomping = false;
 		yield return null;
 
 	}
@@ -460,7 +663,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		yield return new WaitForSeconds(.3f);
+		yield return new WaitForSeconds(0.3f);
 		isCleaving = false;
 		abilityActive = false;
 		yield return null;
@@ -475,7 +678,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
 
 
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(1f);
 		abilityActive = false;
 		isShielding = false;
 		yield return null;
@@ -490,8 +693,12 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		for (int i = 0; i < 16; i++) {
-			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 20f * Time.deltaTime);
+		for (int i = 0; i < 6; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (-rotationPoint.transform.forward * -8f * Time.deltaTime);
+			yield return new WaitForSeconds(0.03f);
+		}
+		for (int i = 0; i < 8; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 28f * Time.deltaTime);
 			yield return new WaitForSeconds(0.01f);
 		}
 
@@ -503,6 +710,9 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<PlayerMovement> ().canMove = true;
 		yield return null;
 	}
+
+
+
 
 	public IEnumerator KegToss(){
 		isKegTossing = true;
@@ -524,21 +734,102 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator DuelDaggers(){
 		isDaggering = true;
 
-
-		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
-		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
 		yield return new WaitForSeconds(0.12f);
 		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		yield return new WaitForSeconds(0.12f);
+		yield return new WaitForSeconds(0.42f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds(0.22f);
 		isDaggering = false;
 		abilityActive = false;
+		yield return null;
+	}
+
+
+	public IEnumerator ComboAttack(){
+		isDaggering = true;
+
+		yield return new WaitForSeconds(0.12f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds(0.22f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		yield return new WaitForSeconds(0.22f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DaggerHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		//yield return new WaitForSeconds(0.10f);
+		if (!isRaging) {
+			yield return new WaitForSeconds (0.12f);
+		}
+		isDaggering = false;
+		abilityActive = false;
+		yield return null;
+	}
+
+	public IEnumerator DashAttack(){
+		isDashAttacking = true;
+		this.GetComponent<PlayerMovement> ().canMove = false;
+		this.GetComponent<PlayerMovement> ().canRotate = false;
+		this.GetComponent<Rigidbody> ().detectCollisions = false;
+		this.GetComponent<Rigidbody> ().isKinematic = true;
+		this.GetComponent<CharacterController> ().detectCollisions = false;
+		this.GetComponent<BoxCollider> ().enabled = false;
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/DashHitbox"), transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		for (int i = 0; i < 10; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 45f * Time.deltaTime);
+
+			yield return new WaitForSeconds (0.01f);
+
+			
+		}
+
+
+
+		yield return new WaitForSeconds(0.1f);
+		this.GetComponent<BoxCollider> ().enabled = true;
+		this.GetComponent<CharacterController> ().detectCollisions = true;
+		this.GetComponent<Rigidbody> ().detectCollisions = true;
+		this.GetComponent<Rigidbody> ().isKinematic = false;
+		abilityActive = false;
+		isDashAttacking = false;
+		this.GetComponent<PlayerMovement> ().canRotate = true;
+		this.GetComponent<PlayerMovement> ().canMove = true;
+		yield return null;
+	}
+
+
+	public IEnumerator Petrify(){
+		isShielding = true;
+		yield return new WaitForSeconds (.2f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/PetrifyProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds (1.2f);
+
+		abilityActive = false;
+		isShielding = false;
 		yield return null;
 	}
 
@@ -578,7 +869,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-
+		yield return new WaitForSeconds(0.7f);
 		isClawTrapping = false;
 		abilityActive = false;
 		yield return null;
@@ -589,7 +880,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public IEnumerator KnifeSpin(){
 		isKnifeSpinning = true;
-		rotationPoint.GetComponent<PlayerRotation> ().canRotate = false;
+		this.GetComponent<PlayerMovement> ().canRotate = false;
 		yield return new WaitForSeconds(0.1f);
 		for (int i = 0; i < 40; i++) {
 			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
@@ -602,7 +893,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		//Do an animation here
-		rotationPoint.GetComponent<PlayerRotation> ().canRotate = true;
+		this.GetComponent<PlayerMovement> ().canRotate = true;
 		isKnifeSpinning = false;
 		abilityActive = false;
 		yield return null;
@@ -610,6 +901,114 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 	}
+
+	public IEnumerator PushPunch(){
+		isShieldPushing = true;
+		this.GetComponent<PlayerMovement> ().canMove = false;
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/PushPunchHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		for (int i = 0; i < 8; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 10f * Time.deltaTime);
+			yield return new WaitForSeconds(0.01f);
+		}
+
+
+
+		yield return new WaitForSeconds(0.3f);
+		abilityActive = false;
+		isShieldPushing = false;
+		this.GetComponent<PlayerMovement> ().canMove = true;
+		yield return null;
+	}
+	public IEnumerator ClayWall(){
+		isClawTrapping = true;
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClayWall"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds(0.3f);
+		isClawTrapping = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator ClayShards(){
+		isKnifeThrowing = true;
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 65,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 65,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 75,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 75,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds(0.3f);
+		isKnifeThrowing = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator BasicArrow(){
+		isKnifeThrowing = true;
+		yield return new WaitForSeconds(0.1f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BasicArrow"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 65,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+
+		yield return new WaitForSeconds(0.3f);
+		isKnifeThrowing = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator BecomeEnraged(){
+		isBecomingEnraged = true;
+		ability1.GetComponent<CooldownManager> ().CancelCooldown();
+		ability2.GetComponent<CooldownManager> ().CancelCooldown();
+		ability3.GetComponent<CooldownManager> ().CancelCooldown();
+		yield return new WaitForSeconds(0.6f);
+		isBecomingEnraged = false;
+		StartCoroutine ("Raging");
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator Raging(){
+
+		isRaging = true;
+		yield return new WaitForSeconds(8f);
+		isRaging = false;
+
+	}
+
+
+
 
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour {
 
@@ -17,10 +18,21 @@ public class PlayerState : MonoBehaviour {
 	public float slowTimer = 2f;
 	public float pushTimer = 2f;
 	public float origSpeed;
+
+	public bool hasTribute = false;
+
+	public GameObject matchManager;
+
+	public Image itemImage;
+
+	public Sprite tributeImg;
 	// Use this for initialization
 	void Start () {
+		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
+		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
+		itemImage.enabled = false;
 		origSpeed = this.GetComponent<PlayerMovement> ().speed;
-
+		matchManager = GameObject.Find ("MatchManager");
 		//TEMP CODE
 		if (this.gameObject.tag == "Player1") {
 			teamNum = 1;
@@ -68,8 +80,22 @@ public class PlayerState : MonoBehaviour {
 		}
 		
 	}
-	public void OnCollisionEnter(Collision col){
+	public void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "Tribute") {
+			Destroy (col.gameObject);
+			print ("gottribute");
+			hasTribute = true;
 
+			itemImage.enabled = true;
+			itemImage.sprite = tributeImg;
+		}
+
+		if (col.gameObject.tag == "TributeDropOff" && hasTribute) {
+			hasTribute = false;
+			itemImage.enabled = false;
+			print ("thishappened");
+			matchManager.GetComponent<MatchManager> ().StartFireRain();
+		}
 	}
 
 	public void InflictStun(float howLong){

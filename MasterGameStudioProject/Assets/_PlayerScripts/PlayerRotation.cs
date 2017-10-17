@@ -10,7 +10,7 @@ public class PlayerRotation : MonoBehaviour {
 	public InputDevice currentJoystick;
 
 	public GameObject parentObject;
-	public bool canRotate = true;
+
 	// Use this for initialization
 	void Start () {
 		parentObject = transform.parent.gameObject;
@@ -41,7 +41,7 @@ public class PlayerRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (canRotate) {
+		if (parentObject.GetComponent<PlayerMovement> ().canRotate) {
 			if (currentJoystick != null) {
 				hMovementR = currentJoystick.RightStickX;
 				vMovementR = currentJoystick.RightStickY;

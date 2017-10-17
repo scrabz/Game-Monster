@@ -14,7 +14,8 @@ public class ClawTrapAction : MonoBehaviour {
 		thisRigid = this.GetComponent<Rigidbody> ();
 		if (Physics.Raycast (transform.position, downDir, out hit, dist)) {
 			if (hit.collider.tag == "Ground") {
-				this.transform.position = hit.collider.gameObject.transform.position;
+				this.transform.position = hit.point + new Vector3(0,0.25f,0);
+				StartCoroutine ("Sink");
 			}
 		} else {
 			Destroy (this.gameObject);
@@ -30,12 +31,29 @@ public class ClawTrapAction : MonoBehaviour {
 	void OnTriggerEnter (Collider col){
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 			if (this.GetComponent<AttackAction> ().teamNum != col.gameObject.GetComponent<PlayerState> ().teamNum && !col.gameObject.GetComponent<PlayerMovement> ().isRolling) {
-
+				this.GetComponent<Animator> ().SetBool ("isActivated", true);
+				this.transform.position = new Vector3(transform.position.x,transform.position.y + 0.5f,transform.position.z);
+				col.transform.position = new Vector3 (transform.position.x, col.transform.position.y, transform.position.z);
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
-				col.gameObject.GetComponent<PlayerState> ().InflictStun (3f);
-				Destroy (this.gameObject);
+				col.gameObject.GetComponent<PlayerState> ().InflictStun (2f);
+				StartCoroutine ("Die");
 			}
 		}
 	}
 
+	public IEnumerator Sink(){
+		for(int i = 0; i < 10f; i++) {
+			this.transform.Translate (0, -0.1f, 0);
+			yield return new WaitForSeconds (0.05f);
+
+
+		}
+		print ("done sinking");
+		yield return null;
+	}
+	public IEnumerator Die(){
+		yield return new WaitForSeconds (2f);
+		Destroy (this.gameObject);
+		yield return null;
+	}
 }

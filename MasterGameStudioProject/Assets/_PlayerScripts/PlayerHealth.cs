@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
 
+
 	void Start () {
 		//matchManagerObject = GameObject.Find ("MatchManager");
 		healthBarActive = true;
@@ -68,7 +69,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (maxHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
 		model = this.gameObject.transform.Find ("RotationPoint").Find ("Model").gameObject;
 		maxHealthText.text = maxHealth.ToString ();
-		//GetHit (0);
+		GetHit (0);
 	}
 
 	// Update is called once per frame
@@ -118,10 +119,12 @@ public class PlayerHealth : MonoBehaviour {
 
 		//Subtract the Lost Health
 		currentHealth -= healthLost;
+		if (healthLost != 0) {
+			StartCoroutine ("FlashRed");
+			this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
+		}
 
-		StartCoroutine ("FlashRed");
 
-		this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
 
 		calcHealth = currentHealth / maxHealth;
 		healthText.text = currentHealth.ToString();
@@ -133,6 +136,8 @@ public class PlayerHealth : MonoBehaviour {
 		healthBarBack.enabled = true;
 
 		if (currentHealth <= 0f) {
+			StopAllCoroutines ();
+			this.GetComponent<PlayerMovement> ().currentJoystick.StopVibration ();
 			Death ();
 			if (matchManagerObject == null) {
 				SceneManager.LoadScene (SceneManager.GetActiveScene().name);

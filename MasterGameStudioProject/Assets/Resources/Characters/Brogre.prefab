@@ -1046,9 +1046,9 @@ GameObject:
   - component: {fileID: 114646532189882768}
   - component: {fileID: 54162938438583918}
   - component: {fileID: 114008274829881958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Brogre
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1230,6 +1230,23 @@ GameObject:
   - component: {fileID: 4637260176596934}
   m_Layer: 0
   m_Name: ELBOW_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1726003898679722
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224093162781227130}
+  - component: {fileID: 222423885835340184}
+  - component: {fileID: 114916464652166654}
+  m_Layer: 10
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3145,7 +3162,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2e010551dd2fd8d408b6535f4820f2c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3177,7 +3194,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d0f15ea1142c34468773d29272d53e4, type: 2}
+  - {fileID: 2100000, guid: 666846dd6d180d94c984816da3ef705e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3209,7 +3226,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 386bd08a00872fe41805e30224b60f5d, type: 2}
+  - {fileID: 2100000, guid: 2e010551dd2fd8d408b6535f4820f2c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3320,6 +3337,7 @@ MonoBehaviour:
   invincibleTimer: 2
   model: {fileID: 0}
   playerNum: 0
+  mainCam: {fileID: 0}
 --- !u!114 &114203218586886776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3359,6 +3377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  rotationPoint: {fileID: 0}
 --- !u!114 &114352593702856238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3477,7 +3496,6 @@ MonoBehaviour:
   vMovementR: 0
   angle: 0
   parentObject: {fileID: 0}
-  canRotate: 1
 --- !u!114 &114575635674055966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3493,6 +3511,7 @@ MonoBehaviour:
   gravity: 20
   isDying: 0
   canMove: 1
+  canRotate: 1
   hMovement: 0
   vMovement: 0
   rollButton: 0
@@ -3535,6 +3554,10 @@ MonoBehaviour:
   slowTimer: 2
   pushTimer: 2
   origSpeed: 0
+  hasTribute: 0
+  matchManager: {fileID: 0}
+  itemImage: {fileID: 0}
+  tributeImg: {fileID: 0}
 --- !u!114 &114727319874632290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3565,14 +3588,45 @@ MonoBehaviour:
   isShielding: 0
   isKegTossing: 0
   isCollecting: 0
-  isComboJabbing: 0
-  isMegaPunching: 0
+  isShooting: 0
   isStomping: 0
   isDaggering: 0
   isKnifeThrowing: 0
   isClawTrapping: 0
   isKnifeSpinning: 0
+  isDashAttacking: 0
+  isPetrifying: 0
+  isBecomingEnraged: 0
+  isRaging: 0
   matchManager: {fileID: 0}
+  handicap: 0
+--- !u!114 &114916464652166654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726003898679722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114950464605838298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3613,9 +3667,9 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 243b0293e9d8b46419c63b91e4c2c6dc, type: 2}
-  - {fileID: 2100000, guid: 243b0293e9d8b46419c63b91e4c2c6dc, type: 2}
-  - {fileID: 2100000, guid: 243b0293e9d8b46419c63b91e4c2c6dc, type: 2}
+  - {fileID: 2100000, guid: bc9c68565542d714ba1c258e03b97faf, type: 2}
+  - {fileID: 2100000, guid: 9aff4049612957f48896569979242cb4, type: 2}
+  - {fileID: 2100000, guid: beaa301b973bda64583f3dbe558937f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3744,6 +3798,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1397217786040266}
+--- !u!222 &222423885835340184
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726003898679722}
 --- !u!222 &222738014486705712
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3788,6 +3848,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.003149536}
   m_SizeDelta: {x: 2, y: 0.2437}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!224 &224093162781227130
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726003898679722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224527874045462280}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.25}
+  m_SizeDelta: {x: 1.25, y: 1.25}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224196547630749794
 RectTransform:
   m_ObjectHideFlags: 1
@@ -3819,6 +3897,7 @@ RectTransform:
   m_Children:
   - {fileID: 224196547630749794}
   - {fileID: 224836358081807336}
+  - {fileID: 224093162781227130}
   m_Father: {fileID: 4012880199309212}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

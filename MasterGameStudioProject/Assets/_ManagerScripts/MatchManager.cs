@@ -75,6 +75,14 @@ public class MatchManager : MonoBehaviour {
 	public Sprite gorgonPortrait;
 
 
+	public float matchActionTimer = 30f;
+	public GameObject thingToSpawn;
+	public int ranNum;
+
+	public Transform tributeSpawn1;
+	public Transform tributeSpawn2;
+	public Transform tributeSpawn3;
+
 	public Transform spawn1;
 	public Transform spawn2;
 
@@ -160,7 +168,12 @@ public class MatchManager : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
 
+		if (SceneManager.GetActiveScene ().name == "VolcanoLevel") {
 
+			tributeSpawn1 = GameObject.Find ("TributeSpawn1").transform;
+			tributeSpawn2 = GameObject.Find ("TributeSpawn2").transform;
+			tributeSpawn3 = GameObject.Find ("TributeSpawn3").transform;
+		}
 
 		LoadCharacters ();
 		winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", false);
@@ -174,6 +187,31 @@ public class MatchManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
+		if (isFighting) {
+			matchActionTimer -= Time.deltaTime;
+
+			if (matchActionTimer <= 0f) {
+				if (SceneManager.GetActiveScene ().name == "VolcanoLevel") {
+					ranNum = Random.Range (0, 3);
+					if (ranNum == 0) {
+						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn1.position, tributeSpawn1.rotation) as GameObject;
+					}
+					if (ranNum == 1) {
+						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn2.position, tributeSpawn2.rotation) as GameObject;
+					}
+					if (ranNum == 2) {
+						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
+					}
+					print ("didspawn");
+				}
+				matchActionTimer = 30f;
+
+			}
+		}
+
+
 		if (isCountingDown) {
 			
 			countdownTimer -= Time.deltaTime;
@@ -185,6 +223,7 @@ public class MatchManager : MonoBehaviour {
 
 			if (countdownTimer <= 0) {
 				isCountingDown = false;
+				isFighting = true;
 				countdownText.enabled = false;
 				countdownTimer = 4f;
 			}
@@ -224,7 +263,7 @@ public class MatchManager : MonoBehaviour {
 					p1ActiveProfile = team1Ch1;
 					StartCoroutine ("VibrateController", p1Joystick);
 				}
-				if (p1B && team1Ch3.enabled) {
+				if (p1B && team1Ch2.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.team1Characters [1];
 					p1ActiveProfile = team1Ch2;
 					StartCoroutine ("VibrateController", p1Joystick);
@@ -286,6 +325,7 @@ public class MatchManager : MonoBehaviour {
 				countdownText.enabled = true;
 				ClosePanels ();
 				SpawnCharacters ();
+				matchActionTimer = 30f;
 				//StartCountdown ();
 			}
 
@@ -324,6 +364,9 @@ public class MatchManager : MonoBehaviour {
 			}
 			if (MasterGameManager.instance.team1Characters[i].name == "Tiny") {
 				p1Portraits.Add (tinyPortrait);
+			}
+			if (MasterGameManager.instance.team1Characters[i].name == "Neredy") {
+				p1Portraits.Add (gorgonPortrait);
 			}
 			if (MasterGameManager.instance.team1Characters[i].name == "Empty") {
 				p1Portraits.Add (blankPortrait);
@@ -374,6 +417,9 @@ public class MatchManager : MonoBehaviour {
 			}
 			if (MasterGameManager.instance.team2Characters[o].name == "Tiny") {
 				p2Portraits.Add (tinyPortrait);
+			}
+			if (MasterGameManager.instance.team1Characters[o].name == "Neredy") {
+				p2Portraits.Add (gorgonPortrait);
 			}
 			if (MasterGameManager.instance.team2Characters[o].name == "Empty") {
 				p2Portraits.Add (blankPortrait);
@@ -436,10 +482,12 @@ public class MatchManager : MonoBehaviour {
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 1;
 		mainCam.gameObject.GetComponent<DynamicCamera> ().AddPlayerToView (characterSpawn);
 		characterSpawn = Instantiate (p2ActiveCharacter, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
+
 		characterSpawn.tag = "Player2";
 		//mainCam.GetComponent<DynamicCamera> ().allPlayers.Add (characterSpawn);
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 2;
 		mainCam.gameObject.GetComponent<DynamicCamera> ().AddPlayerToView (characterSpawn);
+
 
 	}
 
@@ -447,8 +495,10 @@ public class MatchManager : MonoBehaviour {
 
 		p1ActiveCharacter = null;
 		p2ActiveCharacter = null;
-
+		isFighting = false;
 		GameObject[] allPlayersLeft;
+		GameObject[] allAttacksLeft;
+		GameObject[] allAbilitiesLeft;
 
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
@@ -462,8 +512,16 @@ public class MatchManager : MonoBehaviour {
 			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 			Destroy (player);
 		}
+		allAttacksLeft = GameObject.FindGameObjectsWithTag ("Projectile");
 
+		foreach (GameObject attack in allAttacksLeft) {
+			Destroy (attack);
+		}
 
+		allAbilitiesLeft = GameObject.FindGameObjectsWithTag ("Ability");
+		foreach (GameObject ability in allAbilitiesLeft) {
+			ability.GetComponent<CooldownManager> ().CancelCooldown ();
+		}
 
 		if (loser == 1) {
 			p1ActiveProfile.color = Color.black;
@@ -509,5 +567,9 @@ public class MatchManager : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 		Destroy (MasterGameManager.instance);
 		Destroy (this.gameObject);
+	}
+
+	public void StartFireRain(){
+
 	}
 }

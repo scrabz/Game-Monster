@@ -16,6 +16,10 @@ TagManager:
   - TrapHitbox
   - Projectile
   - Hitbox
+  - Wall
+  - Tribute
+  - TributeDropOff
+  - Ability
   layers:
   - Default
   - TransparentFX
@@ -27,7 +31,7 @@ TagManager:
   - 
   - Attacks
   - NoPlayerCol
-  - 
+  - Players
   - 
   - 
   - 

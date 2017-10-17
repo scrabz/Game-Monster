@@ -50,6 +50,11 @@ public class CooldownManager : MonoBehaviour {
 		darkMask.fillAmount = (cooldownTimeLeft / cooldownDuration);
 
 	}
+
+	public void CancelCooldown(){
+		nextReadyTime = Time.time;
+	}
+
 	public void StartCooldown(float cooldown){
 		abilityCooling = true;
 		cooldownDuration = cooldown;

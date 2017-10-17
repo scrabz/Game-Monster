@@ -54,6 +54,7 @@ public class MasterGameManager : MonoBehaviour {
 	public GameObject Brogre;
 	public GameObject Skelly;
 	public GameObject Tiny;
+	public GameObject Neredy;
 
 	public int teamSize = 4;
 
@@ -85,6 +86,7 @@ public class MasterGameManager : MonoBehaviour {
 		Brogre = Resources.Load("Characters/Brogre") as GameObject;
 		Skelly = Resources.Load("Characters/ToeTip") as GameObject;
 		Tiny = Resources.Load("Characters/Tiny") as GameObject;
+		Neredy = Resources.Load("Characters/Neredy") as GameObject;
 
 	}
 	void Update(){
@@ -105,6 +107,9 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Tiny") {
 				team1Characters.Add (Tiny);
 			}
+			if (name == "Neredy") {
+				team1Characters.Add (Neredy);
+			}
 		}
 
 		if (teamNumber == 2) {
@@ -119,6 +124,9 @@ public class MasterGameManager : MonoBehaviour {
 			}
 			if (name == "Tiny") {
 				team2Characters.Add (Tiny);
+			}
+			if (name == "Neredy") {
+				team2Characters.Add (Neredy);
 			}
 		}
 
