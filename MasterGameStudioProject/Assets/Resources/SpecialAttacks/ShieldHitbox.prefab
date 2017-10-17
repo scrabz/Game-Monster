@@ -186,7 +186,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 567bc0b368c4814479f7809076e35192, type: 2}
+  - {fileID: 2100000, guid: 5a00b698c445d554a883bc35d7b48896, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,7 +218,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5a00b698c445d554a883bc35d7b48896, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 567bc0b368c4814479f7809076e35192, type: 2}
+  - {fileID: 2100000, guid: 5a00b698c445d554a883bc35d7b48896, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -403,5 +403,5 @@ MonoBehaviour:
   parentPoint: {fileID: 0}
   creator: {fileID: 0}
   foundCreator: 0
-  lifeTimer: 2
+  lifeTimer: 1
   damage: 0
