@@ -217,7 +217,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 5
-  damage: 2
+  damage: 4
 --- !u!135 &135294142992505714
 SphereCollider:
   m_ObjectHideFlags: 1

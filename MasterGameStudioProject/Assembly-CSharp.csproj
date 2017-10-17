@@ -89,7 +89,20 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-     <Compile Include="Assets\FloatingBoat.cs" />
+     <Compile Include="Assets\ImageEffects\AntialiasingEditor.cs" />
+     <Compile Include="Assets\ImageEffects\BloomAndFlaresEditor.cs" />
+     <Compile Include="Assets\ImageEffects\BloomEditor.cs" />
+     <Compile Include="Assets\ImageEffects\CameraMotionBlurEditor.cs" />
+     <Compile Include="Assets\ImageEffects\ColorCorrectionCurvesEditor.cs" />
+     <Compile Include="Assets\ImageEffects\ColorCorrectionLookupEditor.cs" />
+     <Compile Include="Assets\ImageEffects\CreaseShadingEditor.cs" />
+     <Compile Include="Assets\ImageEffects\DepthOfFieldDeprecatedEditor.cs" />
+     <Compile Include="Assets\ImageEffects\DepthOfFieldEditor.cs" />
+     <Compile Include="Assets\ImageEffects\EdgeDetectionEditor.cs" />
+     <Compile Include="Assets\ImageEffects\NoiseAndGrainEditor.cs" />
+     <Compile Include="Assets\ImageEffects\SunShaftsEditor.cs" />
+     <Compile Include="Assets\ImageEffects\TonemappingEditor.cs" />
+     <Compile Include="Assets\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
      <Compile Include="Assets\InControl\Examples\Basic\BasicExample.cs" />
      <Compile Include="Assets\InControl\Examples\Bindings\BindingsExample.cs" />
      <Compile Include="Assets\InControl\Examples\Bindings\PlayerActions.cs" />
@@ -440,7 +453,6 @@
      <Compile Include="Assets\InControl\Source\XInput\XInputDeviceManager.cs" />
      <Compile Include="Assets\InControl\Source\XInput\XInputDotNetPure\GamePad.cs" />
      <Compile Include="Assets\InControl\Test\TestInputManager.cs" />
-     <Compile Include="Assets\Outline.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\CameraControls.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\IcoBumpin.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Misc\HueCube.cs" />
@@ -452,6 +464,8 @@
      <Compile Include="Assets\ProCore\ProGrids\Classes\pg_IconUtility.cs" />
      <Compile Include="Assets\ProCore\ProGrids\Classes\pg_SceneMeshRender.cs" />
      <Compile Include="Assets\ProCore\ProGrids\Classes\pg_Util.cs" />
+     <Compile Include="Assets\Scripts\FloatingBoat.cs" />
+     <Compile Include="Assets\Scripts\Outline.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -494,13 +508,14 @@
      <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseTextureBlend.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_StandardVertexColor.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexPicker.shader" />
-     <None Include="Assets\Outline.shader" />
+     <None Include="Assets\Scripts\Outline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_HideVertices.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_UnlitVertexColor.shader" />
@@ -574,19 +589,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity4">
- <HintPath>C:/Users/midiv/Desktop/MonsterGame/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>C:/Users/midiv/Desktop/MonsterGame/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="KDTree">
- <HintPath>C:/Users/midiv/Desktop/MonsterGame/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
  </Reference>
  <Reference Include="pb_Stl">
- <HintPath>C:/Users/midiv/Desktop/MonsterGame/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Triangle">
- <HintPath>C:/Users/midiv/Desktop/MonsterGame/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -58,6 +58,11 @@ public class PlayerAbilities : MonoBehaviour {
 	CharacterAbility petrify;
 	CharacterAbility rage;
 
+	public GameObject rageEffectL;
+	public GameObject rageEffectR;
+
+
+
 
 	public InputDevice currentJoystick;
 
@@ -358,7 +363,15 @@ public class PlayerAbilities : MonoBehaviour {
 		if (!handicap && matchManager != null){
 			ability4.GetComponent<CooldownManager> ().StartCooldown (15f);
 		}
-		
+
+
+		if (this.gameObject.name == "Neredy(Clone)") {
+			rageEffectL = GameObject.Find ("RageEffectL");
+			rageEffectR = GameObject.Find ("RageEffectR");
+			rageEffectL.SetActive (false);
+			rageEffectR.SetActive (false);
+		}
+
 
 	}
 
@@ -693,11 +706,11 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		for (int i = 0; i < 6; i++) {
-			this.GetComponent<PlayerMovement> ().controller.Move (-rotationPoint.transform.forward * -8f * Time.deltaTime);
-			yield return new WaitForSeconds(0.03f);
-		}
 		for (int i = 0; i < 8; i++) {
+			this.GetComponent<PlayerMovement> ().controller.Move (-rotationPoint.transform.forward * 8f * Time.deltaTime);
+			yield return new WaitForSeconds(0.02f);
+		}
+		for (int i = 0; i < 24; i++) {
 			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 28f * Time.deltaTime);
 			yield return new WaitForSeconds(0.01f);
 		}
@@ -989,12 +1002,14 @@ public class PlayerAbilities : MonoBehaviour {
 		ability1.GetComponent<CooldownManager> ().CancelCooldown();
 		ability2.GetComponent<CooldownManager> ().CancelCooldown();
 		ability3.GetComponent<CooldownManager> ().CancelCooldown();
+		StartCoroutine ("Raging");
 		yield return new WaitForSeconds(0.6f);
 		isBecomingEnraged = false;
-		StartCoroutine ("Raging");
+		//StartCoroutine ("Raging");
 		abilityActive = false;
 		yield return null;
-
+		rageEffectL.SetActive (true);
+		rageEffectR.SetActive (true);
 
 
 	}
@@ -1004,6 +1019,8 @@ public class PlayerAbilities : MonoBehaviour {
 		isRaging = true;
 		yield return new WaitForSeconds(8f);
 		isRaging = false;
+		rageEffectL.SetActive (false);
+		rageEffectR.SetActive (false);
 
 	}
 
