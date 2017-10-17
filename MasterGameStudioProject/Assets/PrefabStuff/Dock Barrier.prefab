@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65754230070210292}
   m_Layer: 0
   m_Name: Dock Barrier
-  m_TagString: Solid
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,14 +51,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242957002628466}
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: -38.82823, y: -0.12053156, z: 3.3870108}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000031292436}
+  m_LocalPosition: {x: 9.07, y: 5.96, z: 46.72}
   m_LocalScale: {x: 2.514091, y: 2.5140905, z: 2.5140905}
   m_Children:
   - {fileID: 4433467567543724}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!4 &4433467567543724
 Transform:
   m_ObjectHideFlags: 1

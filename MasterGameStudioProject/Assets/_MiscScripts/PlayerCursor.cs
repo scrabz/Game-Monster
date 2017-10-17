@@ -23,8 +23,26 @@ public class PlayerCursor : MonoBehaviour {
 	public GameObject buttonManagerObject;
 	public int currentPlayer;
 
+	public Image cardPanel;
+
+	public Sprite brogreCard;
+	public Sprite skeletonCard;
+	public Sprite gorgonCard;
+	public Sprite drDecayCard;
+	public Sprite tinyCard;
+	public Sprite blankCard;
 	// Use this for initialization
 	void Start () {
+
+
+		brogreCard = Resources.Load<Sprite> ("CharacterCards/BrogreCard");
+		tinyCard = Resources.Load<Sprite> ("CharacterCards/TinyCard");
+		skeletonCard = Resources.Load<Sprite> ("CharacterCards/SkeletonCard");
+		drDecayCard = Resources.Load<Sprite> ("CharacterCards/DrDecayCard");
+		//succPortrait = Resources.Load<Sprite> ("CharacterCards/SuccP");
+		//guyPortrait = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
+		gorgonCard = Resources.Load<Sprite> ("CharacterCards/GorgonCard");
+		blankCard = Resources.Load<Sprite>("CharacterCards/BlankCard");
 		buttonManagerObject = GameObject.Find ("ButtonManager");
 		characterSelectObject = GameObject.Find ("CharacterSelectManager");
 
@@ -32,6 +50,7 @@ public class PlayerCursor : MonoBehaviour {
 		if (this.gameObject.tag == "Player1") {
 			currentPlayer = 1;
 			if (InputManager.Devices [0] != null) {
+				cardPanel = GameObject.Find ("P1CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [0];
 			} else {
 				currentJoystick = null;
@@ -40,18 +59,21 @@ public class PlayerCursor : MonoBehaviour {
 		if (this.gameObject.tag == "Player2") {
 			currentPlayer = 2;
 			if (InputManager.Devices [1] != null) {
+				cardPanel = GameObject.Find ("P2CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [1];
 			}
 		}
 		if (this.gameObject.tag == "Player3") {
 			currentPlayer = 3;
 			if (InputManager.Devices [2] != null) {
+				cardPanel = GameObject.Find ("P2CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [2];
 			}
 		}
 		if (this.gameObject.tag == "Player4") {
 			currentPlayer = 4;
 			if (InputManager.Devices [3] != null) {
+				cardPanel = GameObject.Find ("P2CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
@@ -71,6 +93,39 @@ public class PlayerCursor : MonoBehaviour {
 			aButton = Input.GetButtonDown ("Space");
 			bButton = Input.GetButtonDown ("Backspace");
 			startButton = Input.GetButtonDown ("Enter");
+		}
+		if (Physics.Raycast (transform.position, transform.forward, out hit, 500f)) {
+			if (hit.collider.gameObject.name == "BrogreButton") {
+				cardPanel.sprite = brogreCard;
+			}
+			if (hit.collider.gameObject.name == "SkeletonButton") {
+				cardPanel.sprite = skeletonCard;
+			}
+
+			if (hit.collider.gameObject.name == "TinyButton") {
+				cardPanel.sprite = tinyCard;
+			}
+
+			if (hit.collider.gameObject.name == "SuccButton") {
+				//cardPanel.sprite = ;
+			}
+
+			if (hit.collider.gameObject.name == "GuyButton") {
+				//cardPanel.sprite = brogreCard;
+			}
+
+			if (hit.collider.gameObject.name == "ClaymondButton") {
+				//cardPanel.sprite = brogreCard;
+			}
+
+			if (hit.collider.gameObject.name == "GorgonButton") {
+				cardPanel.sprite = gorgonCard;
+			}
+			if (hit.collider.gameObject.name == "DrDecayButton") {
+				//cardPanel.sprite = drDecayCard;
+			}
+		} else {
+			cardPanel.sprite = blankCard;
 		}
 
 		//Debug.DrawRay (this.transform.position, transform.forward);
@@ -117,6 +172,10 @@ public class PlayerCursor : MonoBehaviour {
 
 				if (hit.collider.gameObject.name == "VolcanoButton") {
 					SceneManager.LoadScene ("VolcanoLevel");
+				}
+
+				if (hit.collider.gameObject.name == "HallOfBrosButton") {
+					SceneManager.LoadScene ("HallOfBrosLevel");
 				}
 
 

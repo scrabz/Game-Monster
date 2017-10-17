@@ -518,9 +518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  gravity: 20
+  gravity: 55
   isDying: 0
   canMove: 1
+  canRotate: 1
   hMovement: 0
   vMovement: 0
   rollButton: 0
@@ -615,6 +616,8 @@ MonoBehaviour:
   characterPoint2: {fileID: 0}
   spawnPoint: {fileID: 0}
   storedProjectiles: []
+  rageEffectL: {fileID: 0}
+  rageEffectR: {fileID: 0}
   abilityActive: 0
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
@@ -630,7 +633,12 @@ MonoBehaviour:
   isKnifeThrowing: 0
   isClawTrapping: 0
   isKnifeSpinning: 0
+  isDashAttacking: 0
+  isPetrifying: 0
+  isBecomingEnraged: 0
+  isRaging: 0
   matchManager: {fileID: 0}
+  handicap: 0
 --- !u!114 &114265807006772350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -694,7 +702,6 @@ MonoBehaviour:
   vMovementR: 0
   angle: 0
   parentObject: {fileID: 0}
-  canRotate: 1
 --- !u!114 &114666793277117774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -747,6 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  rotationPoint: {fileID: 0}
 --- !u!114 &114747314943819582
 MonoBehaviour:
   m_ObjectHideFlags: 1

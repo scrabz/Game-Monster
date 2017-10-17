@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour {
 				rollDirection = this.transform.Find ("RotationPoint").forward;
 				}
 				if (isRolling == false) {
-					moveDirection = new Vector3 (hMovement, 0, vMovement);
+				moveDirection = new Vector3 (hMovement, 0, vMovement);
 					moveDirection = transform.TransformDirection (moveDirection);
 					moveDirection *= speed;
 					moveDirection.y -= gravity * Time.deltaTime;
