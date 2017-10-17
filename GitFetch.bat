@@ -1,1 +1,1 @@
-call git fetch
+@call git fetch
