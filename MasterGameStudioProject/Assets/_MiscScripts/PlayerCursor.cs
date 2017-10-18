@@ -66,14 +66,14 @@ public class PlayerCursor : MonoBehaviour {
 		if (this.gameObject.tag == "Player3") {
 			currentPlayer = 3;
 			if (InputManager.Devices [2] != null) {
-				cardPanel = GameObject.Find ("P2CardPanel").GetComponent<Image> ();
+				cardPanel = GameObject.Find ("P3CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [2];
 			}
 		}
 		if (this.gameObject.tag == "Player4") {
 			currentPlayer = 4;
 			if (InputManager.Devices [3] != null) {
-				cardPanel = GameObject.Find ("P2CardPanel").GetComponent<Image> ();
+				cardPanel = GameObject.Find ("P4CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
