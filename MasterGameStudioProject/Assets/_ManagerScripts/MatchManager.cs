@@ -167,6 +167,14 @@ public class MatchManager : MonoBehaviour {
 
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
+		team1Ch1.sprite = blankPortrait;
+		team1Ch2.sprite = blankPortrait;
+		team1Ch3.sprite = blankPortrait;
+		team1Ch4.sprite = blankPortrait;
+		team2Ch1.sprite = blankPortrait;
+		team2Ch2.sprite = blankPortrait;
+		team2Ch3.sprite = blankPortrait;
+		team2Ch4.sprite = blankPortrait;
 
 		if (SceneManager.GetActiveScene ().name == "VolcanoLevel") {
 
@@ -204,7 +212,6 @@ public class MatchManager : MonoBehaviour {
 					if (ranNum == 2) {
 						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
 					}
-					print ("didspawn");
 				}
 				matchActionTimer = 30f;
 
@@ -418,7 +425,7 @@ public class MatchManager : MonoBehaviour {
 			if (MasterGameManager.instance.team2Characters[o].name == "Tiny") {
 				p2Portraits.Add (tinyPortrait);
 			}
-			if (MasterGameManager.instance.team1Characters[o].name == "Neredy") {
+			if (MasterGameManager.instance.team2Characters[o].name == "Neredy") {
 				p2Portraits.Add (gorgonPortrait);
 			}
 			if (MasterGameManager.instance.team2Characters[o].name == "Empty") {
@@ -481,8 +488,8 @@ public class MatchManager : MonoBehaviour {
 		//mainCam.GetComponent<DynamicCamera> ().allPlayers.Add (characterSpawn);
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 1;
 		mainCam.gameObject.GetComponent<DynamicCamera> ().AddPlayerToView (characterSpawn);
-		characterSpawn = Instantiate (p2ActiveCharacter, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
 
+		characterSpawn = Instantiate (p2ActiveCharacter, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
 		characterSpawn.tag = "Player2";
 		//mainCam.GetComponent<DynamicCamera> ().allPlayers.Add (characterSpawn);
 		characterSpawn.GetComponent<PlayerState> ().teamNum = 2;
@@ -545,7 +552,8 @@ public class MatchManager : MonoBehaviour {
 			if (team2CharactersLeft <= 0) {
 				winnerText.text = "Player 1 Wins";
 			}
-
+			MasterGameManager.instance.team1Characters.Clear ();
+			MasterGameManager.instance.team2Characters.Clear ();
 			StartCoroutine ("MatchComplete");
 		} else {
 			isSelectingCharacter = true;

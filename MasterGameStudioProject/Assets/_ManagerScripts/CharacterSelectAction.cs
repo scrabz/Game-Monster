@@ -253,7 +253,7 @@ public class CharacterSelectAction : MonoBehaviour {
 			team2Ch2.enabled = true;
 			team2Ch3.enabled = true;
 			team2Ch4.enabled = false;
-			team1Ch4.sprite = blankPortrait;
+			team2Ch4.sprite = blankPortrait;
 		}
 		if (teamSize == 2) {
 			team1Ch1.enabled = true;

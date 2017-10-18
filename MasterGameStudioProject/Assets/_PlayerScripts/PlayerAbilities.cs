@@ -159,30 +159,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			comboJab.aName = "Fury Fists";
-			//comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA1");
 			comboJab.aCooldown = 0.8f;
 			comboJab.aPanel = ability1;
 
 			megaFist.aName = "Mega Fist";
-			//megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA2");
 			megaFist.aCooldown = 2f;
 			megaFist.aPanel = ability2;
 
 			collection.aName = "Collection / Rejection";
-			//collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA3");
 			collection.aCooldown = 3f;
 			collection.aPanel = ability3;
 
 			stomp.aName = "Stomp";
-			//stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA4");
 			stomp.aCooldown = 15f;
 			stomp.aPanel = ability4;
 
 			//Change the icons to match the ability
-//			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
-//			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
-//			ability3.GetComponent<Image> ().sprite = collection.aIcon;
-//			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
+			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
+			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
+			ability3.GetComponent<Image> ().sprite = collection.aIcon;
+			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
 
 		}
 
@@ -201,22 +201,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			cleave.aName = "Cleave";
-			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Cleave");
+			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA1");
 			cleave.aCooldown = 0.7f;
 			cleave.aPanel = ability1;
 
 			shield.aName = "Shield";
-			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Shield");
+			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA2");
 			shield.aCooldown = 3f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
-			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Charge");
+			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA3");
 			shieldPush.aCooldown = 3f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
-			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/Brogre - Keg Toss");
+			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA4");
 			kegToss.aCooldown = 15f;
 			kegToss.aPanel = ability4;
 
@@ -244,30 +244,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			comboAttack.aName = "Combo Attack";
-			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			comboAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA1");
 			comboAttack.aCooldown = 1f;
 			comboAttack.aPanel = ability1;
 
 			dashAttack.aName = "Dash Attack";
-			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			dashAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA2");
 			dashAttack.aCooldown = 2.5f;
 			dashAttack.aPanel = ability2;
 
 			petrify.aName = "Petrify";
-			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			petrify.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA3");
 			petrify.aCooldown = 8f;
 			petrify.aPanel = ability3;
 
 			rage.aName = "Rage";
-			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			rage.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA4");
 			rage.aCooldown = 15f;
 			rage.aPanel = ability4;
 
 			//Change the icons to match the ability
-			//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
-			//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
-			//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
-			//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+			ability1.GetComponent<Image> ().sprite = comboAttack.aIcon;
+			ability2.GetComponent<Image> ().sprite = dashAttack.aIcon;
+			ability3.GetComponent<Image> ().sprite = petrify.aIcon;
+			ability4.GetComponent<Image> ().sprite = rage.aIcon;
 
 		}
 
@@ -287,30 +287,30 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			duelDaggers.aName = "Duel Daggers";
-			//cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			duelDaggers.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA1");
 			duelDaggers.aCooldown = 0.7f;
 			duelDaggers.aPanel = ability1;
 
 			knifeThrow.aName = "Knife Throw";
-			//shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			knifeThrow.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
 			knifeThrow.aCooldown = 2.5f;
 			knifeThrow.aPanel = ability2;
 
 			clawTrap.aName = "Claw Trap";
-			//shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			clawTrap.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA3");
 			clawTrap.aCooldown = 8f;
 			clawTrap.aPanel = ability3;
 
 			knifeSpin.aName = "Knife Spin";
-			//kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			knifeSpin.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA4");
 			knifeSpin.aCooldown = 15f;
 			knifeSpin.aPanel = ability4;
 
 			//Change the icons to match the ability
-			//			ability1.GetComponent<Image> ().sprite = cleave.aIcon;
-			//			ability2.GetComponent<Image> ().sprite = shield.aIcon;
-			//			ability3.GetComponent<Image> ().sprite = shieldPush.aIcon;
-			//			ability4.GetComponent<Image> ().sprite = kegToss.aIcon;
+			ability1.GetComponent<Image> ().sprite = duelDaggers.aIcon;
+			ability2.GetComponent<Image> ().sprite = knifeThrow.aIcon;
+			ability3.GetComponent<Image> ().sprite = clawTrap.aIcon;
+			ability4.GetComponent<Image> ().sprite = knifeSpin.aIcon;
 
 		}
 
