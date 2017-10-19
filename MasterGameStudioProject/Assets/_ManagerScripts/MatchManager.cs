@@ -506,7 +506,8 @@ public class MatchManager : MonoBehaviour {
 		GameObject[] allPlayersLeft;
 		GameObject[] allAttacksLeft;
 		GameObject[] allAbilitiesLeft;
-
+		StartCoroutine ("VibrateController", p1Joystick);
+		StartCoroutine ("VibrateController", p2Joystick);
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 		foreach (GameObject player in allPlayersLeft) {

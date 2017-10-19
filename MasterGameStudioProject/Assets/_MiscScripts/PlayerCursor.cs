@@ -14,7 +14,7 @@ public class PlayerCursor : MonoBehaviour {
 	public RaycastHit hit;
 	public float hMovement;
 	public float vMovement;
-	float mouseSpeed = 8f;
+	float mouseSpeed = 12f;
 	public bool aButton;
 	public bool bButton;
 	public bool startButton;
@@ -31,9 +31,17 @@ public class PlayerCursor : MonoBehaviour {
 	public Sprite drDecayCard;
 	public Sprite tinyCard;
 	public Sprite blankCard;
+
+	public Vector3 oldPosition;
+
+	public Rect screenRect;
+	public bool canMoveCursor = true;
+
+
 	// Use this for initialization
 	void Start () {
 
+		screenRect = new Rect(0f, 0f, Screen.width, Screen.height);
 
 		brogreCard = Resources.Load<Sprite> ("CharacterCards/BrogreCard");
 		tinyCard = Resources.Load<Sprite> ("CharacterCards/TinyCard");
@@ -80,7 +88,11 @@ public class PlayerCursor : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
+		Vector3[] objectCorners = new Vector3[4];
+		this.GetComponent<RectTransform>().GetWorldCorners(objectCorners);
+
 		if (currentJoystick != null) {
 			hMovement = currentJoystick.LeftStickX.RawValue;
 			vMovement = currentJoystick.LeftStickY.RawValue;
@@ -131,6 +143,12 @@ public class PlayerCursor : MonoBehaviour {
 		//Debug.DrawRay (this.transform.position, transform.forward);
 		if (aButton) {
 			if (Physics.Raycast(transform.position, transform.forward, out hit,500f)){
+
+				if (hit.collider.gameObject.name == "StartGameButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+				}
+
+
 				if (hit.collider.gameObject.name == "BrogreButton") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Brogre");
@@ -209,9 +227,24 @@ public class PlayerCursor : MonoBehaviour {
 		if (bButton) {
 			characterSelectObject.GetComponent<CharacterSelectAction> ().RemoveLastCharacter (currentPlayer);
 		}
+		oldPosition = this.GetComponent<RectTransform> ().anchoredPosition;
 
 
-		this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
+		foreach (Vector3 corner in objectCorners) {
+			if (!screenRect.Contains (corner)) {
+				//this.GetComponent<RectTransform> ().anchoredPosition = oldPosition + new Vector3(screenRect.center.magnitude,screenRect.center.magnitude,-10);
+				canMoveCursor = false;
+			}
+		}
+		if (canMoveCursor){
+			this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
+		} else {
+			
+			this.GetComponent<RectTransform> ().anchoredPosition = Vector3.MoveTowards (this.GetComponent<RectTransform> ().anchoredPosition, screenRect.center, 0.5f);
+			canMoveCursor = true;
+
+		}
+
 
 	}
 }
