@@ -591,22 +591,22 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator ComboJab(){
 		isShooting = true;
 		yield return new WaitForSeconds(0.2f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-10f,10f),rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-10f,10f),rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-20f,20f),rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MiniFist"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + Random.Range(-10f,10f),rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());

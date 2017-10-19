@@ -9,7 +9,7 @@ public class MiniFistAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 28f;
+		thisRigid.velocity = transform.forward * 48f;
 
 	}
 	

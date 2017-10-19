@@ -950,7 +950,7 @@ MonoBehaviour:
   parentPoint: {fileID: 0}
   creator: {fileID: 0}
   foundCreator: 0
-  lifeTimer: 0.5
+  lifeTimer: 0.2
   damage: 2
 --- !u!114 &114795080741793464
 MonoBehaviour:

@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e99afc3bc7b614ba992d1a9e8ed000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
+  speed: 10.5
   gravity: 55
   isDying: 0
   canMove: 1
@@ -3521,8 +3521,8 @@ MonoBehaviour:
   oldPosition: {x: 0, y: 0, z: 0}
   rollTimer: 0.07
   rollTimerDef: 0.07
-  rollTimerCool: 0.6
-  rollTimerCoolDef: 0.6
+  rollTimerCool: 0.5
+  rollTimerCoolDef: 0.5
   isRolling: 0
   isRollCooling: 0
   rollDirection: {x: 0, y: 0, z: 0}
