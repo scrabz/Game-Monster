@@ -127,7 +127,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.3
-  damage: 6
+  damage: 10
 --- !u!114 &114912072715062942
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -394,11 +394,6 @@ Prefab:
       propertyPath: m_Name
       value: Tiny(Clone)
       objectReference: {fileID: 0}
-    - target: {fileID: 114689667958583036, guid: 7f538c827b14a7243b6e7ad504eec7fc,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
   m_IsPrefabParent: 0
@@ -2809,6 +2804,16 @@ Prefab:
     - target: {fileID: 1245941108007710, guid: cd1e007829078874e8e85221136a9bf1, type: 2}
       propertyPath: m_TagString
       value: Ability
+      objectReference: {fileID: 0}
+    - target: {fileID: 224516858039283170, guid: cd1e007829078874e8e85221136a9bf1,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359246795840848, guid: cd1e007829078874e8e85221136a9bf1,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd1e007829078874e8e85221136a9bf1, type: 2}

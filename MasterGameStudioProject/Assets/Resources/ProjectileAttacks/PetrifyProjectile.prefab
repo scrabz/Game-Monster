@@ -145,7 +145,7 @@ MonoBehaviour:
   parentPoint: {fileID: 0}
   creator: {fileID: 0}
   foundCreator: 0
-  lifeTimer: 1
+  lifeTimer: 1.5
   damage: 3
 --- !u!114 &114864056321319522
 MonoBehaviour:
@@ -372,7 +372,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
