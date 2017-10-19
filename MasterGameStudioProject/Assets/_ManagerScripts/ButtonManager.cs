@@ -30,6 +30,9 @@ public class ButtonManager : MonoBehaviour {
 
 	}
 
+	public void ExitGame(){
+		Application.Quit ();
+	}
 
 	public void StartVersusMatch(){
 		cursorCanvas.SetActive (true);

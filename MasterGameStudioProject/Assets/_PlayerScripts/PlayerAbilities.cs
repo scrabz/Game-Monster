@@ -293,7 +293,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			knifeThrow.aName = "Knife Throw";
 			knifeThrow.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
-			knifeThrow.aCooldown = 2.5f;
+			knifeThrow.aCooldown = 1.5f;
 			knifeThrow.aPanel = ability2;
 
 			clawTrap.aName = "Claw Trap";

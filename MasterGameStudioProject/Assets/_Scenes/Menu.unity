@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -437,6 +437,14 @@ MonoBehaviour:
   drDecayCard: {fileID: 0}
   tinyCard: {fileID: 0}
   blankCard: {fileID: 0}
+  oldPosition: {x: 0, y: 0, z: 0}
+  screenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  canMoveCursor: 1
 --- !u!114 &118678072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,6 +1490,14 @@ MonoBehaviour:
   drDecayCard: {fileID: 0}
   tinyCard: {fileID: 0}
   blankCard: {fileID: 0}
+  oldPosition: {x: 0, y: 0, z: 0}
+  screenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  canMoveCursor: 1
 --- !u!114 &425565057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,12 +1805,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1070033282}
+      - m_Target: {fileID: 250253020}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4585,11 +4601,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044133987}
---- !u!1 &1070033282 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1574541689563606, guid: 9689d40debb073645a2b18c8c4f89f3e,
-    type: 2}
-  m_PrefabInternal: {fileID: 935491070}
 --- !u!1 &1103542856
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5733,14 @@ MonoBehaviour:
   drDecayCard: {fileID: 0}
   tinyCard: {fileID: 0}
   blankCard: {fileID: 0}
+  oldPosition: {x: 0, y: 0, z: 0}
+  screenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  canMoveCursor: 1
 --- !u!114 &1317479804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7343,6 +7362,14 @@ MonoBehaviour:
   drDecayCard: {fileID: 0}
   tinyCard: {fileID: 0}
   blankCard: {fileID: 0}
+  oldPosition: {x: 0, y: 0, z: 0}
+  screenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  canMoveCursor: 1
 --- !u!114 &1968600758
 MonoBehaviour:
   m_ObjectHideFlags: 0
