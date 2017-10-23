@@ -37,11 +37,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4337879894166522}
   - component: {fileID: 33604159384223724}
-  - component: {fileID: 135517920906444518}
   - component: {fileID: 23626197232903256}
   - component: {fileID: 54720945467735816}
   - component: {fileID: 114452611547604590}
   - component: {fileID: 114487985999992742}
+  - component: {fileID: 135294142992505714}
   m_Layer: 8
   m_Name: KnifeProjectile
   m_TagString: Projectile
@@ -185,7 +185,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 5
-  damage: 4
+  damage: 3
 --- !u!114 &114487985999992742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,9 +200,9 @@ MonoBehaviour:
   thisRigid: {fileID: 0}
   pushBackDir: {x: 0, y: 0, z: 0}
   moving: 1
---- !u!135 &135517920906444518
+--- !u!135 &135294142992505714
 SphereCollider:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119103431770120}

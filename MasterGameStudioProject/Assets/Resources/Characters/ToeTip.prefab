@@ -3512,8 +3512,8 @@ MonoBehaviour:
   oldPosition: {x: 0, y: 0, z: 0}
   rollTimer: 0.07
   rollTimerDef: 0.07
-  rollTimerCool: 0.6
-  rollTimerCoolDef: 0.6
+  rollTimerCool: 0.5
+  rollTimerCoolDef: 0.5
   isRolling: 0
   isRollCooling: 0
   rollDirection: {x: 0, y: 0, z: 0}

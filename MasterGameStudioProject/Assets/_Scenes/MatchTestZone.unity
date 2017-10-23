@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1640,6 +1640,7 @@ MonoBehaviour:
   thePlayer: {fileID: 0}
   size: 0
   zoomFactor: 0
+  cameraEnabled: 0
   requiredSize: 0
 --- !u!1 &468288867
 GameObject:
@@ -3780,6 +3781,12 @@ MonoBehaviour:
   claymondPortrait: {fileID: 0}
   succPortrait: {fileID: 0}
   gorgonPortrait: {fileID: 0}
+  matchActionTimer: 30
+  thingToSpawn: {fileID: 0}
+  ranNum: 0
+  tributeSpawn1: {fileID: 0}
+  tributeSpawn2: {fileID: 0}
+  tributeSpawn3: {fileID: 0}
   spawn1: {fileID: 0}
   spawn2: {fileID: 0}
   p1ActiveCharacter: {fileID: 0}
@@ -3787,8 +3794,10 @@ MonoBehaviour:
   p1ActiveProfile: {fileID: 0}
   p2ActiveProfile: {fileID: 0}
   winnerPanel: {fileID: 0}
+  winnerText: {fileID: 0}
   team1CharactersLeft: 0
   team2CharactersLeft: 0
+  mainCam: {fileID: 0}
 --- !u!4 &1097482440
 Transform:
   m_ObjectHideFlags: 0
@@ -6025,7 +6034,7 @@ Prefab:
     - target: {fileID: 224338518224507582, guid: cd1e007829078874e8e85221136a9bf1,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 306.18
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 114674918779468776, guid: cd1e007829078874e8e85221136a9bf1,
         type: 2}
@@ -6060,6 +6069,16 @@ Prefab:
     - target: {fileID: 1365814228809068, guid: cd1e007829078874e8e85221136a9bf1, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224516858039283170, guid: cd1e007829078874e8e85221136a9bf1,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224359246795840848, guid: cd1e007829078874e8e85221136a9bf1,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd1e007829078874e8e85221136a9bf1, type: 2}
