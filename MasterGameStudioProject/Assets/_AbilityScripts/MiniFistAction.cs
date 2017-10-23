@@ -31,7 +31,7 @@ public class MiniFistAction : MonoBehaviour {
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				collisionObject = col.gameObject;
-				col.gameObject.GetComponent<PlayerState> ().Pushback (0.01f,thisRigid.velocity.normalized);
+				//col.gameObject.GetComponent<PlayerState> ().Pushback (0.01f,thisRigid.velocity.normalized);
 				Destroy (this.gameObject);
 
 			}

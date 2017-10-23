@@ -21,14 +21,14 @@ public class MeleeHitboxActions : MonoBehaviour {
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
 				//Dont let Brogre get hurt by this if he's shielding
-				if (!col.gameObject.GetComponent<PlayerAbilities> ().isShielding && !col.gameObject.GetComponent<PlayerAbilities> ().isShieldPushing) {
+				//if (!col.gameObject.GetComponent<PlayerAbilities> ().doingAbil2 && !col.gameObject.GetComponent<PlayerAbilities> ().doingAbil3 && this.gameObject.name == "Brogre(Clone)") {
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					if (this.gameObject.name != "DashHitbox(Clone)" && this.gameObject.name != "PetrifyHitbox(Clone)") {
 						col.gameObject.GetComponent<PlayerState> ().Pushback (0.025f, pushBackDir);
 					}
 					alreadyHit = col.gameObject;
-				}
+				//}
 				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1f);

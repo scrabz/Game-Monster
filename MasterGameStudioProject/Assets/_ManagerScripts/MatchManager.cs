@@ -14,6 +14,9 @@ public class MatchManager : MonoBehaviour {
 	public float countdownTimer = 4f;
 	public Text countdownText;
 
+	public bool isRoundEnding = false;
+	public float roundOverTimer = 3f;
+
 	public GameObject nextCharacterPanel;
 
 	public GameObject characterSpawn;
@@ -218,6 +221,49 @@ public class MatchManager : MonoBehaviour {
 			}
 		}
 
+		if (isRoundEnding) {
+			roundOverTimer -= Time.deltaTime;
+			if (roundOverTimer <= 0) {
+
+				p1ActiveCharacter = null;
+				p2ActiveCharacter = null;
+				isFighting = false;
+				GameObject[] allPlayersLeft;
+				GameObject[] allAttacksLeft;
+				GameObject[] allAbilitiesLeft;
+				StartCoroutine ("VibrateController", p1Joystick);
+				StartCoroutine ("VibrateController", p2Joystick);
+				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
+
+				foreach (GameObject player in allPlayersLeft) {
+					mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
+					Destroy (player);
+				}
+				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
+
+				foreach (GameObject player in allPlayersLeft) {
+					mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
+					Destroy (player);
+				}
+				allAttacksLeft = GameObject.FindGameObjectsWithTag ("Projectile");
+
+				foreach (GameObject attack in allAttacksLeft) {
+					Destroy (attack);
+				}
+
+				allAbilitiesLeft = GameObject.FindGameObjectsWithTag ("Ability");
+				foreach (GameObject ability in allAbilitiesLeft) {
+					ability.GetComponent<CooldownManager> ().CancelCooldown ();
+				}
+
+
+				isRoundEnding = false;
+				roundOverTimer = 3f;
+				isSelectingCharacter = true;
+				OpenPanels ();
+			}
+
+		}
 
 		if (isCountingDown) {
 			
@@ -500,36 +546,22 @@ public class MatchManager : MonoBehaviour {
 
 	public void RoundOver(int loser){
 
-		p1ActiveCharacter = null;
-		p2ActiveCharacter = null;
-		isFighting = false;
+
 		GameObject[] allPlayersLeft;
-		GameObject[] allAttacksLeft;
-		GameObject[] allAbilitiesLeft;
-		StartCoroutine ("VibrateController", p1Joystick);
-		StartCoroutine ("VibrateController", p2Joystick);
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 		foreach (GameObject player in allPlayersLeft) {
-			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
-			Destroy (player);
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
 
 		foreach (GameObject player in allPlayersLeft) {
-			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
-			Destroy (player);
-		}
-		allAttacksLeft = GameObject.FindGameObjectsWithTag ("Projectile");
-
-		foreach (GameObject attack in allAttacksLeft) {
-			Destroy (attack);
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 
-		allAbilitiesLeft = GameObject.FindGameObjectsWithTag ("Ability");
-		foreach (GameObject ability in allAbilitiesLeft) {
-			ability.GetComponent<CooldownManager> ().CancelCooldown ();
-		}
+
 
 		if (loser == 1) {
 			p1ActiveProfile.color = Color.black;
@@ -557,8 +589,8 @@ public class MatchManager : MonoBehaviour {
 			MasterGameManager.instance.team2Characters.Clear ();
 			StartCoroutine ("MatchComplete");
 		} else {
-			isSelectingCharacter = true;
-			OpenPanels ();
+			isRoundEnding = true;
+
 		}
 			
 	

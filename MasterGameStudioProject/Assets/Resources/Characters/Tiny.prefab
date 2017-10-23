@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 114953406950183750}
   m_Layer: 10
   m_Name: Tiny
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3058,20 +3058,10 @@ MonoBehaviour:
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
   teamNum: 0
-  isCleaving: 0
-  isShieldPushing: 0
-  isShielding: 0
-  isKegTossing: 0
-  isCollecting: 0
-  isShooting: 0
-  isStomping: 0
-  isDaggering: 0
-  isKnifeThrowing: 0
-  isClawTrapping: 0
-  isKnifeSpinning: 0
-  isDashAttacking: 0
-  isPetrifying: 0
-  isBecomingEnraged: 0
+  doingAbil1: 0
+  doingAbil2: 0
+  doingAbil3: 0
+  doingAbil4: 0
   isRaging: 0
   matchManager: {fileID: 0}
   handicap: 0
@@ -3113,11 +3103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e99afc3bc7b614ba992d1a9e8ed000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6.15
   gravity: 55
   isDying: 0
   canMove: 1
   canRotate: 1
+  lockedInPlace: 0
   hMovement: 0
   vMovement: 0
   rollButton: 0
@@ -3138,6 +3129,7 @@ MonoBehaviour:
   staminaBack: {fileID: 0}
   staminaFront: {fileID: 0}
   calcRecoverTime: 0
+  wonMatch: 0
   thisModel: {fileID: 0}
 --- !u!114 &114210561690019144
 MonoBehaviour:
@@ -3292,7 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 35
+  maxHealth: 45
   healthBarFront: {fileID: 0}
   healthBarBack: {fileID: 0}
   panelHealthBarFront: {fileID: 0}
@@ -3518,13 +3510,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823635279612720}
-  m_LocalRotation: {x: -0.7071066, y: -0, z: -0, w: 0.70710695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224670852092774964}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1.25}

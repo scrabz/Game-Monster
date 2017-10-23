@@ -9,7 +9,7 @@ public class BigFistAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 18f;
+		thisRigid.velocity = transform.forward * 30f;
 	}
 
 	// Update is called once per frame

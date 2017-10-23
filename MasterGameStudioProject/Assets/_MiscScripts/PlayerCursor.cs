@@ -60,9 +60,7 @@ public class PlayerCursor : MonoBehaviour {
 			if (InputManager.Devices [0] != null) {
 				cardPanel = GameObject.Find ("P1CardPanel").GetComponent<Image> ();
 				currentJoystick = InputManager.Devices [0];
-			} else {
-				currentJoystick = null;
-			}
+			} 
 		}
 		if (this.gameObject.tag == "Player2") {
 			currentPlayer = 2;
@@ -85,6 +83,9 @@ public class PlayerCursor : MonoBehaviour {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
+
+		//var inputDevice = (InputManager.Devices.Count > currentPlayer) ? InputManager.Devices[currentPlayer] : null;
+
 	}
 	
 	// Update is called once per frame

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44746828, g: 0.49741912, b: 0.5752931, a: 1}
+  m_IndirectSpecularColor: {r: 0.44746822, g: 0.49741864, b: 0.575293, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -393,6 +393,10 @@ Prefab:
     - target: {fileID: 1294460527557532, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
       propertyPath: m_Name
       value: Tiny(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294460527557532, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
@@ -1978,11 +1982,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_TagString
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
@@ -2726,12 +2730,12 @@ Prefab:
     - target: {fileID: 224338518224507582, guid: cd1e007829078874e8e85221136a9bf1,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 71.05
+      value: 71.05005
       objectReference: {fileID: 0}
     - target: {fileID: 224338518224507582, guid: cd1e007829078874e8e85221136a9bf1,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 306.18
+      value: -77.825
       objectReference: {fileID: 0}
     - target: {fileID: 114674918779468776, guid: cd1e007829078874e8e85221136a9bf1,
         type: 2}
@@ -3189,16 +3193,7 @@ Prefab:
       value: ToeTip(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 1356930004023502, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
-      propertyPath: m_TagString
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356930004023502, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114412028554052312, guid: 287a78a41d3b2ff4f9a5151097a7b956,
-        type: 2}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3403,10 +3398,9 @@ Prefab:
       propertyPath: m_Name
       value: Neredy(Clone)
       objectReference: {fileID: 0}
-    - target: {fileID: 114481572331950276, guid: 66ee88ab0201c4b47b74a0dd632e708a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 1589946287061502, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}

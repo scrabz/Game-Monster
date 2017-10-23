@@ -27,13 +27,8 @@ public class PlayerState : MonoBehaviour {
 
 	public Sprite tributeImg;
 	// Use this for initialization
-	void Start () {
-		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
-		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
-		itemImage.enabled = false;
-		origSpeed = this.GetComponent<PlayerMovement> ().speed;
-		matchManager = GameObject.Find ("MatchManager");
-		//TEMP CODE
+
+	void Awake(){
 		if (this.gameObject.tag == "Player1") {
 			teamNum = 1;
 		}
@@ -46,6 +41,17 @@ public class PlayerState : MonoBehaviour {
 		if (this.gameObject.tag == "Player4") {
 			teamNum = 4;
 		}
+	}
+
+
+	void Start () {
+		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
+		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
+		itemImage.enabled = false;
+		origSpeed = this.GetComponent<PlayerMovement> ().speed;
+		matchManager = GameObject.Find ("MatchManager");
+		//TEMP CODE
+
 	}
 	
 	// Update is called once per frame
@@ -74,6 +80,7 @@ public class PlayerState : MonoBehaviour {
 			stunTimer -= Time.deltaTime;
 			if (stunTimer <= 0) {
 				isStunned = false;
+				this.GetComponent<PlayerMovement> ().lockedInPlace = false;
 				this.GetComponent<PlayerMovement> ().speed = origSpeed;
 			}
 
@@ -101,7 +108,7 @@ public class PlayerState : MonoBehaviour {
 	public void InflictStun(float howLong){
 		isStunned = true;
 		stunTimer = howLong;
-		this.GetComponent<PlayerMovement> ().speed = 0;
+		this.GetComponent<PlayerMovement> ().lockedInPlace = true;
 	}
 
 	public void InflictSlowed(float howLong){
@@ -111,10 +118,12 @@ public class PlayerState : MonoBehaviour {
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){
-		isBeingPushed = true;
-		pushTimer = howLong;
-		pushDir = importedDir;
-		this.GetComponent<PlayerMovement> ().speed = 0;
+		if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
+			isBeingPushed = true;
+			pushTimer = howLong;
+			pushDir = importedDir;
+			this.GetComponent<PlayerMovement> ().speed = 0;
+		}
 
 	}
 
