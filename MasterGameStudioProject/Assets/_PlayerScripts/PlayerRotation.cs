@@ -36,6 +36,8 @@ public class PlayerRotation : MonoBehaviour {
 			}
 		}
 
+		//var inputDevice = (InputManager.Devices.Count > this.GetComponent<PlayerState>().teamNum) ? InputManager.Devices[this.GetComponent<PlayerState>().teamNum] : null;
+
 
 	}
 	
@@ -58,7 +60,7 @@ public class PlayerRotation : MonoBehaviour {
 					}
 				}
 			
-				transform.rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.AngleAxis (90f - angle, Vector3.up), 20f * Time.deltaTime);
+				transform.rotation = Quaternion.Lerp (this.transform.rotation, Quaternion.AngleAxis (90f - angle, Vector3.up), 6f * Time.deltaTime);
 
 		
 			}

@@ -21,7 +21,7 @@ public class ShieldAction : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 
 		if (col.gameObject.tag == "Projectile") {
-			if (col.gameObject.GetComponent<AttackAction> ().teamNum != this.GetComponent<AttackAction> ().teamNum) {
+			if (col.gameObject.GetComponent<AttackAction> ().teamNum != this.GetComponent<AttackAction> ().teamNum && col.gameObject.name != "ClawTrap(Clone)") {
 				col.gameObject.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 				col.GetComponent<Rigidbody> ().velocity = -col.GetComponent<Rigidbody> ().velocity;
 			}

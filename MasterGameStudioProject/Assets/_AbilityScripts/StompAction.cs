@@ -11,7 +11,7 @@ public class StompAction : MonoBehaviour {
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
 
-		thisRigid.AddForce (-transform.up * 2700f);
+		thisRigid.AddForce (-transform.up * 4000f);
 	}
 
 	// Update is called once per frame
@@ -21,10 +21,13 @@ public class StompAction : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
-		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid") {
+		if (col.gameObject.tag == "Ground") {
 			//Create some particles
-			thisRigid.AddForce (Vector3.zero,ForceMode.VelocityChange);
-			Destroy (this.gameObject);
+
+			print ("yee");
+			//Destroy (this.gameObject);
+			thisRigid.AddForce (transform.up * 2700f);
+			StartCoroutine("Die");
 
 		}
 
@@ -32,16 +35,20 @@ public class StompAction : MonoBehaviour {
 
 
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
+			thisRigid.AddForce (transform.up * 2700f);
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling && col.gameObject != alreadyHit) {
-
+				StartCoroutine("Die");
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
+				col.gameObject.GetComponent<PlayerState> ().InflictStun (0.5f);
 				alreadyHit = col.gameObject;
 				//Destroy (this.gameObject);
 			}
 		}
 	}
 	public IEnumerator Die(){
-		yield return new WaitForSeconds (2f);
+		this.GetComponent<AttackAction> ().parentPoint = null;
+		thisRigid.isKinematic = true;
+		yield return new WaitForSeconds (0.5f);
 		Destroy (this.gameObject);
 		yield return null;
 	}

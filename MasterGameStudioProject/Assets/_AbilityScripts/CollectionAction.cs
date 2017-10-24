@@ -27,6 +27,7 @@ public class CollectionAction : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			Destroy (this.gameObject);
 		}
 		if (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles.Count >= 4) {
 			createdThing = Instantiate (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles [3], this.transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y + 20, this.transform.eulerAngles.z)) as GameObject;
@@ -51,12 +52,10 @@ public class CollectionAction : MonoBehaviour {
 
 		if (col.gameObject.tag == "Projectile") {
 			if (this.GetComponent<AttackAction> ().teamNum != col.GetComponent<AttackAction> ().teamNum) {
-				this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles.Add (Resources.Load ("ProjectileAttacks/" + col.gameObject.name.Substring (0, col.gameObject.name.Length - 7)) as GameObject);
-				Destroy (col.gameObject);
-				if (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles.Count >= 4) {
-					print ("ded");
-					Destroy (this.gameObject);
+				if (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles.Count < 4) {
+					this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles.Add (Resources.Load ("ProjectileAttacks/" + col.gameObject.name.Substring (0, col.gameObject.name.Length - 7)) as GameObject);
 				}
+				Destroy (col.gameObject);
 
 			}
 
