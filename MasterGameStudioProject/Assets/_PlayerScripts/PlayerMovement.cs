@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isDying = false;
 	public bool canMove = true;
 	public bool canRotate = true;
+	public bool lockedInPlace = false;
 	float dyingTimer = 0.7f;
 
 	public float hMovement;
@@ -46,6 +47,8 @@ public class PlayerMovement : MonoBehaviour {
 	public Image staminaFront;
 	public float calcRecoverTime;
 
+	public bool wonMatch = false;
+
 	public GameObject thisModel;
 
 	void Start() {
@@ -75,6 +78,9 @@ public class PlayerMovement : MonoBehaviour {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
+
+		//var inputDevice = (InputManager.Devices.Count > this.GetComponent<PlayerState>().teamNum) ? InputManager.Devices[this.GetComponent<PlayerState>().teamNum] : null;
+
 		staminaFront = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").Find("StaminaFront").gameObject.GetComponent<Image>();
 		staminaBack = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").gameObject.GetComponent<Image>();
 		staminaBack.enabled = false;
@@ -87,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
 			if (matchManager.GetComponent<MatchManager> ().isCountingDown) {
 				canMove = false;
 			} else {
-				canMove = true;
+				//canMove = true;
 			}
 		}
 
@@ -96,12 +102,12 @@ public class PlayerMovement : MonoBehaviour {
 				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
 					hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
 					vMovement = Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
-					rollButton = currentJoystick.Action1.WasPressed;
+					//rollButton = currentJoystick.Action1.WasPressed;
 				}
 			} else {
 				hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
 				vMovement =  Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
-				rollButton = currentJoystick.Action1.WasPressed;
+				//rollButton = currentJoystick.Action1.WasPressed;
 			}
 		}
 
@@ -114,35 +120,35 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 
-		if (isRolling) {
-			//Temp Code
-			//thisModel.transform.Rotate(0,0,40f * Time.deltaTime);
-			//thisModel.transform.Rotate(Vector3.up * Time.deltaTime,Space.World);
-			controller.Move (rollDirection * Time.deltaTime * (speed * 6f));
-			rollTimer -= Time.deltaTime;
-			if (rollTimer <= 0) {
-				isRolling = false;
-				isRollCooling = true;
-				rollTimer = rollTimerDef;
-				//thisModel.transform.rotation = Quaternion.identity;
-			}
+//		if (isRolling) {
+//			//Temp Code
+//			//thisModel.transform.Rotate(0,0,40f * Time.deltaTime);
+//			//thisModel.transform.Rotate(Vector3.up * Time.deltaTime,Space.World);
+//			controller.Move (rollDirection * Time.deltaTime * (speed * 6f));
+//			rollTimer -= Time.deltaTime;
+//			if (rollTimer <= 0) {
+//				isRolling = false;
+//				isRollCooling = true;
+//				rollTimer = rollTimerDef;
+//				//thisModel.transform.rotation = Quaternion.identity;
+//			}
+//
+//		}
 
-		}
-
-		if (isRollCooling) {
-			calcRecoverTime =  1f - (rollTimerCool / rollTimerCoolDef);
-			staminaBack.enabled = true;
-			staminaFront.enabled = true;
-			staminaFront.transform.localScale = new Vector3 (Mathf.Clamp (calcRecoverTime, 0f, 1f), staminaFront.transform.localScale.y, staminaFront.transform.localScale.z);
-			rollTimerCool -= Time.deltaTime;
-			if (rollTimerCool <= 0) {
-				isRollCooling = false;
-				rollTimerCool = rollTimerCoolDef;
-				staminaBack.enabled = false;
-				staminaFront.enabled = false;
-			}
-
-		}
+//		if (isRollCooling) {
+//			calcRecoverTime =  1f - (rollTimerCool / rollTimerCoolDef);
+//			staminaBack.enabled = true;
+//			staminaFront.enabled = true;
+//			staminaFront.transform.localScale = new Vector3 (Mathf.Clamp (calcRecoverTime, 0f, 1f), staminaFront.transform.localScale.y, staminaFront.transform.localScale.z);
+//			rollTimerCool -= Time.deltaTime;
+//			if (rollTimerCool <= 0) {
+//				isRollCooling = false;
+//				rollTimerCool = rollTimerCoolDef;
+//				staminaBack.enabled = false;
+//				staminaFront.enabled = false;
+//			}
+//
+//		}
 
 
 		if (stunTimer <= 0) {
@@ -161,7 +167,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	
 
-		if (isDying == false && canMove == true) {
+		if (isDying == false && canMove == true && lockedInPlace == false) {
 			
 		
 			//if (controller.isGrounded) {

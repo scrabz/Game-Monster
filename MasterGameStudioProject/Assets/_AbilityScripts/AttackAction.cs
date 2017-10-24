@@ -18,7 +18,12 @@ public class AttackAction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+		if (this.gameObject.name.Contains("GiantHand") && parentPoint != null){
+			//this.transform.position = parentPoint.position;
+			transform.position = new Vector3 (gameObject.GetComponent<AttackAction> ().parentPoint.transform.position.x, transform.position.y, gameObject.GetComponent<AttackAction> ().parentPoint.transform.position.z);
+			transform.eulerAngles = gameObject.GetComponent<AttackAction> ().parentPoint.transform.eulerAngles;
+			//this.transform.rotation = parentPoint.rotation;
+		}
 		if (this.gameObject.name.Contains("Hitbox") && parentPoint != null){
 			//this.transform.position = parentPoint.position;
 			transform.position = new Vector3 (gameObject.GetComponent<AttackAction> ().parentPoint.transform.position.x, gameObject.GetComponent<AttackAction> ().parentPoint.transform.position.y, gameObject.GetComponent<AttackAction> ().parentPoint.transform.position.z);

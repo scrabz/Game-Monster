@@ -166,7 +166,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Basic Attack
-  m_Speed: 1.4
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -215,13 +215,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102712013257536994}
-    m_Position: {x: 204, y: 0, z: 0}
+    m_Position: {x: 264, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102346958458519346}
-    m_Position: {x: 300, y: 72, z: 0}
+    m_Position: {x: 516, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102054652589637836}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 264, y: 132, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102334338578259938}
     m_Position: {x: 305, y: 195, z: 0}
