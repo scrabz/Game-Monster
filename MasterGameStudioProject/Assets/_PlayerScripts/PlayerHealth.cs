@@ -33,6 +33,8 @@ public class PlayerHealth : MonoBehaviour {
 
 
 
+
+
 	void Start () {
 		//matchManagerObject = GameObject.Find ("MatchManager");
 		healthBarActive = true;
@@ -52,8 +54,10 @@ public class PlayerHealth : MonoBehaviour {
 		}
 		if (this.gameObject.tag == "Player3") {
 			healthPanel = GameObject.Find ("P3Panel");
+			playerNum = 3;
 		}
 		if (this.gameObject.tag == "Player4") {
+			playerNum = 4;
 			healthPanel = GameObject.Find ("P4Panel");
 		}
 
@@ -76,10 +80,10 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		if (this.transform.position.y < -50f) {
 			if (matchManagerObject != null) {
-				matchManagerObject.GetComponent<MatchManager> ().RoundOver (playerNum);
+				//matchManagerObject.GetComponent<MatchManager> ().SubtractPlayer (playerNum);
 			}
-			mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
-			Destroy (this.gameObject);
+
+			//Destroy (this.gameObject);
 		}
 
 
@@ -116,33 +120,36 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	public void GetHit(float healthLost){
-
-		//Subtract the Lost Health
-		currentHealth -= healthLost;
-		if (healthLost != 0) {
-			StartCoroutine ("FlashRed");
-			this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
-		}
-
-
-
-		calcHealth = currentHealth / maxHealth;
-		healthText.text = currentHealth.ToString();
-		healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
-		panelHealthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
-		healthBarTimer = 2.5f;
-		healthBarActive = true;
-		healthBarFront.enabled = true;
-		healthBarBack.enabled = true;
-
-		if (currentHealth <= 0f) {
-			StopAllCoroutines ();
-			this.GetComponent<PlayerMovement> ().currentJoystick.StopVibration ();
-			Death ();
-			if (matchManagerObject == null) {
-				SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false) {
+			//Subtract the Lost Health
+			currentHealth -= healthLost;
+			if (healthLost != 0) {
+				StartCoroutine ("FlashRed");
+				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
 			}
 
+
+
+			calcHealth = currentHealth / maxHealth;
+			healthText.text = currentHealth.ToString ();
+			healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
+			panelHealthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
+			healthBarTimer = 2.5f;
+			healthBarActive = true;
+			healthBarFront.enabled = true;
+			healthBarBack.enabled = true;
+
+			if (currentHealth <= 0f) {
+				StopAllCoroutines ();
+				this.GetComponent<PlayerMovement> ().currentJoystick.StopVibration ();
+				Death ();
+				if (matchManagerObject == null) {
+					SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				} else {
+					mainCam.gameObject.GetComponent<DynamicCamera> ().RemovePlayerFromView (this.gameObject);
+				}
+
+			}
 		}
 
 	}
@@ -162,7 +169,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void Death(){
-		
+		this.GetComponent<PlayerState> ().isDying = true;
 		this.transform.Translate (0, -100f, 0);
 
 	}

@@ -26,11 +26,18 @@ public class DynamicCamera : MonoBehaviour
 
 
 	}
+	public void RemovePlayerFromView(GameObject importedChar){
+		allPlayers.Remove (importedChar);
+
+
+	}
+
 	public void RemoveAllPlayersFromView(){
 		allPlayers.Clear ();
 
 
 	}
+
 	void Start(){
 		
 //		allPlayers = new List<GameObject> ();

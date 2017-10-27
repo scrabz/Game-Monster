@@ -87,13 +87,14 @@ public class PlayerMovement : MonoBehaviour {
 		staminaFront.enabled = false;
 	}
 
-	void Update() {
+	void FixedUpdate() {
 
 		if (matchManager != null) {
 			if (matchManager.GetComponent<MatchManager> ().isCountingDown) {
 				canMove = false;
-			} else {
-				//canMove = true;
+			} 
+			if (matchManager.GetComponent<MatchManager> ().isFighting) {
+				canMove = true;
 			}
 		}
 
@@ -151,19 +152,9 @@ public class PlayerMovement : MonoBehaviour {
 //		}
 
 
-		if (stunTimer <= 0) {
-			canMove = true;
-
-		}
 
 
-
-		if (isDying == true) {
-			dyingTimer -= Time.deltaTime;
-			if (dyingTimer <= 0) {
-				Die ();
-			}
-		}
+	
 
 	
 

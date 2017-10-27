@@ -70,6 +70,7 @@
      <Compile Include="Assets\_ManagerScripts\CharacterSelectAction.cs" />
      <Compile Include="Assets\_ManagerScripts\CooldownManager.cs" />
      <Compile Include="Assets\_ManagerScripts\GameManagerLoader.cs" />
+     <Compile Include="Assets\_ManagerScripts\LevelInteractions.cs" />
      <Compile Include="Assets\_ManagerScripts\MasterGameManager.cs" />
      <Compile Include="Assets\_ManagerScripts\MatchManager.cs" />
      <Compile Include="Assets\_MiscScripts\ButtonClick.cs" />
@@ -106,8 +107,6 @@
      <Compile Include="Assets\InControl\Examples\TouchControls\CubeController.cs" />
      <Compile Include="Assets\InControl\Examples\VirtualDevice\VirtualDevice.cs" />
      <Compile Include="Assets\InControl\Examples\VirtualDevice\VirtualDeviceExample.cs" />
-     <Compile Include="Assets\InControl\OuyaEverywhere\OuyaEverywhereDevice.cs" />
-     <Compile Include="Assets\InControl\OuyaEverywhere\OuyaEverywhereDeviceManager.cs" />
      <Compile Include="Assets\InControl\Plugins\iOS\ICadePluginPath.cs" />
      <Compile Include="Assets\InControl\Source\Binding\BindingListenOptions.cs" />
      <Compile Include="Assets\InControl\Source\Binding\BindingSource.cs" />
@@ -597,19 +596,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="KDTree">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
  </Reference>
  <Reference Include="pb_Stl">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Triangle">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
