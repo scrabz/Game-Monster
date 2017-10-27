@@ -2,27 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using InControl;
 
 public class CharacterSelectAction : MonoBehaviour {
 
-	public Image team1Ch1;
-	public Image team1Ch2;
-	public Image team1Ch3;
-	public Image team1Ch4;
+	public Image player1Ch1;
+	public Image player1Ch2;
+	public Image player1Ch3;
+	public Image player1Ch4;
 
-	public Image team2Ch1;
-	public Image team2Ch2;
-	public Image team2Ch3;
-	public Image team2Ch4;
+	public Image player2Ch1;
+	public Image player2Ch2;
+	public Image player2Ch3;
+	public Image player2Ch4;
 
 
-	public Text teamSizeDisplay;
 
-	public int team1CurrentSelection = 1;
-	public int team2CurrentSelection = 1;
+	public Image player3Ch1;
+	public Image player3Ch2;
+	public Image player3Ch3;
+	public Image player3Ch4;
 
-	public int teamSize = 3;
+	public Image player4Ch1;
+	public Image player4Ch2;
+	public Image player4Ch3;
+	public Image player4Ch4;
+
+
+
+	public Text playerSizeDisplay;
+
+	public int player1CurrentSelection = 1;
+	public int player2CurrentSelection = 1;
+	public int player3CurrentSelection = 1;
+	public int player4CurrentSelection = 1;
+
+	public int playerSize = 3;
 
 	public Sprite brogrePortrait;
 	public Sprite skeletonPortrait;
@@ -37,8 +52,10 @@ public class CharacterSelectAction : MonoBehaviour {
 	public Sprite portrait;
 	public Sprite blankPortrait;
 
-	public List<Sprite> team1Characters;
-	public List<Sprite> team2Characters;
+	public List<Sprite> player1Characters;
+	public List<Sprite> player2Characters;
+	public List<Sprite> player3Characters;
+	public List<Sprite> player4Characters;
 
 	public GameObject buttonManagerObject;
 
@@ -46,10 +63,14 @@ public class CharacterSelectAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		teamSize = MasterGameManager.instance.teamSize;
 
-		team1Characters = new List<Sprite>();
-		team2Characters = new List<Sprite>();
+
+
+
+		playerSize = MasterGameManager.instance.teamSize;
+
+		player1Characters = new List<Sprite>();
+		player2Characters = new List<Sprite>();
 
 		brogrePortrait = Resources.Load<Sprite> ("CharacterPortraits/BrogreP");
 		tinyPortrait = Resources.Load<Sprite> ("CharacterPortraits/TinyP");
@@ -62,28 +83,52 @@ public class CharacterSelectAction : MonoBehaviour {
 
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
 
-		teamSizeDisplay = GameObject.Find ("TeamSizeNum").GetComponent<Text> ();
+		playerSizeDisplay = GameObject.Find ("TeamSizeNum").GetComponent<Text> ();
 
-		team1Ch1 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
-		team1Ch2 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
-		team1Ch3 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
-		team1Ch4 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
+		player1Ch1 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
+		player1Ch2 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
+		player1Ch3 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
+		player1Ch4 = GameObject.Find ("P1SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
 
 
-		team2Ch1 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
-		team2Ch2 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
-		team2Ch3 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
-		team2Ch4 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
+		player2Ch1 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
+		player2Ch2 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
+		player2Ch3 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
+		player2Ch4 = GameObject.Find ("P2SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
+
+
+		player3Ch1 = GameObject.Find ("P3SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
+		player3Ch2 = GameObject.Find ("P3SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
+		player3Ch3 = GameObject.Find ("P3SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
+		player3Ch4 = GameObject.Find ("P3SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
+
+
+		player4Ch1 = GameObject.Find ("P4SelectedCharacters").transform.Find ("Ch1").gameObject.GetComponent<Image> ();
+		player4Ch2 = GameObject.Find ("P4SelectedCharacters").transform.Find ("Ch2").gameObject.GetComponent<Image> ();
+		player4Ch3 = GameObject.Find ("P4SelectedCharacters").transform.Find ("Ch3").gameObject.GetComponent<Image> ();
+		player4Ch4 = GameObject.Find ("P4SelectedCharacters").transform.Find ("Ch4").gameObject.GetComponent<Image> ();
+
 		buttonManagerObject = GameObject.Find ("ButtonManager");
 		ChangeTeamSize (0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (InputManager.Devices [2] != null) {
+			if (InputManager.Devices [2].Action1.WasPressed) {
+				buttonManagerObject.GetComponent<ButtonManager> ().EnablePlayer3 ();
+			}
+		}
+
+
+		if (InputManager.Devices [3] != null) {
+			if (InputManager.Devices [3].Action1.WasPressed) {
+				buttonManagerObject.GetComponent<ButtonManager> ().EnablePlayer4 ();
+			}
+		}
 	}
 
-	public void AddCharacter(int whichTeam, string whichCharacter){
+	public void AddCharacter(int whichplayer, string whichCharacter){
 		
 		if (whichCharacter == "Brogre") {
 			portrait = brogrePortrait;
@@ -118,71 +163,115 @@ public class CharacterSelectAction : MonoBehaviour {
 
 		}
 
-		if (whichTeam == 1 && team1CurrentSelection <= teamSize) {
+		if (whichplayer == 1 && player1CurrentSelection <= playerSize) {
 			
 
 
-			switch (team1CurrentSelection) {
+			switch (player1CurrentSelection) {
 			case 1:
-				team1Ch1.sprite = portrait;
+				player1Ch1.sprite = portrait;
 				break;
 			case 2:
-				team1Ch2.sprite = portrait;
+				player1Ch2.sprite = portrait;
 				break;
 			case 3:
-				team1Ch3.sprite = portrait;
+				player1Ch3.sprite = portrait;
 				break;
 			case 4:
-				team1Ch4.sprite = portrait;
+				player1Ch4.sprite = portrait;
 				break;
 
 
 			}
-			team1CurrentSelection += 1;
+			player1CurrentSelection += 1;
 		}
 
 
-		if (whichTeam == 2 && team2CurrentSelection <= teamSize) {
+		if (whichplayer == 2 && player2CurrentSelection <= playerSize) {
 
 
 
-			switch (team2CurrentSelection) {
+			switch (player2CurrentSelection) {
 			case 1:
-				team2Ch1.sprite = portrait;
+				player2Ch1.sprite = portrait;
 				break;
 			case 2:
-				team2Ch2.sprite = portrait;
+				player2Ch2.sprite = portrait;
 				break;
 			case 3:
-				team2Ch3.sprite = portrait;
+				player2Ch3.sprite = portrait;
 				break;
 			case 4:
-				team2Ch4.sprite = portrait;
+				player2Ch4.sprite = portrait;
 				break;
 
 
 			}
-			team2CurrentSelection += 1;
+			player2CurrentSelection += 1;
 		}
 
+		if (whichplayer == 3 && player3CurrentSelection <= playerSize) {
 
+
+
+			switch (player3CurrentSelection) {
+			case 1:
+				player3Ch1.sprite = portrait;
+				break;
+			case 2:
+				player3Ch2.sprite = portrait;
+				break;
+			case 3:
+				player3Ch3.sprite = portrait;
+				break;
+			case 4:
+				player3Ch4.sprite = portrait;
+				break;
+
+
+			}
+			player3CurrentSelection += 1;
+		}
+
+		if (whichplayer == 4 && player4CurrentSelection <= playerSize) {
+
+
+
+			switch (player4CurrentSelection) {
+			case 1:
+				player4Ch1.sprite = portrait;
+				break;
+			case 2:
+				player4Ch2.sprite = portrait;
+				break;
+			case 3:
+				player4Ch3.sprite = portrait;
+				break;
+			case 4:
+				player4Ch4.sprite = portrait;
+				break;
+
+
+			}
+			player4CurrentSelection += 1;
+		}
 	}
-	public void RemoveLastCharacter (int whichTeam){
-		if (whichTeam == 1) {
-			if (team1CurrentSelection > 1) {
-				team1CurrentSelection -= 1;
-				switch (team1CurrentSelection) {
+	public void RemoveLastCharacter (int whichplayer){
+		if (whichplayer == 1) {
+			if (player1CurrentSelection > 1) {
+				player1CurrentSelection -= 1;
+				switch (player1CurrentSelection) {
 				case 1:
-					team1Ch1.sprite = blankPortrait;
+					player1Ch1.sprite = blankPortrait;
 					break;
 				case 2:
-					team1Ch2.sprite = blankPortrait;
+					player1Ch2.sprite = blankPortrait;
 					break;
 				case 3:
-					team1Ch3.sprite = blankPortrait;
+					player1Ch3.sprite = blankPortrait;
 					break;
 				case 4:
-					team1Ch4.sprite = blankPortrait;
+					player1Ch4.sprite = blankPortrait;
 					break;
 
 
@@ -191,21 +280,63 @@ public class CharacterSelectAction : MonoBehaviour {
 		}
 
 
-		if (whichTeam == 2) {
-			if (team2CurrentSelection > 1) {
-				team2CurrentSelection -= 1;
-				switch (team2CurrentSelection) {
+		if (whichplayer == 2) {
+			if (player2CurrentSelection > 1) {
+				player2CurrentSelection -= 1;
+				switch (player2CurrentSelection) {
 				case 1:
-					team2Ch1.sprite = blankPortrait;
+					player2Ch1.sprite = blankPortrait;
 					break;
 				case 2:
-					team2Ch2.sprite = blankPortrait;
+					player2Ch2.sprite = blankPortrait;
 					break;
 				case 3:
-					team2Ch3.sprite = blankPortrait;
+					player2Ch3.sprite = blankPortrait;
 					break;
 				case 4:
-					team2Ch4.sprite = blankPortrait;
+					player2Ch4.sprite = blankPortrait;
+					break;
+
+
+				}
+			}
+		}
+		if (whichplayer == 3) {
+			if (player3CurrentSelection > 1) {
+				player3CurrentSelection -= 1;
+				switch (player3CurrentSelection) {
+				case 1:
+					player3Ch1.sprite = blankPortrait;
+					break;
+				case 2:
+					player3Ch2.sprite = blankPortrait;
+					break;
+				case 3:
+					player3Ch3.sprite = blankPortrait;
+					break;
+				case 4:
+					player3Ch4.sprite = blankPortrait;
+					break;
+
+
+				}
+			}
+		}
+		if (whichplayer == 4) {
+			if (player4CurrentSelection > 1) {
+				player4CurrentSelection -= 1;
+				switch (player4CurrentSelection) {
+				case 1:
+					player4Ch1.sprite = blankPortrait;
+					break;
+				case 2:
+					player4Ch2.sprite = blankPortrait;
+					break;
+				case 3:
+					player4Ch3.sprite = blankPortrait;
+					break;
+				case 4:
+					player4Ch4.sprite = blankPortrait;
 					break;
 
 
@@ -221,156 +352,295 @@ public class CharacterSelectAction : MonoBehaviour {
 	public void ChangeTeamSize(int amount){
 
 
-		teamSize += amount;
-		print (teamSize);
-		if (teamSize <= 0) {
-			teamSize = 1;
+		playerSize += amount;
+		print (playerSize);
+		if (playerSize <= 0) {
+			playerSize = 1;
 		}
-		if (teamSize >= 5) {
-			teamSize = 4;
+		if (playerSize >= 5) {
+			playerSize = 4;
 
 		}
-		if (teamSize == 4) {
-			team1Ch1.enabled = true;
-			team1Ch2.enabled = true;
-			team1Ch3.enabled = true;
-			team1Ch4.enabled = true;
+		if (playerSize == 4) {
+			player1Ch1.enabled = true;
+			player1Ch2.enabled = true;
+			player1Ch3.enabled = true;
+			player1Ch4.enabled = true;
 
-			team2Ch1.enabled = true;
-			team2Ch2.enabled = true;
-			team2Ch3.enabled = true;
-			team2Ch4.enabled = true;
+			player2Ch1.enabled = true;
+			player2Ch2.enabled = true;
+			player2Ch3.enabled = true;
+			player2Ch4.enabled = true;
+
+			player3Ch1.enabled = true;
+			player3Ch2.enabled = true;
+			player3Ch3.enabled = true;
+			player3Ch4.enabled = true;
+
+			player4Ch1.enabled = true;
+			player4Ch2.enabled = true;
+			player4Ch3.enabled = true;
+			player4Ch4.enabled = true;
 		}
-		if (teamSize == 3) {
-			team1Ch1.enabled = true;
-			team1Ch2.enabled = true;
-			team1Ch3.enabled = true;
-			team1Ch4.enabled = false;
-			team1Ch4.sprite = blankPortrait;
+		if (playerSize == 3) {
+			player1Ch1.enabled = true;
+			player1Ch2.enabled = true;
+			player1Ch3.enabled = true;
+			player1Ch4.enabled = false;
+			player1Ch4.sprite = blankPortrait;
 
 
-			team2Ch1.enabled = true;
-			team2Ch2.enabled = true;
-			team2Ch3.enabled = true;
-			team2Ch4.enabled = false;
-			team2Ch4.sprite = blankPortrait;
+			player2Ch1.enabled = true;
+			player2Ch2.enabled = true;
+			player2Ch3.enabled = true;
+			player2Ch4.enabled = false;
+			player2Ch4.sprite = blankPortrait;
+
+			player3Ch1.enabled = true;
+			player3Ch2.enabled = true;
+			player3Ch3.enabled = true;
+			player3Ch4.enabled = false;
+			player3Ch4.sprite = blankPortrait;
+
+			player4Ch1.enabled = true;
+			player4Ch2.enabled = true;
+			player4Ch3.enabled = true;
+			player4Ch4.enabled = false;
+			player4Ch4.sprite = blankPortrait;
+
 		}
-		if (teamSize == 2) {
-			team1Ch1.enabled = true;
-			team1Ch2.enabled = true;
-			team1Ch3.enabled = false;
-			team1Ch4.enabled = false;
-			team1Ch3.sprite = blankPortrait;
-			team1Ch4.sprite = blankPortrait;
+		if (playerSize == 2) {
+			player1Ch1.enabled = true;
+			player1Ch2.enabled = true;
+			player1Ch3.enabled = false;
+			player1Ch4.enabled = false;
+			player1Ch3.sprite = blankPortrait;
+			player1Ch4.sprite = blankPortrait;
 
 
-			team2Ch1.enabled = true;
-			team2Ch2.enabled = true;
-			team2Ch3.enabled = false;
-			team2Ch4.enabled = false;
-			team2Ch3.sprite = blankPortrait;
-			team2Ch4.sprite = blankPortrait;
+			player2Ch1.enabled = true;
+			player2Ch2.enabled = true;
+			player2Ch3.enabled = false;
+			player2Ch4.enabled = false;
+			player2Ch3.sprite = blankPortrait;
+			player2Ch4.sprite = blankPortrait;
+
+			player3Ch1.enabled = true;
+			player3Ch2.enabled = true;
+			player3Ch3.enabled = false;
+			player3Ch4.enabled = false;
+			player3Ch3.sprite = blankPortrait;
+			player3Ch4.sprite = blankPortrait;
+
+
+			player4Ch1.enabled = true;
+			player4Ch2.enabled = true;
+			player4Ch3.enabled = false;
+			player4Ch4.enabled = false;
+			player4Ch3.sprite = blankPortrait;
+			player4Ch4.sprite = blankPortrait;
+
 		}
-		if (teamSize == 1) {
-			team1Ch1.enabled = true;
-			team1Ch2.enabled = false;
-			team1Ch3.enabled = false;
-			team1Ch4.enabled = false;
-			team1Ch2.sprite = blankPortrait;
-			team1Ch3.sprite = blankPortrait;
-			team1Ch4.sprite = blankPortrait;
+		if (playerSize == 1) {
+			player1Ch1.enabled = true;
+			player1Ch2.enabled = false;
+			player1Ch3.enabled = false;
+			player1Ch4.enabled = false;
+			player1Ch2.sprite = blankPortrait;
+			player1Ch3.sprite = blankPortrait;
+			player1Ch4.sprite = blankPortrait;
 
-			team2Ch1.enabled = true;
-			team2Ch2.enabled = false;
-			team2Ch3.enabled = false;
-			team2Ch4.enabled = false;
-			team2Ch2.sprite = blankPortrait;
-			team2Ch3.sprite = blankPortrait;
-			team2Ch4.sprite = blankPortrait;
+			player2Ch1.enabled = true;
+			player2Ch2.enabled = false;
+			player2Ch3.enabled = false;
+			player2Ch4.enabled = false;
+			player2Ch2.sprite = blankPortrait;
+			player2Ch3.sprite = blankPortrait;
+			player2Ch4.sprite = blankPortrait;
+
+
+			player3Ch1.enabled = true;
+			player3Ch2.enabled = false;
+			player3Ch3.enabled = false;
+			player3Ch4.enabled = false;
+			player3Ch2.sprite = blankPortrait;
+			player3Ch3.sprite = blankPortrait;
+			player3Ch4.sprite = blankPortrait;
+
+
+			player4Ch1.enabled = true;
+			player4Ch2.enabled = false;
+			player4Ch3.enabled = false;
+			player4Ch4.enabled = false;
+			player4Ch2.sprite = blankPortrait;
+			player4Ch3.sprite = blankPortrait;
+			player4Ch4.sprite = blankPortrait;
 		}
-		teamSizeDisplay.text = teamSize.ToString ();
+		playerSizeDisplay.text = playerSize.ToString ();
 	}
 
-	public void FinalizeTeams(){
-		if (team1CurrentSelection - 1 >= teamSize && team2CurrentSelection - 1 >= teamSize) {
+	public void FinalizePlayers(){
+		//HERE
+		if (player1CurrentSelection - 1 >= playerSize && player2CurrentSelection - 1 >= playerSize) {
+			if (player3CurrentSelection - 1 >= playerSize || MasterGameManager.instance.p3Enabled == false) {
 
-			MasterGameManager.instance.teamSize = teamSize;
-			team1Characters.Add (team1Ch1.sprite);
-			team1Characters.Add (team1Ch2.sprite);
-			team1Characters.Add (team1Ch3.sprite);
-			team1Characters.Add (team1Ch4.sprite);
+				if (player4CurrentSelection - 1 >= playerSize || MasterGameManager.instance.p4Enabled == false) {
+					MasterGameManager.instance.teamSize = playerSize;
+					player1Characters.Add (player1Ch1.sprite);
+					player1Characters.Add (player1Ch2.sprite);
+					player1Characters.Add (player1Ch3.sprite);
+					player1Characters.Add (player1Ch4.sprite);
 
-			team2Characters.Add (team2Ch1.sprite);
-			team2Characters.Add (team2Ch2.sprite);
-			team2Characters.Add (team2Ch3.sprite);
-			team2Characters.Add (team2Ch4.sprite);
+					player2Characters.Add (player2Ch1.sprite);
+					player2Characters.Add (player2Ch2.sprite);
+					player2Characters.Add (player2Ch3.sprite);
+					player2Characters.Add (player2Ch4.sprite);
 
-			foreach (Sprite chr in team1Characters) {
-				print (chr.name);
-				if (chr.name == "BrogreP") {
-					MasterGameManager.instance.AddCharacter (1, "Brogre");
-				}
-				if (chr.name == "SkeletonP") {
-					MasterGameManager.instance.AddCharacter (1, "Skelly");
-				}
-				if (chr.name == "TinyP") {
-					MasterGameManager.instance.AddCharacter (1, "Tiny");
-				}
-				if (chr.name == "GorgonP") {
-					MasterGameManager.instance.AddCharacter (1, "Neredy");
-				}
-				if (chr.name == "SuccP") {
-					MasterGameManager.instance.AddCharacter (1, "Succ");
-				}
-				if (chr.name == "ClaymondP") {
-					MasterGameManager.instance.AddCharacter (1, "Claymond");
-				}
-				if (chr.name == "GuyP") {
-					MasterGameManager.instance.AddCharacter (1, "Guy");
-				}
-				if (chr.name == "DrDecayP") {
-					MasterGameManager.instance.AddCharacter (1, "DrDecay");
-				}
+					player3Characters.Add (player3Ch1.sprite);
+					player3Characters.Add (player3Ch2.sprite);
+					player3Characters.Add (player3Ch3.sprite);
+					player3Characters.Add (player3Ch4.sprite);
 
-				if (chr.name == "Blank") {
-					Debug.Log ("added null");
-					MasterGameManager.instance.AddCharacter (1, "Empty");
-				}
+					player4Characters.Add (player4Ch1.sprite);
+					player4Characters.Add (player4Ch2.sprite);
+					player4Characters.Add (player4Ch3.sprite);
+					player4Characters.Add (player4Ch4.sprite);
 
 
+					foreach (Sprite chr in player1Characters) {
+						print (chr.name);
+						if (chr.name == "BrogreP") {
+							MasterGameManager.instance.AddCharacter (1, "Brogre");
+						}
+						if (chr.name == "SkeletonP") {
+							MasterGameManager.instance.AddCharacter (1, "Skelly");
+						}
+						if (chr.name == "TinyP") {
+							MasterGameManager.instance.AddCharacter (1, "Tiny");
+						}
+						if (chr.name == "GorgonP") {
+							MasterGameManager.instance.AddCharacter (1, "Neredy");
+						}
+						if (chr.name == "SuccP") {
+							MasterGameManager.instance.AddCharacter (1, "Succ");
+						}
+						if (chr.name == "ClaymondP") {
+							MasterGameManager.instance.AddCharacter (1, "Claymond");
+						}
+						if (chr.name == "GuyP") {
+							MasterGameManager.instance.AddCharacter (1, "Guy");
+						}
+						if (chr.name == "DrDecayP") {
+							MasterGameManager.instance.AddCharacter (1, "DrDecay");
+						}
+
+						if (chr.name == "Blank") {
+							Debug.Log ("added null");
+							MasterGameManager.instance.AddCharacter (1, "Empty");
+						}
+
+
+					}
+
+					foreach (Sprite chr in player2Characters) {
+						print (chr.name);
+						if (chr.name == "BrogreP") {
+							MasterGameManager.instance.AddCharacter (2, "Brogre");
+						}
+						if (chr.name == "SkeletonP") {
+							MasterGameManager.instance.AddCharacter (2, "Skelly");
+						}
+						if (chr.name == "TinyP") {
+							MasterGameManager.instance.AddCharacter (2, "Tiny");
+						}
+						if (chr.name == "GorgonP") {
+							MasterGameManager.instance.AddCharacter (2, "Neredy");
+						}
+						if (chr.name == "SuccP") {
+							MasterGameManager.instance.AddCharacter (2, "Succ");
+						}
+						if (chr.name == "ClaymondP") {
+							MasterGameManager.instance.AddCharacter (2, "Claymond");
+						}
+						if (chr.name == "GuyP") {
+							MasterGameManager.instance.AddCharacter (2, "Guy");
+						}
+						if (chr.name == "DrDecayP") {
+							MasterGameManager.instance.AddCharacter (2, "DrDecay");
+						}
+						if (chr.name == "Blank") {
+							Debug.Log ("added null");
+							MasterGameManager.instance.AddCharacter (2, "Empty");
+						}
+					}
+
+					foreach (Sprite chr in player3Characters) {
+						print (chr.name);
+						if (chr.name == "BrogreP") {
+							MasterGameManager.instance.AddCharacter (3, "Brogre");
+						}
+						if (chr.name == "SkeletonP") {
+							MasterGameManager.instance.AddCharacter (3, "Skelly");
+						}
+						if (chr.name == "TinyP") {
+							MasterGameManager.instance.AddCharacter (3, "Tiny");
+						}
+						if (chr.name == "GorgonP") {
+							MasterGameManager.instance.AddCharacter (3, "Neredy");
+						}
+						if (chr.name == "SuccP") {
+							MasterGameManager.instance.AddCharacter (3, "Succ");
+						}
+						if (chr.name == "ClaymondP") {
+							MasterGameManager.instance.AddCharacter (3, "Claymond");
+						}
+						if (chr.name == "GuyP") {
+							MasterGameManager.instance.AddCharacter (3, "Guy");
+						}
+						if (chr.name == "DrDecayP") {
+							MasterGameManager.instance.AddCharacter (3, "DrDecay");
+						}
+						if (chr.name == "Blank") {
+							Debug.Log ("added null");
+							MasterGameManager.instance.AddCharacter (3, "Empty");
+						}
+					}
+
+					foreach (Sprite chr in player4Characters) {
+						print (chr.name);
+						if (chr.name == "BrogreP") {
+							MasterGameManager.instance.AddCharacter (4, "Brogre");
+						}
+						if (chr.name == "SkeletonP") {
+							MasterGameManager.instance.AddCharacter (4, "Skelly");
+						}
+						if (chr.name == "TinyP") {
+							MasterGameManager.instance.AddCharacter (4, "Tiny");
+						}
+						if (chr.name == "GorgonP") {
+							MasterGameManager.instance.AddCharacter (4, "Neredy");
+						}
+						if (chr.name == "SuccP") {
+							MasterGameManager.instance.AddCharacter (4, "Succ");
+						}
+						if (chr.name == "ClaymondP") {
+							MasterGameManager.instance.AddCharacter (4, "Claymond");
+						}
+						if (chr.name == "GuyP") {
+							MasterGameManager.instance.AddCharacter (4, "Guy");
+						}
+						if (chr.name == "DrDecayP") {
+							MasterGameManager.instance.AddCharacter (4, "DrDecay");
+						}
+						if (chr.name == "Blank") {
+							Debug.Log ("added null");
+							MasterGameManager.instance.AddCharacter (4, "Empty");
+						}
+					}
+				}
 			}
 
-			foreach (Sprite chr in team2Characters) {
-				print (chr.name);
-				if (chr.name == "BrogreP") {
-					MasterGameManager.instance.AddCharacter (2, "Brogre");
-				}
-				if (chr.name == "SkeletonP") {
-					MasterGameManager.instance.AddCharacter (2, "Skelly");
-				}
-				if (chr.name == "TinyP") {
-					MasterGameManager.instance.AddCharacter (2, "Tiny");
-				}
-				if (chr.name == "GorgonP") {
-					MasterGameManager.instance.AddCharacter (2, "Neredy");
-				}
-				if (chr.name == "SuccP") {
-					MasterGameManager.instance.AddCharacter (2, "Succ");
-				}
-				if (chr.name == "ClaymondP") {
-					MasterGameManager.instance.AddCharacter (2, "Claymond");
-				}
-				if (chr.name == "GuyP") {
-					MasterGameManager.instance.AddCharacter (2, "Guy");
-				}
-				if (chr.name == "DrDecayP") {
-					MasterGameManager.instance.AddCharacter (2, "DrDecay");
-				}
-				if (chr.name == "Blank") {
-					Debug.Log ("added null");
-					MasterGameManager.instance.AddCharacter (2, "Empty");
-				}
-			}
+
 			buttonManagerObject.GetComponent<ButtonManager> ().LevelSelect ();
 		}
 	}

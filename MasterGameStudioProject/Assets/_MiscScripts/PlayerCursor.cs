@@ -36,8 +36,6 @@ public class PlayerCursor : MonoBehaviour {
 
 	public Rect screenRect;
 	public bool canMoveCursor = true;
-
-
 	// Use this for initialization
 	void Start () {
 
@@ -59,6 +57,7 @@ public class PlayerCursor : MonoBehaviour {
 			currentPlayer = 1;
 			if (InputManager.Devices [0] != null) {
 				cardPanel = GameObject.Find ("P1CardPanel").GetComponent<Image> ();
+
 				currentJoystick = InputManager.Devices [0];
 			} 
 		}
@@ -83,6 +82,7 @@ public class PlayerCursor : MonoBehaviour {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
+		cardPanel.enabled = false;
 
 		//var inputDevice = (InputManager.Devices.Count > currentPlayer) ? InputManager.Devices[currentPlayer] : null;
 
@@ -110,13 +110,16 @@ public class PlayerCursor : MonoBehaviour {
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 500f)) {
 			if (hit.collider.gameObject.name == "BrogreButton") {
 				cardPanel.sprite = brogreCard;
+				cardPanel.enabled = true;
 			}
 			if (hit.collider.gameObject.name == "SkeletonButton") {
 				cardPanel.sprite = skeletonCard;
+				cardPanel.enabled = true;
 			}
 
 			if (hit.collider.gameObject.name == "TinyButton") {
 				cardPanel.sprite = tinyCard;
+				cardPanel.enabled = true;
 			}
 
 			if (hit.collider.gameObject.name == "SuccButton") {
@@ -133,12 +136,14 @@ public class PlayerCursor : MonoBehaviour {
 
 			if (hit.collider.gameObject.name == "GorgonButton") {
 				cardPanel.sprite = gorgonCard;
+				cardPanel.enabled = true;
 			}
 			if (hit.collider.gameObject.name == "DrDecayButton") {
-				//cardPanel.sprite = drDecayCard;
+				cardPanel.enabled = true;
+				cardPanel.sprite = drDecayCard;
 			}
 		} else {
-			cardPanel.sprite = blankCard;
+			//cardPanel.sprite = blankCard;
 		}
 
 		//Debug.DrawRay (this.transform.position, transform.forward);
@@ -188,17 +193,25 @@ public class PlayerCursor : MonoBehaviour {
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "DrDecay");
 				}
 
-
+				if (hit.collider.gameObject.name == "StartBut") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					buttonManagerObject.GetComponent<ButtonManager> ().StartVersusMatch ();
+				}
 				if (hit.collider.gameObject.name == "VolcanoButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					SceneManager.LoadScene ("VolcanoLevel");
 				}
 
 				if (hit.collider.gameObject.name == "HallOfBrosButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					SceneManager.LoadScene ("HallOfBrosLevel");
 				}
 
 
-
+				if (hit.collider.gameObject.name == "ChangeMode") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					buttonManagerObject.GetComponent<ButtonManager> ().ChangeMode ();
+				}
 
 				if (hit.collider.gameObject.name == "DecreaseTeam") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
@@ -214,7 +227,7 @@ public class PlayerCursor : MonoBehaviour {
 				}
 				if (hit.collider.gameObject.name == "LevelSelectButton") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
-					characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizeTeams();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizePlayers();
 
 				}
 
@@ -223,7 +236,7 @@ public class PlayerCursor : MonoBehaviour {
 
 		}
 		if (startButton) {
-			characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizeTeams ();
+			characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizePlayers ();
 		}
 		if (bButton) {
 			characterSelectObject.GetComponent<CharacterSelectAction> ().RemoveLastCharacter (currentPlayer);

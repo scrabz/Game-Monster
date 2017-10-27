@@ -193,7 +193,7 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			cleave.aName = "Cleave";
 			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA1");
-			cleave.aCooldown = 0.7f;
+			cleave.aCooldown = 1f;
 			cleave.aPanel = ability1;
 
 			shield.aName = "Shield";
@@ -367,7 +367,7 @@ public class PlayerAbilities : MonoBehaviour {
 	}
 
 
-	public void Update () {
+	public void FixedUpdate () {
 
 
 		//Set input based on player tag
@@ -622,7 +622,7 @@ public class PlayerAbilities : MonoBehaviour {
 //		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 //		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 //		//Do an animation here
-		yield return new WaitForSeconds(0.01f);
+		yield return new WaitForSeconds(0.02f);
 		doingAbil1 = false;
 		abilityActive = false;
 		yield return null;
@@ -699,14 +699,21 @@ public class PlayerAbilities : MonoBehaviour {
 	//BROGRE ABILITIES
 	public IEnumerator Cleave(){
 		doingAbil1 = true;
-		yield return new WaitForSeconds(0.4f);
+		for (int i = 0; i < 7; i++) {
+
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 10f * Time.deltaTime);
+
+			yield return new WaitForSeconds(0.01f);
+
+		}
 
 		createdThing = Instantiate (Resources.Load ("MeleeAttacks/CleaveHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		yield return new WaitForSeconds(0.2f);
+
+		yield return new WaitForSeconds(0.5f);
 		doingAbil1 = false;
 		abilityActive = false;
 		yield return null;
@@ -732,34 +739,29 @@ public class PlayerAbilities : MonoBehaviour {
 		doingAbil2 = true;
 		Vector3 startPos = characterModel.transform.position;
 		this.GetComponent<PlayerMovement> ().canMove = false;
-		this.GetComponent<PlayerMovement> ().canRotate = false;
-		for (int i = 0; i < 20; i++) {
-			characterModel.transform.position = new Vector3 (characterModel.transform.position.x, characterModel.transform.position.y + 0.2f, characterModel.transform.position.z);
-			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 28f * Time.deltaTime);
+		//this.GetComponent<PlayerMovement> ().canRotate = false;
+
+		for (int i = 0; i < 45; i++) {
+			
+			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 15f * Time.deltaTime);
 
 			yield return new WaitForSeconds(0.01f);
 
 		}
-		for (int i = 0; i < 20; i++) {
-
-			characterModel.transform.position = new Vector3 (characterModel.transform.position.x, characterModel.transform.position.y - 0.2f, characterModel.transform.position.z);
-			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 28f * Time.deltaTime);
-
-			yield return new WaitForSeconds(0.01f);
-
-		}
-		createdThing = Instantiate (Resources.Load ("MeleeAttacks/ShieldPushHitbox"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+			
+		//characterModel.transform.position = Vector3.Lerp (characterModel.transform.position, new Vector3 (characterModel.transform.position.x, characterModel.transform.position.y - 1 , characterModel.transform.position.z), 0.8f);
+		createdThing = Instantiate (Resources.Load ("MeleeAttacks/ShieldShockwaveHitbox"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-
-		yield return new WaitForSeconds(0.1f);
+		createdThing.GetComponent<AttackAction> ().parentPoint = this.transform;
+		yield return new WaitForSeconds(0.3f);
+		//yield return new WaitForSeconds(0.1f);
 		abilityActive = false;
 		doingAbil2 = false;
 		//characterModel.transform.position = startPos;
 		this.GetComponent<PlayerMovement> ().canMove = true;
-		this.GetComponent<PlayerMovement> ().canRotate = true;
+		//this.GetComponent<PlayerMovement> ().canRotate = true;
 		yield return null;
 	}
 
@@ -798,7 +800,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
 		for (int i = 0; i < 16; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
-				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 28f * Time.deltaTime);
+				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 38f * Time.deltaTime);
 			}
 
 			yield return new WaitForSeconds (0.01f);

@@ -11,26 +11,16 @@ public class MasterGameManager : MonoBehaviour {
 	public AudioSource musicSource;
 	public GameObject matchManagerObject;
 
-	//0 = FFA, 1 = 2v2
-	public int currentMode = 0;
+	public bool ffa = true;
 
 
 
-//	public GameObject team1Ch1;
-//	public GameObject team1Ch2;
-//	public GameObject team1Ch3;
-//	public GameObject team1Ch4;
-//	public GameObject team1Ch5;
-//
-//	public GameObject team2Ch1;
-//	public GameObject team2Ch2;
-//	public GameObject team2Ch3;
-//	public GameObject team2Ch4;
-//	public GameObject team2Ch5;
 
 
-	public List<GameObject> team1Characters;
-	public List<GameObject> team2Characters;
+	public List<GameObject> player1Characters;
+	public List<GameObject> player2Characters;
+	public List<GameObject> player3Characters;
+	public List<GameObject> player4Characters;
 
 	public float musicVolume = 0.2f;
 
@@ -58,11 +48,16 @@ public class MasterGameManager : MonoBehaviour {
 
 	public int teamSize = 4;
 
+	public bool p3Enabled = false;
+	public bool p4Enabled = false;
+
 	//Awake is always called before any Start functions
 	void Awake()
 	{
-		team1Characters = new List<GameObject> ();
-		team2Characters = new List<GameObject> ();
+		player1Characters = new List<GameObject> ();
+		player2Characters = new List<GameObject> ();
+		player3Characters = new List<GameObject> ();
+		player4Characters = new List<GameObject> ();
 
 		if (instance == null) {
 
@@ -93,40 +88,74 @@ public class MasterGameManager : MonoBehaviour {
 
 	}
 
-	public void AddCharacter(int teamNumber, string name){
-		if (teamNumber == 1) {
+	public void AddCharacter(int playerNumber, string name){
+		if (playerNumber == 1) {
 			if (name == "Empty"){
-				team1Characters.Add (Empty);
+				player1Characters.Add (Empty);
 			}
 			if (name == "Brogre"){
-				team1Characters.Add (Brogre);
+				player1Characters.Add (Brogre);
 			}
 			if (name == "Skelly") {
-				team1Characters.Add (Skelly);
+				player1Characters.Add (Skelly);
 			}
 			if (name == "Tiny") {
-				team1Characters.Add (Tiny);
+				player1Characters.Add (Tiny);
 			}
 			if (name == "Neredy") {
-				team1Characters.Add (Neredy);
+				player1Characters.Add (Neredy);
 			}
 		}
 
-		if (teamNumber == 2) {
+		if (playerNumber == 2) {
 			if (name == "Empty"){
-				team2Characters.Add (Empty);
+				player2Characters.Add (Empty);
 			}
 			if (name == "Brogre"){
-				team2Characters.Add (Brogre);
+				player2Characters.Add (Brogre);
 			}
 			if (name == "Skelly") {
-				team2Characters.Add (Skelly);
+				player2Characters.Add (Skelly);
 			}
 			if (name == "Tiny") {
-				team2Characters.Add (Tiny);
+				player2Characters.Add (Tiny);
 			}
 			if (name == "Neredy") {
-				team2Characters.Add (Neredy);
+				player2Characters.Add (Neredy);
+			}
+		}
+		if (playerNumber == 3) {
+			if (name == "Empty"){
+				player3Characters.Add (Empty);
+			}
+			if (name == "Brogre"){
+				player3Characters.Add (Brogre);
+			}
+			if (name == "Skelly") {
+				player3Characters.Add (Skelly);
+			}
+			if (name == "Tiny") {
+				player3Characters.Add (Tiny);
+			}
+			if (name == "Neredy") {
+				player3Characters.Add (Neredy);
+			}
+		}
+		if (playerNumber == 4) {
+			if (name == "Empty"){
+				player4Characters.Add (Empty);
+			}
+			if (name == "Brogre"){
+				player4Characters.Add (Brogre);
+			}
+			if (name == "Skelly") {
+				player4Characters.Add (Skelly);
+			}
+			if (name == "Tiny") {
+				player4Characters.Add (Tiny);
+			}
+			if (name == "Neredy") {
+				player4Characters.Add (Neredy);
 			}
 		}
 
@@ -135,8 +164,10 @@ public class MasterGameManager : MonoBehaviour {
 
 	public void ResetCharacters(){
 
-		team1Characters.Clear ();
-		team2Characters.Clear ();
+		player1Characters.Clear ();
+		player2Characters.Clear ();
+		player3Characters.Clear ();
+		player4Characters.Clear ();
 
 	}
 

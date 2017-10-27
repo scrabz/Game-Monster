@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 114907101820916168}
   m_Layer: 10
   m_Name: Neredy
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3150,12 +3150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1b2ac04f2bace46bc835e7461b1151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamNum: 2
+  teamNum: 1
+  playerNum: 1
   isMoving: 0
   isStunned: 0
   isSlowed: 0
   isBeingPushed: 0
   pushDir: {x: 0, y: 0, z: 0}
+  isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2

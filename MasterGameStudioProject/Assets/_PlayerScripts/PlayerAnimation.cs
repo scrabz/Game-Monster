@@ -15,31 +15,28 @@ public class PlayerAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (this.gameObject.name == "Brogre(Clone)") {
-			if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Basic Attack")) {
-				animator.Play ("Basic Attack", 0, 0f);
+			if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
+				animator.Play ("BasicAttack", 0, 0f);
 			}
-			if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate (Keg Toss)")) {
-				animator.Play ("Ultimate (Keg Toss)", 0, 0f);
+			if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
+				animator.Play ("Ultimate", 0, 0f);
 			}
 			if (this.GetComponent<PlayerAbilities> ().doingAbil3) {
 
 
 				if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
 
-					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Shield Up Walk Cycle")) {
-						animator.Play ("Shield Up Walk Cycle", 0, 0f);
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("ShieldBlock")) {
+						animator.Play ("ShieldBlock", 0, 0f);
 					}
 				} else {
-					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk Cycle Start")) {
-						animator.Play ("Walk Cycle Start", 0, 0f);
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("ShieldStay")) {
+						animator.Play ("ShieldStay", 0, 0f);
 					}
 				}
 			}
-			if (this.GetComponent<PlayerAbilities> ().doingAbil3 && this.GetComponent<PlayerMovement> ().hMovement != 0 && this.GetComponent<PlayerMovement> ().vMovement != 0 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Shield Up Walk Cycle")) {
-				animator.Play ("Shield Up Walk Cycle", 0, 0f);
-			}
-			if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk Cycle Start")) {
-				animator.Play ("Walk Cycle Start", 0, 0f);
+			if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("LeapAttack")) {
+				animator.Play ("LeapAttack", 0, 0f);
 			}
 			if (!this.GetComponent<PlayerAbilities> ().doingAbil1 && !this.GetComponent<PlayerAbilities> ().doingAbil2 && !this.GetComponent<PlayerAbilities> ().doingAbil3 && !this.GetComponent<PlayerAbilities> ().doingAbil4) {
 					if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {

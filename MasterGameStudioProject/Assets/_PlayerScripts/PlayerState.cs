@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerState : MonoBehaviour {
 
 	public int teamNum = 1;
+	public int playerNum = 1;
 	public bool isMoving = false;
 	public bool isStunned = false;
 	public bool isSlowed = false;
@@ -13,11 +14,13 @@ public class PlayerState : MonoBehaviour {
 
 
 	public Vector3 pushDir;
-
+	public bool isDying = false;
 	public float stunTimer = 2f;
 	public float slowTimer = 2f;
 	public float pushTimer = 2f;
 	public float origSpeed;
+
+	float deathTimer = 2f;
 
 	public bool hasTribute = false;
 
@@ -31,15 +34,33 @@ public class PlayerState : MonoBehaviour {
 	void Awake(){
 		if (this.gameObject.tag == "Player1") {
 			teamNum = 1;
+			playerNum = 1;
 		}
 		if (this.gameObject.tag == "Player2") {
-			teamNum = 2;
+			if (MasterGameManager.instance != null) {
+				if (MasterGameManager.instance.ffa == true) {
+					teamNum = 2;
+				} else {
+					teamNum = 1;
+				}
+			}
+			playerNum = 2;
 		}
 		if (this.gameObject.tag == "Player3") {
-			teamNum = 3;
+			if (MasterGameManager.instance.ffa == true) {
+				teamNum = 3;
+			} else {
+				teamNum = 2;
+			}
+			playerNum = 3;
 		}
 		if (this.gameObject.tag == "Player4") {
-			teamNum = 4;
+			if (MasterGameManager.instance.ffa == true) {
+				teamNum = 4;
+			} else {
+				teamNum = 2;
+			}
+			playerNum = 4;
 		}
 	}
 
@@ -50,12 +71,29 @@ public class PlayerState : MonoBehaviour {
 		itemImage.enabled = false;
 		origSpeed = this.GetComponent<PlayerMovement> ().speed;
 		matchManager = GameObject.Find ("MatchManager");
-		//TEMP CODE
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+		if (isDying) {
+			deathTimer -= Time.deltaTime;
+		
+			if (deathTimer <= 0) {
+				if (matchManager != null) {
+					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveCharacterFromView (characterSpawn);
+					matchManager.GetComponent<MatchManager> ().SubtractCharacter (playerNum);
+
+				}
+				Destroy (this.gameObject);
+
+			}
+
+		}
+
 
 		if (isBeingPushed) {
 			pushTimer -= Time.deltaTime;
@@ -101,7 +139,6 @@ public class PlayerState : MonoBehaviour {
 			hasTribute = false;
 			itemImage.enabled = false;
 			print ("thishappened");
-			matchManager.GetComponent<MatchManager> ().StartFireRain();
 		}
 	}
 

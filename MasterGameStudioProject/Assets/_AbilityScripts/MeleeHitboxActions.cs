@@ -29,7 +29,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 					}
 					alreadyHit = col.gameObject;
 				//}
-				if (this.gameObject.name == "ShieldPushHitbox(Clone)") {
+				if (this.gameObject.name == "ShieldShockwaveHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1f);
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
