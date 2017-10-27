@@ -5184,7 +5184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6d9329127a8034d47b4960944c8a4fef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d9329127a8034d47b4960944c8a4fef, type: 3}
@@ -11378,7 +11378,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh40528
+  m_Name: pb_Mesh17096
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
