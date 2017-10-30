@@ -3731,7 +3731,6 @@ MonoBehaviour:
   slowTimer: 2
   pushTimer: 2
   origSpeed: 0
-  deathTimer: 0
   hasTribute: 0
   matchManager: {fileID: 0}
   itemImage: {fileID: 0}

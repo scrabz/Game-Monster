@@ -99,12 +99,12 @@ public class PlayerAnimation : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Tiny(Clone)") {
-			if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
-				animator.Play ("BasicAttack", 0, 0f);
+			if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("DashAttack")) {
+				animator.Play ("DashAttack", 0, 0f);
 
 			}
-			if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("ThrowDaggers")) {
-				animator.Play ("ThrowDaggers", 0, 0f);
+			if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
+				animator.Play ("BasicAttack", 0, 0f);
 			}
 			if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("PlaceTrap")) {
 				animator.Play ("PlaceTrap", 0, 0f);

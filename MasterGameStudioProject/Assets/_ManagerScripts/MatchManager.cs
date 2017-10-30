@@ -160,6 +160,8 @@ public class MatchManager : MonoBehaviour {
 	public int player3CharactersLeft = 0;
 	public int player4CharactersLeft = 0;
 
+	public int team1CharactersLeft;
+	public int team2CharactersLeft;
 
 	public GameObject mainCam;
 
@@ -168,9 +170,6 @@ public class MatchManager : MonoBehaviour {
 
 
 	public int activeTeams = 2;
-
-	public bool team1InGame = true;
-	public bool team2InGame = true;
 
 	void Awake(){
 		if (MasterGameManager.instance.ffa == true) {
@@ -198,6 +197,8 @@ public class MatchManager : MonoBehaviour {
 			howManyPlayers += 1;
 		}
 		playersLeft = howManyPlayers;
+
+	
 
 		p1Portraits = new List<Sprite> ();
 		p2Portraits = new List<Sprite> ();
@@ -303,6 +304,10 @@ public class MatchManager : MonoBehaviour {
 		} else {
 			p4AbilityPanel.SetActive (false);
 		}
+
+
+		team1CharactersLeft = MasterGameManager.instance.teamSize * 2;
+		team2CharactersLeft = MasterGameManager.instance.teamSize * 2;
 
 		spawn1 = GameObject.Find ("Spawn1").transform;
 		spawn2 = GameObject.Find ("Spawn2").transform;
@@ -966,11 +971,30 @@ public class MatchManager : MonoBehaviour {
 			}
 
 		if (MasterGameManager.instance.ffa == false) {
-			if (p1ActiveProfile.color == Color.black && p2ActiveProfile.color == Color.black) {
-				isRoundEnding = true;
+
+			if (loser == 1) {
+				team1CharactersLeft -= 1;
+				if (p2ActiveProfile.color == Color.black) {
+					RoundOver ();
+				}
 			}
-			if (p3ActiveProfile.color == Color.black && p4ActiveProfile.color == Color.black) {
-				isRoundEnding = true;
+			if (loser == 2) {
+				team1CharactersLeft -= 1;
+				if (p1ActiveProfile.color == Color.black) {
+					RoundOver ();
+				}
+			}
+			if (loser == 3) {
+				team2CharactersLeft -= 1;
+				if (p4ActiveProfile.color == Color.black) {
+					RoundOver ();
+				}
+			}
+			if (loser == 4) {
+				team2CharactersLeft -= 1;
+				if (p3ActiveProfile.color == Color.black) {
+					RoundOver ();
+				}
 			}
 
 		}
@@ -978,77 +1002,104 @@ public class MatchManager : MonoBehaviour {
 		if (MasterGameManager.instance.ffa) {	
 			//Find the winner and add the surviving players back
 			if (playersLeft == 1) {
-				mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
-				playersLeft = 0;
-				if (player1CharactersLeft > 0) {
-					playersLeft += 1;
-				}
-				if (player2CharactersLeft > 0) {
-					playersLeft += 1;
-				}
-				if (player3CharactersLeft > 0) {
-					playersLeft += 1;
-				}
-				if (player4CharactersLeft > 0) {
-					playersLeft += 1;
-				}
-			
+				RoundOver ();
 
-				GameObject[] allPlayersLeft;
-				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
-
-				foreach (GameObject player in allPlayersLeft) {
-					player.GetComponent<PlayerMovement> ().wonMatch = true;
-					player.GetComponent<PlayerAbilities> ().abilityActive = true;
-				}
-				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
-
-				foreach (GameObject player in allPlayersLeft) {
-					player.GetComponent<PlayerMovement> ().wonMatch = true;
-					player.GetComponent<PlayerAbilities> ().abilityActive = true;
-				}
-
-				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player3");
-
-				foreach (GameObject player in allPlayersLeft) {
-					player.GetComponent<PlayerMovement> ().wonMatch = true;
-					player.GetComponent<PlayerAbilities> ().abilityActive = true;
-				}
-
-				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player4");
-
-				foreach (GameObject player in allPlayersLeft) {
-					player.GetComponent<PlayerMovement> ().wonMatch = true;
-					player.GetComponent<PlayerAbilities> ().abilityActive = true;
-				}
-					
-					if (playersLeft == 1) {
-						winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", true);
-						if (player1CharactersLeft > 0) {
-							winnerText.text = "Player 1 Wins";
-						}
-						if (player2CharactersLeft > 0) {
-							winnerText.text = "Player 2 Wins";
-						}
-						if (player3CharactersLeft > 0) {
-							winnerText.text = "Player 3 Wins";
-						}
-						if (player4CharactersLeft > 0) {
-							winnerText.text = "Player 4 Wins";
-						}
-						MasterGameManager.instance.player1Characters.Clear ();
-						MasterGameManager.instance.player2Characters.Clear ();
-						MasterGameManager.instance.player3Characters.Clear ();
-						MasterGameManager.instance.player4Characters.Clear ();
-						StartCoroutine ("MatchComplete");
-					} else {
-						isRoundEnding = true;
-
-					}
 			}
 		}
 
 		}
+
+	public void RoundOver(){
+		mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
+		playersLeft = 0;
+		if (player1CharactersLeft > 0) {
+			playersLeft += 1;
+		}
+		if (player2CharactersLeft > 0) {
+			playersLeft += 1;
+		}
+		if (player3CharactersLeft > 0) {
+			playersLeft += 1;
+		}
+		if (player4CharactersLeft > 0) {
+			playersLeft += 1;
+		}
+
+
+		GameObject[] allPlayersLeft;
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
+
+		foreach (GameObject player in allPlayersLeft) {
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
+
+		foreach (GameObject player in allPlayersLeft) {
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player3");
+
+		foreach (GameObject player in allPlayersLeft) {
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player4");
+
+		foreach (GameObject player in allPlayersLeft) {
+			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
+			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+
+		if (playersLeft == 1 || team1CharactersLeft == 0 || team2CharactersLeft == 0) {
+			winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", true);
+			if (MasterGameManager.instance.ffa == true) {
+				if (player1CharactersLeft > 0) {
+					winnerText.text = "Player 1 Wins";
+				}
+				if (player2CharactersLeft > 0) {
+					winnerText.text = "Player 2 Wins";
+				}
+				if (player3CharactersLeft > 0) {
+					winnerText.text = "Player 3 Wins";
+				}
+				if (player4CharactersLeft > 0) {
+					winnerText.text = "Player 4 Wins";
+				}
+			}
+			if (MasterGameManager.instance.ffa == false) {
+				if (team1CharactersLeft <= 0) {
+					winnerText.text = "Team 2 Wins";
+				}
+
+				if (team2CharactersLeft <= 0) {
+					winnerText.text = "Team 1 Wins";
+				}
+		
+			}
+
+
+			MasterGameManager.instance.player1Characters.Clear ();
+			MasterGameManager.instance.player2Characters.Clear ();
+			MasterGameManager.instance.player3Characters.Clear ();
+			MasterGameManager.instance.player4Characters.Clear ();
+			StartCoroutine ("MatchComplete");
+		} else {
+			isRoundEnding = true;
+
+		}
+	}
 
 
 	IEnumerator VibrateController(InputDevice whichDevice){

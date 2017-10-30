@@ -394,7 +394,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 		//If player is pressing an attack and there's no problem with that, attack
 		if (this.gameObject.name == "ToeTip(Clone)") {
-			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (comboJab.aCooldown);
@@ -427,7 +427,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Brogre(Clone)") {
-			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (cleave.aCooldown);
@@ -462,7 +462,7 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 		if (this.gameObject.name == "Neredy(Clone)") {
-			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
 				if (isRaging == false) {
 					if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 						abilityActive = true;
@@ -498,21 +498,21 @@ public class PlayerAbilities : MonoBehaviour {
 					if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 						abilityActive = true;
 						ability1.GetComponent<CooldownManager> ().StartCooldown (0.8f);
-						StopAllCoroutines ();
+						//StopAllCoroutines ();
 						StartCoroutine ("ComboAttack");
 
 					}
 					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
 						abilityActive = true;
 						ability2.GetComponent<CooldownManager> ().StartCooldown (0.5f);
-						StopAllCoroutines ();
+						//StopAllCoroutines ();
 						StartCoroutine ("DashAttack");
 
 					}
 					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
 						abilityActive = true;
 						ability3.GetComponent<CooldownManager> ().StartCooldown (0.8f);
-						StopAllCoroutines ();
+						//StopAllCoroutines ();
 						StartCoroutine ("Petrify");
 
 					}
@@ -529,7 +529,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Tiny(Clone)") {
-			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (knifeThrow.aCooldown);
@@ -565,7 +565,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Claymond(Clone)") {
-			if (this.GetComponent<PlayerMovement> ().isRolling == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (pushPunch.aCooldown);
@@ -798,9 +798,9 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 18; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
-				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 38f * Time.deltaTime);
+				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 30f * Time.deltaTime);
 			}
 
 			yield return new WaitForSeconds (0.01f);
@@ -810,7 +810,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
-		yield return new WaitForSeconds(0.02f);
+		yield return new WaitForSeconds(0.05f);
 		this.GetComponent<BoxCollider> ().enabled = true;
 		this.GetComponent<CharacterController> ().detectCollisions = true;
 		this.GetComponent<Rigidbody> ().detectCollisions = true;
@@ -860,9 +860,9 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 16; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
-				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 45f * Time.deltaTime);
+				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 35f * Time.deltaTime);
 			}
 
 			yield return new WaitForSeconds (0.01f);
@@ -872,7 +872,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(0.05f);
 		this.GetComponent<BoxCollider> ().enabled = true;
 		this.GetComponent<CharacterController> ().detectCollisions = true;
 		this.GetComponent<Rigidbody> ().detectCollisions = true;
@@ -935,7 +935,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		yield return new WaitForSeconds(0.7f);
+		yield return new WaitForSeconds(0.4f);
 		doingAbil3 = false;
 		abilityActive = false;
 		yield return null;
@@ -1070,7 +1070,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator Raging(){
 
 		isRaging = true;
-		yield return new WaitForSeconds(8f);
+		yield return new WaitForSeconds(6f);
 		isRaging = false;
 		rageEffectL.SetActive (false);
 		rageEffectR.SetActive (false);
