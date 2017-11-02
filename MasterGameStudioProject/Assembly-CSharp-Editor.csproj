@@ -294,41 +294,23 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="ProBuilderEditor-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity4.dll</HintPath>
- </Reference>
- <Reference Include="Triangle">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
- </Reference>
- <Reference Include="pb_Stl">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderCore-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
- </Reference>
- <Reference Include="KDTree">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and PArticle Effects/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
- </Reference>
  <Reference Include="ProBuilderCore-Unity4">
  <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
- </Reference>
- <Reference Include="pb_Stl">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
- </Reference>
- <Reference Include="KDTree">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderEditor-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity4">
  <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
  </Reference>
+ <Reference Include="KDTree">
+ <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ </Reference>
+ <Reference Include="pb_Stl">
+ <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ </Reference>
  <Reference Include="Triangle">
  <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderEditor-Unity4">
+ <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/Unity Packages and Particle Effects/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity4.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
