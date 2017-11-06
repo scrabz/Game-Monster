@@ -7,10 +7,11 @@ public class PotionTossAction : MonoBehaviour {
 	public Rigidbody thisRigid;
 	public GameObject createdThing;
 	public GameObject alreadyHit;
+	public float dir = 1f;
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 7f;
+		thisRigid.velocity = transform.forward * 7f * dir;
 		thisRigid.AddForce (transform.up * 10800f);
 	}
 

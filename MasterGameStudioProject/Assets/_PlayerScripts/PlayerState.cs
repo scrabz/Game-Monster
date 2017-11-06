@@ -11,6 +11,7 @@ public class PlayerState : MonoBehaviour {
 	public bool isStunned = false;
 	public bool isSlowed = false;
 	public bool isBeingPushed = false;
+	public bool isPoisoned = false;
 
 
 	public Vector3 pushDir;
@@ -18,6 +19,8 @@ public class PlayerState : MonoBehaviour {
 	public float stunTimer = 2f;
 	public float slowTimer = 2f;
 	public float pushTimer = 2f;
+
+	public float poisonTimer = 2f;
 	public float origSpeed;
 
 	float deathTimer = 2f;
@@ -130,6 +133,19 @@ public class PlayerState : MonoBehaviour {
 
 		}
 
+		if (isPoisoned) {
+			poisonTimer -= Time.deltaTime;
+			this.GetComponent<PlayerHealth> ().GetHit (0.05f);
+			this.GetComponent<CharacterController>().Move(pushDir * 30f * Time.deltaTime);
+			if (poisonTimer <= 0) {
+				isPoisoned = false;
+				this.GetComponent<PlayerHealth> ().healthBarFront.color = this.GetComponent<PlayerHealth> ().defHealthColor;
+				this.GetComponent<PlayerHealth> ().panelHealthBarFront.color = this.GetComponent<PlayerHealth> ().defHealthColor;
+			}
+
+		}
+
+
 
 		if (isSlowed) {
 			slowTimer -= Time.deltaTime;
@@ -171,6 +187,13 @@ public class PlayerState : MonoBehaviour {
 		isStunned = true;
 		stunTimer = howLong;
 		this.GetComponent<PlayerMovement> ().lockedInPlace = true;
+	}
+
+	public void InflictPoison(float howLong){
+		isPoisoned = true;
+		poisonTimer = howLong;
+		this.GetComponent<PlayerHealth> ().healthBarFront.color = new Color (0f, 1f, 0f);
+		this.GetComponent<PlayerHealth> ().panelHealthBarFront.color = new Color (0f, 1f, 0f);
 	}
 
 	public void InflictSlowed(float howLong){

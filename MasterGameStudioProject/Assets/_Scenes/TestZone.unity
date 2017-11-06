@@ -287,7 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
@@ -395,6 +395,16 @@ Prefab:
     - target: {fileID: 1833322092007424, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_Name
       value: DrDecay(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034896403213920, guid: 5fbabd10228873342a0d4bd8e91a299a,
+        type: 2}
+      propertyPath: teamNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034896403213920, guid: 5fbabd10228873342a0d4bd8e91a299a,
+        type: 2}
+      propertyPath: playerNum
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
@@ -1171,11 +1181,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1356930004023502, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1356930004023502, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
       propertyPath: m_TagString
-      value: Player2
+      value: Player1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}

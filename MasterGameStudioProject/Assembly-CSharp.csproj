@@ -61,10 +61,12 @@
      <Compile Include="Assets\_AbilityScripts\KegSplatAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KegTossAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KnifeAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\LeechAction.cs" />
      <Compile Include="Assets\_AbilityScripts\MeleeHitboxActions.cs" />
      <Compile Include="Assets\_AbilityScripts\MiniFistAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PetrifyAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PoisonCloudAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\PotionExplosionAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PotionTossAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ShieldAction.cs" />
      <Compile Include="Assets\_AbilityScripts\StompAction.cs" />

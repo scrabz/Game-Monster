@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public GameObject mainCam;
 
+	public Color defHealthColor;
+
 
 
 
@@ -62,6 +64,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		healthBarFront = gameObject.transform.Find("HealthCanvas").transform.Find("HealthBarBack").Find("HealthBarFront").gameObject.GetComponent<Image>();
+		defHealthColor = healthBarFront.color;
 		healthBarBack = gameObject.transform.Find("HealthCanvas").transform.Find("HealthBarBack").gameObject.GetComponent<Image>();
 		healthText = healthPanel.transform.Find ("HealthNum").GetComponent<Text> ();
 		maxHealthText = healthPanel.transform.Find ("MaxHealthNum").GetComponent<Text> ();
@@ -131,7 +134,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
 			calcHealth = currentHealth / maxHealth;
-			healthText.text = currentHealth.ToString ();
+			healthText.text = currentHealth.ToString ("####");
 			healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
 			panelHealthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (calcHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
 			healthBarTimer = 2.5f;

@@ -328,12 +328,12 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			potionToss.aName = "Duel Daggers";
 			potionToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA1");
-			potionToss.aCooldown = 0.5f;
+			potionToss.aCooldown = 0.7f;
 			potionToss.aPanel = ability1;
 
 			poisonCloud.aName = "Knife Throw";
 			poisonCloud.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
-			poisonCloud.aCooldown = 1f;
+			poisonCloud.aCooldown = 5f;
 			poisonCloud.aPanel = ability2;
 
 			undeadCompanions.aName = "Claw Trap";
@@ -1089,12 +1089,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public IEnumerator PoisonCloud(){
 		doingAbil2 = true;
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(0.25f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/PoisonCloud"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		//Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(0.1f);
 		doingAbil2 = false;
 		abilityActive = false;
 		yield return null;
@@ -1111,6 +1111,7 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/NormalPotion"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-15, 15), rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			createdThing.GetComponent<PotionTossAction> ().dir = -1f;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 
 			yield return new WaitForSeconds (0.1f);
