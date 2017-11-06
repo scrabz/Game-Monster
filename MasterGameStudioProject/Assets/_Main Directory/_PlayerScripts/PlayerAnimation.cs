@@ -138,6 +138,47 @@ public class PlayerAnimation : MonoBehaviour {
 
 		}
 
+		if (this.gameObject.name == "DrDecay(Clone)") {
+			if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("GasCloud")) {
+				animator.Play ("GasCloud", 0, 0f);
+
+			}
+			if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
+				animator.Play ("BasicAttack", 0, 0f);
+			}
+			if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BagOfTricks")) {
+				animator.Play ("BagOfTricks", 0, 0f);
+
+			}
+			if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
+				animator.Play ("Ultimate", 0, 0f);
+
+			}
+
+			if (!this.GetComponent<PlayerAbilities> ().doingAbil1 && !this.GetComponent<PlayerAbilities> ().doingAbil2 && !this.GetComponent<PlayerAbilities> ().doingAbil3 && !this.GetComponent<PlayerAbilities> ().doingAbil4) {
+				if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+					if (Vector3.Dot (this.GetComponent<PlayerMovement> ().moveDirection, rotationPoint.transform.forward) < 0) {
+						if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("WalkBackwards")) {
+							animator.Play ("WalkBackwards", 0, 0f);
+
+						}
+					} else {
+						if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk")) {
+							animator.Play ("Walk", 0, 0f);
+						}
+
+					}
+				} else {
+					if (!this.GetComponent<PlayerMovement> ().isRolling && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+						animator.Play ("Idle", 0, 0f);
+					}
+				}
+
+			}
+
+		}
+
+
 		if (this.gameObject.name == "ToeTip(Clone)") {
 
 			if (this.GetComponent<PlayerMovement> ().wonMatch == true) {

@@ -11,7 +11,7 @@ public class KegTossAction : MonoBehaviour {
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
 		thisRigid.velocity = transform.forward * 8f;
-		thisRigid.AddForce (transform.up * 800f);
+		thisRigid.AddForce (transform.up * 1800f);
 	}
 
 	// Update is called once per frame

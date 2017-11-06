@@ -29,19 +29,42 @@ public class PlayerState : MonoBehaviour {
 	public Image itemImage;
 
 	public Sprite tributeImg;
+
+	public Sprite p1indicator;
+	public Sprite p2indicator;
+	public Sprite p3indicator;
+	public Sprite p4indicator;
 	// Use this for initialization
 
 	void Awake(){
+
+
+	}
+
+
+	void Start () {
+
+
+		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
+		p1indicator = Resources.Load <Sprite> ("ItemImages/P1indicator");
+		p2indicator = Resources.Load <Sprite> ("ItemImages/P2indicator");
+		p3indicator = Resources.Load <Sprite> ("ItemImages/P3indicator");
+		p4indicator = Resources.Load <Sprite> ("ItemImages/P4indicator");
+		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
+
 		if (this.gameObject.tag == "Player1") {
 			teamNum = 1;
 			playerNum = 1;
+			itemImage.sprite = p1indicator;
 		}
 		if (this.gameObject.tag == "Player2") {
 			if (MasterGameManager.instance != null) {
 				if (MasterGameManager.instance.ffa == true) {
 					teamNum = 2;
+					itemImage.sprite = p2indicator;
 				} else {
 					teamNum = 1;
+					itemImage.sprite = p1indicator;
 				}
 			}
 			playerNum = 2;
@@ -49,26 +72,28 @@ public class PlayerState : MonoBehaviour {
 		if (this.gameObject.tag == "Player3") {
 			if (MasterGameManager.instance.ffa == true) {
 				teamNum = 3;
+				itemImage.sprite = p3indicator;
 			} else {
 				teamNum = 2;
+				itemImage.sprite = p2indicator;
 			}
 			playerNum = 3;
 		}
 		if (this.gameObject.tag == "Player4") {
 			if (MasterGameManager.instance.ffa == true) {
 				teamNum = 4;
+				itemImage.sprite = p4indicator;
 			} else {
 				teamNum = 2;
+				itemImage.sprite = p2indicator;
 			}
 			playerNum = 4;
 		}
-	}
 
 
-	void Start () {
 		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
-		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
-		itemImage.enabled = false;
+
+		//itemImage.enabled = false;
 		origSpeed = this.GetComponent<PlayerMovement> ().speed;
 		matchManager = GameObject.Find ("MatchManager");
 
@@ -152,6 +177,11 @@ public class PlayerState : MonoBehaviour {
 		isSlowed = true;
 		slowTimer = howLong;
 		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed / 2f;
+	}
+	public void SpeedBoost(float howLong){
+		isSlowed = true;
+		slowTimer = howLong;
+		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed * 2f;
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){
