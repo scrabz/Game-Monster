@@ -1,22 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_PlayerScripts\PlayerAbilities.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Main Directory\_PlayerScripts\PlayerAbilities.cs">
     <Files>
-      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1086" Column="36" />
-      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="61" Column="5" />
-      <File FileName="Assets\_AbilityScripts\AttackAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerState.cs" Line="69" Column="66" />
-      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="446" Column="27" />
-      <File FileName="Assets\_PlayerScripts\PlayerRotation.cs" Line="11" Column="2" />
-      <File FileName="Assets\_ManagerScripts\ButtonManager.cs" Line="64" Column="58" />
-      <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\CharacterSelectAction.cs" Line="638" Column="8" />
-      <File FileName="Assets\_PlayerScripts\PlayerMovement.cs" Line="50" Column="19" />
-      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="149" Column="95" />
-      <File FileName="Assets\_MiscScripts\DynamicCamera.cs" Line="36" Column="23" />
-      <File FileName="Assets\_AbilityScripts\MeleeHitboxActions.cs" Line="30" Column="34" />
-      <File FileName="Assets\_AbilityScripts\MiniFistAction.cs" Line="23" Column="30" />
+      <File FileName="Assets\_Main Directory\_PlayerScripts\PlayerAbilities.cs" Line="19" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
