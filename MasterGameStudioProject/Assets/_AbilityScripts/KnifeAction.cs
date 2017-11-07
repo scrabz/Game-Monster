@@ -20,6 +20,9 @@ public class KnifeAction : MonoBehaviour {
 			Material mat = transform.Find("ThrowingKnifeModel").GetComponent<Renderer>().material;
 			Color color = mat.color;
 			mat.color = new Color(color.r, color.g, color.b, color.a - (0.5f * Time.deltaTime));
+			if (mat.color.a <= 0) {
+				Destroy (this.gameObject);
+			}
 		}
 			
 

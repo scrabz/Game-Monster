@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4163389994380158}
   - component: {fileID: 198362553003009494}
   - component: {fileID: 199826722618488938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NewSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 23452095062516822}
   - component: {fileID: 114113642388618832}
   - component: {fileID: 114338297021333754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoisonCloud
   m_TagString: Projectile
   m_Icon: {fileID: 0}

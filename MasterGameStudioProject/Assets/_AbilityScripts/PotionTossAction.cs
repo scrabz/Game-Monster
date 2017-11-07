@@ -11,8 +11,8 @@ public class PotionTossAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 7f * dir;
-		thisRigid.AddForce (transform.up * 10800f);
+		thisRigid.velocity = transform.forward * 9f * dir;
+		thisRigid.AddForce (transform.up * 8800f);
 	}
 
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class PotionTossAction : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
 			print ("happened");
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			//Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+			Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 			Destroy (this.gameObject);
 		}
 	}

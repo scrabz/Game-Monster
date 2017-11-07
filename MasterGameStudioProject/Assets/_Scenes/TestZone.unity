@@ -358,7 +358,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4495999076591598, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.24
+      value: 6.25
       objectReference: {fileID: 0}
     - target: {fileID: 4495999076591598, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -389,22 +389,8 @@ Prefab:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1833322092007424, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1833322092007424, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_Name
       value: DrDecay(Clone)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114034896403213920, guid: 5fbabd10228873342a0d4bd8e91a299a,
-        type: 2}
-      propertyPath: teamNum
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114034896403213920, guid: 5fbabd10228873342a0d4bd8e91a299a,
-        type: 2}
-      propertyPath: playerNum
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
