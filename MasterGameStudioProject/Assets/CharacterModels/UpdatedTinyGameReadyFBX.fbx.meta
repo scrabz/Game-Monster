@@ -1,0 +1,1946 @@
+fileFormatVersion: 2
+guid: 555712e0d5a2ca343a567d3241ca7e82
+timeCreated: 1509134536
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Clavicle_L
+    100002: Clavicle_R
+    100004: ClavicleControl_L
+    100006: ClavicleControl_R
+    100008: Elbow_L
+    100010: Elbow_R
+    100012: ElbowControl_L
+    100014: ElbowControl_R
+    100016: Foot_L
+    100018: Foot_R
+    100020: FootControl_L
+    100022: FootControl_R
+    100024: Head
+    100026: HeelControl_L
+    100028: HeelControl_R
+    100030: HipsControl
+    100032: ikHandle_LFoot
+    100034: ikHandle_LThigh
+    100036: ikHandle_RFoot
+    100038: ikHandle_RThigh
+    100040: Index01_L
+    100042: Index01_R
+    100044: Index02_L
+    100046: Index02_R
+    100048: Index03_L
+    100050: Index03_R
+    100052: Knee_L
+    100054: Knee_R
+    100056: KneeControl_L
+    100058: KneeControl_R
+    100060: mainDagger
+    100062: Middle01_L
+    100064: Middle01_R
+    100066: Middle02_L
+    100068: Middle02_R
+    100070: Middle03_L
+    100072: Middle03_R
+    100074: Neck
+    100076: NeckControl
+    100078: Nose
+    100080: offDagger
+    100082: Pinky01_L
+    100084: Pinky01_R
+    100086: Pinky02_L
+    100088: Pinky02_R
+    100090: Pinky03_L
+    100092: Pinky03_R
+    100094: ROOT
+    100096: ROOTNODE
+    100098: Shoulder_L
+    100100: Shoulder_R
+    100102: ShoulderControl_L
+    100104: ShoulderControl_R
+    100106: Spine01
+    100108: Spine01Control
+    100110: Spine02
+    100112: Spine02Control
+    100114: Spine03
+    100116: Spine03Control
+    100118: Thigh_L
+    100120: Thigh_R
+    100122: Thumb01_L
+    100124: Thumb01_R
+    100126: Thumb02_L
+    100128: Thumb02_R
+    100130: Thumb03_L
+    100132: Thumb03_R
+    100134: ThumbRoll_L
+    100136: ThumbRoll_R
+    100138: Tiny
+    100140: TinyBackpack
+    100142: TinyBody
+    100144: TinyEyes
+    100146: //RootNode
+    100148: TinyHorns
+    100150: TinyThrowingKnife
+    100152: Toe_L
+    100154: Toe_R
+    100156: ToeTip_L
+    100158: ToeTip_R
+    100160: transform1
+    100162: transform2
+    100164: transform3
+    100166: transform4
+    100168: Wrist_L
+    100170: Wrist_R
+    100172: WristControl_L
+    100174: WristControl_R
+    100176: WristExtension_L
+    100178: WristExtension_R
+    400000: Clavicle_L
+    400002: Clavicle_R
+    400004: ClavicleControl_L
+    400006: ClavicleControl_R
+    400008: Elbow_L
+    400010: Elbow_R
+    400012: ElbowControl_L
+    400014: ElbowControl_R
+    400016: Foot_L
+    400018: Foot_R
+    400020: FootControl_L
+    400022: FootControl_R
+    400024: Head
+    400026: HeelControl_L
+    400028: HeelControl_R
+    400030: HipsControl
+    400032: ikHandle_LFoot
+    400034: ikHandle_LThigh
+    400036: ikHandle_RFoot
+    400038: ikHandle_RThigh
+    400040: Index01_L
+    400042: Index01_R
+    400044: Index02_L
+    400046: Index02_R
+    400048: Index03_L
+    400050: Index03_R
+    400052: Knee_L
+    400054: Knee_R
+    400056: KneeControl_L
+    400058: KneeControl_R
+    400060: mainDagger
+    400062: Middle01_L
+    400064: Middle01_R
+    400066: Middle02_L
+    400068: Middle02_R
+    400070: Middle03_L
+    400072: Middle03_R
+    400074: Neck
+    400076: NeckControl
+    400078: Nose
+    400080: offDagger
+    400082: Pinky01_L
+    400084: Pinky01_R
+    400086: Pinky02_L
+    400088: Pinky02_R
+    400090: Pinky03_L
+    400092: Pinky03_R
+    400094: ROOT
+    400096: ROOTNODE
+    400098: Shoulder_L
+    400100: Shoulder_R
+    400102: ShoulderControl_L
+    400104: ShoulderControl_R
+    400106: Spine01
+    400108: Spine01Control
+    400110: Spine02
+    400112: Spine02Control
+    400114: Spine03
+    400116: Spine03Control
+    400118: Thigh_L
+    400120: Thigh_R
+    400122: Thumb01_L
+    400124: Thumb01_R
+    400126: Thumb02_L
+    400128: Thumb02_R
+    400130: Thumb03_L
+    400132: Thumb03_R
+    400134: ThumbRoll_L
+    400136: ThumbRoll_R
+    400138: Tiny
+    400140: TinyBackpack
+    400142: TinyBody
+    400144: TinyEyes
+    400146: //RootNode
+    400148: TinyHorns
+    400150: TinyThrowingKnife
+    400152: Toe_L
+    400154: Toe_R
+    400156: ToeTip_L
+    400158: ToeTip_R
+    400160: transform1
+    400162: transform2
+    400164: transform3
+    400166: transform4
+    400168: Wrist_L
+    400170: Wrist_R
+    400172: WristControl_L
+    400174: WristControl_R
+    400176: WristExtension_L
+    400178: WristExtension_R
+    2300000: mainDagger
+    2300002: offDagger
+    2300004: TinyThrowingKnife
+    3300000: mainDagger
+    3300002: offDagger
+    3300004: TinyThrowingKnife
+    4300000: mainDagger
+    4300002: offDagger
+    4300004: Tiny
+    4300006: TinyThrowingKnife
+    7400000: Idle
+    7400002: WalkCycle
+    7400004: BasicAttack
+    7400006: DashAttack
+    7400008: PlaceTrap
+    7400010: Ultimate
+    7400012: VictoryAnimation
+    7400014: DefeatAnimation
+    9500000: //RootNode
+    13700000: Tiny
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 3
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: WalkCycle
+      takeName: Take 001
+      firstFrame: 115
+      lastFrame: 154
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: BasicAttack
+      takeName: Take 001
+      firstFrame: 212
+      lastFrame: 233
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DashAttack
+      takeName: Take 001
+      firstFrame: 388
+      lastFrame: 440
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: PlaceTrap
+      takeName: Take 001
+      firstFrame: 191
+      lastFrame: 209
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ultimate
+      takeName: Take 001
+      firstFrame: 236
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: VictoryAnimation
+      takeName: Take 001
+      firstFrame: 303
+      lastFrame: 347
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DefeatAnimation
+      takeName: Take 001
+      firstFrame: 350
+      lastFrame: 385
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ROOT
+        weight: 1
+      - path: ROOT/FootControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L
+        weight: 1
+      - path: ROOT/FootControl_L/HeelControl_L/ikHandle_LFoot
+        weight: 1
+      - path: ROOT/FootControl_L/ikHandle_LThigh
+        weight: 1
+      - path: ROOT/FootControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R
+        weight: 1
+      - path: ROOT/FootControl_R/HeelControl_R/ikHandle_RFoot
+        weight: 1
+      - path: ROOT/FootControl_R/ikHandle_RThigh
+        weight: 1
+      - path: ROOT/HipsControl
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/WristControl_L/mainDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/WristControl_R/offDagger
+        weight: 1
+      - path: ROOT/HipsControl/Spine01Control/Spine02Control/Spine03Control/NeckControl
+        weight: 1
+      - path: ROOT/KneeControl_L
+        weight: 1
+      - path: ROOT/KneeControl_R
+        weight: 1
+      - path: ROOTNODE
+        weight: 1
+      - path: ROOTNODE/Spine01
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_L/Shoulder_L/Elbow_L/Wrist_L/WristExtension_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Clavicle_R/Shoulder_R/Elbow_R/Wrist_R/WristExtension_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head
+        weight: 1
+      - path: ROOTNODE/Spine01/Spine02/Spine03/Neck/Head/Nose
+        weight: 1
+      - path: ROOTNODE/Thigh_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L
+        weight: 1
+      - path: ROOTNODE/Thigh_L/Knee_L/Foot_L/Toe_L/ToeTip_L
+        weight: 1
+      - path: ROOTNODE/Thigh_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R
+        weight: 1
+      - path: ROOTNODE/Thigh_R/Knee_R/Foot_R/Toe_R/ToeTip_R
+        weight: 1
+      - path: Tiny
+        weight: 1
+      - path: TinyBackpack
+        weight: 1
+      - path: TinyBackpack/transform3
+        weight: 1
+      - path: TinyBody
+        weight: 1
+      - path: TinyBody/transform1
+        weight: 1
+      - path: TinyEyes
+        weight: 1
+      - path: TinyEyes/transform4
+        weight: 1
+      - path: TinyHorns
+        weight: 1
+      - path: TinyHorns/transform2
+        weight: 1
+      - path: TinyThrowingKnife
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 3
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
