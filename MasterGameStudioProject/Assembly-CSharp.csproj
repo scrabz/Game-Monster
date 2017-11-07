@@ -58,6 +58,8 @@
      <Compile Include="Assets\_AbilityScripts\ClayShardAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ClayWallAction.cs" />
      <Compile Include="Assets\_AbilityScripts\CollectionAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\CrowAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\FrogAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KegSplatAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KegTossAction.cs" />
      <Compile Include="Assets\_AbilityScripts\KnifeAction.cs" />

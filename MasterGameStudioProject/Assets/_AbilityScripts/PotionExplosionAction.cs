@@ -35,11 +35,11 @@ public class PotionExplosionAction : MonoBehaviour {
 
 
 
-		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
+		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
 
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
-				col.gameObject.GetComponent<PlayerState> ().InflictPoison (1f);
+				col.gameObject.GetComponent<PlayerState> ().InflictPoison (2f);
 				Destroy (thisRigid);
 //				if (!col.gameObject.GetComponent<PlayerState>().isSlowed){
 //				col.GetComponent<PlayerState> ().InflictSlowed (1f);

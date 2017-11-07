@@ -6,6 +6,8 @@ public class BigFistAction : MonoBehaviour {
 	public Rigidbody thisRigid;
 	public GameObject collisionObject;
 	public Vector3 pushBackDir;
+	float deathTimer = 0.1f;
+	public bool shouldDie = false;
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
@@ -14,6 +16,14 @@ public class BigFistAction : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (shouldDie) {
+			//thisRigid.velocity = -transform.forward * 5f;
+			deathTimer -= Time.deltaTime;
+			if (deathTimer <= 0) {
+				
+				Destroy (this.gameObject);
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider col){
@@ -26,7 +36,8 @@ public class BigFistAction : MonoBehaviour {
 				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				collisionObject = col.gameObject;
 				col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,thisRigid.velocity.normalized);
-				Destroy (this.gameObject);
+				Destroy (thisRigid);
+				shouldDie = true;
 
 			}
 		}

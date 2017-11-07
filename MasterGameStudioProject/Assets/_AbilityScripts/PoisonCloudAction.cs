@@ -45,7 +45,7 @@ public class PoisonCloudAction : MonoBehaviour {
 				//Destroy (this.gameObject);
 			} else {
 				if (!col.gameObject.GetComponent<PlayerState> ().isSlowed) {
-					col.GetComponent<PlayerState> ().SpeedBoost (0.1f);
+					col.GetComponent<PlayerState> ().SpeedBoost (0.05f);
 				}
 
 			}

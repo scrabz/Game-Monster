@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4329090650344484}
   - component: {fileID: 198985189777036092}
   - component: {fileID: 199368787142566186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4131950259607796}
   - component: {fileID: 198040404290226016}
   - component: {fileID: 199606297181054384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4890889673592532}
   - component: {fileID: 198952615725871328}
   - component: {fileID: 199977143349697380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 23115276528356396}
   - component: {fileID: 114855433863402244}
   - component: {fileID: 114448998357734126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PotionExplosion
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4429093044838570}
   - component: {fileID: 198538060296178144}
   - component: {fileID: 199570250939558758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4746034924248258}
   - component: {fileID: 198667105234825478}
   - component: {fileID: 199168934571262514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlasmaExplosionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 2
-  damage: 0.1
+  damage: 2
 --- !u!136 &136828471753242374
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -278,7 +278,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.96
+  m_Radius: 1.4
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940696}

@@ -104,7 +104,7 @@ public class PlayerState : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 
 		if (isDying) {
@@ -135,8 +135,8 @@ public class PlayerState : MonoBehaviour {
 
 		if (isPoisoned) {
 			poisonTimer -= Time.deltaTime;
-			this.GetComponent<PlayerHealth> ().GetHit (0.05f);
-			this.GetComponent<CharacterController>().Move(pushDir * 30f * Time.deltaTime);
+			this.GetComponent<PlayerHealth> ().GetHit (0.08f);
+		
 			if (poisonTimer <= 0) {
 				isPoisoned = false;
 				this.GetComponent<PlayerHealth> ().healthBarFront.color = this.GetComponent<PlayerHealth> ().defHealthColor;
@@ -204,7 +204,7 @@ public class PlayerState : MonoBehaviour {
 	public void SpeedBoost(float howLong){
 		isSlowed = true;
 		slowTimer = howLong;
-		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed * 2f;
+		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed * 1.4f;
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){

@@ -9,7 +9,7 @@ public class LeechAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 35f;
+		thisRigid.velocity = transform.forward * 25f;
 
 	}
 	
@@ -17,9 +17,12 @@ public class LeechAction : MonoBehaviour {
 	void Update () {
 		if (moving == false) {
 			thisRigid.isKinematic = true;
-			Material mat = transform.Find("ThrowingKnifeModel").GetComponent<Renderer>().material;
+			Material mat = transform.Find("LeechModel").GetComponent<Renderer>().material;
 			Color color = mat.color;
 			mat.color = new Color(color.r, color.g, color.b, color.a - (0.5f * Time.deltaTime));
+			if (mat.color.a <= 0) {
+				Destroy (this.gameObject);
+			}
 		}
 			
 
@@ -36,9 +39,10 @@ public class LeechAction : MonoBehaviour {
 		if (moving) {
 			if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 				if (this.GetComponent<AttackAction> ().teamNum != col.gameObject.GetComponent<PlayerState> ().teamNum && !col.gameObject.GetComponent<PlayerMovement> ().isRolling && moving == true) {
-				
+					Destroy (thisRigid);
+					this.transform.SetParent (col.gameObject.transform);
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
-					col.gameObject.GetComponent<PlayerState> ().InflictPoison (1f);
+					col.gameObject.GetComponent<PlayerState> ().InflictPoison (5f);
 //				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
 //				col.GetComponent<CharacterController> ().Move (pushBackDir);
 					moving = false;

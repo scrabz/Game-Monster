@@ -333,12 +333,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 			poisonCloud.aName = "Knife Throw";
 			poisonCloud.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
-			poisonCloud.aCooldown = 5f;
+			poisonCloud.aCooldown = 8f;
 			poisonCloud.aPanel = ability2;
 
 			undeadCompanions.aName = "Claw Trap";
 			undeadCompanions.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA3");
-			undeadCompanions.aCooldown = 8f;
+			undeadCompanions.aCooldown = 1f;
 			undeadCompanions.aPanel = ability3;
 
 			bagOfTricks.aName = "Knife Spin";
@@ -1056,21 +1056,21 @@ public class PlayerAbilities : MonoBehaviour {
 		yield return new WaitForSeconds(0.1f);
 		ranNum = Random.Range (0, 3);
 		if (ranNum == 0) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Leech"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y - 10, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Leech"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		}
 
 		if (ranNum == 1) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Frog"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y - 10, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Frog"), characterPoint2.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		}
 
 		if (ranNum == 2) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Crow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y - 10, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/Crow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
@@ -1107,14 +1107,14 @@ public class PlayerAbilities : MonoBehaviour {
 		doingAbil4 = true;
 		this.GetComponent<PlayerMovement> ().canMove = false;
 		yield return new WaitForSeconds(0.1f);
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/NormalPotion"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-15, 15), rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			createdThing.GetComponent<PotionTossAction> ().dir = -1f;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 
-			yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds (0.2f);
 		}
 
 
