@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 65812635054566810}
   m_Layer: 0
   m_Name: Full Table
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2965,7 +2965,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367553080458274}
-  m_LocalRotation: {x: -0.6039962, y: 0.5554461, z: 0.532154, w: 0.20851916}
+  m_LocalRotation: {x: -0.6039963, y: 0.55544615, z: 0.5321541, w: 0.20851919}
   m_LocalPosition: {x: 0.79631233, y: 4.535498, z: 4.039818}
   m_LocalScale: {x: 1.4206451, y: 1.4206455, z: 0.65057737}
   m_Children: []
@@ -3173,9 +3173,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071830544196456}
-  m_LocalRotation: {x: -0, y: 0.009131118, z: -0, w: 0.99995834}
-  m_LocalPosition: {x: -9.38, y: -0.79, z: -24.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.026176924, z: -0, w: 0.99965733}
+  m_LocalPosition: {x: 18.9, y: -0.43, z: -21.5}
+  m_LocalScale: {x: 1.2298142, y: 1.2298142, z: 1.2298142}
   m_Children:
   - {fileID: 4349819365756444}
   - {fileID: 4713792929550396}
@@ -3322,7 +3322,7 @@ Transform:
   - {fileID: 4898204616716268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 1.046, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3, z: 0}
 --- !u!4 &4253048298779402
 Transform:
   m_ObjectHideFlags: 1
@@ -4155,7 +4155,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316655231229316}
-  m_LocalRotation: {x: -0.6039962, y: 0.5554461, z: 0.532154, w: 0.20851916}
+  m_LocalRotation: {x: -0.6039963, y: 0.55544615, z: 0.5321541, w: 0.20851919}
   m_LocalPosition: {x: -0.43668842, y: 4.541498, z: -3.8311825}
   m_LocalScale: {x: 1.4206454, y: 1.4206455, z: 0.65057737}
   m_Children: []
@@ -10910,8 +10910,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.219467, y: 4.145776, z: 16.017721}
-  m_Center: {x: 0.65269995, y: 3.4023223, z: 0.75476354}
+  m_Size: {x: 9.219467, y: 11.822711, z: 16.017721}
+  m_Center: {x: 0.6527, y: 7.240791, z: 0.7547638}
 --- !u!95 &95009822163839640
 Animator:
   serializedVersion: 3
