@@ -12,37 +12,33 @@ public class PlayerRotation : MonoBehaviour {
 	public GameObject parentObject;
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		parentObject = transform.parent.gameObject;
 
-		if (parentObject.gameObject.tag == "Player1") {
+		if (parentObject.gameObject.CompareTag("Player1")) {
 			if (InputManager.Devices [0] != null) {
 				currentJoystick = InputManager.Devices [0];
 			}
 		}
-		if (parentObject.gameObject.tag == "Player2") {
+		if (parentObject.gameObject.CompareTag("Player2")) {
 			if (InputManager.Devices [1] != null) {
 				currentJoystick = InputManager.Devices [1];
 			}
 		}
-		if (parentObject.gameObject.tag == "Player3") {
+		if (parentObject.gameObject.CompareTag("Player3")) {
 			if (InputManager.Devices [2] != null) {
 				currentJoystick = InputManager.Devices [2];
 			}
 		}
-		if (parentObject.gameObject.tag == "Player4") {
+		if (parentObject.gameObject.CompareTag("Player4")) {
 			if (InputManager.Devices [3] != null) {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
-
-		//var inputDevice = (InputManager.Devices.Count > this.GetComponent<PlayerState>().teamNum) ? InputManager.Devices[this.GetComponent<PlayerState>().teamNum] : null;
-
-
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	private void FixedUpdate () {
 		if (parentObject.GetComponent<PlayerMovement> ().canRotate) {
 			if (currentJoystick != null) {
 				hMovementR = currentJoystick.RightStickX;

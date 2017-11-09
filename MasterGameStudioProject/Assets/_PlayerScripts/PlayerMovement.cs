@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 6.0F;
 	public float gravity = 20.0F;
 
-	public bool isDying = false;
+	public bool isDying;
 	public bool canMove = true;
 	public bool canRotate = true;
-	public bool lockedInPlace = false;
+	public bool lockedInPlace;
 	float dyingTimer = 0.7f;
 
 	public float hMovement;
@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float rollTimerDef = 0.3f;
 	public float rollTimerCool = 1f;
 	public float rollTimerCoolDef = 1f;
-	public bool isRolling = false;
-	public bool isRollCooling = false;
+	public bool isRolling;
+	public bool isRollCooling;
 	public Vector3 rollDirection;
 
 	public Vector3 moveDirection = Vector3.zero;
@@ -78,8 +78,6 @@ public class PlayerMovement : MonoBehaviour {
 				currentJoystick = InputManager.Devices [3];
 			}
 		}
-
-		//var inputDevice = (InputManager.Devices.Count > this.GetComponent<PlayerState>().teamNum) ? InputManager.Devices[this.GetComponent<PlayerState>().teamNum] : null;
 
 		staminaFront = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").Find("StaminaFront").gameObject.GetComponent<Image>();
 		staminaBack = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").gameObject.GetComponent<Image>();

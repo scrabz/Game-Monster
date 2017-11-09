@@ -204,20 +204,11 @@ public class MatchManager : MonoBehaviour {
 		p2Portraits = new List<Sprite> ();
 		p3Portraits = new List<Sprite> ();
 		p4Portraits = new List<Sprite> ();
-
-		if (InputManager.Devices [0] != null) {
-			p1Joystick = InputManager.Devices [0];
-		}
-		if (InputManager.Devices [1] != null) {
-			p2Joystick = InputManager.Devices [1];
-		}
-
-		if (InputManager.Devices [2] != null) {
-			p3Joystick = InputManager.Devices [2];
-		}
-		if (InputManager.Devices [3] != null) {
-			p4Joystick = InputManager.Devices [3];
-		}
+		
+		p1Joystick = InputManager.Devices [0];
+		p2Joystick = InputManager.Devices[1];
+		p3Joystick = InputManager.Devices [2];
+		p4Joystick = InputManager.Devices [3];
 
 
 		winnerPanel = GameObject.Find ("WinnerPanel");
@@ -351,11 +342,6 @@ public class MatchManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
-
-
-
 		if (isRoundEnding) {
 			roundOverTimer -= Time.deltaTime;
 			if (roundOverTimer <= 0) {
@@ -375,26 +361,22 @@ public class MatchManager : MonoBehaviour {
 				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 				foreach (GameObject player in allPlayersLeft) {
-					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 					Destroy (player);
 				}
 				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
 
 				foreach (GameObject player in allPlayersLeft) {
-					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 					Destroy (player);
 				}
 
 				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player3");
 
 				foreach (GameObject player in allPlayersLeft) {
-					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 					Destroy (player);
 				}
 				allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player4");
 
 				foreach (GameObject player in allPlayersLeft) {
-					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveAllPlayersFromView ();
 					Destroy (player);
 				}
 

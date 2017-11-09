@@ -60,16 +60,10 @@ public class MasterGameManager : MonoBehaviour {
 		player4Characters = new List<GameObject> ();
 
 		if (instance == null) {
-
-			//if not, set instance to this
 			instance = this;
 		}
-
-		//If instance already exists and it's not this:
-		//				else if (instance != this)
-		//
-		//					//Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-		//					Destroy(gameObject);    
+		else if (instance != this)
+			Destroy(gameObject);
 
 
 		DontDestroyOnLoad(gameObject);
@@ -82,10 +76,6 @@ public class MasterGameManager : MonoBehaviour {
 		Skelly = Resources.Load("Characters/ToeTip") as GameObject;
 		Tiny = Resources.Load("Characters/Tiny") as GameObject;
 		Neredy = Resources.Load("Characters/Neredy") as GameObject;
-
-	}
-	void Update(){
-
 	}
 
 	public void AddCharacter(int playerNumber, string name){
