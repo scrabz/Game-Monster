@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 using InControl;
 
 public class PlayerAbilities : MonoBehaviour {
@@ -60,6 +61,12 @@ public class PlayerAbilities : MonoBehaviour {
 	CharacterAbility clayWall;
 	CharacterAbility shockwave;
 
+
+	CharacterAbility basicArrow;
+	CharacterAbility napalmStrike;
+	CharacterAbility arrowArsenal;
+	CharacterAbility trueForm;
+
 	CharacterAbility comboAttack;
 	CharacterAbility dashAttack;
 	CharacterAbility petrify;
@@ -92,9 +99,9 @@ public class PlayerAbilities : MonoBehaviour {
 	public GameObject matchManager;
 
 	public bool handicap = false;
-
+	public GameObject cam;
 	void Start () {
-
+		cam = GameObject.Find ("Main Camera");
 		teamNum = this.GetComponent<PlayerState> ().teamNum;
 		matchManager = GameObject.Find ("MatchManager");
 		characterModel = transform.Find ("RotationPoint").Find ("Model").gameObject;
@@ -333,7 +340,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			poisonCloud.aName = "Knife Throw";
 			poisonCloud.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
-			poisonCloud.aCooldown = 8f;
+			poisonCloud.aCooldown = 2.5f;
 			poisonCloud.aPanel = ability2;
 
 			undeadCompanions.aName = "Claw Trap";
@@ -396,7 +403,47 @@ public class PlayerAbilities : MonoBehaviour {
 			//			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
 
 		}
+		if (this.gameObject.name == "Guy(Clone)") {
 
+			basicArrow = new CharacterAbility ();
+			napalmStrike = new CharacterAbility ();
+			arrowArsenal = new CharacterAbility ();
+			trueForm = new CharacterAbility ();
+
+			//Find the Ability panels
+			ability1 = abilityPanel.transform.Find ("Ability1").gameObject;
+			ability2 = abilityPanel.transform.Find ("Ability2").gameObject;
+			ability3 = abilityPanel.transform.Find ("Ability3").gameObject;
+			ability4 = abilityPanel.transform.Find ("Ability4").gameObject;
+
+			//Set the properties of every ability
+			basicArrow.aName = "Push Punch";
+			//pushPunch.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			basicArrow.aCooldown = 0.8f;
+			basicArrow.aPanel = ability1;
+
+			napalmStrike.aName = "C";
+			//clayShards.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			napalmStrike.aCooldown = 4f;
+			napalmStrike.aPanel = ability2;
+
+			arrowArsenal.aName = "Clay Wall";
+			//clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			arrowArsenal.aCooldown = 5f;
+			arrowArsenal.aPanel = ability3;
+
+			trueForm.aName = "Shockwave";
+			//shockwave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			trueForm.aCooldown = 25f;
+			trueForm.aPanel = ability4;
+
+			//Change the icons to match the ability
+			//			ability1.GetComponent<Image> ().sprite = comboJab.aIcon;
+			//			ability2.GetComponent<Image> ().sprite = megaFist.aIcon;
+			//			ability3.GetComponent<Image> ().sprite = collection.aIcon;
+			//			ability4.GetComponent<Image> ().sprite = stomp.aIcon;
+
+		}
 
 
 
@@ -421,7 +468,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		//Set input based on player tag
-		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove && !this.GetComponent<PlayerMovement>().wonMatch && !this.GetComponent<PlayerState>().isStunned && !this.GetComponent<PlayerState>().isBeingPushed) {
+		if (currentJoystick != null && this.GetComponent<PlayerMovement>().canMove && !this.GetComponent<PlayerMovement>().matchOver && !this.GetComponent<PlayerState>().isStunned && !this.GetComponent<PlayerState>().isBeingPushed) {
 			if (matchManager != null) {
 				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
 					abilityButton1 = currentJoystick.RightTrigger.IsPressed;
@@ -444,7 +491,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 		//If player is pressing an attack and there's no problem with that, attack
 		if (this.gameObject.name == "ToeTip(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (comboJab.aCooldown);
@@ -477,7 +524,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Brogre(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (cleave.aCooldown);
@@ -512,7 +559,7 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 		if (this.gameObject.name == "Neredy(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (isRaging == false) {
 					if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 						abilityActive = true;
@@ -579,7 +626,7 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "Tiny(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (knifeThrow.aCooldown);
@@ -616,7 +663,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		if (this.gameObject.name == "DrDecay(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (potionToss.aCooldown);
@@ -653,7 +700,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 		if (this.gameObject.name == "Claymond(Clone)") {
-			if (this.GetComponent<PlayerMovement>().wonMatch == false && abilityActive == false) {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
 					ability1.GetComponent<CooldownManager> ().StartCooldown (pushPunch.aCooldown);
@@ -684,8 +731,68 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 
+		if (this.gameObject.name == "Guy(Clone)") {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
+				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability1.GetComponent<CooldownManager> ().StartCooldown (basicArrow.aCooldown);
+					StartCoroutine ("BasicArrow");
+
+				}
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability2.GetComponent<CooldownManager> ().StartCooldown (napalmStrike.aCooldown);
+					StartCoroutine("NapalmStrike");
+
+				}
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability3.GetComponent<CooldownManager> ().StartCooldown (arrowArsenal.aCooldown);
+					StartCoroutine("ArrowArsenal");
+
+				}
+
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (trueForm.aCooldown);
+					StartCoroutine("TrueForm");
+
+				}
+
+
+			}
+		}
+
+
+
 
 	}
+	public IEnumerator TrueForm(){
+		characterModel.GetComponent<Renderer> ().enabled = false;
+		this.GetComponent<PlayerMovement> ().canRotate = false;
+		createdThing = Instantiate (Resources.Load ("Blackout"),cam.transform) as GameObject;
+		this.GetComponent<PlayerState> ().itemImage.enabled = false;
+		cam.GetComponent<Grayscale> ().enabled = true;
+		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ShadowBeastHitbox"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint2;
+		//Do an animation here
+		yield return new WaitForSeconds(5f);
+		createdThing = Instantiate (Resources.Load ("Blackout"),cam.transform) as GameObject;
+		characterModel.GetComponent<Renderer> ().enabled = true;
+		cam.GetComponent<Grayscale> ().enabled = false;
+		this.GetComponent<PlayerMovement> ().canRotate = true;
+		this.GetComponent<PlayerState> ().itemImage.enabled = true;
+		abilityActive = false;
+		doingAbil4 = false;
+		yield return null;
+	}
+	public IEnumerator Shockwave(){
+		yield return null;
+	}
+
 
 	public IEnumerator ComboJab(){
 		doingAbil1 = true;
@@ -710,7 +817,7 @@ public class PlayerAbilities : MonoBehaviour {
 //		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 //		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 //		//Do an animation here
-		yield return new WaitForSeconds(0.02f);
+		yield return new WaitForSeconds(0.1f);
 		doingAbil1 = false;
 		abilityActive = false;
 		yield return null;
@@ -829,7 +936,7 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<PlayerMovement> ().canMove = false;
 		//this.GetComponent<PlayerMovement> ().canRotate = false;
 
-		for (int i = 0; i < 45; i++) {
+		for (int i = 0; i < 38; i++) {
 			
 			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 15f * Time.deltaTime);
 
@@ -890,7 +997,6 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
-	//TINY ABILITIES
 	public IEnumerator QuickSlash(){
 		doingAbil2 = true;
 		this.GetComponent<PlayerMovement> ().canMove = false;
@@ -966,7 +1072,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-		for (int i = 0; i < 16; i++) {
+		for (int i = 0; i < 18; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
 				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 35f * Time.deltaTime);
 			}
@@ -1089,12 +1195,19 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public IEnumerator PoisonCloud(){
 		doingAbil2 = true;
-		yield return new WaitForSeconds(0.25f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/PoisonCloud"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
-		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		this.GetComponent<PlayerMovement> ().canMove = false;
+		yield return new WaitForSeconds(0.30f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/SmokeCloud"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/SmokeCloud"), transform.position + (rotationPoint.transform.forward * 10f), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		yield return new WaitForSeconds(0.05f);
+		this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 10f);
+
+		//createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		//createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		//Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		yield return new WaitForSeconds(0.1f);
+		//yield return new WaitForSeconds(0.1f);
+		this.GetComponent<PlayerMovement> ().canMove = true;
 		doingAbil2 = false;
 		abilityActive = false;
 		yield return null;
@@ -1221,7 +1334,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator BasicArrow(){
 		doingAbil1 = true;
 		yield return new WaitForSeconds(0.1f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BasicArrow"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 65,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BasicArrow"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -1234,6 +1347,8 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 	}
+
+
 
 	public IEnumerator BecomeEnraged(){
 		doingAbil4 = true;

@@ -196,6 +196,10 @@ public class PlayerCursor : MonoBehaviour {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "DrDecay");
 				}
+				if (hit.collider.gameObject.name == "WynkButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					characterSelectObject.GetComponent<CharacterSelectAction> ().AddCharacter (currentPlayer, "Wynk");
+				}
 
 				if (hit.collider.gameObject.name == "StartBut") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();

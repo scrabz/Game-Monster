@@ -16,7 +16,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Solid") {
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 		}
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4"){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
@@ -33,7 +33,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1f);
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
-					Destroy (this.gameObject);
+					this.GetComponent<Rigidbody> ().isKinematic = true;
 				}
 
 				if (this.gameObject.name == "PetrifyHitbox(Clone)") {

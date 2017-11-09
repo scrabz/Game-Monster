@@ -99,6 +99,8 @@ public class PlayerHealth : MonoBehaviour {
 			}
 		}
 
+	
+
 
 		if (invincible) {
 			invincibleTimer -= Time.deltaTime;
@@ -123,7 +125,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	public void GetHit(float healthLost){
-		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false) {
+		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false) {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
 			if (healthLost != 0) {
@@ -173,8 +175,19 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void Death(){
+		StopAllCoroutines ();
+		this.GetComponent<PlayerMovement> ().matchOver = true;
 		this.GetComponent<PlayerState> ().isDying = true;
-		this.transform.Translate (0, -100f, 0);
+
+		if (matchManagerObject != null) {
+			//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveCharacterFromView (characterSpawn);
+			foreach(Renderer variableName in GetComponentsInChildren<Renderer>()){
+				variableName.material.color = Color.white;
+			}
+			matchManagerObject.GetComponent<MatchManager> ().SubtractCharacter (this.GetComponent<PlayerState>().playerNum);
+
+		}
+		//this.transform.Translate (0, -100f, 0);
 
 	}
 }
