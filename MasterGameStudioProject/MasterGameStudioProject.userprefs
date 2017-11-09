@@ -1,13 +1,31 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_PlayerScripts\PlayerAbilities.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_AbilityScripts\BigFistAction.cs">
     <Files>
-      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="715" Column="35" />
-      <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="207" Column="6" />
-      <File FileName="Assets\_ManagerScripts\CharacterSelectAction.cs" Line="169" Column="4" />
-      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="44" Column="27" />
-      <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="44" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="136" Column="94" />
+      <File FileName="Assets\_ManagerScripts\MasterGameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\AttackAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerState.cs" Line="139" Column="3" />
+      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="111" Column="5" />
+      <File FileName="Assets\_PlayerScripts\PlayerRotation.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\ButtonManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\CharacterSelectAction.cs" Line="195" Column="11" />
+      <File FileName="Assets\_PlayerScripts\PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MiscScripts\DynamicCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\MeleeHitboxActions.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\PotionTossAction.cs" Line="31" Column="30" />
+      <File FileName="Assets\_AbilityScripts\KegTossAction.cs" Line="26" Column="1" />
+      <File FileName="Assets\_AbilityScripts\PoisonCloudAction.cs" Line="48" Column="55" />
+      <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="69" Column="2" />
+      <File FileName="Assets\_AbilityScripts\PotionExplosionAction.cs" Line="42" Column="68" />
+      <File FileName="Assets\_AbilityScripts\LeechAction.cs" Line="24" Column="31" />
+      <File FileName="Assets\_AbilityScripts\CrowAction.cs" Line="19" Column="31" />
+      <File FileName="Assets\_AbilityScripts\FrogAction.cs" Line="66" Column="31" />
+      <File FileName="Assets\_AbilityScripts\KnifeAction.cs" Line="23" Column="27" />
+      <File FileName="Assets\_AbilityScripts\BigFistAction.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

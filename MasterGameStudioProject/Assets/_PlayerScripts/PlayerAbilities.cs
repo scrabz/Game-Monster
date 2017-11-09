@@ -15,8 +15,6 @@ public class PlayerAbilities : MonoBehaviour {
 	public GameObject ability3;
 	public GameObject ability4;
 
-
-
 	public GameObject characterModel;
 	public Transform characterPoint1;
 	public Transform characterPoint2;
@@ -30,7 +28,6 @@ public class PlayerAbilities : MonoBehaviour {
 	bool abilityButton2;
 	bool abilityButton3;
 	bool abilityButton4;
-
 
 	CharacterAbility comboJab;
 	CharacterAbility megaFist;
@@ -75,9 +72,6 @@ public class PlayerAbilities : MonoBehaviour {
 	public GameObject rageEffectL;
 	public GameObject rageEffectR;
 
-
-
-
 	public InputDevice currentJoystick;
 
 	public bool abilityActive = false;
@@ -86,9 +80,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public GameObject rotationPoint;
 	public int teamNum;
 
-
 	//Dumb Bools
-
 	public bool doingAbil1 = false;
 	public bool doingAbil2 = false;
 	public bool doingAbil3 = false;
@@ -105,7 +97,6 @@ public class PlayerAbilities : MonoBehaviour {
 		teamNum = this.GetComponent<PlayerState> ().teamNum;
 		matchManager = GameObject.Find ("MatchManager");
 		characterModel = transform.Find ("RotationPoint").Find ("Model").gameObject;
-
 
 		if (this.gameObject.tag == "Player1") {
 			if (InputManager.Devices [0] != null) {
@@ -128,9 +119,7 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 
-
 		//var inputDevice = (InputManager.Devices.Count > this.GetComponent<PlayerState>().teamNum) ? InputManager.Devices[this.GetComponent<PlayerState>().teamNum] : null;
-
 		rotationPoint = this.gameObject.transform.Find ("RotationPoint").gameObject;
 		characterPoint1 = this.gameObject.transform.Find ("RotationPoint").Find ("SpawningPoint1");
 		characterPoint2 = this.gameObject.transform.Find ("RotationPoint").Find ("SpawningPoint2");

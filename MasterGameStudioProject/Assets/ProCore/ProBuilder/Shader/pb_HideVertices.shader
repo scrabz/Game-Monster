@@ -4,7 +4,7 @@ Shader "Hidden/ProBuilder/HideVertices"
 	{
 		Tags { "IgnoreProjector"="True" "RenderType"="Geometry" }
 		Lighting Off
-		ZTest On
+		ZTest LEqual
 		ZWrite On
 		Cull Back
 
