@@ -249,23 +249,29 @@ public class PlayerCursor : MonoBehaviour {
 		if (bButton) {
 			characterSelectObject.GetComponent<CharacterSelectAction> ().RemoveLastCharacter (currentPlayer);
 		}
+
+		this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), 16, this.transform.parent.GetComponent<RectTransform>().rect.width - 16), Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), 16, this.transform.parent.GetComponent<RectTransform>().rect.height - 16), -10f);
+
+
 		oldPosition = this.GetComponent<RectTransform> ().anchoredPosition;
 
 
-		foreach (Vector3 corner in objectCorners) {
-			if (!screenRect.Contains (corner)) {
-				//this.GetComponent<RectTransform> ().anchoredPosition = oldPosition + new Vector3(screenRect.center.magnitude,screenRect.center.magnitude,-10);
-				canMoveCursor = false;
-			}
-		}
-		if (canMoveCursor){
-			this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
-		} else {
-			
-			this.GetComponent<RectTransform> ().anchoredPosition = Vector3.MoveTowards (this.GetComponent<RectTransform> ().anchoredPosition, screenRect.center, 0.5f);
-			canMoveCursor = true;
+		//this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
 
-		}
+//		foreach (Vector3 corner in objectCorners) {
+//			if (!screenRect.Contains (corner)) {
+//				//this.GetComponent<RectTransform> ().anchoredPosition = oldPosition + new Vector3(screenRect.center.magnitude,screenRect.center.magnitude,-10);
+//				canMoveCursor = false;
+//			}
+//		}
+//		if (canMoveCursor){
+//			this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
+//		} else {
+//			
+//			this.GetComponent<RectTransform> ().anchoredPosition = Vector3.MoveTowards (this.GetComponent<RectTransform> ().anchoredPosition, screenRect.center, 0.5f);
+//			canMoveCursor = true;
+//
+//		}
 
 
 	}

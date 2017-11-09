@@ -51,7 +51,7 @@ public class PlayerRotation : MonoBehaviour {
 			}
 			
 
-			if (parentObject.GetComponent<PlayerMovement> ().isDying == false && parentObject.GetComponent<PlayerMovement> ().isRolling == false) {
+			if (parentObject.GetComponent<PlayerState> ().isDying == false && parentObject.GetComponent<PlayerMovement> ().isRolling == false) {
 				if (hMovementR != 0f || vMovementR != 0f) {
 					angle = Mathf.Atan2 (vMovementR, hMovementR) * Mathf.Rad2Deg;
 				} else {

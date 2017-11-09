@@ -231,6 +231,69 @@ public class PlayerAnimation : MonoBehaviour {
 
 		}
 
+		if (this.gameObject.name == "Guy(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
+				this.GetComponent<PlayerMovement> ().canMove = false;
+				if (this.GetComponent<PlayerState> ().isDying) {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("DefeatAnimation")) {
+						animator.Play ("DefeatAnimation", 0, 0f);
+					}
+				} else {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
+						animator.Play ("VictoryAnimation", 0, 0f);
+					}
+				}
+			} else {
+
+
+				if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("NapalmShot")) {
+					animator.Play ("NapalmShot", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+					if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
+						animator.Play ("BasicAttack", 0, 0f);
+					}
+				} else {
+					if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttackNotMoving")) {
+						animator.Play ("BasicAttackNotMoving", 0, 0f);
+					}
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BagOfTricks")) {
+					animator.Play ("BagOfTricks", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
+					animator.Play ("Ultimate", 0, 0f);
+
+				}
+
+				if (!this.GetComponent<PlayerAbilities> ().doingAbil1 && !this.GetComponent<PlayerAbilities> ().doingAbil2 && !this.GetComponent<PlayerAbilities> ().doingAbil3 && !this.GetComponent<PlayerAbilities> ().doingAbil4) {
+					if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+						if (Vector3.Dot (this.GetComponent<PlayerMovement> ().moveDirection, rotationPoint.transform.forward) < 0) {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("WalkBackwards")) {
+								animator.Play ("WalkBackwards", 0, 0f);
+
+							}
+						} else {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk")) {
+								animator.Play ("Walk", 0, 0f);
+							}
+
+						}
+					} else {
+						if (!this.GetComponent<PlayerMovement> ().isRolling && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+							animator.Play ("Idle", 0, 0f);
+						}
+					}
+
+				}
+			}
+
+		}
+
+
+
 
 		if (this.gameObject.name == "ToeTip(Clone)") {
 
@@ -241,8 +304,8 @@ public class PlayerAnimation : MonoBehaviour {
 						animator.Play ("DefeatAnimation", 0, 0f);
 					}
 				} else {
-					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
-						animator.Play ("VictoryAnimation", 0, 0f);
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
+						animator.Play ("Ultimate", 0, 0f);
 					}
 				}
 			} else {

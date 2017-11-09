@@ -85,10 +85,6 @@
      <Compile Include="Assets\InControl\Source\Touch\Editor\TouchSwipeControlEditor.cs" />
      <Compile Include="Assets\InControl\Source\Touch\Editor\TouchTrackControlEditor.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\About\Editor\pb_AboutWindow.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Editor\CustomAction.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Editor\EditorCallbackViewer.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Editor\RenameNewObjects.cs" />
-     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Editor\SetCustomUnwrapParams.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\Editor\MenuItems\Actions\pb_ExportObj.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\Editor\MenuItems\Actions\pb_GenerateUV2.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\Editor\MenuItems\Actions\pb_MakeMeshAsset.cs" />
@@ -129,7 +125,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Particle Ribbon by Moonflower Carnivore\Shaders\Particle Alpha Blend HDR.shader" />
