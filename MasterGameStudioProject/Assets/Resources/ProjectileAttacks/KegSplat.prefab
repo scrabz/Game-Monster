@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4047486751116890}
   - component: {fileID: 198933329153312466}
   - component: {fileID: 199547498929887348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NewFumes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4605225096268004}
   - component: {fileID: 198268813857439856}
   - component: {fileID: 199186288640250252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NewSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 23397690023829304}
   - component: {fileID: 114154003427986448}
   - component: {fileID: 114142503520561738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KegSplat
   m_TagString: Projectile
   m_Icon: {fileID: 0}
