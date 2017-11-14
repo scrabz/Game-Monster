@@ -47,6 +47,7 @@ public class CharacterSelectAction : MonoBehaviour {
 	public Sprite claymondPortrait;
 	public Sprite succPortrait;
 	public Sprite gorgonPortrait;
+	public Sprite wynkPortrait;
 
 
 	public Sprite portrait;
@@ -80,7 +81,7 @@ public class CharacterSelectAction : MonoBehaviour {
 		succPortrait = Resources.Load<Sprite> ("CharacterPortraits/SuccP");
 		guyPortrait = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
 		gorgonPortrait = Resources.Load<Sprite> ("CharacterPortraits/GorgonP");
-
+		//wynkPortrait = Resources.Load<Sprite> ("CharacterPortraits/WynkP");
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
 
 		playerSizeDisplay = GameObject.Find ("TeamSizeNum").GetComponent<Text> ();
@@ -160,6 +161,11 @@ public class CharacterSelectAction : MonoBehaviour {
 		}
 		if (whichCharacter == "Succ") {
 			portrait = succPortrait;
+
+		}
+
+		if (whichCharacter == "Wynk") {
+			portrait = wynkPortrait;
 
 		}
 
@@ -533,7 +539,9 @@ public class CharacterSelectAction : MonoBehaviour {
 						if (chr.name == "DrDecayP") {
 							MasterGameManager.instance.AddCharacter (1, "DrDecay");
 						}
-
+						if (chr.name == "WynkP") {
+							MasterGameManager.instance.AddCharacter (1, "Wynk");
+						}
 						if (chr.name == "Blank") {
 							Debug.Log ("added null");
 							MasterGameManager.instance.AddCharacter (1, "Empty");
@@ -568,6 +576,9 @@ public class CharacterSelectAction : MonoBehaviour {
 						if (chr.name == "DrDecayP") {
 							MasterGameManager.instance.AddCharacter (2, "DrDecay");
 						}
+						if (chr.name == "WynkP") {
+							MasterGameManager.instance.AddCharacter (2, "Wynk");
+						}
 						if (chr.name == "Blank") {
 							Debug.Log ("added null");
 							MasterGameManager.instance.AddCharacter (2, "Empty");
@@ -600,6 +611,9 @@ public class CharacterSelectAction : MonoBehaviour {
 						if (chr.name == "DrDecayP") {
 							MasterGameManager.instance.AddCharacter (3, "DrDecay");
 						}
+						if (chr.name == "WynkP") {
+							MasterGameManager.instance.AddCharacter (3, "Wynk");
+						}
 						if (chr.name == "Blank") {
 							Debug.Log ("added null");
 							MasterGameManager.instance.AddCharacter (3, "Empty");
@@ -631,6 +645,9 @@ public class CharacterSelectAction : MonoBehaviour {
 						}
 						if (chr.name == "DrDecayP") {
 							MasterGameManager.instance.AddCharacter (4, "DrDecay");
+						}
+						if (chr.name == "WynkP") {
+							MasterGameManager.instance.AddCharacter (4, "Wynk");
 						}
 						if (chr.name == "Blank") {
 							Debug.Log ("added null");

@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 114953406950183750}
   m_Layer: 10
   m_Name: Tiny
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3065,6 +3065,7 @@ MonoBehaviour:
   isRaging: 0
   matchManager: {fileID: 0}
   handicap: 0
+  cam: {fileID: 0}
 --- !u!114 &114169269185305526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3129,7 +3130,7 @@ MonoBehaviour:
   staminaBack: {fileID: 0}
   staminaFront: {fileID: 0}
   calcRecoverTime: 0
-  wonMatch: 0
+  matchOver: 0
   thisModel: {fileID: 0}
 --- !u!114 &114210561690019144
 MonoBehaviour:
@@ -3198,22 +3199,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1b2ac04f2bace46bc835e7461b1151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamNum: 1
-  playerNum: 1
+  teamNum: 2
+  playerNum: 2
   isMoving: 0
   isStunned: 0
   isSlowed: 0
   isBeingPushed: 0
+  isPoisoned: 0
   pushDir: {x: 0, y: 0, z: 0}
   isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2
+  poisonTimer: 2
   origSpeed: 0
   hasTribute: 0
   matchManager: {fileID: 0}
   itemImage: {fileID: 0}
   tributeImg: {fileID: 0}
+  p1indicator: {fileID: 0}
+  p2indicator: {fileID: 0}
+  p3indicator: {fileID: 0}
+  p4indicator: {fileID: 0}
 --- !u!114 &114642940888473778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3302,6 +3309,7 @@ MonoBehaviour:
   model: {fileID: 0}
   playerNum: 0
   mainCam: {fileID: 0}
+  defHealthColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!137 &137465144607282370
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

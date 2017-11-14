@@ -107,20 +107,21 @@ public class PlayerState : MonoBehaviour {
 	void FixedUpdate () {
 
 
-		if (isDying) {
-			deathTimer -= Time.deltaTime;
-		
-			if (deathTimer <= 0) {
-				if (matchManager != null) {
-					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveCharacterFromView (characterSpawn);
-					matchManager.GetComponent<MatchManager> ().SubtractCharacter (playerNum);
-
-				}
-				Destroy (this.gameObject);
-
-			}
-
-		}
+//		if (isDying) {
+//			deathTimer -= Time.deltaTime;
+//		
+//			if (deathTimer <= 0) {
+//				if (matchManager != null) {
+//					//mainCam.gameObject.GetComponent<DynamicCamera> ().RemoveCharacterFromView (characterSpawn);
+//
+//					matchManager.GetComponent<MatchManager> ().SubtractCharacter (playerNum);
+//
+//				}
+//				//Destroy (this.gameObject);
+//
+//			}
+//
+//		}
 
 
 		if (isBeingPushed) {

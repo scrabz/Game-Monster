@@ -15,7 +15,7 @@ public class MatchManager : MonoBehaviour {
 	public Text countdownText;
 
 	public bool isRoundEnding = false;
-	public float roundOverTimer = 3f;
+	float roundOverTimer = 1.5f;
 
 	public GameObject nextCharacterPanel;
 
@@ -130,6 +130,7 @@ public class MatchManager : MonoBehaviour {
 	public Sprite claymondPortrait;
 	public Sprite succPortrait;
 	public Sprite gorgonPortrait;
+	public Sprite wynkPortrait;
 
 
 
@@ -232,7 +233,7 @@ public class MatchManager : MonoBehaviour {
 		guyPortrait = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
 		gorgonPortrait = Resources.Load<Sprite> ("CharacterPortraits/GorgonP");
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
-
+		//wynkPortrait = Resources.Load<Sprite> ("CharacterPortraits/WynkP");
 		nextCharacterPanel = GameObject.Find ("NextCharacterPanel");
 
 		countdownText = GameObject.Find ("CountdownText").GetComponent<Text> ();
@@ -685,17 +686,33 @@ public class MatchManager : MonoBehaviour {
 			if (MasterGameManager.instance.player1Characters[i].name == "Neredy") {
 				p1Portraits.Add (gorgonPortrait);
 			}
+			if (MasterGameManager.instance.player1Characters[i].name == "Claymond") {
+				p1Portraits.Add (claymondPortrait);
+			}
+			if (MasterGameManager.instance.player1Characters[i].name == "Guy") {
+				p1Portraits.Add (guyPortrait);
+			}
+			if (MasterGameManager.instance.player1Characters[i].name == "DrDecay") {
+				p1Portraits.Add (drDecayPortrait);
+			}
+			if (MasterGameManager.instance.player1Characters[i].name == "Iris") {
+				p1Portraits.Add (succPortrait);
+			}
+			if (MasterGameManager.instance.player1Characters[i].name == "Wynk") {
+				p1Portraits.Add (wynkPortrait);
+			}
 			if (MasterGameManager.instance.player1Characters[i].name == "Empty") {
 				p1Portraits.Add (blankPortrait);
 			}
+
 			//}
 		}
 
 
 
 
-		Debug.Log (p1Portraits [3].name);
-		player1Ch1.sprite = p1Portraits[0];
+		//Debug.Log (p1Portraits [3].name);
+		player1Ch1.sprite = p1Portraits [0];
 		player1Ch2.sprite = p1Portraits [1];
 		player1Ch3.sprite = p1Portraits [2];
 		player1Ch4.sprite = p1Portraits [3];
@@ -737,6 +754,21 @@ public class MatchManager : MonoBehaviour {
 			}
 			if (MasterGameManager.instance.player2Characters[o].name == "Neredy") {
 				p2Portraits.Add (gorgonPortrait);
+			}
+			if (MasterGameManager.instance.player2Characters[o].name == "Claymond") {
+				p2Portraits.Add (claymondPortrait);
+			}
+			if (MasterGameManager.instance.player2Characters[o].name == "Guy") {
+				p2Portraits.Add (guyPortrait);
+			}
+			if (MasterGameManager.instance.player2Characters[o].name == "DrDecay") {
+				p2Portraits.Add (drDecayPortrait);
+			}
+			if (MasterGameManager.instance.player2Characters[o].name == "Iris") {
+				p2Portraits.Add (succPortrait);
+			}
+			if (MasterGameManager.instance.player2Characters[o].name == "Wynk") {
+				p2Portraits.Add (wynkPortrait);
 			}
 			if (MasterGameManager.instance.player2Characters[o].name == "Empty") {
 				p2Portraits.Add (blankPortrait);
@@ -791,6 +823,21 @@ public class MatchManager : MonoBehaviour {
 				if (MasterGameManager.instance.player3Characters [z].name == "Empty") {
 					p3Portraits.Add (blankPortrait);
 				}
+				if (MasterGameManager.instance.player3Characters[z].name == "Claymond") {
+					p3Portraits.Add (claymondPortrait);
+				}
+				if (MasterGameManager.instance.player3Characters[z].name == "Guy") {
+					p3Portraits.Add (guyPortrait);
+				}
+				if (MasterGameManager.instance.player3Characters[z].name == "DrDecay") {
+					p3Portraits.Add (drDecayPortrait);
+				}
+				if (MasterGameManager.instance.player3Characters[z].name == "Iris") {
+					p3Portraits.Add (succPortrait);
+				}
+				if (MasterGameManager.instance.player3Characters[z].name == "Wynk") {
+					p3Portraits.Add (wynkPortrait);
+				}
 				//}
 			}
 
@@ -841,6 +888,21 @@ public class MatchManager : MonoBehaviour {
 				}
 				if (MasterGameManager.instance.player4Characters [y].name == "Empty") {
 					p4Portraits.Add (blankPortrait);
+				}
+				if (MasterGameManager.instance.player4Characters[y].name == "Claymond") {
+					p4Portraits.Add (claymondPortrait);
+				}
+				if (MasterGameManager.instance.player4Characters[y].name == "Guy") {
+					p4Portraits.Add (guyPortrait);
+				}
+				if (MasterGameManager.instance.player4Characters[y].name == "DrDecay") {
+					p4Portraits.Add (drDecayPortrait);
+				}
+				if (MasterGameManager.instance.player4Characters[y].name == "Iris") {
+					p4Portraits.Add (succPortrait);
+				}
+				if (MasterGameManager.instance.player4Characters[y].name == "Wynk") {
+					p4Portraits.Add (wynkPortrait);
 				}
 				//}
 			}
@@ -1030,36 +1092,40 @@ public class MatchManager : MonoBehaviour {
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 		foreach (GameObject player in allPlayersLeft) {
-			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerMovement> ().canRotate = false;
 			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
-			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
 
 		foreach (GameObject player in allPlayersLeft) {
-			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerMovement> ().canRotate = false;
 			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
-			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player3");
 
 		foreach (GameObject player in allPlayersLeft) {
-			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerMovement> ().canRotate = false;
 			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
-			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player4");
 
 		foreach (GameObject player in allPlayersLeft) {
-			player.GetComponent<PlayerMovement> ().wonMatch = true;
+			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
+			player.GetComponent<PlayerMovement> ().canRotate = false;
 			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
-			player.GetComponent<PlayerAbilities> ().abilityActive = true;
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 
 		if (playersLeft == 1 || team1CharactersLeft == 0 || team2CharactersLeft == 0) {

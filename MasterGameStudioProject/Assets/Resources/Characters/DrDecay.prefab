@@ -3662,7 +3662,7 @@ MonoBehaviour:
   staminaBack: {fileID: 0}
   staminaFront: {fileID: 0}
   calcRecoverTime: 0
-  wonMatch: 0
+  matchOver: 0
   thisModel: {fileID: 0}
 --- !u!114 &114422279673688492
 MonoBehaviour:
@@ -3828,6 +3828,7 @@ MonoBehaviour:
   isRaging: 0
   matchManager: {fileID: 0}
   handicap: 0
+  cam: {fileID: 0}
 --- !u!114 &114627550970243602
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ guid: e2867d2965dd9cc41a4a7beb70a6ee23
 timeCreated: 1509134527
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: GaryAllAnimations001:Clavicle_L
     100002: GaryAllAnimations001:Clavicle_R
@@ -251,11 +251,12 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
-      firstFrame: 3
+      firstFrame: 4
       lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
@@ -264,7 +265,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -495,7 +496,7 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkCycle
       takeName: Take 001
-      firstFrame: 38
+      firstFrame: 52
       lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
@@ -1695,10 +1696,13 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -1714,6 +1718,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

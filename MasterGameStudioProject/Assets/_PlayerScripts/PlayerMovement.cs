@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Image staminaFront;
 	public float calcRecoverTime;
 
-	public bool wonMatch = false;
+	public bool matchOver = false;
 
 	public GameObject thisModel;
 
@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	
 
-		if (isDying == false && canMove == true && lockedInPlace == false) {
+		if (isDying == false && canMove == true && lockedInPlace == false && matchOver == false) {
 			
 		
 			//if (controller.isGrounded) {

@@ -45,6 +45,11 @@ public class MasterGameManager : MonoBehaviour {
 	public GameObject Skelly;
 	public GameObject Tiny;
 	public GameObject Neredy;
+	public GameObject Guy;
+	public GameObject Claymond;
+	public GameObject Iris;
+	public GameObject DrDecay;
+	public GameObject Wynk;
 
 	public int teamSize = 4;
 
@@ -82,6 +87,11 @@ public class MasterGameManager : MonoBehaviour {
 		Skelly = Resources.Load("Characters/ToeTip") as GameObject;
 		Tiny = Resources.Load("Characters/Tiny") as GameObject;
 		Neredy = Resources.Load("Characters/Neredy") as GameObject;
+		DrDecay = Resources.Load("Characters/DrDecay") as GameObject;
+		Guy = Resources.Load("Characters/Guy") as GameObject;
+		Claymond = Resources.Load("Characters/Claymond") as GameObject;
+		//Iris = Resources.Load("Characters/Iris") as GameObject;
+		//Wynk = Resources.Load("Characters/Wynk") as GameObject;
 
 	}
 	void Update(){
@@ -105,6 +115,23 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Neredy") {
 				player1Characters.Add (Neredy);
 			}
+			if (name == "DrDecay") {
+				player1Characters.Add (DrDecay);
+			}
+			if (name == "Guy") {
+				player1Characters.Add (Guy);
+			}
+			if (name == "Iris") {
+				player1Characters.Add (Iris);
+			}
+			if (name == "Claymond") {
+				player1Characters.Add (Claymond);
+			}
+			if (name == "Wynk") {
+				player1Characters.Add (Wynk);
+			}
+		
+
 		}
 
 		if (playerNumber == 2) {
@@ -123,6 +150,21 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Neredy") {
 				player2Characters.Add (Neredy);
 			}
+			if (name == "DrDecay") {
+				player2Characters.Add (DrDecay);
+			}
+			if (name == "Guy") {
+				player2Characters.Add (Guy);
+			}
+			if (name == "Iris") {
+				player2Characters.Add (Iris);
+			}
+			if (name == "Claymond") {
+				player2Characters.Add (Claymond);
+			}
+			if (name == "Wynk") {
+				player2Characters.Add (Wynk);
+			}
 		}
 		if (playerNumber == 3) {
 			if (name == "Empty"){
@@ -140,6 +182,21 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Neredy") {
 				player3Characters.Add (Neredy);
 			}
+			if (name == "DrDecay") {
+				player3Characters.Add (DrDecay);
+			}
+			if (name == "Guy") {
+				player3Characters.Add (Guy);
+			}
+			if (name == "Iris") {
+				player3Characters.Add (Iris);
+			}
+			if (name == "Claymond") {
+				player3Characters.Add (Claymond);
+			}
+			if (name == "Wynk") {
+				player3Characters.Add (Wynk);
+			}
 		}
 		if (playerNumber == 4) {
 			if (name == "Empty"){
@@ -156,6 +213,21 @@ public class MasterGameManager : MonoBehaviour {
 			}
 			if (name == "Neredy") {
 				player4Characters.Add (Neredy);
+			}
+			if (name == "DrDecay") {
+				player4Characters.Add (DrDecay);
+			}
+			if (name == "Guy") {
+				player4Characters.Add (Guy);
+			}
+			if (name == "Iris") {
+				player4Characters.Add (Iris);
+			}
+			if (name == "Claymond") {
+				player4Characters.Add (Claymond);
+			}
+			if (name == "Wynk") {
+				player4Characters.Add (Wynk);
 			}
 		}
 

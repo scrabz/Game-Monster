@@ -15,5 +15,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/VolcanoLevel.unity
     guid: be846d11059c84f4fb3620be6c177380
   - enabled: 1
-    path: Assets/_Scenes/HallOfBrosLevel.unity
+    path: Assets/_Scenes/HallOfBrosLevelEdit.unity
     guid: 2337099808d8ce243b49d94704445d20
+  - enabled: 1
+    path: Assets/_Scenes/HallOfBrosLevel.unity
+    guid: 0a1153d7151f86c4395d75b00aa3ada0

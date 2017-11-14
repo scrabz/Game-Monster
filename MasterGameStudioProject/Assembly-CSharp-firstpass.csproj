@@ -94,9 +94,9 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
-     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Particle Ribbon by Moonflower Carnivore\Shaders\Particle Alpha Blend HDR.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_SelectionPicker.shader" />
      <None Include="Assets\ProCore\ProBuilder\About\changelog.txt" />
      <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseVertexColor.shader" />
@@ -176,6 +176,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Particle Ribbon by Moonflower Carnivore\readme_Simple_Particle_Ribbon.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
@@ -210,19 +211,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity4">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity4.dll</HintPath>
  </Reference>
  <Reference Include="KDTree">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
  </Reference>
  <Reference Include="pb_Stl">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
  </Reference>
  <Reference Include="Triangle">
- <HintPath>C:/Users/twhite13t/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
