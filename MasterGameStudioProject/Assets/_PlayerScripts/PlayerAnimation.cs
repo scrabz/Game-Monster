@@ -259,9 +259,14 @@ public class PlayerAnimation : MonoBehaviour {
 						animator.Play ("BasicAttackNotMoving", 0, 0f);
 					}
 				}
-				if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BagOfTricks")) {
-					animator.Play ("BagOfTricks", 0, 0f);
-
+				if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+					if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttack")) {
+						animator.Play ("BasicAttack", 0, 0f);
+					}
+				} else {
+					if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("BasicAttackNotMoving")) {
+						animator.Play ("BasicAttackNotMoving", 0, 0f);
+					}
 				}
 				if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
 					animator.Play ("Ultimate", 0, 0f);

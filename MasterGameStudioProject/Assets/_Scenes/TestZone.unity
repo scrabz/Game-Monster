@@ -945,40 +945,10 @@ Prefab:
       propertyPath: m_Name
       value: Guy(Clone)
       objectReference: {fileID: 0}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
+    - target: {fileID: 114664849897744040, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137248559061451022, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: ccd86c00fee0d9247b6e4ee3c10e4705, type: 2}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: ccd86c00fee0d9247b6e4ee3c10e4705, type: 2}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 137569680401490078, guid: 6a6bcd6659f31a349a8b0c982423f0bb,
-        type: 2}
-      propertyPath: m_Materials.Array.data[7]
-      value: 
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a6bcd6659f31a349a8b0c982423f0bb, type: 2}

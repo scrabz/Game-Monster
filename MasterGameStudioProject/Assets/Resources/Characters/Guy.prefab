@@ -4373,7 +4373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 125
+  maxHealth: 70
   healthBarFront: {fileID: 0}
   healthBarBack: {fileID: 0}
   panelHealthBarFront: {fileID: 0}
@@ -4444,7 +4444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e99afc3bc7b614ba992d1a9e8ed000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5.5
   gravity: 55
   isDying: 0
   canMove: 1
@@ -4520,6 +4520,7 @@ MonoBehaviour:
   matchManager: {fileID: 0}
   handicap: 0
   cam: {fileID: 0}
+  selectedArrow: 0
 --- !u!114 &114946399475578016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4614,12 +4615,12 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: ec6bdde7460d62e45b74650c41f0a0fe, type: 2}
   - {fileID: 2100000, guid: 1f9eb672130a2034ea3138741a99d484, type: 2}
-  - {fileID: 2100000, guid: 40857501b8819f04788df022a4149c34, type: 2}
-  - {fileID: 2100000, guid: e32cbb826aa3d8b45859da19579aafce, type: 2}
-  - {fileID: 2100000, guid: 277c8e4ce64a7af4ba92f79b1f7d67c2, type: 2}
-  - {fileID: 2100000, guid: 3e23ca4e54202ff4cbb54c4394456856, type: 2}
+  - {fileID: 2100000, guid: ccd86c00fee0d9247b6e4ee3c10e4705, type: 2}
+  - {fileID: 2100000, guid: ccd86c00fee0d9247b6e4ee3c10e4705, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 2100000, guid: f015b4621679d4d48a1cf23a5ad30eaa, type: 2}
-  - {fileID: 2100000, guid: 0934fbf0d818153478e258659c29b2d9, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -92,6 +92,9 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public bool handicap = false;
 	public GameObject cam;
+
+	public int selectedArrow = 0;
+
 	void Start () {
 		cam = GameObject.Find ("Main Camera");
 		teamNum = this.GetComponent<PlayerState> ().teamNum;
@@ -418,7 +421,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			arrowArsenal.aName = "Clay Wall";
 			//clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
-			arrowArsenal.aCooldown = 5f;
+			arrowArsenal.aCooldown = 2f;
 			arrowArsenal.aPanel = ability3;
 
 			trueForm.aName = "Shockwave";
@@ -1372,6 +1375,50 @@ public class PlayerAbilities : MonoBehaviour {
 
 		yield return new WaitForSeconds(0.3f);
 		doingAbil1 = false;
+		abilityActive = false;
+		yield return null;
+
+
+
+	}
+
+	public IEnumerator ArrowArsenal(){
+		doingAbil3 = true;
+		yield return new WaitForSeconds(0.4f);
+
+		if (selectedArrow == 0) {
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BouncyArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+		}
+
+		if (selectedArrow == 1) {
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ScatterArrow"), characterPoint2.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+		}
+
+		if (selectedArrow == 2) {
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/StunArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+		}
+		if (selectedArrow == 3) {
+			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GhostArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+		}
+		selectedArrow += 1;
+		if (selectedArrow >= 4) {
+			selectedArrow = 0;
+		}
+		yield return new WaitForSeconds(0.3f);
+		//Do an animation here
+		doingAbil3 = false;
 		abilityActive = false;
 		yield return null;
 
