@@ -86,6 +86,7 @@
      <Compile Include="Assets\_MiscScripts\DynamicCamera.cs" />
      <Compile Include="Assets\_MiscScripts\FaceCamera.cs" />
      <Compile Include="Assets\_MiscScripts\FloatingBoat.cs" />
+     <Compile Include="Assets\_MiscScripts\InstantUnparent.cs" />
      <Compile Include="Assets\_MiscScripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\_MiscScripts\PlayerCursor.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />

@@ -95,6 +95,25 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public int selectedArrow = 0;
 
+	public AudioClip brogreJump;
+	public AudioClip brogreSmash;
+	public AudioClip brogreSlash;
+	public AudioClip brogreShield;
+	public AudioClip brogreToss;
+	public AudioClip brogreWet;
+
+	public AudioClip tinyKnife;
+	public AudioClip tinyDash;
+	public AudioClip tinyTrapPlace;
+	public AudioClip tinyUlt;
+
+
+	public AudioClip decayPotionThrow;
+	public AudioClip decaySmoke;
+	public AudioClip decayLeechThrow;
+	public AudioClip decayCrowThrow;
+	public AudioClip decayFrogThrow;
+
 	void Start () {
 		cam = GameObject.Find ("Main Camera");
 		teamNum = this.GetComponent<PlayerState> ().teamNum;
@@ -185,6 +204,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 		if (this.gameObject.name == "Brogre(Clone)") {
 
+
+			brogreJump = Resources.Load ("SFX/BrogreJump") as AudioClip;
+			brogreSmash = Resources.Load ("SFX/BrogreSmash") as AudioClip;
+			brogreSlash = Resources.Load ("SFX/BrogreSlash") as AudioClip;
+			brogreShield = Resources.Load ("SFX/BrogreShield") as AudioClip;
+			brogreToss = Resources.Load ("SFX/BrogreToss") as AudioClip;
 			cleave = new CharacterAbility ();
 			shield = new CharacterAbility ();
 			shieldPush = new CharacterAbility ();
@@ -271,6 +296,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 		if (this.gameObject.name == "Tiny(Clone)") {
 
+
+			tinyDash = Resources.Load ("SFX/TinyDash") as AudioClip;
+			tinyKnife = Resources.Load ("SFX/TinyKnife") as AudioClip;
+			tinyTrapPlace = Resources.Load ("SFX/TinyTrapDrop") as AudioClip;
+			tinyUlt = Resources.Load ("SFX/TinyUlt") as AudioClip;
+
 			duelDaggers = new CharacterAbility ();
 			knifeThrow = new CharacterAbility ();
 			clawTrap = new CharacterAbility ();
@@ -312,6 +343,14 @@ public class PlayerAbilities : MonoBehaviour {
 		}
 
 		if (this.gameObject.name == "DrDecay(Clone)") {
+
+
+			decayPotionThrow = Resources.Load ("SFX/DecayPotionThrow") as AudioClip;
+			decaySmoke = Resources.Load ("SFX/DecaySmoke") as AudioClip;
+			decayCrowThrow = Resources.Load ("SFX/DecayCrowThrow") as AudioClip;
+			decayFrogThrow = Resources.Load ("SFX/DecayFrogThrow") as AudioClip;
+			decayLeechThrow = Resources.Load ("SFX/DecayLeechThrow") as AudioClip;
+
 
 			potionToss = new CharacterAbility ();
 			poisonCloud = new CharacterAbility ();
@@ -902,7 +941,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
-
+		this.GetComponent<AudioSource> ().clip = brogreSlash;
+		this.GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(0.5f);
 		doingAbil1 = false;
 		abilityActive = false;
@@ -916,6 +956,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		this.GetComponent<AudioSource> ().clip = brogreShield;
+		this.GetComponent<AudioSource> ().Play ();
 
 
 		yield return new WaitForSeconds(1.5f);
@@ -930,7 +972,8 @@ public class PlayerAbilities : MonoBehaviour {
 		Vector3 startPos = characterModel.transform.position;
 		this.GetComponent<PlayerMovement> ().canMove = false;
 		//this.GetComponent<PlayerMovement> ().canRotate = false;
-
+		this.GetComponent<AudioSource> ().clip = brogreJump;
+		this.GetComponent<AudioSource> ().Play ();
 		for (int i = 0; i < 38; i++) {
 			
 			this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 15f * Time.deltaTime);
@@ -941,10 +984,13 @@ public class PlayerAbilities : MonoBehaviour {
 			
 		//characterModel.transform.position = Vector3.Lerp (characterModel.transform.position, new Vector3 (characterModel.transform.position.x, characterModel.transform.position.y - 1 , characterModel.transform.position.z), 0.8f);
 		createdThing = Instantiate (Resources.Load ("MeleeAttacks/ShieldShockwaveHitbox"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		this.GetComponent<AudioSource> ().clip = brogreSmash;
+		this.GetComponent<AudioSource> ().Play ();
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = this.transform;
+
 		yield return new WaitForSeconds(0.3f);
 		//yield return new WaitForSeconds(0.1f);
 		abilityActive = false;
@@ -966,7 +1012,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		//Do an animation here
-
+		this.GetComponent<AudioSource> ().clip = brogreToss;
+		this.GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(0.7f);
 		abilityActive = false;
 		doingAbil4 = false;
@@ -982,7 +1029,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		//Do an animation here
-
+		this.GetComponent<AudioSource> ().clip = decayPotionThrow;
+		this.GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(0.2f);
 		abilityActive = false;
 		doingAbil1 = false;
@@ -1044,6 +1092,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
+		this.GetComponent<AudioSource> ().clip = tinyDash;
+		this.GetComponent<AudioSource> ().Play ();
 		for (int i = 0; i < 18; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
 				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 30f * Time.deltaTime);
@@ -1160,8 +1210,8 @@ public class PlayerAbilities : MonoBehaviour {
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
-
-
+		this.GetComponent<AudioSource> ().clip = tinyKnife;
+		this.GetComponent<AudioSource> ().Play ();
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -1181,6 +1231,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		this.GetComponent<AudioSource> ().clip = tinyTrapPlace;
+		this.GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(0.4f);
 		doingAbil3 = false;
 		abilityActive = false;
@@ -1200,6 +1252,8 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			this.GetComponent<AudioSource> ().clip = decayLeechThrow;
+			this.GetComponent<AudioSource> ().Play ();
 		}
 
 		if (ranNum == 1) {
@@ -1207,6 +1261,8 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			this.GetComponent<AudioSource> ().clip = decayFrogThrow;
+			this.GetComponent<AudioSource> ().Play ();
 		}
 
 		if (ranNum == 2) {
@@ -1214,6 +1270,8 @@ public class PlayerAbilities : MonoBehaviour {
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			this.GetComponent<AudioSource> ().clip = decayCrowThrow;
+			this.GetComponent<AudioSource> ().Play ();
 		}
 
 		yield return new WaitForSeconds(0.4f);
@@ -1236,7 +1294,8 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/SmokeCloud"), transform.position + (rotationPoint.transform.forward * 10f), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		yield return new WaitForSeconds(0.05f);
 		this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 10f);
-
+		this.GetComponent<AudioSource> ().clip = decaySmoke;
+		this.GetComponent<AudioSource> ().Play ();
 		//createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		//createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		//Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -1255,6 +1314,8 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<PlayerMovement> ().canMove = false;
 		yield return new WaitForSeconds(0.1f);
 		for (int i = 0; i < 10; i++) {
+			this.GetComponent<AudioSource> ().clip = decayPotionThrow;
+			this.GetComponent<AudioSource> ().Play ();
 			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/NormalPotion"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-15, 15), rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
@@ -1279,7 +1340,9 @@ public class PlayerAbilities : MonoBehaviour {
 		doingAbil4 = true;
 		this.GetComponent<PlayerMovement> ().canRotate = false;
 		yield return new WaitForSeconds(0.1f);
-		for (int i = 0; i < 40; i++) {
+		this.GetComponent<AudioSource> ().clip = tinyUlt;
+		this.GetComponent<AudioSource> ().Play ();
+		for (int i = 0; i < 54; i++) {
 			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;

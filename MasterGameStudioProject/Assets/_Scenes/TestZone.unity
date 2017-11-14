@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44746822, g: 0.49741864, b: 0.575293, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -285,9 +285,14 @@ Prefab:
       propertyPath: m_Name
       value: Brogre(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 82648767020277874, guid: 3cc68a775860b75458efe6e63de2bf51,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.511
+      objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
@@ -449,7 +454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1833322092007424, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
@@ -579,23 +584,24 @@ Prefab:
       propertyPath: m_Name
       value: Tiny(Clone)
       objectReference: {fileID: 0}
-    - target: {fileID: 1294460527557532, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 82438464448836718, guid: 7f538c827b14a7243b6e7ad504eec7fc,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 1294460527557532, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
       propertyPath: m_TagString
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 114524776830747222, guid: 7f538c827b14a7243b6e7ad504eec7fc,
         type: 2}
       propertyPath: teamNum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114524776830747222, guid: 7f538c827b14a7243b6e7ad504eec7fc,
         type: 2}
       propertyPath: playerNum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
@@ -949,6 +955,10 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238742117240736, guid: 6a6bcd6659f31a349a8b0c982423f0bb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a6bcd6659f31a349a8b0c982423f0bb, type: 2}

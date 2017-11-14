@@ -32,6 +32,7 @@ public class ClawTrapAction : MonoBehaviour {
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 			if (this.GetComponent<AttackAction> ().teamNum != col.gameObject.GetComponent<PlayerState> ().teamNum && !col.gameObject.GetComponent<PlayerMovement> ().isRolling) {
 				this.GetComponent<Animator> ().SetBool ("isActivated", true);
+				this.GetComponent<AudioSource> ().Play ();
 				this.transform.position = new Vector3(transform.position.x,transform.position.y + 0.5f,transform.position.z);
 				col.transform.position = new Vector3 (transform.position.x, col.transform.position.y, transform.position.z);
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
@@ -44,7 +45,7 @@ public class ClawTrapAction : MonoBehaviour {
 	public IEnumerator Sink(){
 		for(int i = 0; i < 10f; i++) {
 			this.transform.Translate (0, -0.1f, 0);
-			yield return new WaitForSeconds (0.05f);
+			yield return new WaitForSeconds (0.1f);
 
 
 		}

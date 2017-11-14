@@ -62,7 +62,7 @@ public class FrogAction : MonoBehaviour {
 			thisRigid.position = Vector3.Lerp(this.transform.position, whoToFollow.transform.position, 0.5f * Time.deltaTime);
 			this.transform.GetChild(0).rotation = Quaternion.LookRotation (new Vector3(whoToFollow.transform.position.x,whoToFollow.transform.position.y,whoToFollow.transform.position.z));
 			if (Vector3.Distance (this.transform.position, whoToFollow.transform.position) < 1.5f) {
-				createdThing = Instantiate (Resources.Load("ProjectileAttacks/PotionExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
+				createdThing = Instantiate (Resources.Load("ProjectileAttacks/FrogExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
 				thisRigid.isKinematic = true;
 				Destroy (this.gameObject);
 			}

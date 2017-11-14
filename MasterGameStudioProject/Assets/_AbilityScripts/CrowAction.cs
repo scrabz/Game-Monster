@@ -30,7 +30,7 @@ public class CrowAction : MonoBehaviour {
 				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				collisionObject = col.gameObject;
 				col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,thisRigid.velocity.normalized);
-				//Destroy (thisRigid);
+				this.GetComponent<AudioSource> ().Play ();
 				flyAway = true;
 
 			}

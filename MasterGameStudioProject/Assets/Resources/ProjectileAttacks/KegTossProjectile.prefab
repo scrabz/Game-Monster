@@ -219,6 +219,7 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 10
+  createdThing: {fileID: 0}
   damage: 12
 --- !u!114 &114649831606851124
 MonoBehaviour:

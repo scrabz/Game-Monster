@@ -43,6 +43,7 @@ public class LeechAction : MonoBehaviour {
 					this.transform.SetParent (col.gameObject.transform);
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
 					col.gameObject.GetComponent<PlayerState> ().InflictPoison (5f);
+					this.GetComponent<AudioSource> ().Play ();
 //				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
 //				col.GetComponent<CharacterController> ().Move (pushBackDir);
 					moving = false;
