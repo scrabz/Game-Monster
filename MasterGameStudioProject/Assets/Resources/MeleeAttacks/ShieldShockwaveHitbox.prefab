@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 198604591004871478}
   - component: {fileID: 199671865331228534}
   - component: {fileID: 114307929795364510}
+  - component: {fileID: 114515521729393870}
   m_Layer: 0
   m_Name: BrogreSmash
   m_TagString: Untagged
@@ -310,6 +311,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alreadyHit: {fileID: 0}
   pushBackDir: {x: 0, y: 0, z: 0}
+--- !u!114 &114515521729393870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827400493307002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cedb949dfc6b44aa88e1e82ba6471d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5
 --- !u!114 &114895919050999398
 MonoBehaviour:
   m_ObjectHideFlags: 1

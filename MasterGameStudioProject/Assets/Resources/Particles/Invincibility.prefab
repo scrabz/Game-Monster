@@ -70,8 +70,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365793926787410}
+  - component: {fileID: 114510782718373362}
   m_Layer: 0
-  m_Name: Invinsibility
+  m_Name: Invincibility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281004093878910}
   m_LocalRotation: {x: -0.6532814, y: 0.27059832, z: -0.27059838, w: 0.6532814}
-  m_LocalPosition: {x: 1.6200008, y: 1.12, z: 4.34}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5876543, y: 0.5876547, z: 0.5876545}
   m_Children: []
   m_Father: {fileID: 4365793926787410}
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639133831574864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.52, y: 1.58, z: -21.44}
+  m_LocalPosition: {x: 0, y: 1.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4977570624818466}
@@ -131,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1571138170376740}
   m_LocalRotation: {x: -0.70710653, y: -0, z: -0, w: -0.7071071}
-  m_LocalPosition: {x: 1.6200008, y: 1.12, z: 4.34}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.58765435, y: 0.5876547, z: 0.5876547}
   m_Children: []
   m_Father: {fileID: 4365793926787410}
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951076231530776}
   m_LocalRotation: {x: -0.27059767, y: 0.6532816, z: 0.6532817, w: -0.27059764}
-  m_LocalPosition: {x: 1.6200008, y: 1.12, z: 4.34}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5876546, y: 0.58765435, z: 0.5876544}
   m_Children: []
   m_Father: {fileID: 4365793926787410}
@@ -157,12 +158,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292076267070192}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.62, y: 1.12, z: 4.34}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7408237, y: 0.740824, z: 0.740824}
   m_Children: []
   m_Father: {fileID: 4365793926787410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114510782718373362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639133831574864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cedb949dfc6b44aa88e1e82ba6471d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 6
 --- !u!198 &198192453293108698
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -170,7 +183,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292076267070192}
   serializedVersion: 5
-  lengthInSec: 8
+  lengthInSec: 6
   simulationSpeed: 1
   looping: 0
   prewarm: 0
@@ -222,7 +235,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 812395664
+  randomSeed: 2104885582
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -312,7 +325,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.88235295, g: 0.794744, b: 0.30493084, a: 1}
+      maxColor: {r: 0.47794116, g: 0.8919877, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1116,7 +1129,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -3426,7 +3439,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1571138170376740}
   serializedVersion: 5
-  lengthInSec: 8
+  lengthInSec: 6
   simulationSpeed: 1
   looping: 0
   prewarm: 0
@@ -3478,7 +3491,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -951853742
+  randomSeed: -647647878
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3568,7 +3581,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9705882, g: 0.93927616, b: 0.4852941, a: 1}
+      maxColor: {r: 0.47794116, g: 0.8919877, b: 1, a: 0.128}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4372,7 +4385,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -6682,7 +6695,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951076231530776}
   serializedVersion: 5
-  lengthInSec: 8
+  lengthInSec: 6
   simulationSpeed: 1
   looping: 0
   prewarm: 0
@@ -6734,7 +6747,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1477923528
+  randomSeed: 1889509138
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6824,7 +6837,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9705882, g: 0.93927616, b: 0.4852941, a: 1}
+      maxColor: {r: 0.47794116, g: 0.8919877, b: 1, a: 0.128}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -7628,7 +7641,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -9938,7 +9951,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281004093878910}
   serializedVersion: 5
-  lengthInSec: 8
+  lengthInSec: 6
   simulationSpeed: 1
   looping: 0
   prewarm: 0
@@ -9990,7 +10003,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -562982978
+  randomSeed: 1280921316
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10080,7 +10093,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9705882, g: 0.93927616, b: 0.4852941, a: 1}
+      maxColor: {r: 0.47794116, g: 0.8919877, b: 1, a: 0.128}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10884,7 +10897,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1

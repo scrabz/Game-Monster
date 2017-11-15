@@ -68,6 +68,9 @@
      <Compile Include="Assets\_AbilityScripts\LeechAction.cs" />
      <Compile Include="Assets\_AbilityScripts\MeleeHitboxActions.cs" />
      <Compile Include="Assets\_AbilityScripts\MiniFistAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\NapalmAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\NapalmArrowAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\NewFrogAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PetrifyAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PoisonCloudAction.cs" />
      <Compile Include="Assets\_AbilityScripts\PotionExplosionAction.cs" />
@@ -89,6 +92,7 @@
      <Compile Include="Assets\_MiscScripts\InstantUnparent.cs" />
      <Compile Include="Assets\_MiscScripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\_MiscScripts\PlayerCursor.cs" />
+     <Compile Include="Assets\_MiscScripts\SlowRotate.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAbilities.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAnimation.cs" />

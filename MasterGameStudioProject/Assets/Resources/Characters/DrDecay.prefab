@@ -3664,21 +3664,25 @@ MonoBehaviour:
   isSlowed: 0
   isBeingPushed: 0
   isPoisoned: 0
+  isInvincible: 0
   pushDir: {x: 0, y: 0, z: 0}
   isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2
+  invincibilityTimer: 2
   poisonTimer: 2
   origSpeed: 0
   hasTribute: 0
   matchManager: {fileID: 0}
   itemImage: {fileID: 0}
   tributeImg: {fileID: 0}
+  cupImg: {fileID: 0}
   p1indicator: {fileID: 0}
   p2indicator: {fileID: 0}
   p3indicator: {fileID: 0}
   p4indicator: {fileID: 0}
+  createdThing: {fileID: 0}
 --- !u!114 &114057157140550404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3891,6 +3895,7 @@ MonoBehaviour:
   ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
+  characterPortrait: {fileID: 0}
   characterModel: {fileID: 0}
   characterPoint1: {fileID: 0}
   characterPoint2: {fileID: 0}

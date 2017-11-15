@@ -951,7 +951,8 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.35
-  damage: 2
+  createdThing: {fileID: 0}
+  damage: 3
 --- !u!114 &114795080741793464
 MonoBehaviour:
   m_ObjectHideFlags: 1

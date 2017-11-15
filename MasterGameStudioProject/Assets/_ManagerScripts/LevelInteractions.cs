@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelInteractions : MonoBehaviour {
 
-	public float matchActionTimer = 30f;
+	public float matchActionTimer = 15f;
 	public GameObject thingToSpawn;
 	public int ranNum;
 	public GameObject matchObject;
@@ -15,6 +15,8 @@ public class LevelInteractions : MonoBehaviour {
 	public Transform tributeSpawn1;
 	public Transform tributeSpawn2;
 	public Transform tributeSpawn3;
+
+	public Transform soloCupSpawn;
 	// Use this for initialization
 	void Start () {
 		matchObject = GameObject.Find ("MatchManager");
@@ -25,6 +27,11 @@ public class LevelInteractions : MonoBehaviour {
 			tributeSpawn1 = GameObject.Find ("TributeSpawn1").transform;
 			tributeSpawn2 = GameObject.Find ("TributeSpawn2").transform;
 			tributeSpawn3 = GameObject.Find ("TributeSpawn3").transform;
+		}
+
+		if (SceneManager.GetActiveScene ().name == "HallOfBrosLevel") {
+
+			soloCupSpawn = GameObject.Find ("SoloCupSpawn").transform;
 		}
 	}
 	
@@ -46,11 +53,18 @@ public class LevelInteractions : MonoBehaviour {
 						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
 					}
 				}
-				matchActionTimer = 30f;
 
+				if (SceneManager.GetActiveScene ().name == "HallOfBrosLevel") {
+					GameObject cup;
+					cup = GameObject.FindGameObjectWithTag ("SoloCup");
+					if (cup == null) {
+						matchActionTimer = 15f;
+						thingToSpawn = Instantiate (Resources.Load ("SoloCup"), soloCupSpawn.position, soloCupSpawn.rotation) as GameObject;
+					}
+				}
 			}
 		} else {
-			matchActionTimer = 30f;
+			matchActionTimer = 15f;
 		}
 	}
 }

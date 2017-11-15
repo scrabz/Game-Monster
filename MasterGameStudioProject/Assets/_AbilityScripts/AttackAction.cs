@@ -39,7 +39,7 @@ public class AttackAction : MonoBehaviour {
 		lifeTimer -= Time.deltaTime;
 		if (lifeTimer <= 0) {
 			if (this.gameObject.name.Contains ("Frog")) {
-				createdThing = Instantiate (Resources.Load("ProjectileAttacks/PotionExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
+				//createdThing = Instantiate (Resources.Load("ProjectileAttacks/FrogExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
 			}
 			Destroy (this.gameObject);
 			this.transform.position = new Vector3 (0, -100f, 0);

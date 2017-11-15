@@ -6,7 +6,7 @@ public class BigFistAction : MonoBehaviour {
 	public Rigidbody thisRigid;
 	public GameObject collisionObject;
 	public Vector3 pushBackDir;
-	float deathTimer = 0.1f;
+	float deathTimer = 0.2f;
 	public bool shouldDie = false;
 	// Use this for initialization
 	void Start () {
@@ -37,6 +37,7 @@ public class BigFistAction : MonoBehaviour {
 				collisionObject = col.gameObject;
 				col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,thisRigid.velocity.normalized);
 				Destroy (thisRigid);
+				Destroy(this.GetComponent<Collider>());
 				shouldDie = true;
 
 			}

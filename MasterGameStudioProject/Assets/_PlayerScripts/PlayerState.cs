@@ -12,13 +12,15 @@ public class PlayerState : MonoBehaviour {
 	public bool isSlowed = false;
 	public bool isBeingPushed = false;
 	public bool isPoisoned = false;
-
+	public bool isInvincible = false;
 
 	public Vector3 pushDir;
 	public bool isDying = false;
 	public float stunTimer = 2f;
 	public float slowTimer = 2f;
 	public float pushTimer = 2f;
+
+	public float invincibilityTimer = 2f;
 
 	public float poisonTimer = 2f;
 	public float origSpeed;
@@ -32,11 +34,14 @@ public class PlayerState : MonoBehaviour {
 	public Image itemImage;
 
 	public Sprite tributeImg;
+	public Sprite cupImg;
 
 	public Sprite p1indicator;
 	public Sprite p2indicator;
 	public Sprite p3indicator;
 	public Sprite p4indicator;
+
+	public GameObject createdThing;
 	// Use this for initialization
 
 	void Awake(){
@@ -44,16 +49,7 @@ public class PlayerState : MonoBehaviour {
 
 	}
 
-
-	void Start () {
-
-
-		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
-		p1indicator = Resources.Load <Sprite> ("ItemImages/P1indicator");
-		p2indicator = Resources.Load <Sprite> ("ItemImages/P2indicator");
-		p3indicator = Resources.Load <Sprite> ("ItemImages/P3indicator");
-		p4indicator = Resources.Load <Sprite> ("ItemImages/P4indicator");
-		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
+	void AssignIcons(){
 
 		if (this.gameObject.tag == "Player1") {
 			teamNum = 1;
@@ -93,8 +89,23 @@ public class PlayerState : MonoBehaviour {
 			playerNum = 4;
 		}
 
+	}
+	void Start () {
+
 
 		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
+		cupImg = Resources.Load <Sprite> ("ItemImages/CupImg");
+		p1indicator = Resources.Load <Sprite> ("ItemImages/P1indicator");
+		p2indicator = Resources.Load <Sprite> ("ItemImages/P2indicator");
+		p3indicator = Resources.Load <Sprite> ("ItemImages/P3indicator");
+		p4indicator = Resources.Load <Sprite> ("ItemImages/P4indicator");
+		itemImage = gameObject.transform.Find("HealthCanvas").transform.Find("ItemImage").gameObject.GetComponent<Image>();
+
+		AssignIcons ();
+
+		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
+
+		cupImg = Resources.Load <Sprite> ("ItemImages/CupImg");
 
 		//itemImage.enabled = false;
 		origSpeed = this.GetComponent<PlayerMovement> ().speed;
@@ -147,6 +158,13 @@ public class PlayerState : MonoBehaviour {
 		}
 
 
+		if (isInvincible) {
+			invincibilityTimer -= Time.deltaTime;
+			if (invincibilityTimer <= 0) {
+				isInvincible = false;
+				AssignIcons ();
+			}
+		}
 
 		if (isSlowed) {
 			slowTimer -= Time.deltaTime;
@@ -182,6 +200,16 @@ public class PlayerState : MonoBehaviour {
 			itemImage.enabled = false;
 			print ("thishappened");
 		}
+
+
+		if (col.gameObject.tag == "SoloCup") {
+			Destroy (col.gameObject);
+			print ("gottribute");
+			hasTribute = true;
+			Invincibility (6f);
+			itemImage.enabled = true;
+			itemImage.sprite = cupImg;
+		}
 	}
 
 	public void InflictStun(float howLong){
@@ -206,6 +234,11 @@ public class PlayerState : MonoBehaviour {
 		isSlowed = true;
 		slowTimer = howLong;
 		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed * 1.4f;
+	}
+	public void Invincibility(float howLong){
+		isInvincible = true;
+		invincibilityTimer = howLong;
+		createdThing = Instantiate (Resources.Load ("Particles/Invincibility"),this.transform) as GameObject;
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){

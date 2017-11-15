@@ -17,7 +17,7 @@ public class FrogAction : MonoBehaviour {
 	public GameObject[] tempList;
 	void Start () {
 
-
+		GetClosestEnemy (opponentList);
 		downDir = Vector3.down;
 		thisRigid = this.GetComponent<Rigidbody> ();
 		tempList = GameObject.FindGameObjectsWithTag ("Player1");
@@ -56,10 +56,11 @@ public class FrogAction : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		GetClosestEnemy (opponentList);
+		
 		if (whoToFollow != null) {
-
-			thisRigid.position = Vector3.Lerp(this.transform.position, whoToFollow.transform.position, 0.5f * Time.deltaTime);
+			thisRigid.MovePosition(Vector3.MoveTowards(this.transform.position,whoToFollow.transform.position,0.5f));
+			//thisRigid.AddForce (transform.up * 1800f);
+			//thisRigid.position = Vector3.Lerp(this.transform.position, whoToFollow.transform.position, 0.5f * Time.deltaTime);
 			this.transform.GetChild(0).rotation = Quaternion.LookRotation (new Vector3(whoToFollow.transform.position.x,whoToFollow.transform.position.y,whoToFollow.transform.position.z));
 			if (Vector3.Distance (this.transform.position, whoToFollow.transform.position) < 1.5f) {
 				createdThing = Instantiate (Resources.Load("ProjectileAttacks/FrogExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;

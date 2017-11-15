@@ -125,7 +125,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	public void GetHit(float healthLost){
-		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false) {
+		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false && this.GetComponent<PlayerState>().isInvincible == false) {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
 			if (healthLost != 0) {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.ImageEffects;
 using InControl;
 
 public class MatchManager : MonoBehaviour {
@@ -1127,6 +1128,25 @@ public class MatchManager : MonoBehaviour {
 			player.GetComponent<PlayerAbilities> ().StopAllCoroutines ();
 			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
+
+	
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("SoloCup");
+
+		foreach (GameObject player in allPlayersLeft) {
+			Destroy (player);
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+
+		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Projectile");
+
+		foreach (GameObject player in allPlayersLeft) {
+			Destroy (player);
+			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
+		}
+
+		Camera.main.GetComponent<Grayscale> ().enabled = false;
+
+
 
 		if (playersLeft == 1 || team1CharactersLeft == 0 || team2CharactersLeft == 0) {
 			winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", true);
