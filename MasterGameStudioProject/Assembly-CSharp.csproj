@@ -161,9 +161,6 @@
      <Compile Include="Assets\InControl\Source\Device\InputDeviceManager.cs" />
      <Compile Include="Assets\InControl\Source\Device\InputDeviceProfile.cs" />
      <Compile Include="Assets\InControl\Source\GUI\InControlInputModule.cs" />
-     <Compile Include="Assets\InControl\Source\iCade\ICadeDevice.cs" />
-     <Compile Include="Assets\InControl\Source\iCade\ICadeDeviceManager.cs" />
-     <Compile Include="Assets\InControl\Source\iCade\ICadeNative.cs" />
      <Compile Include="Assets\InControl\Source\iCade\ICadeState.cs" />
      <Compile Include="Assets\InControl\Source\InputManager.cs" />
      <Compile Include="Assets\InControl\Source\Native\ControlSources\NativeAnalogSource.cs" />
@@ -184,11 +181,6 @@
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriFightStickMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriPadEXTurboControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriRealArcadeProEXMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriRealArcadeProEXPremiumVLXMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriRealArcadeProEXSEMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriRealArcadeProHayabusaMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HORIRealArcadeProVKaiFightingStickMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HORIRealArcadeProVXMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriRealArcadeProVXSAMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriXbox360GemPadExMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\HoriXboxOneControllerMacProfile.cs" />
@@ -224,7 +216,6 @@
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\MicrosoftXboxOneControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\MicrosoftXboxOneEliteControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\MLGControllerMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\MVCTEStickMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\NaconGC100XFControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PDPAfterglowControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PDPMarvelControllerMacProfile.cs" />
@@ -233,7 +224,6 @@
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PDPXboxOneArcadeStickMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PDPXboxOneControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PowerAAirflowControllerMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\POWERAFUS1ONTournamentControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PowerAMiniControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PowerAMiniProExControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\PowerAMiniXboxOneControllerMacProfile.cs" />
@@ -257,7 +247,6 @@
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\ThrustmasterFerrari458RacingWheelMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\ThrustmasterGPXControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\TrustPredatorJoystickMacProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Generated\TSZPelicanControllerMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Mac\BuffaloClassicMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Mac\LogitechF310ModeDMacProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Mac\LogitechF510ModeDMacProfile.cs" />
@@ -286,7 +275,6 @@
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Windows\XboxOneWindows10AENativeProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Windows\XboxOneWindows10NativeProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Windows\XboxOneWindowsNativeProfile.cs" />
-     <Compile Include="Assets\InControl\Source\Native\DeviceProfiles\Windows\XInputWindowsNativeProfile.cs" />
      <Compile Include="Assets\InControl\Source\Native\Native.cs" />
      <Compile Include="Assets\InControl\Source\Native\NativeDeviceDriverType.cs" />
      <Compile Include="Assets\InControl\Source\Native\NativeDeviceInfo.cs" />
@@ -452,7 +440,6 @@
      <Compile Include="Assets\Particle Ribbon by Moonflower Carnivore\Scripts\randomParticleRotation.cs" />
      <Compile Include="Assets\Particle Ribbon by Moonflower Carnivore\Scripts\ReverseNormals.cs" />
      <Compile Include="Assets\Particle Ribbon by Moonflower Carnivore\Scripts\rotation.cs" />
-     <Compile Include="Assets\Shaders\Outline.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -494,7 +481,6 @@
      <None Include="Assets\ProCore\ProBuilder\Shader\DiffuseTextureBlend.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_StandardVertexColor.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexPicker.shader" />
-     <None Include="Assets\Shaders\Outline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_HideVertices.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -586,9 +572,6 @@
  </Reference>
  <Reference Include="pb_Stl">
  <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
- </Reference>
- <Reference Include="Triangle">
- <HintPath>C:/Users/midiv/Desktop/Game-Monster/MasterGameStudioProject/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

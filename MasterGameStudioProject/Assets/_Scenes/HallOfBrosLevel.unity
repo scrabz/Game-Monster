@@ -1083,7 +1083,6 @@ MonoBehaviour:
   countdownTimer: 4
   countdownText: {fileID: 0}
   isRoundEnding: 0
-  roundOverTimer: 3
   nextCharacterPanel: {fileID: 0}
   characterSpawn: {fileID: 0}
   p1Panel: {fileID: 0}
@@ -1156,6 +1155,7 @@ MonoBehaviour:
   claymondPortrait: {fileID: 0}
   succPortrait: {fileID: 0}
   gorgonPortrait: {fileID: 0}
+  wynkPortrait: {fileID: 0}
   spawn1: {fileID: 0}
   spawn2: {fileID: 0}
   spawn3: {fileID: 0}
@@ -6677,7 +6677,7 @@ Prefab:
         type: 3}
     - target: {fileID: 1361275925261090, guid: cd1e007829078874e8e85221136a9bf1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd1e007829078874e8e85221136a9bf1, type: 2}
@@ -7265,7 +7265,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1229705696}
-  m_LocalRotation: {x: -0, y: 0.74516773, z: -0, w: 0.6668772}
+  m_LocalRotation: {x: -0, y: 0.7451677, z: -0, w: 0.66687715}
   m_LocalPosition: {x: -10.1, y: 0.8, z: -16.46}
   m_LocalScale: {x: 0.8714176, y: 0.87141716, z: 0.87141716}
   m_Children: []
@@ -10433,7 +10433,7 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 1588fefd05b6b104e80de96752a6ed11, type: 2}
     - target: {fileID: 1421377140730464, guid: dad413786fab78740bef26e2899fc248, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dad413786fab78740bef26e2899fc248, type: 2}
