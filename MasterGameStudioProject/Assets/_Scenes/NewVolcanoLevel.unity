@@ -250,7 +250,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4012880199309212, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4012880199309212, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_LocalPosition.y
@@ -258,7 +258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4012880199309212, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.94
+      value: 5.06
       objectReference: {fileID: 0}
     - target: {fileID: 4012880199309212, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_LocalRotation.x
@@ -455,7 +455,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh19446
+  m_Name: pb_Mesh19144
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -845,6 +845,7 @@ MonoBehaviour:
   tributeSpawn1: {fileID: 0}
   tributeSpawn2: {fileID: 0}
   tributeSpawn3: {fileID: 0}
+  soloCupSpawn: {fileID: 0}
 --- !u!1001 &97275964
 Prefab:
   m_ObjectHideFlags: 0
@@ -24867,54 +24868,8 @@ MonoBehaviour:
   asset_guid: 
   dontDestroyMeshOnDelete: 0
   m_selectedFaces: 
-  m_SelectedEdges:
-  - x: 137
-    y: 139
-  - x: 153
-    y: 155
-  - x: 169
-    y: 171
-  - x: 121
-    y: 123
-  - x: 105
-    y: 107
-  - x: 89
-    y: 91
-  - x: 73
-    y: 75
-  - x: 57
-    y: 59
-  - x: 41
-    y: 43
-  - x: 25
-    y: 27
-  - x: 22
-    y: 20
-  - x: 186
-    y: 184
-  - x: 202
-    y: 200
-  - x: 218
-    y: 216
-  - x: 234
-    y: 232
-  - x: 250
-    y: 248
-  - x: 266
-    y: 264
-  - x: 282
-    y: 280
-  - x: 298
-    y: 296
-  - x: 314
-    y: 312
-  - x: 330
-    y: 328
-  - x: 346
-    y: 344
-  - x: 362
-    y: 360
-  m_selectedTriangles: 890000008b000000990000009b000000a9000000ab000000790000007b000000690000006b000000590000005b000000490000004b000000390000003b000000290000002b000000190000001b0000001600000014000000ba000000b8000000ca000000c8000000da000000d8000000ea000000e8000000fa000000f80000000a010000080100001a010000180100002a010000280100003a010000380100004a010000480100005a010000580100006a01000068010000
+  m_SelectedEdges: []
+  m_selectedTriangles: 
 --- !u!23 &1375889044
 MeshRenderer:
   m_ObjectHideFlags: 0
