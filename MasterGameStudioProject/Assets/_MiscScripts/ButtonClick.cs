@@ -22,6 +22,7 @@ public class ButtonClick : MonoBehaviour {
 		
 	}
 	public void TaskOnClick(){
+		this.GetComponent<AudioSource> ().Play ();
 		StartCoroutine ("ButtonPress");
 	}
 

@@ -233,6 +233,10 @@ public class PlayerCursor : MonoBehaviour {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					buttonManagerObject.GetComponent<ButtonManager> ().BackFromCharacterSelect();
 				}
+				if (hit.collider.gameObject.name == "LBackButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					buttonManagerObject.GetComponent<ButtonManager> ().BackFromLevelSelect();
+				}
 				if (hit.collider.gameObject.name == "LevelSelectButton") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					characterSelectObject.GetComponent<CharacterSelectAction> ().FinalizePlayers();

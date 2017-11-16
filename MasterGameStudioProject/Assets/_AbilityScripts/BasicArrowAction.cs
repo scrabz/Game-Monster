@@ -13,22 +13,17 @@ public class BasicArrowAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		if (gameObject.name == "StunArrow(Clone)") {
-			thisRigid.velocity = transform.forward * 50f;
-		}
 		if (gameObject.name == "BasicArrow(Clone)") {
-			thisRigid.velocity = transform.forward * 40f;
+			thisRigid.velocity = transform.forward * 60f;
 		}
 		if (gameObject.name == "ScatterArrow(Clone)") {
 			thisRigid.velocity = transform.forward * 30f;
 		}
 
 		if (gameObject.name == "GhostArrow(Clone)") {
-			thisRigid.velocity = transform.forward * 30f;
+			thisRigid.velocity = transform.forward * 15f;
 		}
-		if (gameObject.name == "BouncyArrow(Clone)") {
-			thisRigid.AddRelativeForce (transform.forward *8f);
-		}
+
 
 	}
 	
@@ -36,9 +31,19 @@ public class BasicArrowAction : MonoBehaviour {
 	void Update () {
 		//print (thisRigid.velocity);
 		//print (thisRigid.velocity.magnitude);
-//		if (thisRigid.velocity.magnitude > 10f) {
-//			thisRigid.velocity = thisRigid.velocity + (-transform.forward * 0.5f);
-//		}
+		if (gameObject.name == "GhostArrow(Clone)") {
+			//this.transform.eulerAngles = transform.forward + new Vector3(0,Mathf.Sin (Time.time * 80f),0) * 2f;
+			transform.Rotate(0,(Mathf.Sin(Time.time + 40f) * 0.5f),0);
+		}
+
+		if (gameObject.name == "BasicArrow(Clone)") {
+			if (thisRigid.velocity.magnitude > 30f) {
+				thisRigid.velocity = thisRigid.velocity + (-transform.forward * 1.5f);
+
+			} else {
+				thisRigid.useGravity = true;
+			}
+		}
 
 		if (moving == false) {
 			thisRigid.isKinematic = true;
@@ -80,7 +85,7 @@ public class BasicArrowAction : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (col.gameObject.tag == "Solid"){
+		if (col.gameObject.tag == "Solid" || col.gameObject.tag == "Ground"){
 			if (gameObject.name == "BasicArrow(Clone)" || gameObject.name == "StunArrow(Clone)" || gameObject.name == "ScatterArrow") {
 				moving = false;
 				thisRigid.velocity = Vector3.zero;

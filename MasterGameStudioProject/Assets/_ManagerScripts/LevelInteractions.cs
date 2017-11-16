@@ -58,13 +58,13 @@ public class LevelInteractions : MonoBehaviour {
 					GameObject cup;
 					cup = GameObject.FindGameObjectWithTag ("SoloCup");
 					if (cup == null) {
-						matchActionTimer = 15f;
+						matchActionTimer = 15f + Random.Range(0f,25f);
 						thingToSpawn = Instantiate (Resources.Load ("SoloCup"), soloCupSpawn.position, soloCupSpawn.rotation) as GameObject;
 					}
 				}
 			}
 		} else {
-			matchActionTimer = 15f;
+			matchActionTimer = 15f + Random.Range(0f,25f);
 		}
 	}
 }

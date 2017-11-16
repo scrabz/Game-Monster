@@ -128,6 +128,7 @@ public class PlayerHealth : MonoBehaviour {
 		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false && this.GetComponent<PlayerState>().isInvincible == false) {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
+			transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
 			if (healthLost != 0) {
 				StartCoroutine ("FlashRed");
 				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");

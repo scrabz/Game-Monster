@@ -96,6 +96,21 @@ public class ButtonManager : MonoBehaviour {
 
 	}
 
+	public void BackFromLevelSelect(){
+
+		characterSelectAnimator.SetBool ("upFromMid", false);
+		characterSelectAnimator.SetBool ("upFromBottom", false);
+		characterSelectAnimator.SetBool ("downFromTop", true);
+		characterSelectAnimator.SetBool ("downFromMid", false);
+
+		levelSelectAnimator.SetBool ("upFromBottom", false);
+		levelSelectAnimator.SetBool ("upFromMid", false);
+		levelSelectAnimator.SetBool ("downFromTop", false);
+		levelSelectAnimator.SetBool ("downFromMid", true);
+
+
+	}
+
 	public void EnablePlayer3(){
 		if (characterSelectAnimator.GetBool ("upFromBottom") == true) {
 			p3Cur.SetActive (true);
