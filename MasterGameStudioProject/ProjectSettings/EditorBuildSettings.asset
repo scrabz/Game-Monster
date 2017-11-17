@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Menu.unity
     guid: 353753478bfa76541b9f3d6ded893624
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/TestZone.unity
     guid: 1e9fe2af5b2e80f448cafa8f92361e4f
   - enabled: 1
     path: Assets/_Scenes/VolcanoLevel.unity
     guid: be846d11059c84f4fb3620be6c177380
-  - enabled: 1
-    path: Assets/_Scenes/HallOfBrosLevelEdit.unity
+  - enabled: 0
+    path: 
     guid: 2337099808d8ce243b49d94704445d20
-  - enabled: 1
-    path: Assets/_Scenes/HallOfBrosLevel.unity
+  - enabled: 0
+    path: 
     guid: 0a1153d7151f86c4395d75b00aa3ada0
+  - enabled: 0
+    path: Assets/_Scenes/New Cave.unity
+    guid: 5050b6aed82479844a0628a8fd4ac286
