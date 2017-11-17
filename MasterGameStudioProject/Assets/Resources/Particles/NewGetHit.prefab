@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198104638265631924}
   - component: {fileID: 199733614222278320}
   m_Layer: 0
-  m_Name: New Get Hit Part
+  m_Name: NewGetHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439219874378716}
   m_LocalRotation: {x: -0.49999976, y: 0.50000024, z: -0.50000036, w: 0.49999973}
-  m_LocalPosition: {x: -10.381126, y: 3.4399319, z: 1.9367447}
-  m_LocalScale: {x: 0.5682202, y: 0.5682202, z: 0.5682202}
+  m_LocalPosition: {x: 0.5920677, y: -2.4974525, z: -9.298065}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,8 +99,8 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
-  randomSeed: -1009780256
+  scalingMode: 0
+  randomSeed: -1727530735
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -190,7 +190,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.91561866, b: 0.8088235, a: 1}
+      maxColor: {r: 0.5626081, g: 0.754355, b: 0.8897059, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -252,7 +252,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2

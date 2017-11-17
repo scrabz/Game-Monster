@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public Color defHealthColor;
 
+	public GameObject createdThing;
 
 
 
@@ -129,6 +130,7 @@ public class PlayerHealth : MonoBehaviour {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
 			transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
+			createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"),this.transform.position,this.transform.rotation) as GameObject;
 			if (healthLost != 0) {
 				StartCoroutine ("FlashRed");
 				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
