@@ -41,30 +41,30 @@ public class LevelInteractions : MonoBehaviour {
 			matchActionTimer -= Time.deltaTime;
 
 			if (matchActionTimer <= 0f) {
-				if (SceneManager.GetActiveScene ().name == "VolcanoLevel") {
-					ranNum = Random.Range (0, 3);
-					if (ranNum == 0) {
-						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn1.position, tributeSpawn1.rotation) as GameObject;
-					}
-					if (ranNum == 1) {
-						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn2.position, tributeSpawn2.rotation) as GameObject;
-					}
-					if (ranNum == 2) {
-						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
-					}
-				}
+//				if (SceneManager.GetActiveScene ().name == "VolcanoLevel") {
+//					ranNum = Random.Range (0, 3);
+//					if (ranNum == 0) {
+//						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn1.position, tributeSpawn1.rotation) as GameObject;
+//					}
+//					if (ranNum == 1) {
+//						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn2.position, tributeSpawn2.rotation) as GameObject;
+//					}
+//					if (ranNum == 2) {
+//						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
+//					}
+//				}
 
 				if (SceneManager.GetActiveScene ().name == "HallOfBrosLevel") {
 					GameObject cup;
 					cup = GameObject.FindGameObjectWithTag ("SoloCup");
 					if (cup == null) {
-						matchActionTimer = 15f;
+						matchActionTimer = 15f + Random.Range(0f,25f);
 						thingToSpawn = Instantiate (Resources.Load ("SoloCup"), soloCupSpawn.position, soloCupSpawn.rotation) as GameObject;
 					}
 				}
 			}
 		} else {
-			matchActionTimer = 15f;
+			matchActionTimer = 15f + Random.Range(0f,25f);
 		}
 	}
 }

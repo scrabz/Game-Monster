@@ -13,7 +13,7 @@ public class FollowParentVelocity : MonoBehaviour {
 	void FixedUpdate () {
 		//transform.LookAt(transform.parent.GetComponent<Rigidbody>().velocity);
 		//transform.rotation = Quaternion.LookRotation(transform.parent.GetComponent<Rigidbody>().velocity,transform.up);
-		transform.Rotate (0, transform.parent.GetComponent<Rigidbody> ().velocity.magnitude, 0);
+		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.parent.GetComponent<Rigidbody> ().velocity.magnitude, transform.eulerAngles.z);
 
 	}
 }

@@ -177,22 +177,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			comboJab.aName = "Fury Fists";
-			comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA1");
+			comboJab.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA1");
 			comboJab.aCooldown = 1f;
 			comboJab.aPanel = ability1;
 
 			megaFist.aName = "Mega Fist";
-			megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA2");
+			megaFist.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA2");
 			megaFist.aCooldown = 2f;
 			megaFist.aPanel = ability2;
 
 			collection.aName = "Collection / Rejection";
-			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA3");
+			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA3");
 			collection.aCooldown = 4f;
 			collection.aPanel = ability3;
 
 			stomp.aName = "Stomp";
-			stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/GaryA4");
+			stomp.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA4");
 			stomp.aCooldown = 15f;
 			stomp.aPanel = ability4;
 
@@ -225,22 +225,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			cleave.aName = "Cleave";
-			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA1");
+			cleave.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA1");
 			cleave.aCooldown = 1f;
 			cleave.aPanel = ability1;
 
 			shield.aName = "Shield";
-			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA2");
+			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA2");
 			shield.aCooldown = 5f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
-			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA3");
+			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA3");
 			shieldPush.aCooldown = 3f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
-			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/BrogreA4");
+			kegToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA4");
 			kegToss.aCooldown = 15f;
 			kegToss.aPanel = ability4;
 
@@ -268,22 +268,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			comboAttack.aName = "Combo Attack";
-			comboAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA1");
+			comboAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NA1");
 			comboAttack.aCooldown = 1f;
 			comboAttack.aPanel = ability1;
 
 			dashAttack.aName = "Dash Attack";
-			dashAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA2");
+			dashAttack.aIcon = Resources.Load<Sprite> ("AbilityIcons/NA2");
 			dashAttack.aCooldown = 2.5f;
 			dashAttack.aPanel = ability2;
 
 			petrify.aName = "Petrify";
-			petrify.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA3");
+			petrify.aIcon = Resources.Load<Sprite> ("AbilityIcons/NA3");
 			petrify.aCooldown = 8f;
 			petrify.aPanel = ability3;
 
 			rage.aName = "Rage";
-			rage.aIcon = Resources.Load<Sprite> ("AbilityIcons/NeredyA4");
+			rage.aIcon = Resources.Load<Sprite> ("AbilityIcons/NA4");
 			rage.aCooldown = 15f;
 			rage.aPanel = ability4;
 
@@ -317,22 +317,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			duelDaggers.aName = "Duel Daggers";
-			duelDaggers.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA1");
+			duelDaggers.aIcon = Resources.Load<Sprite> ("AbilityIcons/TA1");
 			duelDaggers.aCooldown = 0.7f;
 			duelDaggers.aPanel = ability1;
 
 			knifeThrow.aName = "Knife Throw";
-			knifeThrow.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
+			knifeThrow.aIcon = Resources.Load<Sprite> ("AbilityIcons/TA2");
 			knifeThrow.aCooldown = 1f;
 			knifeThrow.aPanel = ability2;
 
 			clawTrap.aName = "Claw Trap";
-			clawTrap.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA3");
+			clawTrap.aIcon = Resources.Load<Sprite> ("AbilityIcons/TA3");
 			clawTrap.aCooldown = 8f;
 			clawTrap.aPanel = ability3;
 
 			knifeSpin.aName = "Knife Spin";
-			knifeSpin.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA4");
+			knifeSpin.aIcon = Resources.Load<Sprite> ("AbilityIcons/TA4");
 			knifeSpin.aCooldown = 15f;
 			knifeSpin.aPanel = ability4;
 
@@ -367,22 +367,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			potionToss.aName = "Duel Daggers";
-			potionToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA1");
+			potionToss.aIcon = Resources.Load<Sprite> ("AbilityIcons/DA1");
 			potionToss.aCooldown = 0.7f;
 			potionToss.aPanel = ability1;
 
 			poisonCloud.aName = "Knife Throw";
-			poisonCloud.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA2");
+			poisonCloud.aIcon = Resources.Load<Sprite> ("AbilityIcons/DA2");
 			poisonCloud.aCooldown = 2.5f;
 			poisonCloud.aPanel = ability2;
 
 			undeadCompanions.aName = "Claw Trap";
-			undeadCompanions.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA3");
+			undeadCompanions.aIcon = Resources.Load<Sprite> ("AbilityIcons/DA3");
 			undeadCompanions.aCooldown = 3f;
 			undeadCompanions.aPanel = ability3;
 
 			bagOfTricks.aName = "Knife Spin";
-			bagOfTricks.aIcon = Resources.Load<Sprite> ("AbilityIcons/TinyA4");
+			bagOfTricks.aIcon = Resources.Load<Sprite> ("AbilityIcons/DA4");
 			bagOfTricks.aCooldown = 15f;
 			bagOfTricks.aPanel = ability4;
 
@@ -452,22 +452,22 @@ public class PlayerAbilities : MonoBehaviour {
 
 			//Set the properties of every ability
 			basicArrow.aName = "Push Punch";
-			//pushPunch.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
-			basicArrow.aCooldown = 0.8f;
+			basicArrow.aIcon = Resources.Load<Sprite> ("AbilityIcons/GUA1");
+			basicArrow.aCooldown = 0.5f;
 			basicArrow.aPanel = ability1;
 
 			napalmStrike.aName = "C";
-			//clayShards.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			napalmStrike.aIcon = Resources.Load<Sprite> ("AbilityIcons/GUA2");
 			napalmStrike.aCooldown = 4f;
 			napalmStrike.aPanel = ability2;
 
 			arrowArsenal.aName = "Clay Wall";
-			//clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/test3");
+			arrowArsenal.aIcon = Resources.Load<Sprite> ("AbilityIcons/GUA3");
 			arrowArsenal.aCooldown = 2f;
 			arrowArsenal.aPanel = ability3;
 
 			trueForm.aName = "Shockwave";
-			//shockwave.aIcon = Resources.Load<Sprite> ("AbilityIcons/test1");
+			shockwave.aIcon = Resources.Load<Sprite> ("AbilityIcons/GUA4");
 			trueForm.aCooldown = 25f;
 			trueForm.aPanel = ability4;
 			characterPortrait.GetComponent<Image>().sprite = Resources.Load<Sprite> ("CharacterPortraits/GuyP");
@@ -1217,8 +1217,6 @@ public class PlayerAbilities : MonoBehaviour {
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		yield return new WaitForSeconds(0.1f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
-		this.GetComponent<AudioSource> ().clip = tinyKnife;
-		this.GetComponent<AudioSource> ().Play ();
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -1344,6 +1342,7 @@ public class PlayerAbilities : MonoBehaviour {
 	}
 
 	public IEnumerator KnifeSpin(){
+		int p = 0;
 		doingAbil4 = true;
 		this.GetComponent<PlayerMovement> ().canRotate = false;
 		yield return new WaitForSeconds(0.1f);
@@ -1351,11 +1350,18 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<AudioSource> ().Play ();
 		createdThing = Instantiate (Resources.Load ("Particles/TinyUltPart"), transform) as GameObject;
 		for (int i = 0; i < 54; i++) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
-			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			p++;
+			if (p == 1) {
+				createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
+				createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+				createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+				Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+			}
+			if (p > 1) {
+				p = 0;
+			}
 			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
+
 			yield return new WaitForSeconds (0.01f);
 		}
 
@@ -1438,13 +1444,13 @@ public class PlayerAbilities : MonoBehaviour {
 
 	public IEnumerator BasicArrow(){
 		doingAbil1 = true;
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(0.25f);
 		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BasicArrow"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.2f);
 		doingAbil1 = false;
 		abilityActive = false;
 		yield return null;
@@ -1457,36 +1463,41 @@ public class PlayerAbilities : MonoBehaviour {
 		doingAbil3 = true;
 		yield return new WaitForSeconds(0.4f);
 
-		if (selectedArrow == 0) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BouncyArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
-			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
-		}
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GhostArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 
-		if (selectedArrow == 1) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ScatterArrow"), characterPoint2.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
-			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
-		}
-
-		if (selectedArrow == 2) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/StunArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
-			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
-		}
-		if (selectedArrow == 3) {
-			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GhostArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
-			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
-			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
-			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
-		}
-		selectedArrow += 1;
-		if (selectedArrow >= 4) {
-			selectedArrow = 0;
-		}
+//		if (selectedArrow == 0) {
+//			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/BouncyArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+//			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+//			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+//			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+//		}
+//
+//		if (selectedArrow == 1) {
+//			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ScatterArrow"), characterPoint2.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+//			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+//			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+//			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+//		}
+//
+//		if (selectedArrow == 2) {
+//			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/StunArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+//			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+//			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+//			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+//		}
+//		if (selectedArrow == 3) {
+//			createdThing = Instantiate (Resources.Load ("ProjectileAttacks/GhostArrow"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y, rotationPoint.transform.eulerAngles.z)) as GameObject;
+//			createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+//			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+//			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
+//		}
+		//selectedArrow += 1;
+		//if (selectedArrow >= 4) {
+		//	selectedArrow = 0;
+		//}
 		yield return new WaitForSeconds(0.3f);
 		//Do an animation here
 		doingAbil3 = false;

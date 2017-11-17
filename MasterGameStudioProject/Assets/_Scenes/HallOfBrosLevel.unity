@@ -4915,7 +4915,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928524841}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -7032,7 +7032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
   textureRamp: {fileID: 0}
-  rampOffset: -0.15
+  rampOffset: -0.03
 --- !u!81 &1446169006
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7241,7 +7241,7 @@ BoxCollider:
   m_GameObject: {fileID: 1463711961}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 29.187418, y: 6.037063, z: 1}
   m_Center: {x: -1.2634373, y: 2.55, z: 0.00000061094846}
@@ -7923,12 +7923,12 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610063409}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 28f3386c5e8707142a23d97b804873bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48db1964489af284eba57159d98cef91, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8949,7 +8949,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh199292
+  m_Name: pb_Mesh236464
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
