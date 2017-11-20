@@ -11,9 +11,9 @@ public class FollowParentVelocity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//transform.LookAt(transform.parent.GetComponent<Rigidbody>().velocity);
-		//transform.rotation = Quaternion.LookRotation(transform.parent.GetComponent<Rigidbody>().velocity,transform.up);
-		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.parent.GetComponent<Rigidbody> ().velocity.magnitude, transform.eulerAngles.z);
+		if (this.transform.parent.GetComponent<Rigidbody> ().velocity.magnitude > 0.1f) {
+			transform.rotation = Quaternion.LookRotation (this.transform.parent.GetComponent<Rigidbody> ().velocity);
+		}
 
 	}
 }

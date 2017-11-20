@@ -48,6 +48,9 @@ public class CooldownManager : MonoBehaviour {
 	void Cooldown(){
 		cooldownTimeLeft -= Time.deltaTime;
 		darkMask.fillAmount = (cooldownTimeLeft / cooldownDuration);
+		if (this.gameObject.name == "Ability4") {
+			this.transform.Find ("UltCountdown").GetComponent<Text> ().text = cooldownTimeLeft.ToString("##");
+		}
 
 	}
 

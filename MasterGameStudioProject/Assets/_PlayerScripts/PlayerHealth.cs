@@ -130,7 +130,9 @@ public class PlayerHealth : MonoBehaviour {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
 			transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
-			createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"),this.transform.position,this.transform.rotation) as GameObject;
+			if (healthLost > 0.8f) {
+				createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"), this.transform.position, this.transform.rotation) as GameObject;
+			}
 			if (healthLost != 0) {
 				StartCoroutine ("FlashRed");
 				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
@@ -149,6 +151,7 @@ public class PlayerHealth : MonoBehaviour {
 
 			if (currentHealth <= 0f) {
 				currentHealth = 0f;
+				healthText.text = currentHealth.ToString ("####");
 				StopAllCoroutines ();
 				this.GetComponent<PlayerMovement> ().currentJoystick.StopVibration ();
 				Death ();

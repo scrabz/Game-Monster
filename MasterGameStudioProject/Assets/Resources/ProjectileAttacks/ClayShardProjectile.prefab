@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1476846446436464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 2.02}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -114,7 +114,8 @@ MonoBehaviour:
   parentPoint: {fileID: 0}
   creator: {fileID: 0}
   foundCreator: 0
-  lifeTimer: 0.6
+  lifeTimer: 0.35
+  createdThing: {fileID: 0}
   damage: 4
 --- !u!114 &114956835318954802
 MonoBehaviour:

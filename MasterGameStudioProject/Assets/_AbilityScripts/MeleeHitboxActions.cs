@@ -35,6 +35,13 @@ public class MeleeHitboxActions : MonoBehaviour {
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
 					this.GetComponent<Rigidbody> ().isKinematic = true;
 				}
+				if (this.gameObject.name == "GroundSlamHitbox(Clone)") {
+					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+					col.GetComponent<PlayerState> ().InflictStun (4f);
+					//col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
+					this.GetComponent<Rigidbody> ().isKinematic = true;
+				}
+
 
 				if (this.gameObject.name == "PetrifyHitbox(Clone)") {
 					//pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
@@ -42,9 +49,9 @@ public class MeleeHitboxActions : MonoBehaviour {
 					Destroy (this.gameObject);
 				}
 
-				if (this.gameObject.name == "PushPunchHitbox(Clone)") {
+				if (this.gameObject.name == "PunchHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
-					col.gameObject.GetComponent<PlayerState> ().Pushback (0.05f,pushBackDir);
+					col.gameObject.GetComponent<PlayerState> ().Pushback (0.2f,pushBackDir);
 					Destroy (this.gameObject);
 				}
 			}

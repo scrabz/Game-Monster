@@ -2,6 +2,7 @@
 using System.Collections;
 using InControl;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerMovement : MonoBehaviour {
@@ -19,7 +20,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float vMovement;
 	public bool rollButton;
 
-
+	public bool switchChrButton;
+	public bool switchChrBack;
 
 	RaycastHit hit;
 	public float dist = 2f;
@@ -50,6 +52,8 @@ public class PlayerMovement : MonoBehaviour {
 	public bool matchOver = false;
 
 	public GameObject thisModel;
+
+	public GameObject createdThing;
 
 	void Start() {
 		rollTimer = rollTimerDef;
@@ -103,16 +107,110 @@ public class PlayerMovement : MonoBehaviour {
 				if (!matchManager.GetComponent<MatchManager> ().isCountingDown) {
 					hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
 					vMovement = Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
-					//rollButton = currentJoystick.Action1.WasPressed;
+
 				}
 			} else {
 				hMovement = Mathf.RoundToInt(currentJoystick.LeftStickX.RawValue);
 				vMovement =  Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
+				switchChrButton = currentJoystick.Action3.WasPressed;
+				switchChrBack = currentJoystick.Action2.WasPressed;
 				//rollButton = currentJoystick.Action1.WasPressed;
 			}
 		}
 
+		if (SceneManager.GetActiveScene ().name == "TestZone") {
+			if (switchChrBack) {
+				if (this.gameObject.name == "Brogre(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/ToeTip"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "ToeTip(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Tiny"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Tiny(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Iris"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Iris(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Neredy"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Neredy(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/DrDecay"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "DrDecay(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Claymond"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Claymond(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Guy"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Guy(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Brogre"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
 
+
+			}
+
+
+			if (switchChrButton) {
+				if (this.gameObject.name == "Brogre(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Guy"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Guy(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Claymond"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Claymond(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/DrDecay"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "DrDecay(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Neredy"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Neredy(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Iris"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Iris(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Tiny"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Tiny(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/ToeTip"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+				if (this.gameObject.name == "Gary(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Brogre"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					Destroy (this.gameObject);
+				}
+
+
+			}
+
+		}
 
 		oldPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 

@@ -53,11 +53,13 @@ public class LevelInteractions : MonoBehaviour {
 //						thingToSpawn = Instantiate (Resources.Load ("Tribute"), tributeSpawn3.position, tributeSpawn3.rotation) as GameObject;
 //					}
 //				}
-
+				Debug.Log("hit 0");
 				if (SceneManager.GetActiveScene ().name == "HallOfBrosLevel") {
 					GameObject cup;
 					cup = GameObject.FindGameObjectWithTag ("SoloCup");
+					Debug.Log (cup.name);
 					if (cup == null) {
+						Debug.Log ("instanciated cup");
 						matchActionTimer = 15f + Random.Range(0f,25f);
 						thingToSpawn = Instantiate (Resources.Load ("SoloCup"), soloCupSpawn.position, soloCupSpawn.rotation) as GameObject;
 					}

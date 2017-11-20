@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e99afc3bc7b614ba992d1a9e8ed000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6.15
+  speed: 6.25
   gravity: 55
   isDying: 0
   canMove: 1
@@ -3493,6 +3493,7 @@ MonoBehaviour:
   playerNum: 0
   mainCam: {fileID: 0}
   defHealthColor: {r: 0, g: 0, b: 0, a: 0}
+  createdThing: {fileID: 0}
 --- !u!137 &137465144607282370
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

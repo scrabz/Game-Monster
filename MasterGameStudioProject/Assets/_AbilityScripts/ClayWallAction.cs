@@ -17,11 +17,12 @@ public class ClayWallAction : MonoBehaviour {
 		if (col.gameObject.tag == "Projectile" || col.gameObject.tag == "Hitbox") {
 			if (col.gameObject.GetComponent<AttackAction> ().teamNum != this.GetComponent<AttackAction> ().teamNum) {
 				health -= col.gameObject.GetComponent<AttackAction> ().damage;
-				Destroy (col.gameObject);
+
 				if (health <= 0) {
 					Destroy (this.gameObject);
 				}
 			}
+			Destroy (col.gameObject);
 		}
 	}
 }

@@ -6,10 +6,26 @@ public class PlayerAnimation : MonoBehaviour {
 
 	public Animator animator;
 	public GameObject rotationPoint;
+
+	public AudioClip brogreVictory;
+	public AudioClip garyVictory;
+	public AudioClip tinyVictory;
+	public AudioClip neredyVictory;
+	public AudioClip guyVictory;
+	public AudioClip decayVictory;
+	public AudioClip geoVictory;
+	public AudioClip irisVictory;
+
 	// Use this for initialization
 	void Start () {
 		rotationPoint = this.transform.Find ("RotationPoint").gameObject;
 		animator = this.transform.Find("RotationPoint").Find("Model").gameObject.GetComponent<Animator> ();
+
+
+		brogreVictory = Resources.Load ("SFX/BrogreVictory") as AudioClip;
+		garyVictory = Resources.Load ("SFX/GaryVictory") as AudioClip;
+		tinyVictory = Resources.Load ("SFX/TinyVictory") as AudioClip;
+		neredyVictory = Resources.Load ("SFX/NeredyVictory") as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -24,6 +40,8 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = brogreVictory;
+						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
 			} else {
@@ -83,6 +101,8 @@ public class PlayerAnimation : MonoBehaviour {
 					}
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
+						this.GetComponent<AudioSource> ().clip = neredyVictory;
+						this.GetComponent<AudioSource> ().Play ();
 						animator.Play ("VictoryAnimation", 0, 0f);
 					}
 				}
@@ -133,6 +153,8 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
 			} else {
@@ -175,6 +197,63 @@ public class PlayerAnimation : MonoBehaviour {
 			}
 
 		}
+
+		if (this.gameObject.name == "Claymond(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
+				this.GetComponent<PlayerMovement> ().canMove = false;
+				if (this.GetComponent<PlayerState> ().isDying) {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("DefeatAnimation")) {
+						animator.Play ("DefeatAnimation", 0, 0f);
+					}
+				} else {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
+						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().Play ();
+					}
+				}
+			} else {
+				if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("SeismicFist")) {
+					animator.Play ("SeismicFist", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("AttackAndWalk")) {
+					animator.Play ("AttackAndWalk", 0, 0f);
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Rockwall")) {
+					animator.Play ("Rockwall", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("SeismicTerror")) {
+					animator.Play ("SeismicTerror", 0, 0f);
+
+				}
+
+				if (!this.GetComponent<PlayerAbilities> ().doingAbil1 && !this.GetComponent<PlayerAbilities> ().doingAbil2 && !this.GetComponent<PlayerAbilities> ().doingAbil3 && !this.GetComponent<PlayerAbilities> ().doingAbil4) {
+					if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+						if (Vector3.Dot (this.GetComponent<PlayerMovement> ().moveDirection, rotationPoint.transform.forward) < 0) {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("WalkBackwards")) {
+								animator.Play ("WalkBackwards", 0, 0f);
+
+							}
+						} else {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk")) {
+								animator.Play ("Walk", 0, 0f);
+							}
+
+						}
+					} else {
+						if (!this.GetComponent<PlayerMovement> ().isRolling && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+							animator.Play ("Idle", 0, 0f);
+						}
+					}
+
+				}
+			}
+
+		}
+
+
 
 		if (this.gameObject.name == "DrDecay(Clone)") {
 			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
@@ -311,6 +390,8 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Ultimate")) {
 						animator.Play ("Ultimate", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = garyVictory;
+						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
 			} else {
