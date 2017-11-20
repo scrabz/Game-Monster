@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4373500890385538
 Transform:
@@ -54,3 +54,14 @@ MonoBehaviour:
   i: 0
   blackoutPanel: {fileID: 0}
   chrManager: {fileID: 0}
+  mainMenuAnimator: {fileID: 0}
+  characterSelectAnimator: {fileID: 0}
+  levelSelectAnimator: {fileID: 0}
+  modeText: {fileID: 0}
+  redPanel: {fileID: 0}
+  bluePanel: {fileID: 0}
+  cursorCanvas: {fileID: 0}
+  p1Cur: {fileID: 0}
+  p2Cur: {fileID: 0}
+  p3Cur: {fileID: 0}
+  p4Cur: {fileID: 0}

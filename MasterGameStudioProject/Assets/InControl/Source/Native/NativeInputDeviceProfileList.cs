@@ -23,11 +23,6 @@ namespace InControl
 			"InControl.NativeProfile.HoriFightStickMacProfile",
 			"InControl.NativeProfile.HoriPadEXTurboControllerMacProfile",
 			"InControl.NativeProfile.HoriRealArcadeProEXMacProfile",
-			"InControl.NativeProfile.HoriRealArcadeProEXPremiumVLXMacProfile",
-			"InControl.NativeProfile.HoriRealArcadeProEXSEMacProfile",
-			"InControl.NativeProfile.HoriRealArcadeProHayabusaMacProfile",
-			"InControl.NativeProfile.HORIRealArcadeProVKaiFightingStickMacProfile",
-			"InControl.NativeProfile.HORIRealArcadeProVXMacProfile",
 			"InControl.NativeProfile.HoriRealArcadeProVXSAMacProfile",
 			"InControl.NativeProfile.HoriXbox360GemPadExMacProfile",
 			"InControl.NativeProfile.HoriXboxOneControllerMacProfile",
@@ -63,7 +58,6 @@ namespace InControl
 			"InControl.NativeProfile.MicrosoftXboxOneControllerMacProfile",
 			"InControl.NativeProfile.MicrosoftXboxOneEliteControllerMacProfile",
 			"InControl.NativeProfile.MLGControllerMacProfile",
-			"InControl.NativeProfile.MVCTEStickMacProfile",
 			"InControl.NativeProfile.NaconGC100XFControllerMacProfile",
 			"InControl.NativeProfile.PDPAfterglowControllerMacProfile",
 			"InControl.NativeProfile.PDPMarvelControllerMacProfile",
@@ -72,7 +66,6 @@ namespace InControl
 			"InControl.NativeProfile.PDPXboxOneArcadeStickMacProfile",
 			"InControl.NativeProfile.PDPXboxOneControllerMacProfile",
 			"InControl.NativeProfile.PowerAAirflowControllerMacProfile",
-			"InControl.NativeProfile.POWERAFUS1ONTournamentControllerMacProfile",
 			"InControl.NativeProfile.PowerAMiniControllerMacProfile",
 			"InControl.NativeProfile.PowerAMiniProExControllerMacProfile",
 			"InControl.NativeProfile.PowerAMiniXboxOneControllerMacProfile",
@@ -96,7 +89,6 @@ namespace InControl
 			"InControl.NativeProfile.ThrustmasterFerrari458RacingWheelMacProfile",
 			"InControl.NativeProfile.ThrustmasterGPXControllerMacProfile",
 			"InControl.NativeProfile.TrustPredatorJoystickMacProfile",
-			"InControl.NativeProfile.TSZPelicanControllerMacProfile",
 			"InControl.NativeProfile.BuffaloClassicMacProfile",
 			"InControl.NativeProfile.LogitechF310ModeDMacProfile",
 			"InControl.NativeProfile.LogitechF510ModeDMacProfile",
@@ -125,7 +117,6 @@ namespace InControl
 			"InControl.NativeProfile.XboxOneWindows10AENativeProfile",
 			"InControl.NativeProfile.XboxOneWindows10NativeProfile",
 			"InControl.NativeProfile.XboxOneWindowsNativeProfile",
-			"InControl.NativeProfile.XInputWindowsNativeProfile",
 		};
 	}
 }

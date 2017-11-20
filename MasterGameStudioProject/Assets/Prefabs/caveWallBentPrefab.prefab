@@ -22,12 +22,13 @@ GameObject:
   - component: {fileID: 33429509448846534}
   - component: {fileID: 23786047026142846}
   - component: {fileID: 95145450836777342}
+  - component: {fileID: 64487389974369800}
   m_Layer: 0
   m_Name: caveWallBentPrefab
   m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4439695881909670
 Transform:
@@ -80,6 +81,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181360756526250}
+  m_Mesh: {fileID: 4300000, guid: 9c7e157114e8593489d7bf9e26a71ff4, type: 3}
+--- !u!64 &64487389974369800
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181360756526250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 9c7e157114e8593489d7bf9e26a71ff4, type: 3}
 --- !u!95 &95145450836777342
 Animator:
