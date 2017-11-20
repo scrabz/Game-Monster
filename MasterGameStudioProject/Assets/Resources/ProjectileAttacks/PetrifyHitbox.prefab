@@ -29,7 +29,7 @@ GameObject:
   m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4913042291569994
 Transform:
@@ -126,4 +126,5 @@ MonoBehaviour:
   creator: {fileID: 0}
   foundCreator: 0
   lifeTimer: 0.2
+  createdThing: {fileID: 0}
   damage: 0
