@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4826007506374964
 Transform:
@@ -54,9 +54,11 @@ MonoBehaviour:
   soundSource: {fileID: 0}
   musicSource: {fileID: 0}
   matchManagerObject: {fileID: 0}
-  currentMode: 0
-  team1Characters: []
-  team2Characters: []
+  ffa: 1
+  player1Characters: []
+  player2Characters: []
+  player3Characters: []
+  player4Characters: []
   musicVolume: 0.2
   screenShaking: 0
   screenShakeTimer: 0.2
@@ -69,4 +71,13 @@ MonoBehaviour:
   Empty: {fileID: 0}
   Brogre: {fileID: 0}
   Skelly: {fileID: 0}
+  Tiny: {fileID: 0}
+  Neredy: {fileID: 0}
+  Guy: {fileID: 0}
+  Claymond: {fileID: 0}
+  Iris: {fileID: 0}
+  DrDecay: {fileID: 0}
+  Wynk: {fileID: 0}
   teamSize: 4
+  p3Enabled: 0
+  p4Enabled: 0
