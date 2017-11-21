@@ -1,289 +1,259 @@
 fileFormatVersion: 2
 guid: 8d9c81e03b37759428bf77d8b960d92d
-timeCreated: 1510251283
+timeCreated: 1510931500
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Ankle_L
     100002: Ankle_R
-    100004: ArrowsInPouch
-    100006: ArrowsInPouch1
-    100008: ArrowsInPouch2
-    100010: ArrowsInPouch3
-    100012: ArrowsInPouch4
-    100014: ArrowsInPouch5
-    100016: Bow01_Lower
-    100018: Bow01_Upper
-    100020: Bow02_Lower
-    100022: Bow02_Upper
-    100024: Bow03_Lower
-    100026: Bow03_Upper
-    100028: Bow04_Lower
-    100030: Bow04_Upper
-    100032: Bow05_Lower
-    100034: Bow05_Upper
-    100036: Bow06_Lower
-    100038: Bow06_Upper
-    100040: Bow07_Lower
-    100042: Bow07_Upper
-    100044: Bow08_Lower
-    100046: Bow08_Upper
-    100048: Bow09_Lower
-    100050: Bow09_Upper
-    100052: BowCenter
-    100054: BowDrawback
-    100056: BOWMASTERCONTROL
-    100058: BowString
-    100060: Clavicle_L
-    100062: Clavicle_R
-    100064: ClavicleControl_L
-    100066: ClavicleControl_R
-    100068: Elbow_L
-    100070: Elbow_R
-    100072: ElbowControl_L
-    100074: ElbowControl_R
-    100076: Foot_L
-    100078: Foot_R
-    100080: FootControl_L
-    100082: FootControl_R
-    100084: GuyArrowPouch
-    100086: GuyArrowPouch1
-    100088: GuyBody
-    100090: GuyBow
-    100092: GuyChestPad
-    100094: GuyEyeBrows
-    100096: GuyEyes
-    100098: //RootNode
-    100100: GuyHair
-    100102: GuyHat
-    100104: Hand_L
-    100106: Hand_R
-    100108: HandControl_L
-    100110: HandControl_R
-    100112: HandRoll_L
-    100114: HandRoll_R
-    100116: Head
-    100118: Hips
-    100120: HipsControl
-    100122: Index01_L
-    100124: Index01_R
-    100126: Index02_L
-    100128: Index02_R
-    100130: Index03_L
-    100132: Index03_R
-    100134: Index04_L
-    100136: Index04_R
-    100138: Knee_L
-    100140: Knee_R
-    100142: KneeControl_L
-    100144: KneeControl_R
-    100146: LeftHeel_IKHandle
-    100148: LeftLeg_IKHandle
-    100150: LeftToe_IKHandle
-    100152: MASTERCONTROLNODE
-    100154: Middle01_L
-    100156: Middle01_R
-    100158: Middle02_L
-    100160: Middle02_R
-    100162: Middle03_L
-    100164: Middle03_R
-    100166: Middle04_L
-    100168: Middle04_R
-    100170: Neck
-    100172: NeckControl
-    100174: Nose
-    100176: Pinky01_L
-    100178: Pinky01_R
-    100180: Pinky02_L
-    100182: Pinky02_R
-    100184: Pinky03_L
-    100186: Pinky03_R
-    100188: Pinky04_L
-    100190: Pinky04_R
-    100192: RightHeel_IKHandle
-    100194: RightLeg_IKHandle
-    100196: RightToe_IKHandle
-    100198: Shoulder_L
-    100200: Shoulder_R
-    100202: ShoulderControl_L
-    100204: ShoulderControl_R
-    100206: Spine01
-    100208: Spine01Control
-    100210: Spine02
-    100212: Spine02Control
-    100214: Thigh_L
-    100216: Thigh_R
-    100218: Thumb01_L
-    100220: Thumb01_R
-    100222: Thumb02_L
-    100224: Thumb02_R
-    100226: Thumb03_L
-    100228: Thumb03_R
-    100230: ThumbRoll_L
-    100232: ThumbRoll_R
-    100234: Toe_L
-    100236: Toe_R
-    100238: ToeControl_L
-    100240: ToeControl_R
-    100242: transform10
-    100244: transform11
-    100246: transform12
-    100248: transform13
-    100250: transform14
-    100252: transform15
-    100254: transform16
-    100256: transform17
-    100258: transform18
-    100260: transform19
-    100262: transform20
-    100264: transform21
+    100004: Bow01_Lower
+    100006: Bow01_Upper
+    100008: Bow02_Lower
+    100010: Bow02_Upper
+    100012: Bow03_Lower
+    100014: Bow03_Upper
+    100016: Bow04_Lower
+    100018: Bow04_Upper
+    100020: Bow05_Lower
+    100022: Bow05_Upper
+    100024: Bow06_Lower
+    100026: Bow06_Upper
+    100028: Bow07_Lower
+    100030: Bow07_Upper
+    100032: Bow08_Lower
+    100034: Bow08_Upper
+    100036: Bow09_Lower
+    100038: Bow09_Upper
+    100040: BowCenter
+    100042: BowDrawback
+    100044: BOWMASTERCONTROL
+    100046: BowString
+    100048: Clavicle_L
+    100050: Clavicle_R
+    100052: ClavicleControl_L
+    100054: ClavicleControl_R
+    100056: Elbow_L
+    100058: Elbow_R
+    100060: ElbowControl_L
+    100062: ElbowControl_R
+    100064: Foot_L
+    100066: Foot_R
+    100068: FootControl_L
+    100070: FootControl_R
+    100072: GuyBody
+    100074: GuyBow
+    100076: guyEyeBrows
+    100078: GuyEyes
+    100080: //RootNode
+    100082: guyHair1
+    100084: guyHat
+    100086: Hand_L
+    100088: Hand_R
+    100090: HandControl_L
+    100092: HandControl_R
+    100094: HandRoll_L
+    100096: HandRoll_R
+    100098: Head
+    100100: Hips
+    100102: HipsControl
+    100104: Index01_L
+    100106: Index01_R
+    100108: Index02_L
+    100110: Index02_R
+    100112: Index03_L
+    100114: Index03_R
+    100116: Index04_L
+    100118: Index04_R
+    100120: Knee_L
+    100122: Knee_R
+    100124: KneeControl_L
+    100126: KneeControl_R
+    100128: LeftHeel_IKHandle
+    100130: LeftLeg_IKHandle
+    100132: LeftToe_IKHandle
+    100134: MASTERCONTROLNODE
+    100136: Middle01_L
+    100138: Middle01_R
+    100140: Middle02_L
+    100142: Middle02_R
+    100144: Middle03_L
+    100146: Middle03_R
+    100148: Middle04_L
+    100150: Middle04_R
+    100152: Neck
+    100154: NeckControl
+    100156: Nose
+    100158: Pinky01_L
+    100160: Pinky01_R
+    100162: Pinky02_L
+    100164: Pinky02_R
+    100166: Pinky03_L
+    100168: Pinky03_R
+    100170: Pinky04_L
+    100172: Pinky04_R
+    100174: polySurface1
+    100176: RightHeel_IKHandle
+    100178: RightLeg_IKHandle
+    100180: RightToe_IKHandle
+    100182: Shoulder_L
+    100184: Shoulder_R
+    100186: ShoulderControl_L
+    100188: ShoulderControl_R
+    100190: Spine01
+    100192: Spine01Control
+    100194: Spine02
+    100196: Spine02Control
+    100198: Thigh_L
+    100200: Thigh_R
+    100202: Thumb01_L
+    100204: Thumb01_R
+    100206: Thumb02_L
+    100208: Thumb02_R
+    100210: Thumb03_L
+    100212: Thumb03_R
+    100214: ThumbRoll_L
+    100216: ThumbRoll_R
+    100218: Toe_L
+    100220: Toe_R
+    100222: ToeControl_L
+    100224: ToeControl_R
     400000: Ankle_L
     400002: Ankle_R
-    400004: ArrowsInPouch
-    400006: ArrowsInPouch1
-    400008: ArrowsInPouch2
-    400010: ArrowsInPouch3
-    400012: ArrowsInPouch4
-    400014: ArrowsInPouch5
-    400016: Bow01_Lower
-    400018: Bow01_Upper
-    400020: Bow02_Lower
-    400022: Bow02_Upper
-    400024: Bow03_Lower
-    400026: Bow03_Upper
-    400028: Bow04_Lower
-    400030: Bow04_Upper
-    400032: Bow05_Lower
-    400034: Bow05_Upper
-    400036: Bow06_Lower
-    400038: Bow06_Upper
-    400040: Bow07_Lower
-    400042: Bow07_Upper
-    400044: Bow08_Lower
-    400046: Bow08_Upper
-    400048: Bow09_Lower
-    400050: Bow09_Upper
-    400052: BowCenter
-    400054: BowDrawback
-    400056: BOWMASTERCONTROL
-    400058: BowString
-    400060: Clavicle_L
-    400062: Clavicle_R
-    400064: ClavicleControl_L
-    400066: ClavicleControl_R
-    400068: Elbow_L
-    400070: Elbow_R
-    400072: ElbowControl_L
-    400074: ElbowControl_R
-    400076: Foot_L
-    400078: Foot_R
-    400080: FootControl_L
-    400082: FootControl_R
-    400084: GuyArrowPouch
-    400086: GuyArrowPouch1
-    400088: GuyBody
-    400090: GuyBow
-    400092: GuyChestPad
-    400094: GuyEyeBrows
-    400096: GuyEyes
-    400098: //RootNode
-    400100: GuyHair
-    400102: GuyHat
-    400104: Hand_L
-    400106: Hand_R
-    400108: HandControl_L
-    400110: HandControl_R
-    400112: HandRoll_L
-    400114: HandRoll_R
-    400116: Head
-    400118: Hips
-    400120: HipsControl
-    400122: Index01_L
-    400124: Index01_R
-    400126: Index02_L
-    400128: Index02_R
-    400130: Index03_L
-    400132: Index03_R
-    400134: Index04_L
-    400136: Index04_R
-    400138: Knee_L
-    400140: Knee_R
-    400142: KneeControl_L
-    400144: KneeControl_R
-    400146: LeftHeel_IKHandle
-    400148: LeftLeg_IKHandle
-    400150: LeftToe_IKHandle
-    400152: MASTERCONTROLNODE
-    400154: Middle01_L
-    400156: Middle01_R
-    400158: Middle02_L
-    400160: Middle02_R
-    400162: Middle03_L
-    400164: Middle03_R
-    400166: Middle04_L
-    400168: Middle04_R
-    400170: Neck
-    400172: NeckControl
-    400174: Nose
-    400176: Pinky01_L
-    400178: Pinky01_R
-    400180: Pinky02_L
-    400182: Pinky02_R
-    400184: Pinky03_L
-    400186: Pinky03_R
-    400188: Pinky04_L
-    400190: Pinky04_R
-    400192: RightHeel_IKHandle
-    400194: RightLeg_IKHandle
-    400196: RightToe_IKHandle
-    400198: Shoulder_L
-    400200: Shoulder_R
-    400202: ShoulderControl_L
-    400204: ShoulderControl_R
-    400206: Spine01
-    400208: Spine01Control
-    400210: Spine02
-    400212: Spine02Control
-    400214: Thigh_L
-    400216: Thigh_R
-    400218: Thumb01_L
-    400220: Thumb01_R
-    400222: Thumb02_L
-    400224: Thumb02_R
-    400226: Thumb03_L
-    400228: Thumb03_R
-    400230: ThumbRoll_L
-    400232: ThumbRoll_R
-    400234: Toe_L
-    400236: Toe_R
-    400238: ToeControl_L
-    400240: ToeControl_R
-    400242: transform10
-    400244: transform11
-    400246: transform12
-    400248: transform13
-    400250: transform14
-    400252: transform15
-    400254: transform16
-    400256: transform17
-    400258: transform18
-    400260: transform19
-    400262: transform20
-    400264: transform21
+    400004: Bow01_Lower
+    400006: Bow01_Upper
+    400008: Bow02_Lower
+    400010: Bow02_Upper
+    400012: Bow03_Lower
+    400014: Bow03_Upper
+    400016: Bow04_Lower
+    400018: Bow04_Upper
+    400020: Bow05_Lower
+    400022: Bow05_Upper
+    400024: Bow06_Lower
+    400026: Bow06_Upper
+    400028: Bow07_Lower
+    400030: Bow07_Upper
+    400032: Bow08_Lower
+    400034: Bow08_Upper
+    400036: Bow09_Lower
+    400038: Bow09_Upper
+    400040: BowCenter
+    400042: BowDrawback
+    400044: BOWMASTERCONTROL
+    400046: BowString
+    400048: Clavicle_L
+    400050: Clavicle_R
+    400052: ClavicleControl_L
+    400054: ClavicleControl_R
+    400056: Elbow_L
+    400058: Elbow_R
+    400060: ElbowControl_L
+    400062: ElbowControl_R
+    400064: Foot_L
+    400066: Foot_R
+    400068: FootControl_L
+    400070: FootControl_R
+    400072: GuyBody
+    400074: GuyBow
+    400076: guyEyeBrows
+    400078: GuyEyes
+    400080: //RootNode
+    400082: guyHair1
+    400084: guyHat
+    400086: Hand_L
+    400088: Hand_R
+    400090: HandControl_L
+    400092: HandControl_R
+    400094: HandRoll_L
+    400096: HandRoll_R
+    400098: Head
+    400100: Hips
+    400102: HipsControl
+    400104: Index01_L
+    400106: Index01_R
+    400108: Index02_L
+    400110: Index02_R
+    400112: Index03_L
+    400114: Index03_R
+    400116: Index04_L
+    400118: Index04_R
+    400120: Knee_L
+    400122: Knee_R
+    400124: KneeControl_L
+    400126: KneeControl_R
+    400128: LeftHeel_IKHandle
+    400130: LeftLeg_IKHandle
+    400132: LeftToe_IKHandle
+    400134: MASTERCONTROLNODE
+    400136: Middle01_L
+    400138: Middle01_R
+    400140: Middle02_L
+    400142: Middle02_R
+    400144: Middle03_L
+    400146: Middle03_R
+    400148: Middle04_L
+    400150: Middle04_R
+    400152: Neck
+    400154: NeckControl
+    400156: Nose
+    400158: Pinky01_L
+    400160: Pinky01_R
+    400162: Pinky02_L
+    400164: Pinky02_R
+    400166: Pinky03_L
+    400168: Pinky03_R
+    400170: Pinky04_L
+    400172: Pinky04_R
+    400174: polySurface1
+    400176: RightHeel_IKHandle
+    400178: RightLeg_IKHandle
+    400180: RightToe_IKHandle
+    400182: Shoulder_L
+    400184: Shoulder_R
+    400186: ShoulderControl_L
+    400188: ShoulderControl_R
+    400190: Spine01
+    400192: Spine01Control
+    400194: Spine02
+    400196: Spine02Control
+    400198: Thigh_L
+    400200: Thigh_R
+    400202: Thumb01_L
+    400204: Thumb01_R
+    400206: Thumb02_L
+    400208: Thumb02_R
+    400210: Thumb03_L
+    400212: Thumb03_R
+    400214: ThumbRoll_L
+    400216: ThumbRoll_R
+    400218: Toe_L
+    400220: Toe_R
+    400222: ToeControl_L
+    400224: ToeControl_R
     4300000: GuyBow
-    4300002: GuyArrowPouch1
+    4300002: guyHair1
+    4300004: guyHat
+    4300006: polySurface1
+    4300008: guyEyeBrows
+    4300010: GuyBody
+    4300012: GuyEyes
     7400000: Idle
     7400002: WalkCycle
-    7400004: BasicAttack
-    7400006: NapalmShot
-    7400008: VictoryAnimation
-    7400010: DefeatAnimation
-    7400012: StunnedAnimation
-    7400014: BasicAttackNotMoving
+    7400004: AttackAndWalk
+    7400006: BasicAttack
+    7400008: NapalmShot
+    7400010: VictoryAnimation
+    7400012: DefeatAnimation
+    7400014: StunnedAnimation
     9500000: //RootNode
-    13700000: GuyArrowPouch1
+    13700000: GuyBody
     13700002: GuyBow
+    13700004: guyEyeBrows
+    13700006: GuyEyes
+    13700008: guyHair1
+    13700010: guyHat
+    13700012: polySurface1
   materials:
     importMaterials: 1
     materialName: 0
@@ -335,28 +305,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -397,37 +345,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -598,6 +526,8 @@ ModelImporter:
       - path: MASTERCONTROLNODE/KneeControl_L
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -629,28 +559,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -691,37 +599,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -893,11 +781,13 @@ ModelImporter:
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
         weight: 1
+      - path: polySurface1
+        weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BasicAttack
+      name: AttackAndWalk
       takeName: Take 001
       firstFrame: 166
       lastFrame: 208
@@ -923,28 +813,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -985,37 +853,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -1186,6 +1034,262 @@ ModelImporter:
       - path: MASTERCONTROLNODE/KneeControl_L
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BasicAttack
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 163
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BowCenter
+        weight: 1
+      - path: BowCenter/Bow01_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower/Bow08_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower/Bow08_Lower/Bow09_Lower
+        weight: 1
+      - path: BowCenter/Bow01_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper/Bow08_Upper
+        weight: 1
+      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper/Bow08_Upper/Bow09_Upper
+        weight: 1
+      - path: BowString
+        weight: 1
+      - path: GuyBody
+        weight: 1
+      - path: GuyBow
+        weight: 1
+      - path: guyEyeBrows
+        weight: 1
+      - path: GuyEyes
+        weight: 1
+      - path: guyHair1
+        weight: 1
+      - path: guyHat
+        weight: 1
+      - path: Hips
+        weight: 1
+      - path: Hips/Spine01
+        weight: 1
+      - path: Hips/Spine01/Spine02
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L/Pinky03_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L/Pinky03_L/Pinky04_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L/Index03_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L/Index03_L/Index04_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L/Middle03_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L/Middle03_L/Middle04_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L/Thumb02_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R/Pinky03_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R/Pinky03_R/Pinky04_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R/Index03_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R/Index03_R/Index04_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R/Middle03_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R/Middle03_R/Middle04_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R/Thumb02_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
+        weight: 1
+      - path: Hips/Spine01/Spine02/Neck
+        weight: 1
+      - path: Hips/Spine01/Spine02/Neck/Head
+        weight: 1
+      - path: Hips/Spine01/Spine02/Neck/Head/Nose
+        weight: 1
+      - path: Hips/Thigh_L
+        weight: 1
+      - path: Hips/Thigh_L/Knee_L
+        weight: 1
+      - path: Hips/Thigh_L/Knee_L/Ankle_L
+        weight: 1
+      - path: Hips/Thigh_L/Knee_L/Ankle_L/Foot_L
+        weight: 1
+      - path: Hips/Thigh_L/Knee_L/Ankle_L/Foot_L/Toe_L
+        weight: 1
+      - path: Hips/Thigh_R
+        weight: 1
+      - path: Hips/Thigh_R/Knee_R
+        weight: 1
+      - path: Hips/Thigh_R/Knee_R/Ankle_R
+        weight: 1
+      - path: Hips/Thigh_R/Knee_R/Ankle_R/Foot_R
+        weight: 1
+      - path: Hips/Thigh_R/Knee_R/Ankle_R/Foot_R/Toe_R
+        weight: 1
+      - path: MASTERCONTROLNODE
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_L/LeftLeg_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L/LeftHeel_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L/LeftToe_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_R/RightLeg_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R/RightHeel_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R/RightToe_IKHandle
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L/BOWMASTERCONTROL
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L/BOWMASTERCONTROL/BowDrawback
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/HandControl_R
+        weight: 1
+      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/NeckControl
+        weight: 1
+      - path: MASTERCONTROLNODE/KneeControl_L
+        weight: 1
+      - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1217,28 +1321,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -1279,37 +1361,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -1480,6 +1542,8 @@ ModelImporter:
       - path: MASTERCONTROLNODE/KneeControl_L
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1511,28 +1575,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -1573,37 +1615,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -1774,6 +1796,8 @@ ModelImporter:
       - path: MASTERCONTROLNODE/KneeControl_L
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1805,28 +1829,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -1867,37 +1869,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -2068,6 +2050,8 @@ ModelImporter:
       - path: MASTERCONTROLNODE/KneeControl_L
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
+        weight: 1
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -2099,28 +2083,6 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
       - path: BowCenter
         weight: 1
       - path: BowCenter/Bow01_Lower
@@ -2161,37 +2123,17 @@ ModelImporter:
         weight: 1
       - path: BowString
         weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
       - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
         weight: 1
       - path: GuyBow
         weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
+      - path: guyEyeBrows
         weight: 1
       - path: GuyEyes
         weight: 1
-      - path: GuyEyes/transform10
+      - path: guyHair1
         weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
+      - path: guyHat
         weight: 1
       - path: Hips
         weight: 1
@@ -2363,299 +2305,7 @@ ModelImporter:
         weight: 1
       - path: MASTERCONTROLNODE/KneeControl_R
         weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: BasicAttackNotMoving
-      takeName: Take 001
-      firstFrame: 121
-      lastFrame: 163
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: ArrowsInPouch
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch1/transform17
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch2/transform15
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch3/transform19
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch4/transform16
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5
-        weight: 1
-      - path: ArrowsInPouch/ArrowsInPouch5/transform20
-        weight: 1
-      - path: BowCenter
-        weight: 1
-      - path: BowCenter/Bow01_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower/Bow08_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Lower/Bow02_Lower/Bow03_Lower/Bow04_Lower/Bow05_Lower/Bow06_Lower/Bow07_Lower/Bow08_Lower/Bow09_Lower
-        weight: 1
-      - path: BowCenter/Bow01_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper/Bow08_Upper
-        weight: 1
-      - path: BowCenter/Bow01_Upper/Bow02_Upper/Bow03_Upper/Bow04_Upper/Bow05_Upper/Bow06_Upper/Bow07_Upper/Bow08_Upper/Bow09_Upper
-        weight: 1
-      - path: BowString
-        weight: 1
-      - path: GuyArrowPouch
-        weight: 1
-      - path: GuyArrowPouch/transform21
-        weight: 1
-      - path: GuyArrowPouch1
-        weight: 1
-      - path: GuyBody
-        weight: 1
-      - path: GuyBody/transform18
-        weight: 1
-      - path: GuyBow
-        weight: 1
-      - path: GuyChestPad
-        weight: 1
-      - path: GuyChestPad/transform11
-        weight: 1
-      - path: GuyEyeBrows
-        weight: 1
-      - path: GuyEyeBrows/transform12
-        weight: 1
-      - path: GuyEyes
-        weight: 1
-      - path: GuyEyes/transform10
-        weight: 1
-      - path: GuyHair
-        weight: 1
-      - path: GuyHair/transform13
-        weight: 1
-      - path: GuyHat
-        weight: 1
-      - path: GuyHat/transform14
-        weight: 1
-      - path: Hips
-        weight: 1
-      - path: Hips/Spine01
-        weight: 1
-      - path: Hips/Spine01/Spine02
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L/Pinky03_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/HandRoll_L/Pinky01_L/Pinky02_L/Pinky03_L/Pinky04_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L/Index03_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Index01_L/Index02_L/Index03_L/Index04_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L/Middle03_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/Middle01_L/Middle02_L/Middle03_L/Middle04_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L/Thumb02_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_L/Shoulder_L/Elbow_L/Hand_L/ThumbRoll_L/Thumb01_L/Thumb02_L/Thumb03_L
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R/Pinky03_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/HandRoll_R/Pinky01_R/Pinky02_R/Pinky03_R/Pinky04_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R/Index03_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Index01_R/Index02_R/Index03_R/Index04_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R/Middle03_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/Middle01_R/Middle02_R/Middle03_R/Middle04_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R/Thumb02_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Clavicle_R/Shoulder_R/Elbow_R/Hand_R/ThumbRoll_R/Thumb01_R/Thumb02_R/Thumb03_R
-        weight: 1
-      - path: Hips/Spine01/Spine02/Neck
-        weight: 1
-      - path: Hips/Spine01/Spine02/Neck/Head
-        weight: 1
-      - path: Hips/Spine01/Spine02/Neck/Head/Nose
-        weight: 1
-      - path: Hips/Thigh_L
-        weight: 1
-      - path: Hips/Thigh_L/Knee_L
-        weight: 1
-      - path: Hips/Thigh_L/Knee_L/Ankle_L
-        weight: 1
-      - path: Hips/Thigh_L/Knee_L/Ankle_L/Foot_L
-        weight: 1
-      - path: Hips/Thigh_L/Knee_L/Ankle_L/Foot_L/Toe_L
-        weight: 1
-      - path: Hips/Thigh_R
-        weight: 1
-      - path: Hips/Thigh_R/Knee_R
-        weight: 1
-      - path: Hips/Thigh_R/Knee_R/Ankle_R
-        weight: 1
-      - path: Hips/Thigh_R/Knee_R/Ankle_R/Foot_R
-        weight: 1
-      - path: Hips/Thigh_R/Knee_R/Ankle_R/Foot_R/Toe_R
-        weight: 1
-      - path: MASTERCONTROLNODE
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_L/LeftLeg_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L/LeftHeel_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_L/ToeControl_L/LeftToe_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_R/RightLeg_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R/RightHeel_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/FootControl_R/ToeControl_R/RightToe_IKHandle
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L/BOWMASTERCONTROL
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_L/ShoulderControl_L/ElbowControl_L/HandControl_L/BOWMASTERCONTROL/BowDrawback
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/ClavicleControl_R/ShoulderControl_R/ElbowControl_R/HandControl_R
-        weight: 1
-      - path: MASTERCONTROLNODE/HipsControl/Spine01Control/Spine02Control/NeckControl
-        weight: 1
-      - path: MASTERCONTROLNODE/KneeControl_L
-        weight: 1
-      - path: MASTERCONTROLNODE/KneeControl_R
+      - path: polySurface1
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
@@ -2663,7 +2313,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.5
+    globalScale: 1.6
     meshCompression: 0
     addColliders: 0
     importVisibility: 0

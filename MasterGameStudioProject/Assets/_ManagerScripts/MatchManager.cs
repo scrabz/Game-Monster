@@ -173,7 +173,15 @@ public class MatchManager : MonoBehaviour {
 
 	public int activeTeams = 2;
 
+
+
 	void Awake(){
+
+		//decayVictory = Resources.Load ("SFX/BrogreToss") as AudioClip;
+		//guyVictory = Resources.Load ("SFX/BrogreSlash") as AudioClip;
+		//geoVictory = Resources.Load ("SFX/BrogreShield") as AudioClip;
+		//irisVictory = Resources.Load ("SFX/BrogreToss") as AudioClip;
+
 		if (MasterGameManager.instance.ffa == true) {
 			if (MasterGameManager.instance.p3Enabled && MasterGameManager.instance.p4Enabled) {
 				activeTeams = 4;
@@ -1093,6 +1101,7 @@ public class MatchManager : MonoBehaviour {
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player1");
 
 		foreach (GameObject player in allPlayersLeft) {
+
 			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
 			player.GetComponent<PlayerMovement> ().canRotate = false;
@@ -1101,7 +1110,9 @@ public class MatchManager : MonoBehaviour {
 		}
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player2");
 
+
 		foreach (GameObject player in allPlayersLeft) {
+
 			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
 			player.GetComponent<PlayerMovement> ().canRotate = false;
@@ -1112,6 +1123,7 @@ public class MatchManager : MonoBehaviour {
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player3");
 
 		foreach (GameObject player in allPlayersLeft) {
+
 			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
 			player.GetComponent<PlayerMovement> ().canRotate = false;
@@ -1122,6 +1134,7 @@ public class MatchManager : MonoBehaviour {
 		allPlayersLeft = GameObject.FindGameObjectsWithTag ("Player4");
 
 		foreach (GameObject player in allPlayersLeft) {
+
 			player.GetComponent<PlayerMovement> ().matchOver = true;
 			player.GetComponent<PlayerMovement> ().canMove = false;
 			player.GetComponent<PlayerMovement> ().canRotate = false;

@@ -77,6 +77,7 @@
      <Compile Include="Assets\_AbilityScripts\PotionTossAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ShadowBeastAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ShieldAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\SoundwaveAction.cs" />
      <Compile Include="Assets\_AbilityScripts\StompAction.cs" />
      <Compile Include="Assets\_ManagerScripts\ButtonManager.cs" />
      <Compile Include="Assets\_ManagerScripts\CharacterSelectAction.cs" />

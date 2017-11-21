@@ -9,7 +9,7 @@ public class PetrifyAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 10f;
+		thisRigid.velocity = transform.forward * 15f;
 	}
 
 	// Update is called once per frame

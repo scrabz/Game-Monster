@@ -206,7 +206,7 @@ public class PlayerState : MonoBehaviour {
 			Destroy (col.gameObject);
 			print ("gottribute");
 			hasTribute = true;
-			Invincibility (6f);
+			Invincibility (6f,true);
 			itemImage.enabled = true;
 			itemImage.sprite = cupImg;
 		}
@@ -235,10 +235,12 @@ public class PlayerState : MonoBehaviour {
 		slowTimer = howLong;
 		this.GetComponent<PlayerMovement> ().speed = this.GetComponent<PlayerMovement> ().speed * 1.4f;
 	}
-	public void Invincibility(float howLong){
+	public void Invincibility(float howLong,bool particles){
 		isInvincible = true;
 		invincibilityTimer = howLong;
-		createdThing = Instantiate (Resources.Load ("Particles/Invincibility"),this.transform) as GameObject;
+		if (particles == true) {
+			createdThing = Instantiate (Resources.Load ("Particles/Invincibility"), this.transform) as GameObject;
+		}
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){
