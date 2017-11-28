@@ -27,7 +27,7 @@ GameObject:
   m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4554612047639066
 Transform:
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238883896877860}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.0000009946, y: -0.40997, z: 0.0000016142}
+  m_LocalPosition: {x: 43.5382, y: 70.18404, z: -85.81477}
   m_LocalScale: {x: 12.534494, y: 12.5344925, z: 23.722424}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238883896877860}
-  m_Mesh: {fileID: 4300000, guid: e522e53c82d348c46b72d42a5e48cd4a, type: 3}
+  m_Mesh: {fileID: 4300014, guid: a543bfb67cf0328499c471ed7316fb38, type: 3}
 --- !u!95 &95429431904056956
 Animator:
   serializedVersion: 3
