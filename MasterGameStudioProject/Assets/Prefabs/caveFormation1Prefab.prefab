@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33441490090298130}
   - component: {fileID: 23526146507060172}
   - component: {fileID: 95548019216909476}
+  - component: {fileID: 64167266738566180}
   m_Layer: 0
   m_Name: caveFormation1Prefab
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784382978703074}
+  m_Mesh: {fileID: 4300000, guid: 3ee739684b4a0c248994535fcc8fb68b, type: 3}
+--- !u!64 &64167266738566180
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784382978703074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3ee739684b4a0c248994535fcc8fb68b, type: 3}
 --- !u!95 &95548019216909476
 Animator:
