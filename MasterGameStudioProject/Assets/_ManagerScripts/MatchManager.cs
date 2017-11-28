@@ -133,6 +133,15 @@ public class MatchManager : MonoBehaviour {
 	public Sprite gorgonPortrait;
 	public Sprite wynkPortrait;
 
+	public Sprite brogreDead;
+	public Sprite skeletonDead;
+	public Sprite tinyDead;
+	public Sprite guyDead;
+	public Sprite drDecayDead;
+	public Sprite claymondDead;
+	public Sprite succDead;
+	public Sprite gorgonDead;
+	public Sprite wynkDead;
 
 
 
@@ -244,6 +253,15 @@ public class MatchManager : MonoBehaviour {
 		blankPortrait = Resources.Load<Sprite> ("CharacterPortraits/Blank");
 		//wynkPortrait = Resources.Load<Sprite> ("CharacterPortraits/WynkP");
 		nextCharacterPanel = GameObject.Find ("NextCharacterPanel");
+
+		brogreDead = Resources.Load<Sprite> ("CharacterPortraits/BrDead");
+		tinyDead = Resources.Load<Sprite> ("CharacterPortraits/TiDead");
+		skeletonDead = Resources.Load<Sprite> ("CharacterPortraits/GaDead");
+		claymondDead = Resources.Load<Sprite> ("CharacterPortraits/GeDead");
+		drDecayDead = Resources.Load<Sprite> ("CharacterPortraits/DeDead");
+		succDead = Resources.Load<Sprite> ("CharacterPortraits/IrDead");
+		guyDead = Resources.Load<Sprite> ("CharacterPortraits/GuDead");
+		gorgonDead = Resources.Load<Sprite> ("CharacterPortraits/NeDead");
 
 		countdownText = GameObject.Find ("CountdownText").GetComponent<Text> ();
 
@@ -449,59 +467,59 @@ public class MatchManager : MonoBehaviour {
 		if (isSelectingCharacter) {
 
 			if (player1CharactersLeft > 0) {
-				if (player1Ch1.color == Color.white) {
+				if (!player1Ch1.sprite.name.Contains("Dead")) {
 					p1A = p1Joystick.Action1;
 				}
-				if (player1Ch2.color == Color.white) {
+				if (!player1Ch2.sprite.name.Contains("Dead")) {
 					p1B = p1Joystick.Action2;
 				}
-				if (player1Ch3.color == Color.white) {
+				if (!player1Ch3.sprite.name.Contains("Dead")) {
 					p1X = p1Joystick.Action3;
 				}
-				if (player1Ch4.color == Color.white) {
+				if (!player1Ch4.sprite.name.Contains("Dead")) {
 					p1Y = p1Joystick.Action4;
 				}
 			}
 			if (player2CharactersLeft > 0) {
-				if (player2Ch1.color == Color.white) {
+				if (!player2Ch1.sprite.name.Contains("Dead")) {
 					p2A = p2Joystick.Action1;
 				}
-				if (player2Ch2.color == Color.white) {
+				if (!player2Ch2.sprite.name.Contains("Dead")) {
 					p2B = p2Joystick.Action2;
 				}
-				if (player2Ch3.color == Color.white) {
+				if (!player2Ch3.sprite.name.Contains("Dead")) {
 					p2X = p2Joystick.Action3;
 				}
-				if (player2Ch4.color == Color.white) {
+				if (!player2Ch4.sprite.name.Contains("Dead")) {
 					p2Y = p2Joystick.Action4;
 				}
 			}
 
 			if (MasterGameManager.instance.p3Enabled && player3CharactersLeft > 0) {
-				if (player3Ch1.color == Color.white) {
+				if (!player3Ch1.sprite.name.Contains("Dead")) {
 					p3A = p3Joystick.Action1;
 				}
-				if (player3Ch2.color == Color.white) {
+				if (!player3Ch2.sprite.name.Contains("Dead")) {
 					p3B = p3Joystick.Action2;
 				}
-				if (player3Ch3.color == Color.white) {
+				if (!player3Ch3.sprite.name.Contains("Dead")) {
 					p3X = p3Joystick.Action3;
 				}
-				if (player3Ch4.color == Color.white) {
+				if (!player3Ch4.sprite.name.Contains("Dead")) {
 					p3Y = p3Joystick.Action4;
 				}
 			}
 			if (MasterGameManager.instance.p4Enabled && player4CharactersLeft > 0) {
-				if (player4Ch1.color == Color.white) {
+				if (!player4Ch1.sprite.name.Contains("Dead")) {
 					p4A = p4Joystick.Action1;
 				}
-				if (player4Ch2.color == Color.white) {
+				if (!player4Ch2.sprite.name.Contains("Dead")) {
 					p4B = p4Joystick.Action2;
 				}
-				if (player4Ch3.color == Color.white) {
+				if (!player4Ch3.sprite.name.Contains("Dead")) {
 					p4X = p4Joystick.Action3;
 				}
-				if (player4Ch4.color == Color.white) {
+				if (!player4Ch4.sprite.name.Contains("Dead")) {
 					p4Y = p4Joystick.Action4;
 				}
 			}
@@ -1017,26 +1035,28 @@ public class MatchManager : MonoBehaviour {
 		playersLeft -= 1;
 
 			if (loser == 1) {
-				p1ActiveProfile.color = Color.black;
+			GoDead (p1ActiveProfile);
 				player1CharactersLeft -= 1;
 				if (player1CharactersLeft <= 0) {
 				}
 			}
 
 			if (loser == 2) {
-				p2ActiveProfile.color = Color.black;
+			GoDead (p2ActiveProfile);
 				player2CharactersLeft -= 1;
 
 			}
 
 			if (loser == 3) {
-				p3ActiveProfile.color = Color.black;
+			GoDead (p3ActiveProfile);
+				//p3ActiveProfile.color = Color.black;
 				player3CharactersLeft -= 1;
 
 			}
 
 			if (loser == 4) {
-				p4ActiveProfile.color = Color.black;
+			GoDead (p4ActiveProfile);
+				//p4ActiveProfile.color = Color.black;
 				player4CharactersLeft -= 1;
 
 			}
@@ -1045,25 +1065,25 @@ public class MatchManager : MonoBehaviour {
 
 			if (loser == 1) {
 				team1CharactersLeft -= 1;
-				if (p2ActiveProfile.color == Color.black) {
+				if (p2ActiveProfile.name.Contains("Dead")) {
 					RoundOver ();
 				}
 			}
 			if (loser == 2) {
 				team1CharactersLeft -= 1;
-				if (p1ActiveProfile.color == Color.black) {
+				if (p1ActiveProfile.name.Contains("Dead")) {
 					RoundOver ();
 				}
 			}
 			if (loser == 3) {
 				team2CharactersLeft -= 1;
-				if (p4ActiveProfile.color == Color.black) {
+				if (p4ActiveProfile.name.Contains("Dead")) {
 					RoundOver ();
 				}
 			}
 			if (loser == 4) {
 				team2CharactersLeft -= 1;
-				if (p3ActiveProfile.color == Color.black) {
+				if (p3ActiveProfile.name.Contains("Dead")) {
 					RoundOver ();
 				}
 			}
@@ -1207,7 +1227,32 @@ public class MatchManager : MonoBehaviour {
 		whichDevice.StopVibration ();
 	}
 
-
+	public void GoDead(Image profile){
+		if (profile.sprite.name == "BrogreP") {
+			profile.sprite = brogreDead;
+		}
+		if (profile.sprite.name == "SkeletonP") {
+			profile.sprite = skeletonDead;
+		}
+		if (profile.sprite.name == "SuccP") {
+			profile.sprite = succDead;
+		}
+		if (profile.sprite.name == "GorgonP") {
+			profile.sprite = gorgonDead;
+		}
+		if (profile.sprite.name == "TinyP") {
+			profile.sprite = tinyDead;
+		}
+		if (profile.sprite.name == "GuyP") {
+			profile.sprite = guyDead;
+		}
+		if (profile.sprite.name == "DrDecayP") {
+			profile.sprite = drDecayDead;
+		}
+		if (profile.sprite.name == "ClaymondP") {
+			profile.sprite = claymondDead;
+		}
+	}
 	IEnumerator MatchComplete(){
 		yield return new WaitForSeconds(4f);
 		SceneManager.LoadScene ("Menu");

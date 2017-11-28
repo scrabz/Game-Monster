@@ -1,22 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_MiscScripts\ButtonClick.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_ManagerScripts\LevelInteractions.cs">
     <Files>
-      <File FileName="Assets\_ManagerScripts\LevelInteractions.cs" Line="44" Column="3" />
-      <File FileName="Assets\_MiscScripts\SlowRotate.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="1524" Column="3" />
-      <File FileName="Assets\_PlayerScripts\PlayerState.cs" Line="179" Column="25" />
-      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\FrogAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\PotionTossAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\NewFrogAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\AttackAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="110" Column="18" />
-      <File FileName="Assets\_AbilityScripts\MeleeHitboxActions.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\ClayWallAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\SoundwaveAction.cs" Line="32" Column="101" />
-      <File FileName="Assets\_AbilityScripts\PetrifyAction.cs" Line="12" Column="24" />
+      <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\LevelInteractions.cs" Line="70" Column="4" />
+      <File FileName="Assets\_AbilityScripts\FallingRockAction.cs" Line="13" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

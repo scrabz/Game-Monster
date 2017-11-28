@@ -11,7 +11,7 @@ public class PotionTossAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 9f * dir;
+		thisRigid.velocity = transform.forward * 15f * dir;
 		thisRigid.AddForce (transform.up * 8800f);
 	}
 

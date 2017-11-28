@@ -8,14 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Menu.unity
     guid: 353753478bfa76541b9f3d6ded893624
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/TestZone.unity
     guid: 1e9fe2af5b2e80f448cafa8f92361e4f
   - enabled: 0
     path: Assets/_Scenes/VolcanoLevelOld.unity
     guid: be846d11059c84f4fb3620be6c177380
   - enabled: 1
-    path: Assets/_Scenes/HallofBrosLevel.unity
+    path: Assets/_Scenes/HallOfBrosLevel.unity
     guid: 68e744a4c3870874eade8eb5a9a8f6b3
   - enabled: 1
     path: Assets/_Scenes/VolcanoLevel.unity
