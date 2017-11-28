@@ -432,7 +432,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			clayWall.aName = "Clay Wall";
 			clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA3");
-			clayWall.aCooldown = 3f;
+			clayWall.aCooldown = 8f;
 			clayWall.aPanel = ability3;
 
 			shockwave.aName = "Shockwave";
@@ -589,21 +589,21 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine("ComboJab");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (megaFist.aCooldown);
 					StopAllCoroutines ();
 					StartCoroutine("MegaFist");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (collection.aCooldown);
 					StopAllCoroutines ();
 					StartCoroutine("Collection");
 
 				}
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (stomp.aCooldown);
 					StopAllCoroutines ();
@@ -622,14 +622,14 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine ("Cleave");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (shieldPush.aCooldown);
 					StopAllCoroutines ();
 					StartCoroutine("ShieldPush");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (shield.aCooldown);
 					StopAllCoroutines ();
@@ -637,7 +637,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 				}
 
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (kegToss.aCooldown);
 					StopAllCoroutines ();
@@ -658,7 +658,7 @@ public class PlayerAbilities : MonoBehaviour {
 						StartCoroutine ("ComboAttack");
 
 					}
-					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 						abilityActive = true;
 						ability2.GetComponent<CooldownManager> ().StartCooldown (dashAttack.aCooldown);
 						StopAllCoroutines ();
@@ -666,7 +666,7 @@ public class PlayerAbilities : MonoBehaviour {
 						StartCoroutine ("DashAttack");
 
 					}
-					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 						abilityActive = true;
 						ability3.GetComponent<CooldownManager> ().StartCooldown (petrify.aCooldown);
 						StopAllCoroutines ();
@@ -674,7 +674,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 					}
 
-					if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+					if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 						abilityActive = true;
 						ability4.GetComponent<CooldownManager> ().StartCooldown (rage.aCooldown);
 						StopAllCoroutines ();
@@ -689,14 +689,14 @@ public class PlayerAbilities : MonoBehaviour {
 						StartCoroutine ("ComboAttack");
 
 					}
-					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+					if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 						abilityActive = true;
 						ability2.GetComponent<CooldownManager> ().StartCooldown (0.5f);
 						//StopAllCoroutines ();
 						StartCoroutine ("DashAttack");
 
 					}
-					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+					if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 						abilityActive = true;
 						ability3.GetComponent<CooldownManager> ().StartCooldown (0.8f);
 						//StopAllCoroutines ();
@@ -724,14 +724,14 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine ("KnifeThrow");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (knifeThrow.aCooldown);
 					StopAllCoroutines ();
 					StartCoroutine("QuickSlash");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (clawTrap.aCooldown);
 					StopAllCoroutines ();
@@ -739,7 +739,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 				}
 
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (knifeSpin.aCooldown);
 					StopAllCoroutines ();
@@ -761,14 +761,14 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine ("PotionToss");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (poisonCloud.aCooldown);
 					StopAllCoroutines ();
 					StartCoroutine("PoisonCloud");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (undeadCompanions.aCooldown);
 					StopAllCoroutines ();
@@ -776,7 +776,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 				}
 
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (bagOfTricks.aCooldown);
 					StopAllCoroutines ();
@@ -797,20 +797,20 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine ("ClayShards");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (clayShards.aCooldown);
 					StartCoroutine("PushPunch");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (clayWall.aCooldown);
 					StartCoroutine("ClayWall");
 
 				}
 
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (shockwave.aCooldown);
 					StartCoroutine("GroundSlam");
@@ -829,20 +829,20 @@ public class PlayerAbilities : MonoBehaviour {
 					StartCoroutine ("BasicArrow");
 
 				}
-				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability2.GetComponent<CooldownManager> ().StartCooldown (napalmStrike.aCooldown);
 					StartCoroutine("NapalmStrike");
 
 				}
-				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability3.GetComponent<CooldownManager> ().StartCooldown (arrowArsenal.aCooldown);
 					StartCoroutine("ArrowArsenal");
 
 				}
 
-				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false) {
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
 					ability4.GetComponent<CooldownManager> ().StartCooldown (trueForm.aCooldown);
 					StartCoroutine("TrueForm");

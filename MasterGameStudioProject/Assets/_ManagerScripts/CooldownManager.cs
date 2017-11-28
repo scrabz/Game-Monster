@@ -17,7 +17,7 @@ public class CooldownManager : MonoBehaviour {
 	public bool abilityCooling = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		darkMask = transform.Find ("Mask").GetComponent<Image>();
 	}
 

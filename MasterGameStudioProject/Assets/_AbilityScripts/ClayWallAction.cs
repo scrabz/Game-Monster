@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClayWallAction : MonoBehaviour {
 	public float health = 20f;
+
+	public GameObject createdThing;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +17,17 @@ public class ClayWallAction : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Projectile" || col.gameObject.tag == "Hitbox") {
+
+			if (col.gameObject.name == "PunchHitbox(Clone)") {
+				createdThing = Instantiate (Resources.Load("ProjectileAttacks/ClayShardProjectile"), this.transform.position, Quaternion.Euler(col.transform.eulerAngles.x,col.transform.eulerAngles.y,col.transform.eulerAngles.z)) as GameObject;
+				createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
+				createdThing = Instantiate (Resources.Load("ProjectileAttacks/ClayShardProjectile"), this.transform.position, Quaternion.Euler(col.transform.eulerAngles.x,col.transform.eulerAngles.y,col.transform.eulerAngles.z)) as GameObject;
+				createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
+				createdThing = Instantiate (Resources.Load("ProjectileAttacks/ClayShardProjectile"), this.transform.position, Quaternion.Euler(col.transform.eulerAngles.x,col.transform.eulerAngles.y,col.transform.eulerAngles.z)) as GameObject;
+				createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
+				Destroy (this.gameObject);
+			}
+
 			if (col.gameObject.GetComponent<AttackAction> ().teamNum != this.GetComponent<AttackAction> ().teamNum) {
 				health -= col.gameObject.GetComponent<AttackAction> ().damage;
 

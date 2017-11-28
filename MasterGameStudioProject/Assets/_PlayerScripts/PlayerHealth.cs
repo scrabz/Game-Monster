@@ -34,11 +34,86 @@ public class PlayerHealth : MonoBehaviour {
 
 	public GameObject createdThing;
 
+	public Image currentPortrait;
 
-
+	public Sprite brFull;
+	public Sprite brNeutral;
+	public Sprite brLow;
+	public Sprite brDead;
 
 
 	void Start () {
+		if (this.gameObject.name == "Brogre(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/BrFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/BrNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/BrLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/BrDead");
+
+
+		}
+
+		if (this.gameObject.name == "ToeTip(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/GaFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/GaNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/GaLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/GaDead");
+
+
+		}
+
+		if (this.gameObject.name == "Tiny(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/TiFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/TiNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/TiLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/TiDead");
+
+
+		}
+
+		if (this.gameObject.name == "Neredy(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/NeFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/NeNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/NeLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/NeDead");
+
+
+		}
+
+		if (this.gameObject.name == "DrDecay(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/DeFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/DeNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/DeLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/DeDead");
+
+
+		}
+
+		if (this.gameObject.name == "Guy(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/GuFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/GuNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/GuLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/GuDead");
+
+
+		}
+
+		if (this.gameObject.name == "Iris(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/IrFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/IrNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/IrLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/IrDead");
+
+
+		}
+
+		if (this.gameObject.name == "Claymond(Clone)") {
+			brFull = Resources.Load<Sprite> ("CharacterPortraits/GeFull");
+			brNeutral = Resources.Load<Sprite> ("CharacterPortraits/GeNeutral");
+			brLow = Resources.Load<Sprite> ("CharacterPortraits/GeLow");
+			brDead = Resources.Load<Sprite> ("CharacterPortraits/GeDead");
+
+
+		}
 		//matchManagerObject = GameObject.Find ("MatchManager");
 		healthBarActive = true;
 		currentHealth = maxHealth;
@@ -77,6 +152,10 @@ public class PlayerHealth : MonoBehaviour {
 		healthBarFront.transform.localScale = new Vector3 (Mathf.Clamp (maxHealth, 0f, 1f), healthBarFront.transform.localScale.y, healthBarFront.transform.localScale.z);
 		model = this.gameObject.transform.Find ("RotationPoint").Find ("Model").gameObject;
 		maxHealthText.text = maxHealth.ToString ();
+
+		//currentPortrait = healthPanel.transform.Find ("ChrPortrait").gameObject.GetComponent<Image> ();
+		currentPortrait = healthPanel.transform.GetChild(8).gameObject.GetComponent<Image> ();
+
 		GetHit (0);
 	}
 
@@ -129,8 +208,9 @@ public class PlayerHealth : MonoBehaviour {
 		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false && this.GetComponent<PlayerState>().isInvincible == false) {
 			//Subtract the Lost Health
 			currentHealth -= healthLost;
-			transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
-			if (healthLost > 0.8f) {
+
+			if (healthLost > 0.9f) {
+				transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
 				createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"), this.transform.position, this.transform.rotation) as GameObject;
 			}
 			if (healthLost != 0) {
@@ -148,7 +228,7 @@ public class PlayerHealth : MonoBehaviour {
 			healthBarActive = true;
 			healthBarFront.enabled = true;
 			healthBarBack.enabled = true;
-
+			SwitchPortrait ();
 			if (currentHealth <= 0f) {
 				currentHealth = 0f;
 				healthText.text = currentHealth.ToString ("####");
@@ -196,5 +276,25 @@ public class PlayerHealth : MonoBehaviour {
 		//this.transform.Translate (0, -100f, 0);
 
 	}
+
+	public void SwitchPortrait(){
+
+			if (currentHealth / maxHealth <= 0) {
+				currentPortrait.sprite = brDead;
+			}
+			if (currentHealth / maxHealth >= 0.25f) {
+				currentPortrait.sprite = brLow;
+			}
+
+			if (currentHealth / maxHealth >= 0.50f) {
+				currentPortrait.sprite = brNeutral;
+			}
+
+			if (currentHealth / maxHealth >= 0.75f) {
+				currentPortrait.sprite = brFull;
+			}
+
+
+		}
 }
 		

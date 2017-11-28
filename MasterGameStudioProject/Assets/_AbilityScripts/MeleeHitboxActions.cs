@@ -51,7 +51,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 
 				if (this.gameObject.name == "PunchHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
-					col.gameObject.GetComponent<PlayerState> ().Pushback (0.2f,pushBackDir);
+					col.gameObject.GetComponent<PlayerState> ().Pushback (0.35f,pushBackDir);
 					Destroy (this.gameObject);
 				}
 			}

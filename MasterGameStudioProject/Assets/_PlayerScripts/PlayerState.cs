@@ -42,6 +42,8 @@ public class PlayerState : MonoBehaviour {
 	public Sprite p4indicator;
 
 	public GameObject createdThing;
+
+	public GameObject levelInteractions;
 	// Use this for initialization
 
 	void Awake(){
@@ -110,7 +112,7 @@ public class PlayerState : MonoBehaviour {
 		//itemImage.enabled = false;
 		origSpeed = this.GetComponent<PlayerMovement> ().speed;
 		matchManager = GameObject.Find ("MatchManager");
-
+		levelInteractions = GameObject.Find ("LevelInteractions");
 
 	}
 	
@@ -198,6 +200,7 @@ public class PlayerState : MonoBehaviour {
 		if (col.gameObject.tag == "TributeDropOff" && hasTribute) {
 			hasTribute = false;
 			itemImage.enabled = false;
+			StartFireRain ();
 			print ("thishappened");
 		}
 
@@ -241,6 +244,11 @@ public class PlayerState : MonoBehaviour {
 		if (particles == true) {
 			createdThing = Instantiate (Resources.Load ("Particles/Invincibility"), this.transform) as GameObject;
 		}
+	}
+
+	public void StartFireRain(){
+		Invincibility (7f, true);
+		levelInteractions.GetComponent<LevelInteractions> ().StartCoroutine("FireRain");
 	}
 
 	public void Pushback(float howLong, Vector3 importedDir){
