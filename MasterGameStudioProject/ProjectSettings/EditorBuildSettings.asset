@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/HallOfBrosLevel.unity
     guid: 68e744a4c3870874eade8eb5a9a8f6b3
+  - enabled: 0
+    path: 
+    guid: 8fc9e1238bcdfc247a5aeaf914d61497
+  - enabled: 1
+    path: Assets/_Scenes/CaveLevel.unity
+    guid: 5050b6aed82479844a0628a8fd4ac286
   - enabled: 1
     path: Assets/_Scenes/VolcanoLevel.unity
-    guid: 8fc9e1238bcdfc247a5aeaf914d61497
-  - enabled: 0
-    path: Assets/_Scenes/New Cave.unity
-    guid: 5050b6aed82479844a0628a8fd4ac286
+    guid: 120fa53e3973f6b4b905b4540e89362b
