@@ -420,15 +420,15 @@ public class PlayerAbilities : MonoBehaviour {
 			ability4 = abilityPanel.transform.Find ("Ability4").gameObject;
 
 			//Set the properties of every ability
-			pushPunch.aName = "Push Punch";
-			pushPunch.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA1");
-			pushPunch.aCooldown = 0.8f;
-			pushPunch.aPanel = ability1;
-
 			clayShards.aName = "Clay Shards";
-			clayShards.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA2");
-			clayShards.aCooldown = 2f;
-			clayShards.aPanel = ability2;
+			clayShards.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA1");
+			clayShards.aCooldown = 0.8f;
+			clayShards.aPanel = ability1;
+
+			pushPunch.aName = "Push Punch";
+			pushPunch.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA2");
+			pushPunch.aCooldown = 3f;
+			pushPunch.aPanel = ability2;
 
 			clayWall.aName = "Clay Wall";
 			clayWall.aIcon = Resources.Load<Sprite> ("AbilityIcons/GEA3");
@@ -793,13 +793,13 @@ public class PlayerAbilities : MonoBehaviour {
 			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
 				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
 					abilityActive = true;
-					ability1.GetComponent<CooldownManager> ().StartCooldown (pushPunch.aCooldown);
+					ability1.GetComponent<CooldownManager> ().StartCooldown (clayShards.aCooldown);
 					StartCoroutine ("ClayShards");
 
 				}
 				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
 					abilityActive = true;
-					ability2.GetComponent<CooldownManager> ().StartCooldown (clayShards.aCooldown);
+					ability2.GetComponent<CooldownManager> ().StartCooldown (pushPunch.aCooldown);
 					StartCoroutine("PushPunch");
 
 				}
@@ -1529,7 +1529,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint1;
 		this.GetComponent<PlayerMovement> ().canMove = false;
 		this.GetComponent<PlayerMovement> ().canRotate = false;
-		for (int i = 0; i < 24; i++) {
+		for (int i = 0; i < 18; i++) {
 			if (this.GetComponent<PlayerMovement> ().lockedInPlace == false) {
 				this.GetComponent<PlayerMovement> ().controller.Move (rotationPoint.transform.forward * 35f * Time.deltaTime);
 			}

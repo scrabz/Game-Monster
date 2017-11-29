@@ -37,11 +37,6 @@ public class MatchManager : MonoBehaviour {
 	public Image player1Ch3;
 	public Image player1Ch4;
 
-	public Text player1Ch1Name;
-	public Text player1Ch2Name;
-	public Text player1Ch3Name;
-	public Text player1Ch4Name;
-
 
 	public Image player2Ch1;
 	public Image player2Ch2;
@@ -49,11 +44,6 @@ public class MatchManager : MonoBehaviour {
 	public Image player2Ch4;
 
 
-
-	public Text player2Ch1Name;
-	public Text player2Ch2Name;
-	public Text player2Ch3Name;
-	public Text player2Ch4Name;
 
 
 
@@ -64,24 +54,12 @@ public class MatchManager : MonoBehaviour {
 
 
 
-	public Text player3Ch1Name;
-	public Text player3Ch2Name;
-	public Text player3Ch3Name;
-	public Text player3Ch4Name;
-
 
 
 	public Image player4Ch1;
 	public Image player4Ch2;
 	public Image player4Ch3;
 	public Image player4Ch4;
-
-
-
-	public Text player4Ch1Name;
-	public Text player4Ch2Name;
-	public Text player4Ch3Name;
-	public Text player4Ch4Name;
 
 
 
@@ -275,41 +253,21 @@ public class MatchManager : MonoBehaviour {
 		player1Ch3 = GameObject.Find ("P1TeamPanel").transform.Find ("Ch3Img").gameObject.GetComponent<Image> ();
 		player1Ch4 = GameObject.Find ("P1TeamPanel").transform.Find ("Ch4Img").gameObject.GetComponent<Image> ();
 
-		player1Ch1Name = GameObject.Find ("P1TeamPanel").transform.Find ("Ch1Img").Find("Ch1Name").gameObject.GetComponent<Text> ();
-		player1Ch2Name = GameObject.Find ("P1TeamPanel").transform.Find ("Ch2Img").Find("Ch2Name").gameObject.GetComponent<Text> ();
-		player1Ch3Name = GameObject.Find ("P1TeamPanel").transform.Find ("Ch3Img").Find("Ch3Name").gameObject.GetComponent<Text> ();
-		player1Ch4Name = GameObject.Find ("P1TeamPanel").transform.Find ("Ch4Img").Find("Ch4Name").gameObject.GetComponent<Text> ();
 
 		player2Ch1 = GameObject.Find ("P2TeamPanel").transform.Find ("Ch1Img").gameObject.GetComponent<Image> ();
 		player2Ch2 = GameObject.Find ("P2TeamPanel").transform.Find ("Ch2Img").gameObject.GetComponent<Image> ();
 		player2Ch3 = GameObject.Find ("P2TeamPanel").transform.Find ("Ch3Img").gameObject.GetComponent<Image> ();
 		player2Ch4 = GameObject.Find ("P2TeamPanel").transform.Find ("Ch4Img").gameObject.GetComponent<Image> ();
 
-		player2Ch1Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch1Img").Find("Ch1Name").gameObject.GetComponent<Text> ();
-		player2Ch2Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch2Img").Find("Ch2Name").gameObject.GetComponent<Text> ();
-		player2Ch3Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch3Img").Find("Ch3Name").gameObject.GetComponent<Text> ();
-		player2Ch4Name = GameObject.Find ("P2TeamPanel").transform.Find ("Ch4Img").Find("Ch4Name").gameObject.GetComponent<Text> ();
-
 		player3Ch1 = GameObject.Find ("P3TeamPanel").transform.Find ("Ch1Img").gameObject.GetComponent<Image> ();
 		player3Ch2 = GameObject.Find ("P3TeamPanel").transform.Find ("Ch2Img").gameObject.GetComponent<Image> ();
 		player3Ch3 = GameObject.Find ("P3TeamPanel").transform.Find ("Ch3Img").gameObject.GetComponent<Image> ();
 		player3Ch4 = GameObject.Find ("P3TeamPanel").transform.Find ("Ch4Img").gameObject.GetComponent<Image> ();
 
-		player3Ch1Name = GameObject.Find ("P3TeamPanel").transform.Find ("Ch1Img").Find("Ch1Name").gameObject.GetComponent<Text> ();
-		player3Ch2Name = GameObject.Find ("P3TeamPanel").transform.Find ("Ch2Img").Find("Ch2Name").gameObject.GetComponent<Text> ();
-		player3Ch3Name = GameObject.Find ("P3TeamPanel").transform.Find ("Ch3Img").Find("Ch3Name").gameObject.GetComponent<Text> ();
-		player3Ch4Name = GameObject.Find ("P3TeamPanel").transform.Find ("Ch4Img").Find("Ch4Name").gameObject.GetComponent<Text> ();
-
 		player4Ch1 = GameObject.Find ("P4TeamPanel").transform.Find ("Ch1Img").gameObject.GetComponent<Image> ();
 		player4Ch2 = GameObject.Find ("P4TeamPanel").transform.Find ("Ch2Img").gameObject.GetComponent<Image> ();
 		player4Ch3 = GameObject.Find ("P4TeamPanel").transform.Find ("Ch3Img").gameObject.GetComponent<Image> ();
 		player4Ch4 = GameObject.Find ("P4TeamPanel").transform.Find ("Ch4Img").gameObject.GetComponent<Image> ();
-
-		player4Ch1Name = GameObject.Find ("P4TeamPanel").transform.Find ("Ch1Img").Find("Ch1Name").gameObject.GetComponent<Text> ();
-		player4Ch2Name = GameObject.Find ("P4TeamPanel").transform.Find ("Ch2Img").Find("Ch2Name").gameObject.GetComponent<Text> ();
-		player4Ch3Name = GameObject.Find ("P4TeamPanel").transform.Find ("Ch3Img").Find("Ch3Name").gameObject.GetComponent<Text> ();
-		player4Ch4Name = GameObject.Find ("P4TeamPanel").transform.Find ("Ch4Img").Find("Ch4Name").gameObject.GetComponent<Text> ();
-
 
 
 		p1Panel = GameObject.Find ("P1TeamPanel").GetComponent<Animator> ();
@@ -744,26 +702,18 @@ public class MatchManager : MonoBehaviour {
 		player1Ch3.sprite = p1Portraits [2];
 		player1Ch4.sprite = p1Portraits [3];
 
-		player1Ch1Name.text = MasterGameManager.instance.player1Characters [0].name;
-		player1Ch2Name.text = MasterGameManager.instance.player1Characters [1].name;
-		player1Ch3Name.text = MasterGameManager.instance.player1Characters [2].name;
-		player1Ch4Name.text = MasterGameManager.instance.player1Characters [3].name;
-
 
 		if (player1Ch2.sprite == blankPortrait) {
 			player1Ch2.enabled = false;
-			player1Ch2Name.enabled = false;
 			player1Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 		if (player1Ch3.sprite == blankPortrait) {
 			player1Ch3.enabled = false;
-			player1Ch3Name.enabled = false;
 			player1Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 
 		if (player1Ch4.sprite == blankPortrait) {
 			player1Ch4.enabled = false;
-			player1Ch4Name.enabled = false;
 			player1Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 
@@ -809,27 +759,20 @@ public class MatchManager : MonoBehaviour {
 		player2Ch3.sprite = p2Portraits [2];
 		player2Ch4.sprite = p2Portraits [3];
 
-		player2Ch1Name.text = MasterGameManager.instance.player2Characters [0].name;
-		player2Ch2Name.text = MasterGameManager.instance.player2Characters [1].name;
-		player2Ch3Name.text = MasterGameManager.instance.player2Characters [2].name;
-		player2Ch4Name.text = MasterGameManager.instance.player2Characters [3].name;
 
 
 
 		if (player2Ch2.sprite == blankPortrait) {
 			player2Ch2.enabled = false;
-			player2Ch2Name.enabled = false;
 			player2Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 		if (player2Ch3.sprite == blankPortrait) {
 			player2Ch3.enabled = false;
-			player2Ch3Name.enabled = false;
 			player2Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 
 		if (player2Ch4.sprite == blankPortrait) {
 			player2Ch4.enabled = false;
-			player2Ch4Name.enabled = false;
 			player2Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 		}
 		if (MasterGameManager.instance.p3Enabled) {
@@ -874,27 +817,19 @@ public class MatchManager : MonoBehaviour {
 			player3Ch3.sprite = p3Portraits [2];
 			player3Ch4.sprite = p3Portraits [3];
 
-			player3Ch1Name.text = MasterGameManager.instance.player3Characters [0].name;
-			player3Ch2Name.text = MasterGameManager.instance.player3Characters [1].name;
-			player3Ch3Name.text = MasterGameManager.instance.player3Characters [2].name;
-			player3Ch4Name.text = MasterGameManager.instance.player3Characters [3].name;
-
 
 
 			if (player3Ch2.sprite == blankPortrait) {
 				player3Ch2.enabled = false;
-				player3Ch2Name.enabled = false;
 				player3Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 			if (player3Ch3.sprite == blankPortrait) {
 				player3Ch3.enabled = false;
-				player3Ch3Name.enabled = false;
 				player3Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 
 			if (player3Ch4.sprite == blankPortrait) {
 				player3Ch4.enabled = false;
-				player3Ch4Name.enabled = false;
 				player3Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 		}
@@ -940,27 +875,19 @@ public class MatchManager : MonoBehaviour {
 			player4Ch3.sprite = p4Portraits [2];
 			player4Ch4.sprite = p4Portraits [3];
 
-			player4Ch1Name.text = MasterGameManager.instance.player4Characters [0].name;
-			player4Ch2Name.text = MasterGameManager.instance.player4Characters [1].name;
-			player4Ch3Name.text = MasterGameManager.instance.player4Characters [2].name;
-			player4Ch4Name.text = MasterGameManager.instance.player4Characters [3].name;
-
 
 
 			if (player4Ch2.sprite == blankPortrait) {
 				player4Ch2.enabled = false;
-				player4Ch2Name.enabled = false;
 				player4Ch2.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 			if (player4Ch3.sprite == blankPortrait) {
 				player4Ch3.enabled = false;
-				player4Ch3Name.enabled = false;
 				player4Ch3.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 
 			if (player4Ch4.sprite == blankPortrait) {
 				player4Ch4.enabled = false;
-				player4Ch4Name.enabled = false;
 				player4Ch4.gameObject.transform.Find ("ButtonImg").GetComponent<Image> ().enabled = false;
 			}
 

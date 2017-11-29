@@ -18,6 +18,11 @@ public class ButtonManager : MonoBehaviour {
 	public Image redPanel;
 	public Image bluePanel;
 
+	public Image p1Back;
+	public Image p2Back;
+	public Image p3Back;
+	public Image p4Back;
+
 	public GameObject cursorCanvas;
 
 	public GameObject p1Cur;
@@ -28,6 +33,16 @@ public class ButtonManager : MonoBehaviour {
 		modeText = GameObject.Find ("ModeText").GetComponent<Text>();
 		redPanel = GameObject.Find ("RedPanel").GetComponent<Image>();
 		bluePanel = GameObject.Find ("BluePanel").GetComponent<Image>();
+
+		p1Back = GameObject.Find ("P1Back").GetComponent<Image>();
+
+		p2Back = GameObject.Find ("P2Back").GetComponent<Image>();
+
+		p3Back = GameObject.Find ("P3Back").GetComponent<Image>();
+
+		p4Back = GameObject.Find ("P4Back").GetComponent<Image>();
+
+
 		redPanel.enabled = false;
 		bluePanel.enabled = false;
 		cursorCanvas = GameObject.Find ("CursorCanvas");
@@ -134,11 +149,19 @@ public class ButtonManager : MonoBehaviour {
 			modeText.text = "TEAM";
 			redPanel.enabled = true;
 			bluePanel.enabled = true;
+			p1Back.enabled = false;
+			p2Back.enabled = false;
+			p3Back.enabled = false;
+			p4Back.enabled = false;
 		} else {
 			MasterGameManager.instance.ffa = true;
 			modeText.text = "FFA";
 			redPanel.enabled = false;
 			bluePanel.enabled = false;
+			p1Back.enabled = true;
+			p2Back.enabled = true;
+			p3Back.enabled = true;
+			p4Back.enabled = true;
 		}
 
 	}
