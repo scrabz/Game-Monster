@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33250461866471722}
   - component: {fileID: 23668776167532884}
   - component: {fileID: 95360268652140146}
-  - component: {fileID: 64579531885065632}
   m_Layer: 0
   m_Name: caveWallCylPrefab
   m_TagString: Wall
@@ -81,20 +80,6 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972206233198354}
-  m_Mesh: {fileID: 4300000, guid: 3fc795722b64e7b448f1b44c277f6071, type: 3}
---- !u!64 &64579531885065632
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972206233198354}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3fc795722b64e7b448f1b44c277f6071, type: 3}
 --- !u!95 &95360268652140146
 Animator:

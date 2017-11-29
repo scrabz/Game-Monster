@@ -21,14 +21,14 @@ GameObject:
   - component: {fileID: 4091517037403748}
   - component: {fileID: 33613007332719894}
   - component: {fileID: 23220242584584174}
-  - component: {fileID: 95175126080335530}
-  - component: {fileID: 64240545084559096}
+  - component: {fileID: 95599042692426488}
+  - component: {fileID: 65448742167948242}
   m_Layer: 0
   m_Name: caveWallFlatPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4091517037403748
 Transform:
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fb8d252ab06c6384f8694d568762a942, type: 2}
+  - {fileID: 2100000, guid: e3255649e6798b64bbcb3252ed10695b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,8 +82,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870397174255296}
   m_Mesh: {fileID: 4300000, guid: 4e0edf31e0b052045862a5e57a79d764, type: 3}
---- !u!64 &64240545084559096
-MeshCollider:
+--- !u!65 &65448742167948242
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -92,11 +92,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 4e0edf31e0b052045862a5e57a79d764, type: 3}
---- !u!95 &95175126080335530
+  m_Size: {x: 428.45294, y: 409.1015, z: 250.59369}
+  m_Center: {x: -26.246307, y: 204.55057, z: 11.755066}
+--- !u!95 &95599042692426488
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
