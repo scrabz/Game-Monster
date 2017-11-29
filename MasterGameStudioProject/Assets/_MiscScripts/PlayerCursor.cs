@@ -215,6 +215,10 @@ public class PlayerCursor : MonoBehaviour {
 					SceneManager.LoadScene ("HallOfBrosLevel");
 				}
 
+				if (hit.collider.gameObject.name == "CaveButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					SceneManager.LoadScene ("CaveLevel");
+				}
 
 				if (hit.collider.gameObject.name == "ChangeMode") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
