@@ -3095,6 +3095,7 @@ MonoBehaviour:
   p3indicator: {fileID: 0}
   p4indicator: {fileID: 0}
   createdThing: {fileID: 0}
+  levelInteractions: {fileID: 0}
 --- !u!114 &114175151487927034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3281,6 +3282,11 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   defHealthColor: {r: 0, g: 0, b: 0, a: 0}
   createdThing: {fileID: 0}
+  currentPortrait: {fileID: 0}
+  brFull: {fileID: 0}
+  brNeutral: {fileID: 0}
+  brLow: {fileID: 0}
+  brDead: {fileID: 0}
 --- !u!114 &114721152596198976
 MonoBehaviour:
   m_ObjectHideFlags: 1

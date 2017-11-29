@@ -527,7 +527,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1833322092007424, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fbabd10228873342a0d4bd8e91a299a, type: 2}
@@ -658,20 +658,6 @@ Prefab:
       value: Brogre(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
-      propertyPath: m_TagString
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114646532189882768, guid: 3cc68a775860b75458efe6e63de2bf51,
-        type: 2}
-      propertyPath: teamNum
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114646532189882768, guid: 3cc68a775860b75458efe6e63de2bf51,
-        type: 2}
-      propertyPath: playerNum
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -687,7 +673,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4776212540117874, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.18
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4776212540117874, guid: 7f538c827b14a7243b6e7ad504eec7fc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1241,7 +1227,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4502395397198768, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.36
+      value: 10.28
       objectReference: {fileID: 0}
     - target: {fileID: 4502395397198768, guid: 287a78a41d3b2ff4f9a5151097a7b956, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1291,7 +1277,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4675566498679512, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.84
+      value: -10.7
       objectReference: {fileID: 0}
     - target: {fileID: 4675566498679512, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1324,6 +1310,10 @@ Prefab:
     - target: {fileID: 1589946287061502, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
       propertyPath: m_Name
       value: Neredy(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589946287061502, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66ee88ab0201c4b47b74a0dd632e708a, type: 2}
@@ -1372,8 +1362,18 @@ Prefab:
       value: Claymond(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 1684754152244306, guid: 80b3114e1cadeca4bac1784653002450, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_TagString
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060217010196842, guid: 80b3114e1cadeca4bac1784653002450,
+        type: 2}
+      propertyPath: teamNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114060217010196842, guid: 80b3114e1cadeca4bac1784653002450,
+        type: 2}
+      propertyPath: playerNum
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80b3114e1cadeca4bac1784653002450, type: 2}
