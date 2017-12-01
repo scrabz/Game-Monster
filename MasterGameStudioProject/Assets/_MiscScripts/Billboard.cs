@@ -13,7 +13,7 @@ public class Billboard : MonoBehaviour
 
 //          transform.rotation = Quaternion.Euler( 0, 0, 0);
 
-//        transform.position = new Vector3( 0, 0, 0);
+//          transform.position = new Vector3( 0, 0, 0);
     }
 
 }
