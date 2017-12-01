@@ -13,12 +13,14 @@ public class PlayerState : MonoBehaviour {
 	public bool isBeingPushed = false;
 	public bool isPoisoned = false;
 	public bool isInvincible = false;
+	public bool isWeakened = false;
 
 	public Vector3 pushDir;
 	public bool isDying = false;
 	public float stunTimer = 2f;
 	public float slowTimer = 2f;
 	public float pushTimer = 2f;
+	public float weakenTimer = 2f;
 
 	public float invincibilityTimer = 2f;
 
@@ -35,7 +37,7 @@ public class PlayerState : MonoBehaviour {
 
 	public Sprite tributeImg;
 	public Sprite cupImg;
-
+	public Sprite heartImg;
 	public Sprite p1indicator;
 	public Sprite p2indicator;
 	public Sprite p3indicator;
@@ -97,6 +99,7 @@ public class PlayerState : MonoBehaviour {
 
 		tributeImg = Resources.Load <Sprite> ("ItemImages/TributeImg");
 		cupImg = Resources.Load <Sprite> ("ItemImages/CupImg");
+		heartImg = Resources.Load <Sprite> ("ItemImages/HeartImg");
 		p1indicator = Resources.Load <Sprite> ("ItemImages/P1indicator");
 		p2indicator = Resources.Load <Sprite> ("ItemImages/P2indicator");
 		p3indicator = Resources.Load <Sprite> ("ItemImages/P3indicator");
@@ -176,6 +179,16 @@ public class PlayerState : MonoBehaviour {
 			}
 
 		}
+
+		if (isWeakened) {
+			weakenTimer -= Time.deltaTime;
+			if (weakenTimer <= 0) {
+				isWeakened = false;
+				AssignIcons ();
+			}
+
+		}
+
 		if (isStunned) {
 			stunTimer -= Time.deltaTime;
 			if (stunTimer <= 0) {
@@ -213,6 +226,12 @@ public class PlayerState : MonoBehaviour {
 			itemImage.enabled = true;
 			itemImage.sprite = cupImg;
 		}
+	}
+
+	public void InflictWeakened(float howLong){
+		isWeakened = true;
+		weakenTimer = howLong;
+		itemImage.sprite = heartImg;
 	}
 
 	public void InflictStun(float howLong){

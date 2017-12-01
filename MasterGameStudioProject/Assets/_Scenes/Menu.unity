@@ -828,7 +828,7 @@ BoxCollider:
   m_GameObject: {fileID: 138087987}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 88, y: 88, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -15959,7 +15959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13235295, g: 0.12748703, b: 0.12748703, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

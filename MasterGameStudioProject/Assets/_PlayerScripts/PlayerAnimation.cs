@@ -198,6 +198,67 @@ public class PlayerAnimation : MonoBehaviour {
 
 		}
 
+		if (this.gameObject.name == "Iris(Clone)") {
+			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
+				this.GetComponent<PlayerMovement> ().canMove = false;
+				if (this.GetComponent<PlayerState> ().isDying) {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("DefeatAnimation")) {
+						animator.Play ("DefeatAnimation", 0, 0f);
+					}
+				} else {
+					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
+						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().Play ();
+					}
+				}
+			} else {
+				if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("WhipIn") && this.GetComponent<PlayerAbilities> ().gotSomeone == true) {
+					animator.Play ("WhipIn", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil2 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("WhipOut") && this.GetComponent<PlayerAbilities> ().gotSomeone == false) {
+					animator.Play ("WhipOut", 0, 0f);
+
+				}
+
+				if (this.GetComponent<PlayerAbilities> ().doingAbil1 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("ChaosClaw")) {
+					animator.Play ("ChaosClaw", 0, 0f);
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil3 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Charm")) {
+					animator.Play ("Charm", 0, 0f);
+
+				}
+				if (this.GetComponent<PlayerAbilities> ().doingAbil4 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("LifeSteal")) {
+					animator.Play ("LifeSteal", 0, 0f);
+
+				}
+
+				if (!this.GetComponent<PlayerAbilities> ().doingAbil1 && !this.GetComponent<PlayerAbilities> ().doingAbil2 && !this.GetComponent<PlayerAbilities> ().doingAbil3 && !this.GetComponent<PlayerAbilities> ().doingAbil4) {
+					if (this.GetComponent<PlayerMovement> ().hMovement != 0 || this.GetComponent<PlayerMovement> ().vMovement != 0) {
+						if (Vector3.Dot (this.GetComponent<PlayerMovement> ().moveDirection, rotationPoint.transform.forward) < 0) {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("WalkBackwards")) {
+								animator.Play ("WalkBackwards", 0, 0f);
+
+							}
+						} else {
+							if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Walk")) {
+								animator.Play ("Walk", 0, 0f);
+							}
+
+						}
+					} else {
+						if (!this.GetComponent<PlayerMovement> ().isRolling && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+							animator.Play ("Idle", 0, 0f);
+						}
+					}
+
+				}
+			}
+
+		}
+
+
 		if (this.gameObject.name == "Claymond(Clone)") {
 			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
 				this.GetComponent<PlayerMovement> ().canMove = false;

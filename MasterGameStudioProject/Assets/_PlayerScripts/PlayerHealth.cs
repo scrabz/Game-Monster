@@ -207,13 +207,19 @@ public class PlayerHealth : MonoBehaviour {
 	public void GetHit(float healthLost){
 		if (this.GetComponent<PlayerAbilities> ().doingAbil2 == false && this.GetComponent<PlayerState>().isDying == false && this.GetComponent<PlayerState>().isInvincible == false) {
 			//Subtract the Lost Health
+			if (this.GetComponent<PlayerState> ().isWeakened) {
+				healthLost = healthLost * 1.5f;
+			}
 			currentHealth -= healthLost;
+			if (currentHealth > maxHealth) {
+				currentHealth = maxHealth;
+			}
 
 			if (healthLost > 0.9f) {
 				transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
 				createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"), this.transform.position, this.transform.rotation) as GameObject;
 			}
-			if (healthLost != 0) {
+			if (healthLost >= 0) {
 				StartCoroutine ("FlashRed");
 				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
 			}

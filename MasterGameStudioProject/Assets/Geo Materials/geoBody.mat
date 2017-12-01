@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: geoBody
-  m_Shader: {fileID: 4800000, guid: 65553c668ab063a45b5a1a714ae08556, type: 3}
+  m_Shader: {fileID: 4800000, guid: 054a31a99d11e49d110086ba44295342, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -54,6 +54,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ToonShade:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -69,7 +73,7 @@ Material:
     - _Metallic: 0.354
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.002
+    - _Outline: 0.004
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -79,4 +83,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0.91724133, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
