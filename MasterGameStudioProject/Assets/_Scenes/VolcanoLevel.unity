@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44226435, g: 0.49129266, b: 0.57117826, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ Transform:
   m_LocalScale: {x: 104.55993, y: 2.5376542, z: 66.96984}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &129418209
 Prefab:
@@ -1786,34 +1786,18 @@ MonoBehaviour:
   player1Ch2: {fileID: 0}
   player1Ch3: {fileID: 0}
   player1Ch4: {fileID: 0}
-  player1Ch1Name: {fileID: 0}
-  player1Ch2Name: {fileID: 0}
-  player1Ch3Name: {fileID: 0}
-  player1Ch4Name: {fileID: 0}
   player2Ch1: {fileID: 0}
   player2Ch2: {fileID: 0}
   player2Ch3: {fileID: 0}
   player2Ch4: {fileID: 0}
-  player2Ch1Name: {fileID: 0}
-  player2Ch2Name: {fileID: 0}
-  player2Ch3Name: {fileID: 0}
-  player2Ch4Name: {fileID: 0}
   player3Ch1: {fileID: 0}
   player3Ch2: {fileID: 0}
   player3Ch3: {fileID: 0}
   player3Ch4: {fileID: 0}
-  player3Ch1Name: {fileID: 0}
-  player3Ch2Name: {fileID: 0}
-  player3Ch3Name: {fileID: 0}
-  player3Ch4Name: {fileID: 0}
   player4Ch1: {fileID: 0}
   player4Ch2: {fileID: 0}
   player4Ch3: {fileID: 0}
   player4Ch4: {fileID: 0}
-  player4Ch1Name: {fileID: 0}
-  player4Ch2Name: {fileID: 0}
-  player4Ch3Name: {fileID: 0}
-  player4Ch4Name: {fileID: 0}
   p1A: 0
   p1B: 0
   p1X: 0
@@ -18252,7 +18236,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9485b0c79d11e2e4d0007da98d76c639, type: 2}
       propertyPath: m_LocalScale.x
@@ -24774,239 +24758,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 79d6e89fb5d6f6c4cae6b6173528d703, type: 3}
   m_PrefabInternal: {fileID: 2062048197}
---- !u!1 &2075796453
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2075796456}
-  - component: {fileID: 2075796455}
-  - component: {fileID: 2075796454}
-  m_Layer: 0
-  m_Name: MatchManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!82 &2075796454
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075796453}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.869
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &2075796455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075796453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b3ae6bccb08204c9e3ca6688dedc86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelectingCharacter: 1
-  isCountingDown: 0
-  isFighting: 0
-  countdownTimer: 4
-  countdownText: {fileID: 0}
-  isRoundEnding: 0
-  nextCharacterPanel: {fileID: 0}
-  characterSpawn: {fileID: 0}
-  p1Panel: {fileID: 0}
-  p2Panel: {fileID: 0}
-  p3Panel: {fileID: 0}
-  p4Panel: {fileID: 0}
-  p1AbilityPanel: {fileID: 0}
-  p2AbilityPanel: {fileID: 0}
-  p3AbilityPanel: {fileID: 0}
-  p4AbilityPanel: {fileID: 0}
-  player1Ch1: {fileID: 0}
-  player1Ch2: {fileID: 0}
-  player1Ch3: {fileID: 0}
-  player1Ch4: {fileID: 0}
-  player1Ch1Name: {fileID: 0}
-  player1Ch2Name: {fileID: 0}
-  player1Ch3Name: {fileID: 0}
-  player1Ch4Name: {fileID: 0}
-  player2Ch1: {fileID: 0}
-  player2Ch2: {fileID: 0}
-  player2Ch3: {fileID: 0}
-  player2Ch4: {fileID: 0}
-  player2Ch1Name: {fileID: 0}
-  player2Ch2Name: {fileID: 0}
-  player2Ch3Name: {fileID: 0}
-  player2Ch4Name: {fileID: 0}
-  player3Ch1: {fileID: 0}
-  player3Ch2: {fileID: 0}
-  player3Ch3: {fileID: 0}
-  player3Ch4: {fileID: 0}
-  player3Ch1Name: {fileID: 0}
-  player3Ch2Name: {fileID: 0}
-  player3Ch3Name: {fileID: 0}
-  player3Ch4Name: {fileID: 0}
-  player4Ch1: {fileID: 0}
-  player4Ch2: {fileID: 0}
-  player4Ch3: {fileID: 0}
-  player4Ch4: {fileID: 0}
-  player4Ch1Name: {fileID: 0}
-  player4Ch2Name: {fileID: 0}
-  player4Ch3Name: {fileID: 0}
-  player4Ch4Name: {fileID: 0}
-  p1A: 0
-  p1B: 0
-  p1X: 0
-  p1Y: 0
-  p2A: 0
-  p2B: 0
-  p2X: 0
-  p2Y: 0
-  p3A: 0
-  p3B: 0
-  p3X: 0
-  p3Y: 0
-  p4A: 0
-  p4B: 0
-  p4X: 0
-  p4Y: 0
-  p1Portraits: []
-  p2Portraits: []
-  p3Portraits: []
-  p4Portraits: []
-  portrait: {fileID: 0}
-  blankPortrait: {fileID: 0}
-  brogrePortrait: {fileID: 0}
-  skeletonPortrait: {fileID: 0}
-  tinyPortrait: {fileID: 0}
-  guyPortrait: {fileID: 0}
-  drDecayPortrait: {fileID: 0}
-  claymondPortrait: {fileID: 0}
-  succPortrait: {fileID: 0}
-  gorgonPortrait: {fileID: 0}
-  wynkPortrait: {fileID: 0}
-  brogreDead: {fileID: 0}
-  skeletonDead: {fileID: 0}
-  tinyDead: {fileID: 0}
-  guyDead: {fileID: 0}
-  drDecayDead: {fileID: 0}
-  claymondDead: {fileID: 0}
-  succDead: {fileID: 0}
-  gorgonDead: {fileID: 0}
-  wynkDead: {fileID: 0}
-  spawn1: {fileID: 0}
-  spawn2: {fileID: 0}
-  spawn3: {fileID: 0}
-  spawn4: {fileID: 0}
-  p1ActiveCharacter: {fileID: 0}
-  p2ActiveCharacter: {fileID: 0}
-  p3ActiveCharacter: {fileID: 0}
-  p4ActiveCharacter: {fileID: 0}
-  p1ActiveProfile: {fileID: 0}
-  p2ActiveProfile: {fileID: 0}
-  p3ActiveProfile: {fileID: 0}
-  p4ActiveProfile: {fileID: 0}
-  winnerPanel: {fileID: 0}
-  winnerText: {fileID: 0}
-  player1CharactersLeft: 0
-  player2CharactersLeft: 0
-  player3CharactersLeft: 0
-  player4CharactersLeft: 0
-  team1CharactersLeft: 0
-  team2CharactersLeft: 0
-  mainCam: {fileID: 0}
-  howManyPlayers: 2
-  playersLeft: 0
-  activeTeams: 2
---- !u!4 &2075796456
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075796453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085961655
 GameObject:
   m_ObjectHideFlags: 0
@@ -25055,7 +24806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086574174 stripped
 GameObject:

@@ -91,14 +91,16 @@
      <Compile Include="Assets\_ManagerScripts\LevelInteractions.cs" />
      <Compile Include="Assets\_ManagerScripts\MasterGameManager.cs" />
      <Compile Include="Assets\_ManagerScripts\MatchManager.cs" />
+     <Compile Include="Assets\_MiscScripts\BackFromCredits.cs" />
      <Compile Include="Assets\_MiscScripts\Billboard.cs" />
      <Compile Include="Assets\_MiscScripts\ButtonClick.cs" />
      <Compile Include="Assets\_MiscScripts\DynamicCamera.cs" />
      <Compile Include="Assets\_MiscScripts\FaceCamera.cs" />
+     <Compile Include="Assets\_MiscScripts\Flicker.cs" />
      <Compile Include="Assets\_MiscScripts\FloatingBoat.cs" />
      <Compile Include="Assets\_MiscScripts\InstantUnparent.cs" />
-     <Compile Include="Assets\_MiscScripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\_MiscScripts\PlayerCursor.cs" />
+     <Compile Include="Assets\_MiscScripts\SlowMoveUp.cs" />
      <Compile Include="Assets\_MiscScripts\SlowRotate.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAbilities.cs" />
