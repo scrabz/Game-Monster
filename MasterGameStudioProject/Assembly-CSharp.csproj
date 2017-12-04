@@ -88,12 +88,13 @@
      <Compile Include="Assets\_ManagerScripts\LevelInteractions.cs" />
      <Compile Include="Assets\_ManagerScripts\MasterGameManager.cs" />
      <Compile Include="Assets\_ManagerScripts\MatchManager.cs" />
+     <Compile Include="Assets\_MiscScripts\Billboard.cs" />
      <Compile Include="Assets\_MiscScripts\ButtonClick.cs" />
      <Compile Include="Assets\_MiscScripts\DynamicCamera.cs" />
      <Compile Include="Assets\_MiscScripts\FaceCamera.cs" />
+     <Compile Include="Assets\_MiscScripts\Flicker.cs" />
      <Compile Include="Assets\_MiscScripts\FloatingBoat.cs" />
      <Compile Include="Assets\_MiscScripts\InstantUnparent.cs" />
-     <Compile Include="Assets\_MiscScripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\_MiscScripts\PlayerCursor.cs" />
      <Compile Include="Assets\_MiscScripts\SlowRotate.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />
@@ -480,7 +481,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
-     <None Include="Assets\VFX\Shader\Standard.shader" />
+     <None Include="Assets\VFX\Shader\standardPlayer1.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -535,6 +536,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\VFX\Shader\Hole4.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
