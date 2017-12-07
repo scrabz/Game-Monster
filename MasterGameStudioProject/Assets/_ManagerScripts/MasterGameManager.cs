@@ -90,7 +90,7 @@ public class MasterGameManager : MonoBehaviour {
 		DrDecay = Resources.Load("Characters/DrDecay") as GameObject;
 		Guy = Resources.Load("Characters/Guy") as GameObject;
 		Claymond = Resources.Load("Characters/Claymond") as GameObject;
-		//Iris = Resources.Load("Characters/Iris") as GameObject;
+		Iris = Resources.Load("Characters/Iris") as GameObject;
 		//Wynk = Resources.Load("Characters/Wynk") as GameObject;
 
 	}
@@ -121,7 +121,7 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Guy") {
 				player1Characters.Add (Guy);
 			}
-			if (name == "Iris") {
+			if (name == "Succ") {
 				player1Characters.Add (Iris);
 			}
 			if (name == "Claymond") {
@@ -156,7 +156,7 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Guy") {
 				player2Characters.Add (Guy);
 			}
-			if (name == "Iris") {
+			if (name == "Succ") {
 				player2Characters.Add (Iris);
 			}
 			if (name == "Claymond") {
@@ -188,7 +188,7 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Guy") {
 				player3Characters.Add (Guy);
 			}
-			if (name == "Iris") {
+			if (name == "Succ") {
 				player3Characters.Add (Iris);
 			}
 			if (name == "Claymond") {
@@ -220,7 +220,7 @@ public class MasterGameManager : MonoBehaviour {
 			if (name == "Guy") {
 				player4Characters.Add (Guy);
 			}
-			if (name == "Iris") {
+			if (name == "Succ") {
 				player4Characters.Add (Iris);
 			}
 			if (name == "Claymond") {

@@ -1,21 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VFX\Shader\Standard.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_AbilityScripts\VolcanoRockExplosionAction.cs">
     <Files>
       <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="1" Column="1" />
       <File FileName="Assets\_ManagerScripts\LevelInteractions.cs" Line="1" Column="1" />
       <File FileName="Assets\_AbilityScripts\FallingRockAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerState.cs" Line="1" Column="1" />
       <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="1" Column="1" />
       <File FileName="Assets\_AbilityScripts\VolcanoRockExplosionAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\PotionTossAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\VFX\Shader\Standard.shader" Line="10" Column="46" />
-      <File FileName="Assets\_ManagerScripts\ButtonManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\LeechAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_AbilityScripts\ClayWallAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1096" Column="30" />
+      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="267" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

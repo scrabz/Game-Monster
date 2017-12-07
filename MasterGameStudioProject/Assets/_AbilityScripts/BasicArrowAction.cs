@@ -33,7 +33,7 @@ public class BasicArrowAction : MonoBehaviour {
 		//print (thisRigid.velocity.magnitude);
 		if (gameObject.name == "GhostArrow(Clone)") {
 			//this.transform.eulerAngles = transform.forward + new Vector3(0,Mathf.Sin (Time.time * 80f),0) * 2f;
-			thisRigid.velocity = transform.forward * 5f + new Vector3(0,0,transform.forward.z + Mathf.Sin(Time.time * 10f) * 10f);
+			thisRigid.velocity = transform.forward * 18f;
 		}
 
 		if (gameObject.name == "BasicArrow(Clone)") {

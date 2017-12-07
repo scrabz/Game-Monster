@@ -87,6 +87,9 @@ public class PlayerAbilities : MonoBehaviour {
 	public int teamNum;
 
 	//Dumb Bools
+
+	public bool gotSomeone = true;
+
 	public bool doingAbil1 = false;
 	public bool doingAbil2 = false;
 	public bool doingAbil3 = false;
@@ -240,7 +243,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			shield.aName = "Shield";
 			shield.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA2");
-			shield.aCooldown = 5f;
+			shield.aCooldown = 6f;
 			shield.aPanel = ability2;
 
 			shieldPush.aName = "Shield Push";
@@ -466,17 +469,17 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			darkClaw.aName = "Push Punch";
 			darkClaw.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA1");
-			darkClaw.aCooldown = 0.8f;
+			darkClaw.aCooldown = 1.2f;
 			darkClaw.aPanel = ability1;
 
 			whip.aName = "Clay Shards";
 			whip.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA2");
-			whip.aCooldown = 2f;
+			whip.aCooldown = 3f;
 			whip.aPanel = ability2;
 
 			kissOfDeath.aName = "Clay Wall";
 			kissOfDeath.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA3");
-			kissOfDeath.aCooldown = 3f;
+			kissOfDeath.aCooldown = 5f;
 			kissOfDeath.aPanel = ability3;
 
 			lifeSteal.aName = "Shockwave";
@@ -751,6 +754,43 @@ public class PlayerAbilities : MonoBehaviour {
 			}
 		}
 
+		if (this.gameObject.name == "Iris(Clone)") {
+			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
+				if (abilityButton1 && ability1.GetComponent<CooldownManager> ().abilityCooling == false) {
+					abilityActive = true;
+					ability1.GetComponent<CooldownManager> ().StartCooldown (darkClaw.aCooldown);
+					StopAllCoroutines ();
+					StartCoroutine ("DarkClaw");
+
+				}
+				if (abilityButton2 && ability2.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
+					abilityActive = true;
+					ability2.GetComponent<CooldownManager> ().StartCooldown (whip.aCooldown);
+					StopAllCoroutines ();
+					StartCoroutine("Whip");
+
+				}
+				if (abilityButton3 && ability3.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
+					abilityActive = true;
+					ability3.GetComponent<CooldownManager> ().StartCooldown (kissOfDeath.aCooldown);
+					StopAllCoroutines ();
+					StartCoroutine("KissOfDeath");
+
+				}
+
+				if (abilityButton4 && ability4.GetComponent<CooldownManager> ().abilityCooling == false && !abilityActive) {
+					abilityActive = true;
+					ability4.GetComponent<CooldownManager> ().StartCooldown (lifeSteal.aCooldown);
+					StopAllCoroutines ();
+					StartCoroutine("LifeSteal");
+
+				}
+
+
+			}
+		}
+
+
 
 		if (this.gameObject.name == "DrDecay(Clone)") {
 			if (this.GetComponent<PlayerMovement>().matchOver == false && abilityActive == false) {
@@ -857,6 +897,34 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 	}
+
+	public IEnumerator Whip(){
+		doingAbil2 = true;
+
+		yield return new WaitForSeconds(0.4f);
+		createdThing = Instantiate (Resources.Load ("SpecialAttacks/WhipHitbox"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint2;
+		//this.GetComponent<AudioSource> ().clip = brogreSlash;
+		//this.GetComponent<AudioSource> ().Play ();
+
+
+		yield return new WaitForSeconds(0.35f);
+		if (gotSomeone == false) {
+			gotSomeone = true;
+			yield return new WaitForSeconds(0.5f);
+		}
+
+
+
+		gotSomeone = false;
+		doingAbil2 = false;
+		abilityActive = false;
+		yield return null;
+	}
+
 	public IEnumerator TrueForm(){
 		characterModel.transform.Find("GuyEyes").GetComponent<SkinnedMeshRenderer> ().enabled = false;
 		characterModel.transform.Find("guyHat").GetComponent<SkinnedMeshRenderer> ().enabled = false;
@@ -866,7 +934,7 @@ public class PlayerAbilities : MonoBehaviour {
 		characterModel.transform.Find("GuyBow").GetComponent<SkinnedMeshRenderer> ().enabled = false;
 		characterModel.transform.Find("guyEyeBrows").GetComponent<SkinnedMeshRenderer> ().enabled = false;
 		characterModel.transform.Find("polySurface1").GetComponent<SkinnedMeshRenderer> ().enabled = false;
-		this.GetComponent<PlayerState> ().Invincibility (5f,false);
+		this.GetComponent<PlayerState> ().Invincibility (3f,false);
 		this.GetComponent<PlayerMovement> ().canRotate = false;
 		createdThing = Instantiate (Resources.Load ("Blackout"),cam.transform) as GameObject;
 		this.GetComponent<PlayerState> ().itemImage.enabled = false;
@@ -877,7 +945,7 @@ public class PlayerAbilities : MonoBehaviour {
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 		createdThing.GetComponent<AttackAction> ().parentPoint = characterPoint2;
 		//Do an animation here
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(3f);
 		createdThing = Instantiate (Resources.Load ("Blackout"),cam.transform) as GameObject;
 		characterModel.transform.Find("GuyBody").GetComponent<SkinnedMeshRenderer> ().enabled = true;
 		characterModel.transform.Find("GuyEyes").GetComponent<SkinnedMeshRenderer> ().enabled = true;
@@ -1002,6 +1070,10 @@ public class PlayerAbilities : MonoBehaviour {
 
 
 
+
+
+
+
 	//BROGRE ABILITIES
 	public IEnumerator Cleave(){
 		doingAbil1 = true;
@@ -1037,7 +1109,7 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<AudioSource> ().Play ();
 
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2.5f);
 		abilityActive = false;
 		doingAbil3 = false;
 		yield return null;
@@ -1336,6 +1408,47 @@ public class PlayerAbilities : MonoBehaviour {
 		yield return null;
 	}
 
+	public IEnumerator DarkClaw(){
+		doingAbil1 = true;
+		yield return new WaitForSeconds (0.2f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/MissileProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds (0.3f);
+
+		abilityActive = false;
+		doingAbil1 = false;
+		yield return null;
+	}
+
+	public IEnumerator KissOfDeath(){
+		doingAbil3 = true;
+		yield return new WaitForSeconds (0.4f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KissProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds (0.7f);
+
+		abilityActive = false;
+		doingAbil3 = false;
+		yield return null;
+	}
+
+	public IEnumerator LifeSteal(){
+		doingAbil4 = true;
+		yield return new WaitForSeconds (0.3f);
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/LifeSteal"), transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
+		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
+		yield return new WaitForSeconds (0.7f);
+
+		abilityActive = false;
+		doingAbil4 = false;
+		yield return null;
+	}
 
 	public IEnumerator KnifeThrow(){
 		doingAbil1 = true;
@@ -1556,7 +1669,7 @@ public class PlayerAbilities : MonoBehaviour {
 		doingAbil3 = true;
 
 		yield return new WaitForSeconds(0.4f);
-		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClayWall"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClayWallPush"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
@@ -1595,28 +1708,28 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator ClayShards(){
 		doingAbil1 = true;
 		yield return new WaitForSeconds(0.2f);
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 30,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 30,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 20,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y + 20,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(-1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 30,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 30,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(-1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 10,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position + new Vector3(-1,0,0), Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 20,rotationPoint.transform.eulerAngles.z)) as GameObject;
+		createdThing = Instantiate (Resources.Load ("ProjectileAttacks/ClayShardProjectile"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y - 20,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
