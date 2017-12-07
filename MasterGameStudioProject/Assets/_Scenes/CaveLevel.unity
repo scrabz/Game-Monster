@@ -33980,6 +33980,8 @@ MonoBehaviour:
   howManyPlayers: 2
   playersLeft: 0
   activeTeams: 2
+  team1LostPerson: 0
+  team2LostPerson: 0
 --- !u!4 &2079691928
 Transform:
   m_ObjectHideFlags: 0

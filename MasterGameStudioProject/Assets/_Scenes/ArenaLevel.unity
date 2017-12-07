@@ -14041,7 +14041,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1748949018630696, guid: b833fc31ae3e33545bf9b0c2c1ea284e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198879803415154008, guid: b833fc31ae3e33545bf9b0c2c1ea284e,
         type: 2}
@@ -14052,6 +14052,14 @@ Prefab:
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646661698802240, guid: b833fc31ae3e33545bf9b0c2c1ea284e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891412580489964, guid: b833fc31ae3e33545bf9b0c2c1ea284e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b833fc31ae3e33545bf9b0c2c1ea284e, type: 2}
@@ -20016,7 +20024,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_LocalPosition.z
@@ -20056,8 +20064,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 656fde119942645aa8e062e04c119aa1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
   m_IsPrefabParent: 0
@@ -33373,6 +33385,8 @@ MonoBehaviour:
   howManyPlayers: 2
   playersLeft: 0
   activeTeams: 2
+  team1LostPerson: 0
+  team2LostPerson: 0
 --- !u!4 &1893475759
 Transform:
   m_ObjectHideFlags: 0
