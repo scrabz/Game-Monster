@@ -80,7 +80,7 @@ public class LevelInteractions : MonoBehaviour {
 	}
 
 	public IEnumerator FireRain(){
-		light.GetComponent<Light> ().intensity = 0;
+		light.GetComponent<Light> ().intensity = 0.2f;
 		for (int i = 0; i < 88; i++) {
 			print ("spawned");
 			thingToSpawn = Instantiate (Resources.Load ("ProjectileAttacks/FallingFire"), fireSpawn.transform.position + new Vector3 (Random.Range (-50f, 50f), 0, Random.Range (-30f, 30f)), fireSpawn.transform.rotation) as GameObject;

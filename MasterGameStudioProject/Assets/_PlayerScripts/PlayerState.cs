@@ -167,6 +167,7 @@ public class PlayerState : MonoBehaviour {
 			invincibilityTimer -= Time.deltaTime;
 			if (invincibilityTimer <= 0) {
 				isInvincible = false;
+				Destroy (createdThing);
 				AssignIcons ();
 			}
 		}
@@ -193,6 +194,7 @@ public class PlayerState : MonoBehaviour {
 			stunTimer -= Time.deltaTime;
 			if (stunTimer <= 0) {
 				isStunned = false;
+				Destroy (createdThing);
 				this.GetComponent<PlayerMovement> ().lockedInPlace = false;
 				this.GetComponent<PlayerMovement> ().speed = origSpeed;
 			}
@@ -238,6 +240,7 @@ public class PlayerState : MonoBehaviour {
 		isStunned = true;
 		stunTimer = howLong;
 		this.GetComponent<PlayerMovement> ().lockedInPlace = true;
+		createdThing = Instantiate (Resources.Load ("Particles/StunParticles"), this.transform) as GameObject;
 	}
 
 	public void InflictPoison(float howLong){

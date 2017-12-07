@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ClayWallAction : MonoBehaviour {
-	public float health = 20f;
+	public float health = 14f;
 
 	public GameObject createdThing;
 	// Use this for initialization
@@ -15,7 +15,17 @@ public class ClayWallAction : MonoBehaviour {
 	void Update () {
 		
 	}
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
+
+		}
+	}
 	void OnTriggerEnter(Collider col){
+
+
+
+
+
 		if (col.gameObject.tag == "Projectile" || col.gameObject.tag == "Hitbox") {
 
 			if (col.gameObject.name == "PunchHitbox(Clone)") {
@@ -71,7 +81,9 @@ public class ClayWallAction : MonoBehaviour {
 					Destroy (this.gameObject);
 				}
 			}
-			Destroy (col.gameObject);
+			if (this.gameObject.name != "GhostArrow(Clone)") {
+				Destroy (col.gameObject);
+			}
 		}
 	}
 }

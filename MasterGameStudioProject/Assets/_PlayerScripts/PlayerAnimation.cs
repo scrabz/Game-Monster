@@ -16,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour {
 	public AudioClip geoVictory;
 	public AudioClip irisVictory;
 
+	public GameObject createdThing;
 	// Use this for initialization
 	void Start () {
 		rotationPoint = this.transform.Find ("RotationPoint").gameObject;
@@ -263,9 +264,11 @@ public class PlayerAnimation : MonoBehaviour {
 			if (this.GetComponent<PlayerMovement> ().matchOver == true) {
 				this.GetComponent<PlayerMovement> ().canMove = false;
 				if (this.GetComponent<PlayerState> ().isDying) {
-					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("DefeatAnimation")) {
-						animator.Play ("DefeatAnimation", 0, 0f);
-					}
+					
+						Destroy (rotationPoint.gameObject);
+						createdThing = Instantiate (Resources.Load("Particles/BigExplosion"), transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y - 10f,this.transform.eulerAngles.z)) as GameObject;
+	
+					
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);

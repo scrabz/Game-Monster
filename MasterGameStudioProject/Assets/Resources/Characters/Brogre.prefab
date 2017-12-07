@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114373936109341388}
   - component: {fileID: 114418974984554838}
   - component: {fileID: 114352593702856238}
+  - component: {fileID: 114021418764716320}
   m_Layer: 0
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -3657,7 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 80
+  maxHealth: 85
   healthBarFront: {fileID: 0}
   healthBarBack: {fileID: 0}
   panelHealthBarFront: {fileID: 0}
@@ -3680,6 +3681,17 @@ MonoBehaviour:
   brNeutral: {fileID: 0}
   brLow: {fileID: 0}
   brDead: {fileID: 0}
+--- !u!114 &114021418764716320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014970317620540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158791f6f728652438aad8900a51a264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114203218586886776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3734,7 +3746,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014970317620540}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03c1c521a9a63274789fa6dfb8dad68c, type: 3}
   m_Name: 
@@ -3907,11 +3919,13 @@ MonoBehaviour:
   isBeingPushed: 0
   isPoisoned: 0
   isInvincible: 0
+  isWeakened: 0
   pushDir: {x: 0, y: 0, z: 0}
   isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2
+  weakenTimer: 2
   invincibilityTimer: 2
   poisonTimer: 2
   origSpeed: 0
@@ -3920,6 +3934,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   tributeImg: {fileID: 0}
   cupImg: {fileID: 0}
+  heartImg: {fileID: 0}
   p1indicator: {fileID: 0}
   p2indicator: {fileID: 0}
   p3indicator: {fileID: 0}
@@ -3954,6 +3969,7 @@ MonoBehaviour:
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
   teamNum: 0
+  gotSomeone: 1
   doingAbil1: 0
   doingAbil2: 0
   doingAbil3: 0

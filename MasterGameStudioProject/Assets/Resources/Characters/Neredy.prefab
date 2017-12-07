@@ -1025,6 +1025,7 @@ GameObject:
   - component: {fileID: 114713418769039184}
   - component: {fileID: 114890222029198338}
   - component: {fileID: 114481572331950276}
+  - component: {fileID: 114811596474623172}
   m_Layer: 10
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -3102,6 +3103,7 @@ MonoBehaviour:
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
   teamNum: 0
+  gotSomeone: 1
   doingAbil1: 0
   doingAbil2: 0
   doingAbil3: 0
@@ -3332,6 +3334,17 @@ MonoBehaviour:
   matchOver: 0
   thisModel: {fileID: 0}
   createdThing: {fileID: 0}
+--- !u!114 &114811596474623172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657480322239356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158791f6f728652438aad8900a51a264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114826222163428076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3351,11 +3364,13 @@ MonoBehaviour:
   isBeingPushed: 0
   isPoisoned: 0
   isInvincible: 0
+  isWeakened: 0
   pushDir: {x: 0, y: 0, z: 0}
   isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2
+  weakenTimer: 2
   invincibilityTimer: 2
   poisonTimer: 2
   origSpeed: 0
@@ -3364,6 +3379,7 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   tributeImg: {fileID: 0}
   cupImg: {fileID: 0}
+  heartImg: {fileID: 0}
   p1indicator: {fileID: 0}
   p2indicator: {fileID: 0}
   p3indicator: {fileID: 0}
@@ -3398,7 +3414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 60
+  maxHealth: 75
   healthBarFront: {fileID: 0}
   healthBarBack: {fileID: 0}
   panelHealthBarFront: {fileID: 0}

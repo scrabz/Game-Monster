@@ -58,6 +58,7 @@
      <Compile Include="Assets\_AbilityScripts\ClawTrapAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ClayShardAction.cs" />
      <Compile Include="Assets\_AbilityScripts\ClayWallAction.cs" />
+     <Compile Include="Assets\_AbilityScripts\ClayWallPushAction.cs" />
      <Compile Include="Assets\_AbilityScripts\CollectionAction.cs" />
      <Compile Include="Assets\_AbilityScripts\CrowAction.cs" />
      <Compile Include="Assets\_AbilityScripts\FallingRockAction.cs" />
@@ -541,6 +542,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\VFX\Shader\Hole4.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />

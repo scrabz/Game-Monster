@@ -205,7 +205,7 @@ MonoBehaviour:
   lifeTimer: 0.35
   createdThing: {fileID: 1572361370231166, guid: c6606a615c6200342b1325807d6a654f,
     type: 2}
-  damage: 4
+  damage: 2
 --- !u!114 &114956835318954802
 MonoBehaviour:
   m_ObjectHideFlags: 1

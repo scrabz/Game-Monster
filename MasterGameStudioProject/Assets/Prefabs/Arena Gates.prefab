@@ -72,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4248820732654702}
   - component: {fileID: 64686747223389366}
+  - component: {fileID: 65499497542817798}
   m_Layer: 0
   m_Name: Arena Gates
   m_TagString: Untagged
@@ -111,9 +112,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1460231350642414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: -6.29, z: 34.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.52, y: -5.8176, z: 34.82}
+  m_LocalScale: {x: 1, y: 0.8991386, z: 1}
   m_Children:
   - {fileID: 4027520490256958}
   - {fileID: 4341091104530888}
@@ -265,6 +266,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!65 &65499497542817798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460231350642414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8017082, y: 6.331364, z: 1.8592033}
+  m_Center: {x: 1.3445015, y: 8.552584, z: -8.007982}
 --- !u!136 &136289280802144832
 CapsuleCollider:
   m_ObjectHideFlags: 1

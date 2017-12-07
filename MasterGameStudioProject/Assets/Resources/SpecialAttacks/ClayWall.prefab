@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 54397990909001310}
   - component: {fileID: 114119578592921528}
   - component: {fileID: 114552728842841888}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ClayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,8 +559,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0341787, z: 1}
-  m_Center: {x: 0, y: 0.017089367, z: 0}
+  m_Size: {x: 1, y: 3.7725296, z: 1}
+  m_Center: {x: 0, y: 1.3862648, z: 0}
 --- !u!95 &95215686995789486
 Animator:
   serializedVersion: 3
