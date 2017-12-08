@@ -34,5 +34,14 @@ public class ClayShardAction : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}
+		if (col.gameObject.tag == "Player2" && col.gameObject.name.Contains ("Dummy")) {
+			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
+
+				col.gameObject.GetComponent<DummyHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
+				//				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
+				//				col.GetComponent<CharacterController> ().Move (pushBackDir);
+				Destroy (this.gameObject);
+			}
+		}
 	}
 }

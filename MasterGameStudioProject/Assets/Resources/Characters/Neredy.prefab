@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 82452485163687234}
   m_Layer: 10
   m_Name: Neredy
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3151,6 +3151,7 @@ MonoBehaviour:
   decayVictory: {fileID: 0}
   geoVictory: {fileID: 0}
   irisVictory: {fileID: 0}
+  createdThing: {fileID: 0}
 --- !u!114 &114234032301775724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3334,6 +3335,7 @@ MonoBehaviour:
   matchOver: 0
   thisModel: {fileID: 0}
   createdThing: {fileID: 0}
+  dojoCard: {fileID: 0}
 --- !u!114 &114811596474623172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3356,8 +3358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1b2ac04f2bace46bc835e7461b1151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teamNum: 2
-  playerNum: 2
+  teamNum: 1
+  playerNum: 1
   isMoving: 0
   isStunned: 0
   isSlowed: 0

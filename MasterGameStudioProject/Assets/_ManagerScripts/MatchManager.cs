@@ -434,7 +434,8 @@ public class MatchManager : MonoBehaviour {
 		}
 
 		if (isCountingDown) {
-			
+			team1LostPerson = false;
+			team2LostPerson = false;
 			countdownTimer -= Time.deltaTime;
 			countdownText.text = (countdownTimer - 1).ToString("#");
 			if (countdownTimer < 1f) {
@@ -1082,7 +1083,7 @@ public class MatchManager : MonoBehaviour {
 				if (team1LostPerson) {
 					RoundOver ();
 				}
-				team1LostPerson = true;
+
 			}
 			if (loser == 2) {
 				team1CharactersLeft -= 1;
@@ -1090,7 +1091,7 @@ public class MatchManager : MonoBehaviour {
 				if (team1LostPerson) {
 					RoundOver ();
 				}
-				team1LostPerson = true;
+
 			}
 			if (loser == 3) {
 				team2CharactersLeft -= 1;
@@ -1098,7 +1099,6 @@ public class MatchManager : MonoBehaviour {
 				if (team2LostPerson) {
 					RoundOver ();
 				}
-				team2LostPerson = true;
 			}
 			if (loser == 4) {
 				team2CharactersLeft -= 1;
@@ -1106,9 +1106,14 @@ public class MatchManager : MonoBehaviour {
 				if (team2LostPerson) {
 					RoundOver ();
 				}
+
+			}
+			if (loser == 1 || loser == 2) {
+				team1LostPerson = true;
+			}
+			if (loser == 3 || loser == 4) {
 				team2LostPerson = true;
 			}
-
 		}
 
 		if (MasterGameManager.instance.ffa) {	

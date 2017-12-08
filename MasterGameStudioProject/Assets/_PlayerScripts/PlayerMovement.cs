@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool switchChrButton;
 	public bool switchChrBack;
+	public bool leaveMatch;
 
 	RaycastHit hit;
 	public float dist = 2f;
@@ -55,10 +56,35 @@ public class PlayerMovement : MonoBehaviour {
 
 	public GameObject createdThing;
 
+
+	public Image dojoCard;
+
+	public GameObject newCheck;
+
 	void Start() {
 		rollTimer = rollTimerDef;
 		controller = this.GetComponent<CharacterController> ();
 		matchManager = GameObject.Find ("MatchManager");
+
+		if (SceneManager.GetActiveScene ().name == "Dojo") {
+			dojoCard = GameObject.Find ("DojoCard").GetComponent<Image>();
+			newCheck = GameObject.Find ("NewCheck");
+
+			if (newCheck != null) {
+				Destroy (newCheck);
+				if (this.gameObject.name == "Brogre(Clone)") {
+					createdThing = Instantiate (Resources.Load ("Characters/Brogre"), transform.position, transform.rotation) as GameObject;
+					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/BrogreDojo");
+					Destroy (this.gameObject);
+
+				}
+
+			}
+
+		}
+
+
 		thisModel = this.transform.Find("RotationPoint").Find("Model").gameObject;
 		downDir = new Vector3 (0, -4f, 0);
 
@@ -89,6 +115,8 @@ public class PlayerMovement : MonoBehaviour {
 		staminaBack = gameObject.transform.Find("HealthCanvas").transform.Find("StaminaBack").gameObject.GetComponent<Image>();
 		staminaBack.enabled = false;
 		staminaFront.enabled = false;
+
+
 	}
 
 	void FixedUpdate() {
@@ -114,51 +142,63 @@ public class PlayerMovement : MonoBehaviour {
 				vMovement =  Mathf.RoundToInt(currentJoystick.LeftStickY.RawValue);
 				switchChrButton = currentJoystick.Action3.WasPressed;
 				switchChrBack = currentJoystick.Action2.WasPressed;
+				leaveMatch = currentJoystick.CommandWasPressed;
 				//rollButton = currentJoystick.Action1.WasPressed;
 			}
 		}
 
-		if (SceneManager.GetActiveScene ().name == "TestZone") {
+		if (leaveMatch) {
+			SceneManager.LoadScene ("Menu");
+		}
+		if (SceneManager.GetActiveScene ().name == "Dojo") {
 			if (switchChrBack) {
 				if (this.gameObject.name == "Brogre(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/ToeTip"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/SkeletonDojo");
 				}
 				if (this.gameObject.name == "ToeTip(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Tiny"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/TinyDojo");
 				}
 				if (this.gameObject.name == "Tiny(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Iris"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/SuccDojo");
 				}
 				if (this.gameObject.name == "Iris(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Neredy"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/GorgonDojo");
 				}
 				if (this.gameObject.name == "Neredy(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/DrDecay"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/DrDecayDojo");
 				}
 				if (this.gameObject.name == "DrDecay(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Claymond"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/ClaymondDojo");
 				}
 				if (this.gameObject.name == "Claymond(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Guy"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/GuyDojo");
 				}
 				if (this.gameObject.name == "Guy(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Brogre"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/BrogreDojo");
 				}
 
 
@@ -170,41 +210,50 @@ public class PlayerMovement : MonoBehaviour {
 					createdThing = Instantiate (Resources.Load ("Characters/Guy"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/GuyDojo");
 				}
 				if (this.gameObject.name == "Guy(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Claymond"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/ClaymondDojo");
 				}
 				if (this.gameObject.name == "Claymond(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/DrDecay"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/DrDecayDojo");
 				}
 				if (this.gameObject.name == "DrDecay(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Neredy"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/GorgonDojo");
 				}
 				if (this.gameObject.name == "Neredy(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Iris"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/SuccDojo");
 				}
 				if (this.gameObject.name == "Iris(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Tiny"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/TinyDojo");
 				}
 				if (this.gameObject.name == "Tiny(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/ToeTip"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/SkeletonDojo");
 				}
-				if (this.gameObject.name == "Gary(Clone)") {
+
+				if (this.gameObject.name == "ToeTip(Clone)") {
 					createdThing = Instantiate (Resources.Load ("Characters/Brogre"), transform.position, transform.rotation) as GameObject;
 					createdThing.GetComponent<PlayerState> ().teamNum = this.GetComponent<PlayerState>().teamNum; 
 					Destroy (this.gameObject);
+					dojoCard.sprite = Resources.Load<Sprite> ("DojoCards/BrogreDojo");
 				}
 
 
@@ -320,8 +369,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	public IEnumerator Rumble(){
-		currentJoystick.Vibrate (0.3f);
-		yield return new WaitForSeconds(0.3f);
-		currentJoystick.StopVibration ();
+		if (currentJoystick != null) {
+			currentJoystick.Vibrate (0.3f);
+			yield return new WaitForSeconds (0.3f);
+			currentJoystick.StopVibration ();
+		}
 	}
 }

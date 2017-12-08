@@ -22,7 +22,12 @@ public class MeleeHitboxActions : MonoBehaviour {
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && col.gameObject != alreadyHit) {
 				//Dont let Brogre get hurt by this if he's shielding
 				//if (!col.gameObject.GetComponent<PlayerAbilities> ().doingAbil2 && !col.gameObject.GetComponent<PlayerAbilities> ().doingAbil3 && this.gameObject.name == "Brogre(Clone)") {
+				if (!col.gameObject.name.Contains("Dummy")){
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
+				}
+				else{
+					col.gameObject.GetComponent<DummyHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
+				}
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				if (this.gameObject.name != "DashHitbox(Clone)" && this.gameObject.name != "PetrifyHitbox(Clone)" && this.gameObject.name != "WhipHitbox(Clone)") {
 						col.gameObject.GetComponent<PlayerState> ().Pushback (0.025f, pushBackDir);
@@ -37,7 +42,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 				}
 				if (this.gameObject.name == "GroundSlamHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
-					col.GetComponent<PlayerState> ().InflictStun (4f);
+					col.GetComponent<PlayerState> ().InflictStun (2f);
 					//col.gameObject.GetComponent<PlayerState> ().Pushback (0.15f,pushBackDir);
 					this.GetComponent<Rigidbody> ().isKinematic = true;
 				}
