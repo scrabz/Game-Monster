@@ -220,9 +220,18 @@ public class PlayerCursor : MonoBehaviour {
 					SceneManager.LoadScene ("CaveLevel");
 				}
 
+				if (hit.collider.gameObject.name == "ArenaButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					SceneManager.LoadScene ("ArenaLevel");
+				}
+
 				if (hit.collider.gameObject.name == "ChangeMode") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					buttonManagerObject.GetComponent<ButtonManager> ().ChangeMode ();
+				}
+				if (hit.collider.gameObject.name == "Creds") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					SceneManager.LoadScene ("Credits");
 				}
 
 				if (hit.collider.gameObject.name == "DecreaseTeam") {

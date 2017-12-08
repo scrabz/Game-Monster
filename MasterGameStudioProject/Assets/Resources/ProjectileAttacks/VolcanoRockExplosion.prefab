@@ -400,7 +400,7 @@ MonoBehaviour:
   foundCreator: 0
   lifeTimer: 0.6
   createdThing: {fileID: 0}
-  damage: 20
+  damage: 10
 --- !u!136 &136181846596298654
 CapsuleCollider:
   m_ObjectHideFlags: 1

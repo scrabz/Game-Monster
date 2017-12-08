@@ -138,6 +138,19 @@ public class MatchManager : MonoBehaviour {
 	public Image p3ActiveProfile;
 	public Image p4ActiveProfile;
 
+
+	public Image p1LGate;
+	public Image p1RGate;
+
+	public Image p2LGate;
+	public Image p2RGate;
+
+	public Image p3LGate;
+	public Image p3RGate;
+
+	public Image p4LGate;
+	public Image p4RGate;
+
 	public GameObject winnerPanel;
 	public Text winnerText;
 
@@ -161,6 +174,8 @@ public class MatchManager : MonoBehaviour {
 	public int activeTeams = 2;
 
 
+	public bool team1LostPerson = false;
+	public bool team2LostPerson = false;
 
 	void Awake(){
 
@@ -247,6 +262,20 @@ public class MatchManager : MonoBehaviour {
 		p2AbilityPanel = GameObject.Find ("P2Panel");
 		p3AbilityPanel = GameObject.Find ("P3Panel");
 		p4AbilityPanel = GameObject.Find ("P4Panel");
+
+
+		p1LGate = GameObject.Find ("P1TeamPanel").transform.Find ("LeftGate").gameObject.GetComponent<Image> ();
+		p1RGate = GameObject.Find ("P1TeamPanel").transform.Find ("RightGate").gameObject.GetComponent<Image> ();
+
+		p2LGate = GameObject.Find ("P2TeamPanel").transform.Find ("LeftGate").gameObject.GetComponent<Image> ();
+		p2RGate = GameObject.Find ("P2TeamPanel").transform.Find ("RightGate").gameObject.GetComponent<Image> ();
+
+		p3LGate = GameObject.Find ("P3TeamPanel").transform.Find ("LeftGate").gameObject.GetComponent<Image> ();
+		p3RGate = GameObject.Find ("P3TeamPanel").transform.Find ("RightGate").gameObject.GetComponent<Image> ();
+
+		p4LGate = GameObject.Find ("P4TeamPanel").transform.Find ("LeftGate").gameObject.GetComponent<Image> ();
+		p4RGate = GameObject.Find ("P4TeamPanel").transform.Find ("RightGate").gameObject.GetComponent<Image> ();
+
 
 		player1Ch1 = GameObject.Find ("P1TeamPanel").transform.Find ("Ch1Img").gameObject.GetComponent<Image> ();
 		player1Ch2 = GameObject.Find ("P1TeamPanel").transform.Find ("Ch2Img").gameObject.GetComponent<Image> ();
@@ -487,21 +516,33 @@ public class MatchManager : MonoBehaviour {
 					p1ActiveCharacter = MasterGameManager.instance.player1Characters [0];
 					p1ActiveProfile = player1Ch1;
 					StartCoroutine ("VibrateController", p1Joystick);
+					p1LGate.enabled = true;
+					p1RGate.enabled = true;
+					p1RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p1B && player1Ch2.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.player1Characters [1];
 					p1ActiveProfile = player1Ch2;
 					StartCoroutine ("VibrateController", p1Joystick);
+					p1LGate.enabled = true;
+					p1RGate.enabled = true;
+					p1RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p1X && player1Ch3.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.player1Characters [2];
 					p1ActiveProfile = player1Ch3;
 					StartCoroutine ("VibrateController", p1Joystick);
+					p1LGate.enabled = true;
+					p1RGate.enabled = true;
+					p1RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p1Y && player1Ch4.enabled) {
 					p1ActiveCharacter = MasterGameManager.instance.player1Characters [3];
 					p1ActiveProfile = player1Ch4;
 					StartCoroutine ("VibrateController", p1Joystick);
+					p1LGate.enabled = true;
+					p1RGate.enabled = true;
+					p1RGate.GetComponent<AudioSource> ().Play ();
 				}
 
 			}
@@ -512,21 +553,33 @@ public class MatchManager : MonoBehaviour {
 					p2ActiveCharacter = MasterGameManager.instance.player2Characters [0];
 					p2ActiveProfile = player2Ch1;
 					StartCoroutine ("VibrateController", p2Joystick);
+					p2LGate.enabled = true;
+					p2RGate.enabled = true;
+					p2RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p2B && player2Ch2.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.player2Characters [1];
 					p2ActiveProfile = player2Ch2;
 					StartCoroutine ("VibrateController", p2Joystick);
+					p2LGate.enabled = true;
+					p2RGate.enabled = true;
+					p2RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p2X && player2Ch3.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.player2Characters [2];
 					p2ActiveProfile = player2Ch3;
 					StartCoroutine ("VibrateController", p2Joystick);
+					p2LGate.enabled = true;
+					p2RGate.enabled = true;
+					p2RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p2Y && player2Ch4.enabled) {
 					p2ActiveCharacter = MasterGameManager.instance.player2Characters [3];
 					p2ActiveProfile = player2Ch4;
 					StartCoroutine ("VibrateController", p2Joystick);
+					p2LGate.enabled = true;
+					p2RGate.enabled = true;
+					p2RGate.GetComponent<AudioSource> ().Play ();
 				}
 		
 			}
@@ -536,21 +589,34 @@ public class MatchManager : MonoBehaviour {
 					p3ActiveCharacter = MasterGameManager.instance.player3Characters [0];
 					p3ActiveProfile = player3Ch1;
 					StartCoroutine ("VibrateController", p3Joystick);
+
+					p3LGate.enabled = true;
+					p3RGate.enabled = true;
+					p3RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p3B && player3Ch2.enabled) {
 					p3ActiveCharacter = MasterGameManager.instance.player3Characters [1];
 					p3ActiveProfile = player3Ch2;
 					StartCoroutine ("VibrateController", p3Joystick);
+					p3LGate.enabled = true;
+					p3RGate.enabled = true;
+					p3RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p3X && player3Ch3.enabled) {
 					p3ActiveCharacter = MasterGameManager.instance.player3Characters [2];
 					p3ActiveProfile = player3Ch3;
 					StartCoroutine ("VibrateController", p3Joystick);
+					p3LGate.enabled = true;
+					p3RGate.enabled = true;
+					p3RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p3Y && player3Ch4.enabled) {
 					p3ActiveCharacter = MasterGameManager.instance.player3Characters [3];
 					p3ActiveProfile = player3Ch4;
 					StartCoroutine ("VibrateController", p3Joystick);
+					p3LGate.enabled = true;
+					p3RGate.enabled = true;
+					p3RGate.GetComponent<AudioSource> ().Play ();
 				}
 
 			}
@@ -561,21 +627,33 @@ public class MatchManager : MonoBehaviour {
 					p4ActiveCharacter = MasterGameManager.instance.player4Characters [0];
 					p4ActiveProfile = player4Ch1;
 					StartCoroutine ("VibrateController", p4Joystick);
+					p4LGate.enabled = true;
+					p4RGate.enabled = true;
+					p4RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p4B && player4Ch2.enabled) {
 					p4ActiveCharacter = MasterGameManager.instance.player4Characters [1];
 					p4ActiveProfile = player4Ch2;
 					StartCoroutine ("VibrateController", p4Joystick);
+					p4LGate.enabled = true;
+					p4RGate.enabled = true;
+					p4RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p4X && player4Ch3.enabled) {
 					p4ActiveCharacter = MasterGameManager.instance.player4Characters [2];
 					p4ActiveProfile = player4Ch3;
 					StartCoroutine ("VibrateController", p4Joystick);
+					p4LGate.enabled = true;
+					p4RGate.enabled = true;
+					p4RGate.GetComponent<AudioSource> ().Play ();
 				}
 				if (p4Y && player4Ch4.enabled) {
 					p4ActiveCharacter = MasterGameManager.instance.player4Characters [3];
 					p4ActiveProfile = player4Ch4;
 					StartCoroutine ("VibrateController", p4Joystick);
+					p4LGate.enabled = true;
+					p4RGate.enabled = true;
+					p4RGate.GetComponent<AudioSource> ().Play ();
 				}
 
 			}
@@ -628,6 +706,14 @@ public class MatchManager : MonoBehaviour {
 //		}
 	}
 	public void OpenPanels(){
+		p1LGate.enabled = false;
+		p1RGate.enabled = false;
+		p2LGate.enabled = false;
+		p2RGate.enabled = false;
+		p3LGate.enabled = false;
+		p3RGate.enabled = false;
+		p4LGate.enabled = false;
+		p4RGate.enabled = false;
 		p1Panel.SetBool ("isOpen", true);
 		p2Panel.SetBool ("isOpen", true);
 		if (MasterGameManager.instance.p3Enabled) {
@@ -992,27 +1078,35 @@ public class MatchManager : MonoBehaviour {
 
 			if (loser == 1) {
 				team1CharactersLeft -= 1;
-				if (p2ActiveProfile.name.Contains("Dead")) {
+
+				if (team1LostPerson) {
 					RoundOver ();
 				}
+				team1LostPerson = true;
 			}
 			if (loser == 2) {
 				team1CharactersLeft -= 1;
-				if (p1ActiveProfile.name.Contains("Dead")) {
+
+				if (team1LostPerson) {
 					RoundOver ();
 				}
+				team1LostPerson = true;
 			}
 			if (loser == 3) {
 				team2CharactersLeft -= 1;
-				if (p4ActiveProfile.name.Contains("Dead")) {
+
+				if (team2LostPerson) {
 					RoundOver ();
 				}
+				team2LostPerson = true;
 			}
 			if (loser == 4) {
 				team2CharactersLeft -= 1;
-				if (p3ActiveProfile.name.Contains("Dead")) {
+
+				if (team2LostPerson) {
 					RoundOver ();
 				}
+				team2LostPerson = true;
 			}
 
 		}
@@ -1104,6 +1198,8 @@ public class MatchManager : MonoBehaviour {
 			//player.GetComponent<PlayerAbilities> ().abilityActive = true;
 		}
 
+		team1LostPerson = false;
+		team2LostPerson = false;
 		Camera.main.GetComponent<Grayscale> ().enabled = false;
 
 

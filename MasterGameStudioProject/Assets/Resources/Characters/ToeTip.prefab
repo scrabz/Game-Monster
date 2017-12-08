@@ -1476,6 +1476,7 @@ GameObject:
   - component: {fileID: 114532365965981192}
   - component: {fileID: 114649159342032108}
   - component: {fileID: 114412028554052312}
+  - component: {fileID: 114865851570075658}
   m_Layer: 10
   m_Name: HealthCanvas
   m_TagString: Untagged
@@ -3650,6 +3651,7 @@ MonoBehaviour:
   createdThing: {fileID: 0}
   rotationPoint: {fileID: 0}
   teamNum: 0
+  gotSomeone: 1
   doingAbil1: 0
   doingAbil2: 0
   doingAbil3: 0
@@ -3805,7 +3807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 70
+  maxHealth: 75
   healthBarFront: {fileID: 0}
   healthBarBack: {fileID: 0}
   panelHealthBarFront: {fileID: 0}
@@ -3823,6 +3825,11 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   defHealthColor: {r: 0, g: 0, b: 0, a: 0}
   createdThing: {fileID: 0}
+  currentPortrait: {fileID: 0}
+  brFull: {fileID: 0}
+  brNeutral: {fileID: 0}
+  brLow: {fileID: 0}
+  brDead: {fileID: 0}
 --- !u!114 &114412028554052312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3854,11 +3861,13 @@ MonoBehaviour:
   isBeingPushed: 0
   isPoisoned: 0
   isInvincible: 0
+  isWeakened: 0
   pushDir: {x: 0, y: 0, z: 0}
   isDying: 0
   stunTimer: 2
   slowTimer: 2
   pushTimer: 2
+  weakenTimer: 2
   invincibilityTimer: 2
   poisonTimer: 2
   origSpeed: 0
@@ -3867,11 +3876,13 @@ MonoBehaviour:
   itemImage: {fileID: 0}
   tributeImg: {fileID: 0}
   cupImg: {fileID: 0}
+  heartImg: {fileID: 0}
   p1indicator: {fileID: 0}
   p2indicator: {fileID: 0}
   p3indicator: {fileID: 0}
   p4indicator: {fileID: 0}
   createdThing: {fileID: 0}
+  levelInteractions: {fileID: 0}
 --- !u!114 &114482710221179342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3963,6 +3974,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114865851570075658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828721816353180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158791f6f728652438aad8900a51a264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114893397849391036
 MonoBehaviour:
   m_ObjectHideFlags: 1

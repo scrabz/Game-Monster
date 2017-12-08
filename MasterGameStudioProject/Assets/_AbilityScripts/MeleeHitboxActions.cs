@@ -24,7 +24,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 				//if (!col.gameObject.GetComponent<PlayerAbilities> ().doingAbil2 && !col.gameObject.GetComponent<PlayerAbilities> ().doingAbil3 && this.gameObject.name == "Brogre(Clone)") {
 					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
-					if (this.gameObject.name != "DashHitbox(Clone)" && this.gameObject.name != "PetrifyHitbox(Clone)") {
+				if (this.gameObject.name != "DashHitbox(Clone)" && this.gameObject.name != "PetrifyHitbox(Clone)" && this.gameObject.name != "WhipHitbox(Clone)") {
 						col.gameObject.GetComponent<PlayerState> ().Pushback (0.025f, pushBackDir);
 					}
 					alreadyHit = col.gameObject;
@@ -54,6 +54,15 @@ public class MeleeHitboxActions : MonoBehaviour {
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.35f,pushBackDir);
 					Destroy (this.gameObject);
 				}
+
+				if (this.gameObject.name == "WhipHitbox(Clone)") {
+					this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().gotSomeone = true;
+					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
+					col.gameObject.transform.position = this.GetComponent<AttackAction>().creator.transform.Find ("RotationPoint").Find ("SpawningPoint1").position;
+					col.gameObject.GetComponent<PlayerState> ().InflictStun (0.50f);
+					Destroy (this.gameObject);
+				}
+
 			}
 		}
 	}

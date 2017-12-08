@@ -22,10 +22,9 @@ public class NapalmArrowAction : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
-		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid") {
+		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid" || col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 			createdThing = Instantiate (Resources.Load("ProjectileAttacks/Napalm"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
-			print ("napsss");
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 			Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
 			Destroy (this.gameObject);
