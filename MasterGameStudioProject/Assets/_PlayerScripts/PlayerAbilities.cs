@@ -88,7 +88,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	//Dumb Bools
 
-	public bool gotSomeone = true;
+	public bool gotSomeone = false;
 
 	public bool doingAbil1 = false;
 	public bool doingAbil2 = false;
@@ -171,8 +171,9 @@ public class PlayerAbilities : MonoBehaviour {
 		if (this.gameObject.tag == "Player4") {
 			abilityPanel = GameObject.Find ("P4Panel");
 		}
-
-		characterPortrait = abilityPanel.transform.Find ("ChrPortrait").gameObject;
+		if (!this.gameObject.name.Contains ("Dummy")) {
+			characterPortrait = abilityPanel.transform.Find ("ChrPortrait").gameObject;
+		}
 
 		if (this.gameObject.name == "ToeTip(Clone)") {
 
@@ -200,7 +201,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			collection.aName = "Collection / Rejection";
 			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA3");
-			collection.aCooldown = 4f;
+			collection.aCooldown = 2.8f;
 			collection.aPanel = ability3;
 
 			stomp.aName = "Stomp";
@@ -1597,16 +1598,16 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<AudioSource> ().Play ();
 		createdThing = Instantiate (Resources.Load ("Particles/TinyUltPart"), transform) as GameObject;
 		for (int i = 0; i < 54; i++) {
-			p++;
-			if (p == 1) {
+			//p++;
+			if (Random.Range(0,2) == 0) {
 				createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
 				createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 				createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 				Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			}
-			if (p > 1) {
-				p = 0;
-			}
+			//if (p > 1) {
+			//	p = 0;
+			//}
 			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
 
 			yield return new WaitForSeconds (0.01f);

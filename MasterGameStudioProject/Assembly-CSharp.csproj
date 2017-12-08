@@ -88,6 +88,7 @@
      <Compile Include="Assets\_ManagerScripts\ButtonManager.cs" />
      <Compile Include="Assets\_ManagerScripts\CharacterSelectAction.cs" />
      <Compile Include="Assets\_ManagerScripts\CooldownManager.cs" />
+     <Compile Include="Assets\_ManagerScripts\DojoControls.cs" />
      <Compile Include="Assets\_ManagerScripts\GameManagerLoader.cs" />
      <Compile Include="Assets\_ManagerScripts\LevelInteractions.cs" />
      <Compile Include="Assets\_ManagerScripts\MasterGameManager.cs" />
@@ -104,6 +105,7 @@
      <Compile Include="Assets\_MiscScripts\SlowMoveUp.cs" />
      <Compile Include="Assets\_MiscScripts\SlowRotate.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />
+     <Compile Include="Assets\_PlayerScripts\DummyHealth.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAbilities.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAnimation.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerHealth.cs" />

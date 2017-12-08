@@ -22,7 +22,7 @@ public class PotionTossAction : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 
-		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid") {
+		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Solid" || col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 			createdThing = Instantiate (Resources.Load("ProjectileAttacks/PotionExplosion"), this.transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y,this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction>().teamNum;
 			print ("happened");

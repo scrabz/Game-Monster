@@ -27,8 +27,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Credits.unity
     guid: 7e3d6d89cd8e4f44db0ddd933ff221ec
   - enabled: 0
-    path: Assets/_Scenes/Arena Stage.unity
+    path: 
     guid: 9e6782abd7f217b438e948cafdf8871d
   - enabled: 1
     path: Assets/_Scenes/ArenaLevel.unity
     guid: fa92a54737a6a824194212168b998b9e
+  - enabled: 1
+    path: Assets/_Scenes/Dojo.unity
+    guid: 9d4469d1d226ccc4cb898bd6de71f7db

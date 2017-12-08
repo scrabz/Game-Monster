@@ -49,6 +49,18 @@ public class LeechAction : MonoBehaviour {
 					moving = false;
 				}
 			}
+			if (col.gameObject.tag == "Player2" && col.gameObject.name.Contains("Dummy")) {
+				if (this.GetComponent<AttackAction> ().teamNum != col.gameObject.GetComponent<PlayerState> ().teamNum && !col.gameObject.GetComponent<PlayerMovement> ().isRolling && moving == true) {
+					Destroy (thisRigid);
+					this.transform.SetParent (col.gameObject.transform);
+					col.gameObject.GetComponent<DummyHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
+					col.gameObject.GetComponent<PlayerState> ().InflictPoison (5.5f);
+					this.GetComponent<AudioSource> ().Play ();
+					//				pushBackDir = this.GetComponent<Rigidbody> ().velocity.normalized * 1.2f;
+					//				col.GetComponent<CharacterController> ().Move (pushBackDir);
+					moving = false;
+				}
+			}
 		}
 	}
 }

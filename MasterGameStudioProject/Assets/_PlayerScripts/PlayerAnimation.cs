@@ -16,6 +16,8 @@ public class PlayerAnimation : MonoBehaviour {
 	public AudioClip geoVictory;
 	public AudioClip irisVictory;
 
+	public bool didIt = false;
+
 	public GameObject createdThing;
 	// Use this for initialization
 	void Start () {
@@ -267,7 +269,8 @@ public class PlayerAnimation : MonoBehaviour {
 				if (this.GetComponent<PlayerState> ().isDying) {
 					
 						Destroy (rotationPoint.gameObject);
-					if (createdThing == null) {
+					if (createdThing == null && didIt == false) {
+						didIt = true;
 						createdThing = Instantiate (Resources.Load ("Particles/BigExplosion"), transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y - 10f, this.transform.eulerAngles.z)) as GameObject;
 					}
 					
