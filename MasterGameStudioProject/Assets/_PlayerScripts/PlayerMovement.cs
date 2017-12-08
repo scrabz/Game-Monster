@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour {
 		controller = this.GetComponent<CharacterController> ();
 		matchManager = GameObject.Find ("MatchManager");
 		thisModel = this.transform.Find("RotationPoint").Find("Model").gameObject;
-		downDir = new Vector3 (0, -1, 0);
+		downDir = new Vector3 (0, -4f, 0);
 
 		if (this.gameObject.tag == "Player1") {
 			if (InputManager.Devices [0] != null) {
@@ -283,7 +283,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Physics.Raycast (transform.position, downDir, out hit, dist)) {
 			if (hit.collider.tag == "Ground") {
-				
+				//this.transform.position = new Vector3 (this.transform.position.x, hit.collider.transform.position.y + 1.5f, this.transform.position.z);
 			}
 		} else {
 			this.transform.position = new Vector3(oldPosition.x, oldPosition.y, oldPosition.z);

@@ -248,7 +248,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			shieldPush.aName = "Shield Push";
 			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA3");
-			shieldPush.aCooldown = 5f;
+			shieldPush.aCooldown = 4f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
@@ -365,7 +365,7 @@ public class PlayerAbilities : MonoBehaviour {
 			decaySmoke = Resources.Load ("SFX/DecaySmoke") as AudioClip;
 			decayCrowThrow = Resources.Load ("SFX/DecayCrowThrow") as AudioClip;
 			decayFrogThrow = Resources.Load ("SFX/DecayFrogThrow") as AudioClip;
-			decayLeechThrow = Resources.Load ("SFX/DecayLeechThrow") as AudioClip;
+			decayLeechThrow = Resources.Load ("SFX/DecayCrowBite") as AudioClip;
 
 
 			potionToss = new CharacterAbility ();
@@ -1668,7 +1668,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator ClayWall(){
 		doingAbil3 = true;
 
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(0.2f);
 		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClayWallPush"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
@@ -1733,7 +1733,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-
+		createdThing = Instantiate (Resources.Load ("Particles/GeoShoot"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 
 		yield return new WaitForSeconds(0.3f);
 		doingAbil1 = false;
@@ -1800,7 +1800,7 @@ public class PlayerAbilities : MonoBehaviour {
 		//if (selectedArrow >= 4) {
 		//	selectedArrow = 0;
 		//}
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.2f);
 		//Do an animation here
 		doingAbil3 = false;
 		abilityActive = false;

@@ -27,6 +27,7 @@ public class PlayerAnimation : MonoBehaviour {
 		garyVictory = Resources.Load ("SFX/GaryVictory") as AudioClip;
 		tinyVictory = Resources.Load ("SFX/TinyVictory") as AudioClip;
 		neredyVictory = Resources.Load ("SFX/NeredyVictory") as AudioClip;
+		irisVictory = Resources.Load ("SFX/IrisVictory") as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -209,7 +210,7 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
-						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().clip = irisVictory;
 						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
@@ -266,8 +267,9 @@ public class PlayerAnimation : MonoBehaviour {
 				if (this.GetComponent<PlayerState> ().isDying) {
 					
 						Destroy (rotationPoint.gameObject);
-						createdThing = Instantiate (Resources.Load("Particles/BigExplosion"), transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y - 10f,this.transform.eulerAngles.z)) as GameObject;
-	
+					if (createdThing == null) {
+						createdThing = Instantiate (Resources.Load ("Particles/BigExplosion"), transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y - 10f, this.transform.eulerAngles.z)) as GameObject;
+					}
 					
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {

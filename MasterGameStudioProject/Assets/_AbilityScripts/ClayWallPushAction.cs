@@ -7,7 +7,7 @@ public class ClayWallPushAction : MonoBehaviour {
 	public GameObject createdThing;
 	// Use this for initialization
 
-	float thingTimer = 0.5f;
+	float thingTimer = 0.2f;
 	void Start () {
 		
 	}
@@ -19,9 +19,9 @@ public class ClayWallPushAction : MonoBehaviour {
 			DoThing ();
 		}
 	}
-	void OnTriggerEnter(Collision col){
+	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
-			col.gameObject.GetComponent<PlayerState> ().Pushback (1f, -this.transform.forward);
+			col.gameObject.GetComponent<PlayerState> ().Pushback (0.1f, -this.transform.forward);
 			Debug.Log ("blip");
 
 		}

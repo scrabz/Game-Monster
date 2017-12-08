@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1238742117240736, guid: 6a6bcd6659f31a349a8b0c982423f0bb, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607999058110286, guid: 6a6bcd6659f31a349a8b0c982423f0bb, type: 2}
       propertyPath: m_Layer
@@ -492,7 +492,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1233556435638542, guid: e89f3ad78cb764c439eddbcc7bc8fd46, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e89f3ad78cb764c439eddbcc7bc8fd46, type: 2}
@@ -801,7 +801,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1082031755858124, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_Layer
@@ -813,6 +813,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1525873653632916, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592457383298222, guid: 3cc68a775860b75458efe6e63de2bf51, type: 2}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646532189882768, guid: 3cc68a775860b75458efe6e63de2bf51,
+        type: 2}
+      propertyPath: teamNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646532189882768, guid: 3cc68a775860b75458efe6e63de2bf51,
+        type: 2}
+      propertyPath: playerNum
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1713,17 +1727,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1684754152244306, guid: 80b3114e1cadeca4bac1784653002450, type: 2}
       propertyPath: m_TagString
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 114060217010196842, guid: 80b3114e1cadeca4bac1784653002450,
         type: 2}
       propertyPath: teamNum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114060217010196842, guid: 80b3114e1cadeca4bac1784653002450,
         type: 2}
       propertyPath: playerNum
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1412177840292042, guid: 80b3114e1cadeca4bac1784653002450, type: 2}
       propertyPath: m_Layer
@@ -1731,7 +1745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1684754152244306, guid: 80b3114e1cadeca4bac1784653002450, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114666793277117774, guid: 80b3114e1cadeca4bac1784653002450,
         type: 2}
