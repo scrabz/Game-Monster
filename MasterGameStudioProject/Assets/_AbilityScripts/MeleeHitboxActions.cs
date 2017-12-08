@@ -46,13 +46,13 @@ public class MeleeHitboxActions : MonoBehaviour {
 				if (this.gameObject.name == "PetrifyHitbox(Clone)") {
 					//pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.GetComponent<PlayerState> ().InflictStun (1.5f);
-					Destroy (this.gameObject);
+					Destroy (this.GetComponent<Collider>());
 				}
 
 				if (this.gameObject.name == "PunchHitbox(Clone)") {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.gameObject.GetComponent<PlayerState> ().Pushback (0.35f,pushBackDir);
-					Destroy (this.gameObject);
+					Destroy (this.GetComponent<Collider>());
 				}
 
 				if (this.gameObject.name == "WhipHitbox(Clone)") {
@@ -60,7 +60,7 @@ public class MeleeHitboxActions : MonoBehaviour {
 					pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 					col.gameObject.transform.position = this.GetComponent<AttackAction>().creator.transform.Find ("RotationPoint").Find ("SpawningPoint1").position;
 					col.gameObject.GetComponent<PlayerState> ().InflictStun (0.50f);
-					Destroy (this.gameObject);
+					Destroy (this.GetComponent<Collider>());
 				}
 
 			}
