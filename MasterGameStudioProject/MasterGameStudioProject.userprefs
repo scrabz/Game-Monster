@@ -1,14 +1,30 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_AbilityScripts\VolcanoRockExplosionAction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_PlayerScripts\PlayerAnimation.cs">
     <Files>
       <File FileName="Assets\_ManagerScripts\CooldownManager.cs" Line="1" Column="1" />
       <File FileName="Assets\_ManagerScripts\LevelInteractions.cs" Line="1" Column="1" />
       <File FileName="Assets\_AbilityScripts\FallingRockAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerAbilities.cs" Line="473" Column="30" />
       <File FileName="Assets\_AbilityScripts\VolcanoRockExplosionAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1096" Column="30" />
-      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="267" Column="6" />
+      <File FileName="Assets\_ManagerScripts\MatchManager.cs" Line="1117" Column="4" />
+      <File FileName="Assets\_PlayerScripts\PlayerAnimation.cs" Line="98" Column="5" />
+      <File FileName="Assets\_PlayerScripts\PlayerMovement.cs" Line="321" Column="1" />
+      <File FileName="Assets\_AbilityScripts\ClayWallPushAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\LeechAction.cs" Line="52" Column="4" />
+      <File FileName="Assets\_AbilityScripts\MeleeHitboxActions.cs" Line="29" Column="101" />
+      <File FileName="Assets\_AbilityScripts\CollectionAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_ManagerScripts\DojoControls.cs" Line="1" Column="1" />
+      <File FileName="Assets\_MiscScripts\PlayerCursor.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerRotation.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerHealth.cs" Line="208" Column="5" />
+      <File FileName="Assets\_PlayerScripts\DummyHealth.cs" Line="96" Column="35" />
+      <File FileName="Assets\_AbilityScripts\PotionTossAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\NapalmArrowAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\BasicArrowAction.cs" Line="1" Column="1" />
+      <File FileName="Assets\_PlayerScripts\PlayerState.cs" Line="1" Column="1" />
+      <File FileName="Assets\_AbilityScripts\ClayShardAction.cs" Line="44" Column="5" />
+      <File FileName="Assets\_AbilityScripts\LifeStealAction.cs" Line="30" Column="94" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

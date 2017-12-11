@@ -178,24 +178,7 @@ public class PlayerHealth : MonoBehaviour {
 				healthBarActive = false;
 			}
 		}
-
-	
-
-
-		if (invincible) {
-			invincibleTimer -= Time.deltaTime;
-			if (invincibleTimer % 2 == 0) {
-				model.GetComponent<Renderer> ().material.color = Color.white;
-			} else {
-				model.GetComponent<Renderer> ().material.color = Color.gray;
-			}
-
-			if (invincibleTimer <= 0) {
-				model.GetComponent<Renderer> ().material.color = Color.white;
-				invincible = false;
-				invincibleTimer = 2f;
-			}
-		}
+			
 
 
 
@@ -219,7 +202,7 @@ public class PlayerHealth : MonoBehaviour {
 				transform.Find ("RotationPoint").GetComponent<AudioSource> ().Play ();
 				createdThing = Instantiate (Resources.Load ("Particles/NewGetHit"), this.transform.position, this.transform.rotation) as GameObject;
 			}
-			if (healthLost >= 0) {
+			if (healthLost > 0) {
 				StartCoroutine ("FlashRed");
 				this.GetComponent<PlayerMovement> ().StartCoroutine ("Rumble");
 			}

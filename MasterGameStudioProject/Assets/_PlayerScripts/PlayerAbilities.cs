@@ -88,7 +88,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	//Dumb Bools
 
-	public bool gotSomeone = true;
+	public bool gotSomeone = false;
 
 	public bool doingAbil1 = false;
 	public bool doingAbil2 = false;
@@ -171,8 +171,9 @@ public class PlayerAbilities : MonoBehaviour {
 		if (this.gameObject.tag == "Player4") {
 			abilityPanel = GameObject.Find ("P4Panel");
 		}
-
-		characterPortrait = abilityPanel.transform.Find ("ChrPortrait").gameObject;
+		if (!this.gameObject.name.Contains ("Dummy")) {
+			characterPortrait = abilityPanel.transform.Find ("ChrPortrait").gameObject;
+		}
 
 		if (this.gameObject.name == "ToeTip(Clone)") {
 
@@ -200,7 +201,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			collection.aName = "Collection / Rejection";
 			collection.aIcon = Resources.Load<Sprite> ("AbilityIcons/GA3");
-			collection.aCooldown = 4f;
+			collection.aCooldown = 2.8f;
 			collection.aPanel = ability3;
 
 			stomp.aName = "Stomp";
@@ -248,7 +249,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			shieldPush.aName = "Shield Push";
 			shieldPush.aIcon = Resources.Load<Sprite> ("AbilityIcons/BA3");
-			shieldPush.aCooldown = 5f;
+			shieldPush.aCooldown = 4f;
 			shieldPush.aPanel = ability3;
 
 			kegToss.aName = "Keg Toss";
@@ -365,7 +366,7 @@ public class PlayerAbilities : MonoBehaviour {
 			decaySmoke = Resources.Load ("SFX/DecaySmoke") as AudioClip;
 			decayCrowThrow = Resources.Load ("SFX/DecayCrowThrow") as AudioClip;
 			decayFrogThrow = Resources.Load ("SFX/DecayFrogThrow") as AudioClip;
-			decayLeechThrow = Resources.Load ("SFX/DecayLeechThrow") as AudioClip;
+			decayLeechThrow = Resources.Load ("SFX/DecayCrowBite") as AudioClip;
 
 
 			potionToss = new CharacterAbility ();
@@ -469,7 +470,7 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			darkClaw.aName = "Push Punch";
 			darkClaw.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA1");
-			darkClaw.aCooldown = 1.2f;
+			darkClaw.aCooldown = 0.8f;
 			darkClaw.aPanel = ability1;
 
 			whip.aName = "Clay Shards";
@@ -1597,16 +1598,16 @@ public class PlayerAbilities : MonoBehaviour {
 		this.GetComponent<AudioSource> ().Play ();
 		createdThing = Instantiate (Resources.Load ("Particles/TinyUltPart"), transform) as GameObject;
 		for (int i = 0; i < 54; i++) {
-			p++;
-			if (p == 1) {
+			//p++;
+			if (Random.Range(0,2) == 0) {
 				createdThing = Instantiate (Resources.Load ("ProjectileAttacks/KnifeProjectile"), characterPoint1.transform.position, Quaternion.Euler (rotationPoint.transform.eulerAngles.x, rotationPoint.transform.eulerAngles.y + Random.Range (-5, 5), rotationPoint.transform.eulerAngles.z)) as GameObject;
 				createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 				createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 				Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			}
-			if (p > 1) {
-				p = 0;
-			}
+			//if (p > 1) {
+			//	p = 0;
+			//}
 			rotationPoint.transform.eulerAngles = new Vector3 (transform.rotation.eulerAngles.x, rotationPoint.transform.rotation.eulerAngles.y + 30f, transform.rotation.eulerAngles.z);
 
 			yield return new WaitForSeconds (0.01f);
@@ -1668,7 +1669,7 @@ public class PlayerAbilities : MonoBehaviour {
 	public IEnumerator ClayWall(){
 		doingAbil3 = true;
 
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(0.2f);
 		createdThing = Instantiate (Resources.Load ("SpecialAttacks/ClayWallPush"), characterPoint2.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
@@ -1733,7 +1734,7 @@ public class PlayerAbilities : MonoBehaviour {
 		createdThing.GetComponent<AttackAction> ().teamNum = teamNum;
 		createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
 		Physics.IgnoreCollision(this.GetComponent<Collider>(),createdThing.GetComponent<Collider>());
-
+		createdThing = Instantiate (Resources.Load ("Particles/GeoShoot"), characterPoint1.transform.position, Quaternion.Euler(rotationPoint.transform.eulerAngles.x,rotationPoint.transform.eulerAngles.y,rotationPoint.transform.eulerAngles.z)) as GameObject;
 
 		yield return new WaitForSeconds(0.3f);
 		doingAbil1 = false;
@@ -1800,7 +1801,7 @@ public class PlayerAbilities : MonoBehaviour {
 		//if (selectedArrow >= 4) {
 		//	selectedArrow = 0;
 		//}
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.2f);
 		//Do an animation here
 		doingAbil3 = false;
 		abilityActive = false;

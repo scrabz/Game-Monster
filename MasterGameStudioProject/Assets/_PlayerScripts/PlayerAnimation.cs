@@ -16,6 +16,8 @@ public class PlayerAnimation : MonoBehaviour {
 	public AudioClip geoVictory;
 	public AudioClip irisVictory;
 
+	public bool didIt = false;
+
 	public GameObject createdThing;
 	// Use this for initialization
 	void Start () {
@@ -27,6 +29,10 @@ public class PlayerAnimation : MonoBehaviour {
 		garyVictory = Resources.Load ("SFX/GaryVictory") as AudioClip;
 		tinyVictory = Resources.Load ("SFX/TinyVictory") as AudioClip;
 		neredyVictory = Resources.Load ("SFX/NeredyVictory") as AudioClip;
+		irisVictory = Resources.Load ("SFX/IrisVictory") as AudioClip;
+		guyVictory = Resources.Load ("SFX/GuyVictory") as AudioClip;
+		geoVictory = Resources.Load ("SFX/GeoVictory") as AudioClip;
+		decayVictory = Resources.Load ("SFX/DecayVictory") as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -209,7 +215,7 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
-						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().clip = irisVictory;
 						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
@@ -266,13 +272,15 @@ public class PlayerAnimation : MonoBehaviour {
 				if (this.GetComponent<PlayerState> ().isDying) {
 					
 						Destroy (rotationPoint.gameObject);
-						createdThing = Instantiate (Resources.Load("Particles/BigExplosion"), transform.position, Quaternion.Euler(this.transform.eulerAngles.x,this.transform.eulerAngles.y - 10f,this.transform.eulerAngles.z)) as GameObject;
-	
+					if (createdThing == null && didIt == false) {
+						didIt = true;
+						createdThing = Instantiate (Resources.Load ("Particles/BigExplosion"), transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y - 10f, this.transform.eulerAngles.z)) as GameObject;
+					}
 					
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
-						this.GetComponent<AudioSource> ().clip = tinyVictory;
+						this.GetComponent<AudioSource> ().clip = geoVictory;
 						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
@@ -329,6 +337,8 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = decayVictory;
+						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
 			} else {

@@ -12,6 +12,7 @@ public class CollectionAction : MonoBehaviour {
 			createdThing = Instantiate (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles [0], this.transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y - 20, this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			createdThing.GetComponent<AttackAction> ().damage = createdThing.GetComponent<AttackAction> ().damage * 2;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			Destroy (this.gameObject);
 		}
@@ -19,6 +20,7 @@ public class CollectionAction : MonoBehaviour {
 				createdThing = Instantiate (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles [1], this.transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y - 10, this.transform.eulerAngles.z)) as GameObject;
 				createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 				createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			createdThing.GetComponent<AttackAction> ().damage = createdThing.GetComponent<AttackAction> ().damage * 2;
 				Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 				Destroy (this.gameObject);
 			}
@@ -26,6 +28,7 @@ public class CollectionAction : MonoBehaviour {
 			createdThing = Instantiate (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles [2], this.transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y + 10, this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			createdThing.GetComponent<AttackAction> ().damage = createdThing.GetComponent<AttackAction> ().damage * 2;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			Destroy (this.gameObject);
 		}
@@ -33,6 +36,7 @@ public class CollectionAction : MonoBehaviour {
 			createdThing = Instantiate (this.GetComponent<AttackAction> ().creator.GetComponent<PlayerAbilities> ().storedProjectiles [3], this.transform.position, Quaternion.Euler (this.transform.eulerAngles.x, this.transform.eulerAngles.y + 20, this.transform.eulerAngles.z)) as GameObject;
 			createdThing.GetComponent<AttackAction> ().teamNum = this.GetComponent<AttackAction> ().teamNum;
 			createdThing.GetComponent<AttackAction> ().creator = this.gameObject;
+			createdThing.GetComponent<AttackAction> ().damage = createdThing.GetComponent<AttackAction> ().damage * 2;
 			Physics.IgnoreCollision (this.GetComponent<Collider> (), createdThing.GetComponent<Collider> ());
 			Destroy (this.gameObject);
 		}

@@ -19,6 +19,10 @@ public class PlayerCursor : MonoBehaviour {
 	public bool bButton;
 	public bool startButton;
 	public bool xButton;
+
+	public bool aReleased;
+	public bool bReleased;
+
 	public GameObject characterSelectObject;
 	public GameObject buttonManagerObject;
 	public int currentPlayer;
@@ -103,6 +107,8 @@ public class PlayerCursor : MonoBehaviour {
 			vMovement = currentJoystick.LeftStickY.RawValue;
 			aButton = currentJoystick.Action1.WasPressed;
 			bButton = currentJoystick.Action2.WasPressed;
+			aReleased = currentJoystick.Action1.WasReleased;
+			bReleased = currentJoystick.Action2.WasReleased;
 			startButton = currentJoystick.Command.WasPressed;
 		} else {
 			hMovement = Input.GetAxis("Horizontal");
@@ -224,6 +230,15 @@ public class PlayerCursor : MonoBehaviour {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
 					SceneManager.LoadScene ("ArenaLevel");
 				}
+
+				if (hit.collider.gameObject.name == "DojoButton") {
+					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();
+					SceneManager.LoadScene ("Dojo");
+				}
+				if (hit.collider.gameObject.name == "ExitButton") {
+					Application.Quit ();
+				}
+
 
 				if (hit.collider.gameObject.name == "ChangeMode") {
 					hit.collider.gameObject.GetComponent<ButtonClick> ().TaskOnClick ();

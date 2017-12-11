@@ -144,8 +144,8 @@ public class BasicArrowAction : MonoBehaviour {
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4") {
 			if (this.gameObject.name == "GhostArrow(Clone)") {
 				if (this.GetComponent<AttackAction> ().teamNum != col.gameObject.GetComponent<PlayerState> ().teamNum && !col.gameObject.GetComponent<PlayerMovement> ().isRolling) {
-					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage);
-
+					col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction> ().damage * 2f);
+					col.gameObject.GetComponent<PlayerState> ().InflictSlowed (2f);
 					if (this.gameObject.name == "StunArrow(Clone)") {
 						col.gameObject.GetComponent<PlayerState> ().InflictStun (1.5f);
 					}

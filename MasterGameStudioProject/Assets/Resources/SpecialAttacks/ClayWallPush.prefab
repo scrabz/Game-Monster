@@ -299,7 +299,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796892457969058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -559,8 +559,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.1134768, z: 1.836766}
-  m_Center: {x: 0, y: 1.5567384, z: -0.111065984}
+  m_Size: {x: 1, y: 1.0902133, z: 1.836766}
+  m_Center: {x: 0, y: 0.04510665, z: -0.111065984}
 --- !u!95 &95355103292123344
 Animator:
   serializedVersion: 3
