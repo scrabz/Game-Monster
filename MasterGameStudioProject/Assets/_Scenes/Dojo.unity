@@ -5068,7 +5068,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4141553912350930, guid: 469f64371253fea43b764d8248e01a78, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4141553912350930, guid: 469f64371253fea43b764d8248e01a78, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11278,7 +11278,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b61aae40141a3d449bb169b92227cb95, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.465
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12254,7 +12254,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cf79da564112f99488c4d711fdeb0181, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8441d4a9abc0baa44b3bb90fe2aac212, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

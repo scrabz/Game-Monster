@@ -470,7 +470,7 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			darkClaw.aName = "Push Punch";
 			darkClaw.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA1");
-			darkClaw.aCooldown = 1.2f;
+			darkClaw.aCooldown = 0.8f;
 			darkClaw.aPanel = ability1;
 
 			whip.aName = "Clay Shards";

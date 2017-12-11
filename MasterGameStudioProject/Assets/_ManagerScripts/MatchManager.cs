@@ -546,6 +546,10 @@ public class MatchManager : MonoBehaviour {
 					p1RGate.GetComponent<AudioSource> ().Play ();
 				}
 
+			} else {
+				if (MasterGameManager.instance.ffa == false) {
+					team1LostPerson = true;
+				}
 			}
 
 			if (p2ActiveCharacter == null && player2CharactersLeft > 0) {
@@ -584,6 +588,11 @@ public class MatchManager : MonoBehaviour {
 				}
 		
 			}
+			else {
+				if (MasterGameManager.instance.ffa == false) {
+					team1LostPerson = true;
+				}
+			}
 			if (p3ActiveCharacter == null && player3CharactersLeft > 0 && MasterGameManager.instance.p3Enabled) {
 
 				if (p3A && player3Ch1.enabled) {
@@ -621,6 +630,11 @@ public class MatchManager : MonoBehaviour {
 				}
 
 			}
+			else {
+				if (MasterGameManager.instance.ffa == false) {
+					team2LostPerson = true;
+				}
+			}
 
 			if (p4ActiveCharacter == null && player4CharactersLeft > 0 && MasterGameManager.instance.p4Enabled) {
 
@@ -657,6 +671,11 @@ public class MatchManager : MonoBehaviour {
 					p4RGate.GetComponent<AudioSource> ().Play ();
 				}
 
+			}
+			else {
+				if (MasterGameManager.instance.ffa == false) {
+					team2LostPerson = true;
+				}
 			}
 
 		

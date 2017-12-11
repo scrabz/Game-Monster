@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 114060217010196842}
   - component: {fileID: 54164426565513254}
   - component: {fileID: 114697983985550162}
+  - component: {fileID: 82363835251289004}
   m_Layer: 10
   m_Name: Claymond
   m_TagString: Player1
@@ -2893,6 +2894,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82363835251289004
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684754152244306}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.83
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82499296110175590
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3039,6 +3120,7 @@ MonoBehaviour:
   rollButton: 0
   switchChrButton: 0
   switchChrBack: 0
+  leaveMatch: 0
   dist: 2
   downDir: {x: 0, y: 0, z: 0}
   oldPosition: {x: 0, y: 0, z: 0}
@@ -3059,6 +3141,8 @@ MonoBehaviour:
   matchOver: 0
   thisModel: {fileID: 0}
   createdThing: {fileID: 0}
+  dojoCard: {fileID: 0}
+  newCheck: {fileID: 0}
 --- !u!114 &114042760386083168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3324,6 +3408,8 @@ MonoBehaviour:
   decayVictory: {fileID: 0}
   geoVictory: {fileID: 0}
   irisVictory: {fileID: 0}
+  didIt: 0
+  createdThing: {fileID: 0}
 --- !u!114 &114747314943819582
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -27,7 +27,7 @@ public class LifeStealAction : MonoBehaviour {
 
 		if (col.gameObject.tag == "Player1" || col.gameObject.tag == "Player2" || col.gameObject.tag == "Player3" || col.gameObject.tag == "Player4" ){
 			if (this.GetComponent<AttackAction>().teamNum != col.gameObject.GetComponent<PlayerState>().teamNum && !col.gameObject.GetComponent<PlayerMovement>().isRolling) {
-				this.GetComponent<AttackAction> ().creator.GetComponent<PlayerHealth> ().GetHit (-0.05f);	
+				this.GetComponent<AttackAction> ().creator.GetComponent<PlayerHealth> ().GetHit (-0.1f);	
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				if (!col.gameObject.GetComponent<PlayerState>().isSlowed){
 

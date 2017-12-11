@@ -3642,7 +3642,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.54
+  m_Volume: 0.861
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3818,6 +3818,7 @@ MonoBehaviour:
   rollButton: 0
   switchChrButton: 0
   switchChrBack: 0
+  leaveMatch: 0
   dist: 2
   downDir: {x: 0, y: 0, z: 0}
   oldPosition: {x: 0, y: 0, z: 0}
@@ -3839,6 +3840,7 @@ MonoBehaviour:
   thisModel: {fileID: 0}
   createdThing: {fileID: 0}
   dojoCard: {fileID: 0}
+  newCheck: {fileID: 0}
 --- !u!114 &114422279673688492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3950,6 +3952,7 @@ MonoBehaviour:
   decayVictory: {fileID: 0}
   geoVictory: {fileID: 0}
   irisVictory: {fileID: 0}
+  didIt: 0
   createdThing: {fileID: 0}
 --- !u!114 &114544067469049784
 MonoBehaviour:
