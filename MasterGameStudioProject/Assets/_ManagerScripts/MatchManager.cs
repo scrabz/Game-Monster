@@ -89,6 +89,11 @@ public class MatchManager : MonoBehaviour {
 	public bool p4X;
 	public bool p4Y;
 
+	public bool p1S;
+	public bool p2S;
+	public bool p3S;
+	public bool p4S;
+
 
 
 	public List<Sprite> p1Portraits;
@@ -173,6 +178,8 @@ public class MatchManager : MonoBehaviour {
 
 	public int activeTeams = 2;
 
+	public Text holdToExit;
+	public float exitTimer = 1.5f;
 
 	public bool team1LostPerson = false;
 	public bool team2LostPerson = false;
@@ -183,7 +190,7 @@ public class MatchManager : MonoBehaviour {
 		//guyVictory = Resources.Load ("SFX/BrogreSlash") as AudioClip;
 		//geoVictory = Resources.Load ("SFX/BrogreShield") as AudioClip;
 		//irisVictory = Resources.Load ("SFX/BrogreToss") as AudioClip;
-
+		Application.targetFrameRate = 70;
 		if (MasterGameManager.instance.ffa == true) {
 			if (MasterGameManager.instance.p3Enabled && MasterGameManager.instance.p4Enabled) {
 				activeTeams = 4;
@@ -330,7 +337,7 @@ public class MatchManager : MonoBehaviour {
 		spawn4 = GameObject.Find ("Spawn4").transform;
 
 		mainCam = GameObject.Find ("CameraHolder");
-
+		holdToExit = GameObject.Find ("HoldToExit").GetComponent<Text> ();
 
 	}
 
@@ -359,6 +366,7 @@ public class MatchManager : MonoBehaviour {
 		winnerPanel.GetComponent<Animator> ().SetBool ("shouldMove", false);
 		OpenPanels ();
 		countdownText.enabled = false;
+		holdToExit.enabled = false;
 
 
 
@@ -367,9 +375,21 @@ public class MatchManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-
-
+		p1S = p1Joystick.CommandIsPressed;
+		p2S = p2Joystick.CommandIsPressed;
+		p3S = p3Joystick.CommandIsPressed;
+		p4S = p4Joystick.CommandIsPressed;
+		if (p1S || p2S || p3S || p4S) {
+			holdToExit.enabled = true;
+			exitTimer -= Time.deltaTime;
+			if (exitTimer <= 0) {
+				Destroy (MasterGameManager.instance.gameObject);
+				SceneManager.LoadScene ("Menu");
+			}
+		} else {
+			exitTimer = 1.5f;
+			holdToExit.enabled = false;
+		}
 
 		if (isRoundEnding) {
 			roundOverTimer -= Time.deltaTime;
@@ -1302,9 +1322,10 @@ public class MatchManager : MonoBehaviour {
 	}
 	IEnumerator MatchComplete(){
 		yield return new WaitForSeconds(4f);
-		SceneManager.LoadScene ("Menu");
-		Destroy (MasterGameManager.instance);
+		Destroy (MasterGameManager.instance.gameObject);
 		Destroy (this.gameObject);
+		SceneManager.LoadScene ("Menu");
+
 	}
 		
 }

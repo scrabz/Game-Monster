@@ -394,6 +394,8 @@ public class PlayerAnimation : MonoBehaviour {
 				} else {
 					if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("VictoryAnimation")) {
 						animator.Play ("VictoryAnimation", 0, 0f);
+						this.GetComponent<AudioSource> ().clip = guyVictory;
+						this.GetComponent<AudioSource> ().Play ();
 					}
 				}
 			} else {

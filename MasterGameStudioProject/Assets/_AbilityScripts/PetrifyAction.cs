@@ -9,7 +9,7 @@ public class PetrifyAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 15f;
+		thisRigid.velocity = transform.forward * 25f;
 	}
 
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class PetrifyAction : MonoBehaviour {
 				col.gameObject.GetComponent<PlayerHealth> ().GetHit (this.GetComponent<AttackAction>().damage);
 				pushBackDir = this.GetComponent<AttackAction>().creator.transform.Find("RotationPoint").forward;
 				collisionObject = col.gameObject;
-				col.gameObject.GetComponent<PlayerState> ().InflictStun (1f);
+				col.gameObject.GetComponent<PlayerState> ().InflictStun (1.5f);
 				Destroy (this.gameObject);
 
 			}

@@ -128,10 +128,10 @@ public class DynamicCamera : MonoBehaviour
 		float zoomInFactor = 1f;
 		float zoomOutFactor = 0f;
 
-		float outerBufferW = Screen.width * 0.1f;
-		float innerBufferW = Screen.width * 0.15f;
-		float outerBufferH = Screen.height * 0.1f;
-		float innerBufferH = Screen.height * 0.15f;
+		float outerBufferW = Screen.width * 0.2f;
+		float innerBufferW = Screen.width * 0.25f;
+		float outerBufferH = Screen.height * 0.2f;
+		float innerBufferH = Screen.height * 0.25f;
 
 
 		//Vector3 averagePos = new Vector3 ();

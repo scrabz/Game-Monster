@@ -294,7 +294,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 			petrify.aName = "Petrify";
 			petrify.aIcon = Resources.Load<Sprite> ("AbilityIcons/NA3");
-			petrify.aCooldown = 8f;
+			petrify.aCooldown = 6f;
 			petrify.aPanel = ability3;
 
 			rage.aName = "Rage";
@@ -470,7 +470,7 @@ public class PlayerAbilities : MonoBehaviour {
 			//Set the properties of every ability
 			darkClaw.aName = "Push Punch";
 			darkClaw.aIcon = Resources.Load<Sprite> ("AbilityIcons/IA1");
-			darkClaw.aCooldown = 0.8f;
+			darkClaw.aCooldown = 0.65f;
 			darkClaw.aPanel = ability1;
 
 			whip.aName = "Clay Shards";

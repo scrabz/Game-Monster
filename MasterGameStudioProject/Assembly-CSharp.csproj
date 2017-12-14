@@ -104,6 +104,7 @@
      <Compile Include="Assets\_MiscScripts\PlayerCursor.cs" />
      <Compile Include="Assets\_MiscScripts\SlowMoveUp.cs" />
      <Compile Include="Assets\_MiscScripts\SlowRotate.cs" />
+     <Compile Include="Assets\_MiscScripts\SplashFades.cs" />
      <Compile Include="Assets\_MiscScripts\TrapAction.cs" />
      <Compile Include="Assets\_PlayerScripts\DummyHealth.cs" />
      <Compile Include="Assets\_PlayerScripts\PlayerAbilities.cs" />

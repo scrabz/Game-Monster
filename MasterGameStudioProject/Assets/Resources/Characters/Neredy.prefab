@@ -3151,6 +3151,7 @@ MonoBehaviour:
   decayVictory: {fileID: 0}
   geoVictory: {fileID: 0}
   irisVictory: {fileID: 0}
+  didIt: 0
   createdThing: {fileID: 0}
 --- !u!114 &114234032301775724
 MonoBehaviour:
@@ -3315,6 +3316,7 @@ MonoBehaviour:
   rollButton: 0
   switchChrButton: 0
   switchChrBack: 0
+  leaveMatch: 0
   dist: 2
   downDir: {x: 0, y: 0, z: 0}
   oldPosition: {x: 0, y: 0, z: 0}
@@ -3336,6 +3338,7 @@ MonoBehaviour:
   thisModel: {fileID: 0}
   createdThing: {fileID: 0}
   dojoCard: {fileID: 0}
+  newCheck: {fileID: 0}
 --- !u!114 &114811596474623172
 MonoBehaviour:
   m_ObjectHideFlags: 1

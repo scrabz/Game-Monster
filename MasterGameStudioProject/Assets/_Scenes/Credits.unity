@@ -7282,8 +7282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.0069427, y: 941.6}
-  m_SizeDelta: {x: 1366.2, y: 3822.8}
+  m_AnchoredPosition: {x: -0.0069427, y: -1149}
+  m_SizeDelta: {x: 1366, y: 8468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208812470
 MonoBehaviour:
@@ -7322,10 +7322,15 @@ MonoBehaviour:
     Design / Prop Design\r\n\r\n<i>Harrison Fisher\r</i>\nProgramming / Music\r\n\r\n<i>Tyler
     Hopp\r</i>\nSFX Design / Production\r\n\r\n<i>Connor Kneeland\r</i>\nCharacter
     Art / Level & Environment Design\r\n\r\n<i>Tyler White\r</i>\nLevel & Environment
-    Design / VFX Design\r\n\nAdditional Programming by\r\n<i>Dillon Kneeland\r</i>\n\r\n\nSpecial
-    Thanks to:\r\n\r<i>\nChris Berry\r\n\r\nBrett Crowe\r\n\r\nErick Eiben II\r\n\r\nNathan
-    Goldman\r\n\r\nJon Stewart\r\n\r\nJeff Warmouth\r\n\r\nGregory Westland\r\n\r\nBrandon
-    Voeuk\r\n\r</i>\n\n"
+    Design / VFX Design\r\n\n<i>Jeff Warmouth\r</i>\nFaculty Advisor\r\n\nAdditional
+    Programming by\r\n<i>Julia Kneeland\r</i>\n\n\n\r\nSFX collected from www.zapsplat.com\n\nSpecial
+    Thanks to:\r\n\r<i>\nLucas Acevedo\n\nBrad Allen\n\nChris Berry\r\n\r\nBrett Crowe\r\n\r\nErick
+    Eiben II\r\n\nFrank Firicano\n\nNick Fredrick\n\r\nNathan Goldman\r\n\r\nMonique
+    Guthrie\n\nKenny Howell\n\nZack Jesionowski\n\nJared Miller\n\nTJ Mitchell\n\nSteve
+    Nguyen\n\nMatt Perez\n\nNick Santo\n\nChris Schiavo\n\nNick Spatola\n\nJon Stewart\r\n\nMarissa
+    Tautiva\n\nGregory Westland\r\n\r\nBrandon Voeuk\r\n\nThe Fitchburg State Smash
+    Club\n\nThe Fitchburg State Game Design Professors\n\r</i>\n\nThanks for playing!\n\n\n\n\n\n\n\n\n\n\n...Press
+    B to return to the menu...\n"
 --- !u!222 &1208812471
 CanvasRenderer:
   m_ObjectHideFlags: 0

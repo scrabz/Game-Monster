@@ -9,7 +9,7 @@ public class MissileAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisRigid = this.GetComponent<Rigidbody> ();
-		thisRigid.velocity = transform.forward * 16f;
+		thisRigid.velocity = transform.forward * 20f;
 	}
 
 	// Update is called once per frame

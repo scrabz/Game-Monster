@@ -282,7 +282,7 @@ public class PlayerCursor : MonoBehaviour {
 			characterSelectObject.GetComponent<CharacterSelectAction> ().RemoveLastCharacter (currentPlayer);
 		}
 		//this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), -10f);
-		this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed), 16, this.transform.parent.GetComponent<RectTransform>().rect.width - 16), Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed), 16, this.transform.parent.GetComponent<RectTransform>().rect.height - 16), -10f);
+		this.GetComponent<RectTransform> ().anchoredPosition = new Vector3 (Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.x + (hMovement * mouseSpeed * Time.fixedDeltaTime * 50f), 16, this.transform.parent.GetComponent<RectTransform>().rect.width - 16), Mathf.Clamp(this.GetComponent<RectTransform> ().anchoredPosition.y + (vMovement * mouseSpeed * Time.fixedDeltaTime * 50f), 16, this.transform.parent.GetComponent<RectTransform>().rect.height - 16), -10f);
 
 
 		oldPosition = this.GetComponent<RectTransform> ().anchoredPosition;

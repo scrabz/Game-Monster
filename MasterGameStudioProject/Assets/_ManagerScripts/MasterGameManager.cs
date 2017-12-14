@@ -59,6 +59,8 @@ public class MasterGameManager : MonoBehaviour {
 	//Awake is always called before any Start functions
 	void Awake()
 	{
+
+		Application.targetFrameRate = 70;
 		player1Characters = new List<GameObject> ();
 		player2Characters = new List<GameObject> ();
 		player3Characters = new List<GameObject> ();

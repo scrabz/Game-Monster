@@ -33330,6 +33330,10 @@ MonoBehaviour:
   p4B: 0
   p4X: 0
   p4Y: 0
+  p1S: 0
+  p2S: 0
+  p3S: 0
+  p4S: 0
   p1Portraits: []
   p2Portraits: []
   p3Portraits: []
@@ -33386,6 +33390,8 @@ MonoBehaviour:
   howManyPlayers: 2
   playersLeft: 0
   activeTeams: 2
+  holdToExit: {fileID: 0}
+  exitTimer: 1.5
   team1LostPerson: 0
   team2LostPerson: 0
 --- !u!4 &2079691928

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54789632807538948}
   - component: {fileID: 114349086060193938}
   - component: {fileID: 114864056321319522}
+  - component: {fileID: 82833536236110292}
   m_Layer: 8
   m_Name: PetrifyProjectile
   m_TagString: Projectile
@@ -90,8 +91,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994481188165286}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5507236, y: 0.5507236, z: 0.5507239}
+  m_LocalPosition: {x: 0, y: 0, z: -0.08808507}
+  m_LocalScale: {x: 0.60028875, y: 0.60028875, z: 0.60028934}
   m_Children: []
   m_Father: {fileID: 4374596005033372}
   m_RootOrder: 0
@@ -104,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 1224030062445820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: -2.64}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3.24291, y: 3.242909, z: 3.242909}
   m_Children:
   - {fileID: 4162676412843824}
   - {fileID: 4878021546881694}
@@ -119,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322982074917018}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: 0.35}
-  m_LocalScale: {x: 0.70000035, y: 0.7, z: 0.7000007}
+  m_LocalPosition: {x: 0, y: 0, z: 0.022}
+  m_LocalScale: {x: 0.7630004, y: 0.763, z: 0.76300114}
   m_Children: []
   m_Father: {fileID: 4374596005033372}
   m_RootOrder: 2
@@ -132,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796016009757776}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: -0.35}
-  m_LocalScale: {x: 0.38135007, y: 0.3813499, z: 0.38135028}
+  m_LocalPosition: {x: 0, y: 0, z: -0.14694506}
+  m_LocalScale: {x: 0.4156716, y: 0.4156714, z: 0.415672}
   m_Children: []
   m_Father: {fileID: 4374596005033372}
   m_RootOrder: 1
@@ -192,6 +193,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!82 &82833536236110292
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1224030062445820}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4e0389eca800f43469c166ddf649446a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1.61
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114349086060193938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +376,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1550385679
+  randomSeed: 265412207
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -373,7 +454,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8455882, g: 0.3673936, b: 0, a: 0.58431375}
+      maxColor: {r: 0.11807961, g: 0.7647059, b: 0.17605299, a: 0.58431375}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3526,7 +3607,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1326344266
+  randomSeed: -254923960
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3604,7 +3685,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8455882, g: 0.3673936, b: 0, a: 0.58431375}
+      maxColor: {r: 0.11807961, g: 0.7647059, b: 0.17605299, a: 0.58431375}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6757,7 +6838,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1596404626
+  randomSeed: 1158432352
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6835,7 +6916,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8455882, g: 0.3673936, b: 0, a: 0.58431375}
+      maxColor: {r: 0.11807961, g: 0.7647059, b: 0.17605299, a: 0.58431375}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
